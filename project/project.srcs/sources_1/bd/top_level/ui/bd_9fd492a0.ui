@@ -1,0 +1,947 @@
+{
+   "ActiveEmotionalView":"No Loops",
+   "Default View_ScaleFactor":"0.0984933",
+   "Default View_TopLeft":"-6518,0",
+   "DisplayTieOff":"1",
+   "ExpandedHierarchyInLayout":"",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port CLK_IN_D_0 -pg 1 -lvl 0 -x 0 -y 1380 -defaultsOSRD
+preplace port CLK_IN_D_1 -pg 1 -lvl 0 -x 0 -y 1160 -defaultsOSRD
+preplace port GT_Serial_0 -pg 1 -lvl 4 -x 2470 -y 360 -defaultsOSRD
+preplace port GT_Serial_1 -pg 1 -lvl 4 -x 2470 -y 100 -defaultsOSRD
+preplace port s_axi -pg 1 -lvl 0 -x 0 -y 2140 -defaultsOSRD
+preplace port port-id_gtpowergood_0 -pg 1 -lvl 4 -x 2470 -y 640 -defaultsOSRD
+preplace port port-id_gt_rxcdrhold_1 -pg 1 -lvl 0 -x 0 -y 840 -defaultsOSRD
+preplace port port-id_apb3clk_quad -pg 1 -lvl 0 -x 0 -y 1080 -defaultsOSRD
+preplace port port-id_s_axi_aresetn -pg 1 -lvl 0 -x 0 -y 1100 -defaultsOSRD
+preplace port port-id_IBUFDS_ODIV2 -pg 1 -lvl 4 -x 2470 -y 3300 -defaultsOSRD
+preplace port port-id_gtpowergood_1 -pg 1 -lvl 4 -x 2470 -y 280 -defaultsOSRD
+preplace port port-id_s_axi_aclk -pg 1 -lvl 0 -x 0 -y 2540 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_ena0 -pg 1 -lvl 4 -x 2470 -y 4960 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_ena1 -pg 1 -lvl 4 -x 2470 -y 5020 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_ena2 -pg 1 -lvl 4 -x 2470 -y 5080 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_ena3 -pg 1 -lvl 4 -x 2470 -y 5140 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_eop0 -pg 1 -lvl 4 -x 2470 -y 5200 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_eop1 -pg 1 -lvl 4 -x 2470 -y 5260 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_eop2 -pg 1 -lvl 4 -x 2470 -y 5320 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_eop3 -pg 1 -lvl 4 -x 2470 -y 5360 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_err0 -pg 1 -lvl 4 -x 2470 -y 5400 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_err1 -pg 1 -lvl 4 -x 2470 -y 5460 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_err2 -pg 1 -lvl 4 -x 2470 -y 5520 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_err3 -pg 1 -lvl 4 -x 2470 -y 5580 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_sop0 -pg 1 -lvl 4 -x 2470 -y 5880 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_sop1 -pg 1 -lvl 4 -x 2470 -y 5940 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_sop2 -pg 1 -lvl 4 -x 2470 -y 5960 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_sop3 -pg 1 -lvl 4 -x 2470 -y 5980 -defaultsOSRD
+preplace port port-id_rx_axis_tvalid_0 -pg 1 -lvl 4 -x 2470 -y 6000 -defaultsOSRD
+preplace port port-id_rx_axis_tvalid_1 -pg 1 -lvl 4 -x 2470 -y 6020 -defaultsOSRD
+preplace port port-id_rx_lane_aligner_fill_start -pg 1 -lvl 4 -x 2470 -y 6060 -defaultsOSRD
+preplace port port-id_rx_lane_aligner_fill_valid -pg 1 -lvl 4 -x 2470 -y 6080 -defaultsOSRD
+preplace port port-id_rx_pcs_tdm_stats_start -pg 1 -lvl 4 -x 2470 -y 6120 -defaultsOSRD
+preplace port port-id_rx_pcs_tdm_stats_valid -pg 1 -lvl 4 -x 2470 -y 6140 -defaultsOSRD
+preplace port port-id_tx_axis_tready_0 -pg 1 -lvl 4 -x 2470 -y 6660 -defaultsOSRD
+preplace port port-id_tx_axis_tready_1 -pg 1 -lvl 4 -x 2470 -y 6680 -defaultsOSRD
+preplace port port-id_rx_axi_clk -pg 1 -lvl 0 -x 0 -y 2620 -defaultsOSRD
+preplace port port-id_rx_core_clk -pg 1 -lvl 0 -x 0 -y 2660 -defaultsOSRD
+preplace port port-id_rx_macif_clk -pg 1 -lvl 0 -x 0 -y 2800 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_ena0 -pg 1 -lvl 0 -x 0 -y 2980 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_ena1 -pg 1 -lvl 0 -x 0 -y 3000 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_ena2 -pg 1 -lvl 0 -x 0 -y 3020 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_ena3 -pg 1 -lvl 0 -x 0 -y 3040 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_eop0 -pg 1 -lvl 0 -x 0 -y 3060 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_eop1 -pg 1 -lvl 0 -x 0 -y 3080 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_eop2 -pg 1 -lvl 0 -x 0 -y 3100 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_eop3 -pg 1 -lvl 0 -x 0 -y 3120 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_err0 -pg 1 -lvl 0 -x 0 -y 3140 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_err1 -pg 1 -lvl 0 -x 0 -y 3160 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_err2 -pg 1 -lvl 0 -x 0 -y 3180 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_err3 -pg 1 -lvl 0 -x 0 -y 3200 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_sop0 -pg 1 -lvl 0 -x 0 -y 3300 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_sop1 -pg 1 -lvl 0 -x 0 -y 3320 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_sop2 -pg 1 -lvl 0 -x 0 -y 3360 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_sop3 -pg 1 -lvl 0 -x 0 -y 3400 -defaultsOSRD
+preplace port port-id_tx_axis_tvalid_0 -pg 1 -lvl 0 -x 0 -y 3420 -defaultsOSRD
+preplace port port-id_tx_axis_tvalid_1 -pg 1 -lvl 0 -x 0 -y 3460 -defaultsOSRD
+preplace port port-id_tx_axi_clk -pg 1 -lvl 0 -x 0 -y 3500 -defaultsOSRD
+preplace port port-id_tx_core_clk -pg 1 -lvl 0 -x 0 -y 3540 -defaultsOSRD
+preplace port port-id_tx_macif_clk -pg 1 -lvl 0 -x 0 -y 3600 -defaultsOSRD
+preplace port port-id_gtpowergood_in -pg 1 -lvl 0 -x 0 -y 3640 -defaultsOSRD
+preplace port port-id_gt_reset_all_in -pg 1 -lvl 0 -x 0 -y 3660 -defaultsOSRD
+preplace port port-id_gt_reset_tx_datapath_in_0 -pg 1 -lvl 0 -x 0 -y 3680 -defaultsOSRD
+preplace port port-id_gt_reset_rx_datapath_in_0 -pg 1 -lvl 0 -x 0 -y 3760 -defaultsOSRD
+preplace port port-id_gt_reset_tx_datapath_in_1 -pg 1 -lvl 0 -x 0 -y 3840 -defaultsOSRD
+preplace port port-id_gt_reset_rx_datapath_in_1 -pg 1 -lvl 0 -x 0 -y 3920 -defaultsOSRD
+preplace port port-id_gt_rxcdrhold_0 -pg 1 -lvl 0 -x 0 -y 1280 -defaultsOSRD
+preplace port port-id_gt_tx_reset_done_out_0 -pg 1 -lvl 4 -x 2470 -y 6700 -defaultsOSRD
+preplace port port-id_gt_tx_reset_done_out_5 -pg 1 -lvl 4 -x 2470 -y 6900 -defaultsOSRD
+preplace port port-id_gt_rx_reset_done_out_0 -pg 1 -lvl 4 -x 2470 -y 6720 -defaultsOSRD
+preplace port port-id_gt_tx_reset_done_out_1 -pg 1 -lvl 4 -x 2470 -y 6740 -defaultsOSRD
+preplace port port-id_gt_tx_reset_done_out_3 -pg 1 -lvl 4 -x 2470 -y 6820 -defaultsOSRD
+preplace port port-id_gt_tx_reset_done_out_4 -pg 1 -lvl 4 -x 2470 -y 6860 -defaultsOSRD
+preplace port port-id_gt_rx_reset_done_out_2 -pg 1 -lvl 4 -x 2470 -y 6800 -defaultsOSRD
+preplace port port-id_gt_tx_reset_done_out_6 -pg 1 -lvl 4 -x 2470 -y 6940 -defaultsOSRD
+preplace port port-id_gt_rx_reset_done_out_3 -pg 1 -lvl 4 -x 2470 -y 6840 -defaultsOSRD
+preplace port port-id_gt_rx_reset_done_out_4 -pg 1 -lvl 4 -x 2470 -y 6880 -defaultsOSRD
+preplace port port-id_gt_rx_reset_done_out_1 -pg 1 -lvl 4 -x 2470 -y 6760 -defaultsOSRD
+preplace port port-id_gt_tx_reset_done_out_7 -pg 1 -lvl 4 -x 2470 -y 6980 -defaultsOSRD
+preplace port port-id_gt_tx_reset_done_out_2 -pg 1 -lvl 4 -x 2470 -y 6780 -defaultsOSRD
+preplace port port-id_gt_rx_reset_done_out_7 -pg 1 -lvl 4 -x 2470 -y 7000 -defaultsOSRD
+preplace port port-id_gt_rx_reset_done_out_5 -pg 1 -lvl 4 -x 2470 -y 6920 -defaultsOSRD
+preplace port port-id_gt_rx_reset_done_out_6 -pg 1 -lvl 4 -x 2470 -y 6960 -defaultsOSRD
+preplace portBus ch0_rx_usr_clk_1 -pg 1 -lvl 4 -x 2470 -y 3580 -defaultsOSRD
+preplace portBus ch0_rx_usr_clk2_1 -pg 1 -lvl 4 -x 2470 -y 3600 -defaultsOSRD
+preplace portBus gt_txpostcursor -pg 1 -lvl 0 -x 0 -y 1240 -defaultsOSRD
+preplace portBus gt_txprecursor -pg 1 -lvl 0 -x 0 -y 1260 -defaultsOSRD
+preplace portBus gt_txmaincursor -pg 1 -lvl 0 -x 0 -y 20 -defaultsOSRD
+preplace portBus ch0_tx_usr_clk2_0 -pg 1 -lvl 4 -x 2470 -y 3500 -defaultsOSRD
+preplace portBus ch0_rx_usr_clk2_0 -pg 1 -lvl 4 -x 2470 -y 3460 -defaultsOSRD
+preplace portBus gt_loopback_0 -pg 1 -lvl 0 -x 0 -y 40 -defaultsOSRD
+preplace portBus ch0_tx_usr_clk_0 -pg 1 -lvl 4 -x 2470 -y 4000 -defaultsOSRD
+preplace portBus ch0_tx_usr_clk_1 -pg 1 -lvl 4 -x 2470 -y 3820 -defaultsOSRD
+preplace portBus ch0_tx_usr_clk2_1 -pg 1 -lvl 4 -x 2470 -y 3840 -defaultsOSRD
+preplace portBus gt_loopback_1 -pg 1 -lvl 0 -x 0 -y 240 -defaultsOSRD
+preplace portBus ch0_rx_usr_clk_0 -pg 1 -lvl 4 -x 2470 -y 3760 -defaultsOSRD
+preplace portBus rx_axis_tdata0 -pg 1 -lvl 4 -x 2470 -y 4680 -defaultsOSRD
+preplace portBus rx_axis_tdata1 -pg 1 -lvl 4 -x 2470 -y 4760 -defaultsOSRD
+preplace portBus rx_axis_tdata2 -pg 1 -lvl 4 -x 2470 -y 4840 -defaultsOSRD
+preplace portBus rx_axis_tdata3 -pg 1 -lvl 4 -x 2470 -y 4900 -defaultsOSRD
+preplace portBus rx_axis_tuser_mty0 -pg 1 -lvl 4 -x 2470 -y 5640 -defaultsOSRD
+preplace portBus rx_axis_tuser_mty1 -pg 1 -lvl 4 -x 2470 -y 5700 -defaultsOSRD
+preplace portBus rx_axis_tuser_mty2 -pg 1 -lvl 4 -x 2470 -y 5760 -defaultsOSRD
+preplace portBus rx_axis_tuser_mty3 -pg 1 -lvl 4 -x 2470 -y 5820 -defaultsOSRD
+preplace portBus rx_lane_aligner_fill -pg 1 -lvl 4 -x 2470 -y 6040 -defaultsOSRD
+preplace portBus rx_pcs_tdm_stats_data -pg 1 -lvl 4 -x 2470 -y 6100 -defaultsOSRD
+preplace portBus rx_port_pm_rdy -pg 1 -lvl 4 -x 2470 -y 6160 -defaultsOSRD
+preplace portBus rx_alt_serdes_clk -pg 1 -lvl 0 -x 0 -y 2580 -defaultsOSRD
+preplace portBus rx_flexif_clk -pg 1 -lvl 0 -x 0 -y 2740 -defaultsOSRD
+preplace portBus rx_serdes_clk -pg 1 -lvl 0 -x 0 -y 2840 -defaultsOSRD
+preplace portBus ts_clk -pg 1 -lvl 0 -x 0 -y 2860 -defaultsOSRD
+preplace portBus tx_alt_serdes_clk -pg 1 -lvl 0 -x 0 -y 2880 -defaultsOSRD
+preplace portBus tx_axis_tdata0 -pg 1 -lvl 0 -x 0 -y 2900 -defaultsOSRD
+preplace portBus tx_axis_tdata1 -pg 1 -lvl 0 -x 0 -y 2920 -defaultsOSRD
+preplace portBus tx_axis_tdata2 -pg 1 -lvl 0 -x 0 -y 2940 -defaultsOSRD
+preplace portBus tx_axis_tdata3 -pg 1 -lvl 0 -x 0 -y 2960 -defaultsOSRD
+preplace portBus tx_axis_tuser_mty0 -pg 1 -lvl 0 -x 0 -y 3220 -defaultsOSRD
+preplace portBus tx_axis_tuser_mty1 -pg 1 -lvl 0 -x 0 -y 3240 -defaultsOSRD
+preplace portBus tx_axis_tuser_mty2 -pg 1 -lvl 0 -x 0 -y 3260 -defaultsOSRD
+preplace portBus tx_axis_tuser_mty3 -pg 1 -lvl 0 -x 0 -y 3280 -defaultsOSRD
+preplace portBus tx_flexif_clk -pg 1 -lvl 0 -x 0 -y 3580 -defaultsOSRD
+preplace portBus tx_serdes_clk -pg 1 -lvl 0 -x 0 -y 3620 -defaultsOSRD
+preplace inst util_ds_buf_mbufg_rx_1 -pg 1 -lvl 3 -x 2210 -y 3560 -swap {0 1 6 2 4 5 3 7 8 9 10} -defaultsOSRD -pinBusDir MBUFG_GT_I left -pinBusY MBUFG_GT_I 20L -pinBusDir MBUFG_GT_CE left -pinBusY MBUFG_GT_CE 40L -pinBusDir MBUFG_GT_CEMASK left -pinBusY MBUFG_GT_CEMASK 140L -pinBusDir MBUFG_GT_CLR left -pinBusY MBUFG_GT_CLR 60L -pinBusDir MBUFG_GT_CLRMASK left -pinBusY MBUFG_GT_CLRMASK 100L -pinBusDir MBUFG_GT_DIV left -pinBusY MBUFG_GT_DIV 120L -pinBusDir MBUFG_GT_CLRB_LEAF left -pinBusY MBUFG_GT_CLRB_LEAF 80L -pinBusDir MBUFG_GT_O1 right -pinBusY MBUFG_GT_O1 20R -pinBusDir MBUFG_GT_O2 right -pinBusY MBUFG_GT_O2 40R -pinBusDir MBUFG_GT_O3 right -pinBusY MBUFG_GT_O3 60R -pinBusDir MBUFG_GT_O4 right -pinBusY MBUFG_GT_O4 80R
+preplace inst util_ds_buf_0 -pg 1 -lvl 2 -x 820 -y 1360 -defaultsOSRD -pinDir CLK_IN_D1 left -pinY CLK_IN_D1 20L -pinBusDir IBUFDS_GTME5_CEB left -pinBusY IBUFDS_GTME5_CEB 40L -pinBusDir IBUFDS_GTME5_O right -pinBusY IBUFDS_GTME5_O 20R -pinBusDir IBUFDS_GTME5_ODIV2 right -pinBusY IBUFDS_GTME5_ODIV2 40R
+preplace inst util_ds_buf_1 -pg 1 -lvl 1 -x 240 -y 1140 -swap {0 1 2 3 5 4} -defaultsOSRD -pinDir CLK_IN_D1 left -pinY CLK_IN_D1 20L -pinBusDir IBUFDS_GTME5_CEB left -pinBusY IBUFDS_GTME5_CEB 40L -pinBusDir IBUFDS_GTME5_O right -pinBusY IBUFDS_GTME5_O 40R -pinBusDir IBUFDS_GTME5_ODIV2 right -pinBusY IBUFDS_GTME5_ODIV2 20R
+preplace inst gt_quad_base_0 -pg 1 -lvl 3 -x 2210 -y 320 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319 320 321 322 323 324 325 326 327 328 329 330 331 332 333 334 335 336 337 338 339 340 341 342 343 344 345 346 347 348 349 350 351 352 353 354 355 356 357 358 359 360 361 362 363 364 365 366 367 368 369 370 371 372 373 374 375 376 377 378 379 380 381 382 383 384 385 386 387 388 389 390 391 392 393 394 395 396 397 398 399 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 418 419 420 421 422 423 424 425 426 427 428 429 430 431 432 433 434 435 436 437 438 439 440 441 442 443 444 445 446 447 448 449 450 451 452 453 454 455 456 457 458 459 460 461 462 463 464 465 466 467 468 469 470 471 472 473 474 475 476 477 478 479 480 481 482 483 484 485 486 487 488 489 490 491 492 493 494 495 496 497 498 499 500 501 502 503 504 505 506 507 508 509 510 511 512 513 543 527 528 542 547 519 520 521 560 531 532 533 534 535 536 549 551 553 554 555 557 559 561 522 537 538 539 541 526 514 515 516 524 545 540 525 548 529 550 530 546 517 552 518 556 523 558 544} -defaultsOSRD -pinDir HSCLK0_DEBUG left -pinY HSCLK0_DEBUG 20L -pinDir HSCLK1_DEBUG left -pinY HSCLK1_DEBUG 40L -pinDir gt_rxmargin_intf left -pinY gt_rxmargin_intf 60L -pinDir GT_DEBUG left -pinY GT_DEBUG 80L -pinDir APB3_INTF left -pinY APB3_INTF 100L -pinDir GT_NORTHIN_SOUTHOUT right -pinY GT_NORTHIN_SOUTHOUT 20R -pinDir GT_NORTHOUT_SOUTHIN left -pinY GT_NORTHOUT_SOUTHIN 120L -pinDir CH0_DEBUG left -pinY CH0_DEBUG 140L -pinDir CH0_DEBUG.ch0_loopback left -pinY CH0_DEBUG.ch0_loopback 160L -pinDir CH1_DEBUG left -pinY CH1_DEBUG 180L -pinDir CH1_DEBUG.ch1_loopback left -pinY CH1_DEBUG.ch1_loopback 200L -pinDir CH2_DEBUG left -pinY CH2_DEBUG 220L -pinDir CH2_DEBUG.ch2_loopback left -pinY CH2_DEBUG.ch2_loopback 240L -pinDir CH3_DEBUG left -pinY CH3_DEBUG 260L -pinDir CH3_DEBUG.ch3_loopback left -pinY CH3_DEBUG.ch3_loopback 280L -pinDir TX0_GT_IP_Interface left -pinY TX0_GT_IP_Interface 1740L -pinDir TX0_GT_IP_Interface.ch0_txmaincursor left -pinY TX0_GT_IP_Interface.ch0_txmaincursor 1760L -pinDir TX0_GT_IP_Interface.ch0_txpostcursor left -pinY TX0_GT_IP_Interface.ch0_txpostcursor 1780L -pinDir TX0_GT_IP_Interface.ch0_txprecursor left -pinY TX0_GT_IP_Interface.ch0_txprecursor 1800L -pinDir TX1_GT_IP_Interface left -pinY TX1_GT_IP_Interface 1820L -pinDir TX1_GT_IP_Interface.ch1_txmaincursor left -pinY TX1_GT_IP_Interface.ch1_txmaincursor 1840L -pinDir TX1_GT_IP_Interface.ch1_txpostcursor left -pinY TX1_GT_IP_Interface.ch1_txpostcursor 1860L -pinDir TX1_GT_IP_Interface.ch1_txprecursor left -pinY TX1_GT_IP_Interface.ch1_txprecursor 1880L -pinDir TX2_GT_IP_Interface left -pinY TX2_GT_IP_Interface 1900L -pinDir TX2_GT_IP_Interface.ch2_txmaincursor left -pinY TX2_GT_IP_Interface.ch2_txmaincursor 1920L -pinDir TX2_GT_IP_Interface.ch2_txpostcursor left -pinY TX2_GT_IP_Interface.ch2_txpostcursor 1940L -pinDir TX2_GT_IP_Interface.ch2_txprecursor left -pinY TX2_GT_IP_Interface.ch2_txprecursor 1960L -pinDir TX3_GT_IP_Interface left -pinY TX3_GT_IP_Interface 1980L -pinDir TX3_GT_IP_Interface.ch3_txmaincursor left -pinY TX3_GT_IP_Interface.ch3_txmaincursor 2000L -pinDir TX3_GT_IP_Interface.ch3_txpostcursor left -pinY TX3_GT_IP_Interface.ch3_txpostcursor 2020L -pinDir TX3_GT_IP_Interface.ch3_txprecursor left -pinY TX3_GT_IP_Interface.ch3_txprecursor 2040L -pinDir RX0_GT_IP_Interface left -pinY RX0_GT_IP_Interface 2060L -pinDir RX0_GT_IP_Interface.ch0_rxcdrhold left -pinY RX0_GT_IP_Interface.ch0_rxcdrhold 2080L -pinDir RX1_GT_IP_Interface left -pinY RX1_GT_IP_Interface 2100L -pinDir RX1_GT_IP_Interface.ch1_rxcdrhold left -pinY RX1_GT_IP_Interface.ch1_rxcdrhold 2120L -pinDir RX2_GT_IP_Interface left -pinY RX2_GT_IP_Interface 2140L -pinDir RX2_GT_IP_Interface.ch2_rxcdrhold left -pinY RX2_GT_IP_Interface.ch2_rxcdrhold 2160L -pinDir RX3_GT_IP_Interface left -pinY RX3_GT_IP_Interface 2180L -pinDir RX3_GT_IP_Interface.ch3_rxcdrhold left -pinY RX3_GT_IP_Interface.ch3_rxcdrhold 2200L -pinDir GT_Serial right -pinY GT_Serial 40R -pinDir hsclk0_lcpllreset left -pinY hsclk0_lcpllreset 2640L -pinDir hsclk0_rpllreset left -pinY hsclk0_rpllreset 2400L -pinDir hsclk1_lcpllreset left -pinY hsclk1_lcpllreset 2420L -pinDir hsclk1_rpllreset left -pinY hsclk1_rpllreset 2620L -pinDir hsclk0_lcplllock left -pinY hsclk0_lcplllock 2720L -pinDir hsclk1_lcplllock right -pinY hsclk1_lcplllock 60R -pinDir hsclk0_rplllock right -pinY hsclk0_rplllock 80R -pinDir hsclk1_rplllock right -pinY hsclk1_rplllock 100R -pinDir gtpowergood right -pinY gtpowergood 320R -pinDir ch0_pcierstb left -pinY ch0_pcierstb 2480L -pinDir ch1_pcierstb left -pinY ch1_pcierstb 2500L -pinDir ch2_pcierstb left -pinY ch2_pcierstb 2520L -pinDir ch3_pcierstb left -pinY ch3_pcierstb 2540L -pinDir pcielinkreachtarget left -pinY pcielinkreachtarget 2560L -pinBusDir pcieltssm left -pinBusY pcieltssm 2580L -pinDir ch0_iloreset left -pinY ch0_iloreset 2740L -pinDir ch1_iloreset left -pinY ch1_iloreset 2760L -pinDir ch2_iloreset left -pinY ch2_iloreset 2780L -pinDir ch3_iloreset left -pinY ch3_iloreset 2800L -pinDir ch0_iloresetdone left -pinY ch0_iloresetdone 2820L -pinDir ch1_iloresetdone left -pinY ch1_iloresetdone 2840L -pinDir ch2_iloresetdone left -pinY ch2_iloresetdone 2860L -pinDir ch3_iloresetdone left -pinY ch3_iloresetdone 2880L -pinDir ch0_phystatus right -pinY ch0_phystatus 120R -pinDir ch1_phystatus right -pinY ch1_phystatus 140R -pinDir ch2_phystatus right -pinY ch2_phystatus 160R -pinDir ch3_phystatus right -pinY ch3_phystatus 180R -pinDir refclk0_gtrefclkpd left -pinY refclk0_gtrefclkpd 2600L -pinDir refclk1_gtrefclkpd left -pinY refclk1_gtrefclkpd 2380L -pinDir apb3clk left -pinY apb3clk 2220L -pinDir apb3presetn left -pinY apb3presetn 2240L -pinDir GT_REFCLK0 left -pinY GT_REFCLK0 2260L -pinDir ch0_txoutclk left -pinY ch0_txoutclk 2340L -pinDir ch0_txusrclk left -pinY ch0_txusrclk 2680L -pinDir ch1_txoutclk right -pinY ch1_txoutclk 200R -pinDir ch1_txusrclk left -pinY ch1_txusrclk 2360L -pinDir ch2_txoutclk right -pinY ch2_txoutclk 220R -pinDir ch2_txusrclk left -pinY ch2_txusrclk 2440L -pinDir ch3_txoutclk right -pinY ch3_txoutclk 240R -pinDir ch3_txusrclk left -pinY ch3_txusrclk 2460L -pinDir ch0_rxoutclk left -pinY ch0_rxoutclk 2700L -pinDir ch0_rxusrclk left -pinY ch0_rxusrclk 2280L -pinDir ch1_rxoutclk right -pinY ch1_rxoutclk 260R -pinDir ch1_rxusrclk left -pinY ch1_rxusrclk 2300L -pinDir ch2_rxoutclk right -pinY ch2_rxoutclk 280R -pinDir ch2_rxusrclk left -pinY ch2_rxusrclk 2320L -pinDir ch3_rxoutclk right -pinY ch3_rxoutclk 300R -pinDir ch3_rxusrclk left -pinY ch3_rxusrclk 2660L
+preplace inst bufg_gt_odiv2 -pg 1 -lvl 3 -x 2210 -y 3280 -defaultsOSRD -pinDir outclk left -pinY outclk 20L -pinDir gt_bufgtce left -pinY gt_bufgtce 40L -pinDir gt_bufgtcemask left -pinY gt_bufgtcemask 60L -pinDir gt_bufgtclr left -pinY gt_bufgtclr 80L -pinDir gt_bufgtclrmask left -pinY gt_bufgtclrmask 100L -pinBusDir gt_bufgtdiv left -pinBusY gt_bufgtdiv 120L -pinDir usrclk right -pinY usrclk 20R
+preplace inst util_ds_buf_mbufg_tx_0 -pg 1 -lvl 2 -x 820 -y 1800 -swap {3 1 2 8 4 5 7 10 6 0 9} -defaultsOSRD -pinBusDir MBUFG_GT_I right -pinBusY MBUFG_GT_I 40R -pinBusDir MBUFG_GT_CE left -pinBusY MBUFG_GT_CE 20L -pinBusDir MBUFG_GT_CEMASK left -pinBusY MBUFG_GT_CEMASK 40L -pinBusDir MBUFG_GT_CLR right -pinBusY MBUFG_GT_CLR 100R -pinBusDir MBUFG_GT_CLRMASK left -pinBusY MBUFG_GT_CLRMASK 60L -pinBusDir MBUFG_GT_DIV left -pinBusY MBUFG_GT_DIV 80L -pinBusDir MBUFG_GT_CLRB_LEAF right -pinBusY MBUFG_GT_CLRB_LEAF 80R -pinBusDir MBUFG_GT_O1 right -pinBusY MBUFG_GT_O1 140R -pinBusDir MBUFG_GT_O2 right -pinBusY MBUFG_GT_O2 60R -pinBusDir MBUFG_GT_O3 right -pinBusY MBUFG_GT_O3 20R -pinBusDir MBUFG_GT_O4 right -pinBusY MBUFG_GT_O4 120R
+preplace inst util_ds_buf_mbufg_tx_1 -pg 1 -lvl 3 -x 2210 -y 3800 -swap {0 1 6 2 4 5 3 7 8 9 10} -defaultsOSRD -pinBusDir MBUFG_GT_I left -pinBusY MBUFG_GT_I 20L -pinBusDir MBUFG_GT_CE left -pinBusY MBUFG_GT_CE 40L -pinBusDir MBUFG_GT_CEMASK left -pinBusY MBUFG_GT_CEMASK 140L -pinBusDir MBUFG_GT_CLR left -pinBusY MBUFG_GT_CLR 60L -pinBusDir MBUFG_GT_CLRMASK left -pinBusY MBUFG_GT_CLRMASK 100L -pinBusDir MBUFG_GT_DIV left -pinBusY MBUFG_GT_DIV 120L -pinBusDir MBUFG_GT_CLRB_LEAF left -pinBusY MBUFG_GT_CLRB_LEAF 80L -pinBusDir MBUFG_GT_O1 right -pinBusY MBUFG_GT_O1 20R -pinBusDir MBUFG_GT_O2 right -pinBusY MBUFG_GT_O2 40R -pinBusDir MBUFG_GT_O3 right -pinBusY MBUFG_GT_O3 60R -pinBusDir MBUFG_GT_O4 right -pinBusY MBUFG_GT_O4 80R
+preplace inst gt_quad_base_1 -pg 1 -lvl 2 -x 820 -y 80 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 509 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319 320 321 322 323 324 325 326 327 328 329 330 331 332 333 334 335 336 337 338 339 340 341 342 343 344 345 346 347 348 349 350 351 352 353 354 355 356 357 358 359 360 361 362 363 364 365 366 367 368 369 370 371 372 373 374 375 376 377 378 379 380 381 382 383 384 385 386 387 388 389 390 391 392 393 394 395 396 397 398 399 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 418 419 420 421 422 423 424 425 426 427 428 429 430 431 432 433 434 435 436 437 438 439 440 441 442 443 444 445 446 447 448 449 450 451 452 453 454 455 456 457 458 459 460 461 462 463 464 465 466 467 468 469 470 471 472 473 474 475 476 477 478 479 480 481 482 483 484 485 486 487 488 489 490 491 492 493 494 495 496 497 498 499 500 501 502 503 504 505 506 507 508 103 510 511 512 513 549 550 551 552 557 515 516 517 514 523 524 525 526 527 541 556 555 554 553 561 560 559 558 518 519 520 521 543 544 528 542 545 548 538 522 539 529 540 530 546 547 534 531 535 532 536 533 537} -defaultsOSRD -pinDir HSCLK0_DEBUG left -pinY HSCLK0_DEBUG 20L -pinDir HSCLK1_DEBUG left -pinY HSCLK1_DEBUG 40L -pinDir gt_rxmargin_intf left -pinY gt_rxmargin_intf 60L -pinDir GT_DEBUG left -pinY GT_DEBUG 80L -pinDir APB3_INTF left -pinY APB3_INTF 100L -pinDir GT_NORTHIN_SOUTHOUT right -pinY GT_NORTHIN_SOUTHOUT 360R -pinDir GT_NORTHOUT_SOUTHIN left -pinY GT_NORTHOUT_SOUTHIN 120L -pinDir CH0_DEBUG left -pinY CH0_DEBUG 140L -pinDir CH0_DEBUG.ch0_loopback left -pinY CH0_DEBUG.ch0_loopback 160L -pinDir CH1_DEBUG left -pinY CH1_DEBUG 180L -pinDir CH1_DEBUG.ch1_loopback left -pinY CH1_DEBUG.ch1_loopback 200L -pinDir CH2_DEBUG left -pinY CH2_DEBUG 220L -pinDir CH2_DEBUG.ch2_loopback left -pinY CH2_DEBUG.ch2_loopback 240L -pinDir CH3_DEBUG left -pinY CH3_DEBUG 260L -pinDir CH3_DEBUG.ch3_loopback left -pinY CH3_DEBUG.ch3_loopback 280L -pinDir TX0_GT_IP_Interface right -pinY TX0_GT_IP_Interface 40R -pinDir TX0_GT_IP_Interface.ch0_txmaincursor right -pinY TX0_GT_IP_Interface.ch0_txmaincursor 60R -pinDir TX0_GT_IP_Interface.ch0_txpostcursor right -pinY TX0_GT_IP_Interface.ch0_txpostcursor 80R -pinDir TX0_GT_IP_Interface.ch0_txprecursor right -pinY TX0_GT_IP_Interface.ch0_txprecursor 100R -pinDir TX1_GT_IP_Interface right -pinY TX1_GT_IP_Interface 120R -pinDir TX1_GT_IP_Interface.ch1_txmaincursor right -pinY TX1_GT_IP_Interface.ch1_txmaincursor 140R -pinDir TX1_GT_IP_Interface.ch1_txpostcursor right -pinY TX1_GT_IP_Interface.ch1_txpostcursor 160R -pinDir TX1_GT_IP_Interface.ch1_txprecursor right -pinY TX1_GT_IP_Interface.ch1_txprecursor 180R -pinDir TX2_GT_IP_Interface right -pinY TX2_GT_IP_Interface 200R -pinDir TX2_GT_IP_Interface.ch2_txmaincursor right -pinY TX2_GT_IP_Interface.ch2_txmaincursor 220R -pinDir TX2_GT_IP_Interface.ch2_txpostcursor right -pinY TX2_GT_IP_Interface.ch2_txpostcursor 240R -pinDir TX2_GT_IP_Interface.ch2_txprecursor right -pinY TX2_GT_IP_Interface.ch2_txprecursor 260R -pinDir TX3_GT_IP_Interface right -pinY TX3_GT_IP_Interface 280R -pinDir TX3_GT_IP_Interface.ch3_txmaincursor right -pinY TX3_GT_IP_Interface.ch3_txmaincursor 300R -pinDir TX3_GT_IP_Interface.ch3_txpostcursor right -pinY TX3_GT_IP_Interface.ch3_txpostcursor 320R -pinDir TX3_GT_IP_Interface.ch3_txprecursor right -pinY TX3_GT_IP_Interface.ch3_txprecursor 340R -pinDir RX0_GT_IP_Interface left -pinY RX0_GT_IP_Interface 740L -pinDir RX0_GT_IP_Interface.ch0_rxcdrhold left -pinY RX0_GT_IP_Interface.ch0_rxcdrhold 760L -pinDir RX1_GT_IP_Interface left -pinY RX1_GT_IP_Interface 780L -pinDir RX1_GT_IP_Interface.ch1_rxcdrhold left -pinY RX1_GT_IP_Interface.ch1_rxcdrhold 800L -pinDir RX2_GT_IP_Interface left -pinY RX2_GT_IP_Interface 820L -pinDir RX2_GT_IP_Interface.ch2_rxcdrhold left -pinY RX2_GT_IP_Interface.ch2_rxcdrhold 840L -pinDir RX3_GT_IP_Interface left -pinY RX3_GT_IP_Interface 860L -pinDir RX3_GT_IP_Interface.ch3_rxcdrhold left -pinY RX3_GT_IP_Interface.ch3_rxcdrhold 880L -pinDir GT_Serial right -pinY GT_Serial 20R -pinDir hsclk0_lcpllreset right -pinY hsclk0_lcpllreset 860R -pinDir hsclk0_rpllreset right -pinY hsclk0_rpllreset 880R -pinDir hsclk1_lcpllreset right -pinY hsclk1_lcpllreset 900R -pinDir hsclk1_rpllreset right -pinY hsclk1_rpllreset 920R -pinDir hsclk0_lcplllock right -pinY hsclk0_lcplllock 1020R -pinDir hsclk1_lcplllock right -pinY hsclk1_lcplllock 400R -pinDir hsclk0_rplllock right -pinY hsclk0_rplllock 420R -pinDir hsclk1_rplllock right -pinY hsclk1_rplllock 440R -pinDir gtpowergood right -pinY gtpowergood 380R -pinDir ch0_pcierstb left -pinY ch0_pcierstb 900L -pinDir ch1_pcierstb left -pinY ch1_pcierstb 920L -pinDir ch2_pcierstb left -pinY ch2_pcierstb 940L -pinDir ch3_pcierstb left -pinY ch3_pcierstb 960L -pinDir pcielinkreachtarget left -pinY pcielinkreachtarget 980L -pinBusDir pcieltssm left -pinBusY pcieltssm 1020L -pinDir ch0_iloreset right -pinY ch0_iloreset 1000R -pinDir ch1_iloreset right -pinY ch1_iloreset 980R -pinDir ch2_iloreset right -pinY ch2_iloreset 960R -pinDir ch3_iloreset right -pinY ch3_iloreset 940R -pinDir ch0_iloresetdone right -pinY ch0_iloresetdone 1100R -pinDir ch1_iloresetdone right -pinY ch1_iloresetdone 1080R -pinDir ch2_iloresetdone right -pinY ch2_iloresetdone 1060R -pinDir ch3_iloresetdone right -pinY ch3_iloresetdone 1040R -pinDir ch0_phystatus right -pinY ch0_phystatus 460R -pinDir ch1_phystatus right -pinY ch1_phystatus 480R -pinDir ch2_phystatus right -pinY ch2_phystatus 500R -pinDir ch3_phystatus right -pinY ch3_phystatus 520R -pinDir refclk0_gtrefclkpd left -pinY refclk0_gtrefclkpd 1060L -pinDir refclk1_gtrefclkpd left -pinY refclk1_gtrefclkpd 1080L -pinDir apb3clk left -pinY apb3clk 1000L -pinDir apb3presetn left -pinY apb3presetn 1040L -pinDir GT_REFCLK0 left -pinY GT_REFCLK0 1100L -pinDir ch0_txoutclk right -pinY ch0_txoutclk 840R -pinDir ch0_txusrclk right -pinY ch0_txusrclk 740R -pinDir ch1_txoutclk right -pinY ch1_txoutclk 540R -pinDir ch1_txusrclk right -pinY ch1_txusrclk 760R -pinDir ch2_txoutclk right -pinY ch2_txoutclk 560R -pinDir ch2_txusrclk right -pinY ch2_txusrclk 780R -pinDir ch3_txoutclk right -pinY ch3_txoutclk 580R -pinDir ch3_txusrclk right -pinY ch3_txusrclk 800R -pinDir ch0_rxoutclk right -pinY ch0_rxoutclk 820R -pinDir ch0_rxusrclk right -pinY ch0_rxusrclk 660R -pinDir ch1_rxoutclk right -pinY ch1_rxoutclk 600R -pinDir ch1_rxusrclk right -pinY ch1_rxusrclk 680R -pinDir ch2_rxoutclk right -pinY ch2_rxoutclk 620R -pinDir ch2_rxusrclk right -pinY ch2_rxusrclk 700R -pinDir ch3_rxoutclk right -pinY ch3_rxoutclk 640R -pinDir ch3_rxusrclk right -pinY ch3_rxusrclk 720R
+preplace inst util_ds_buf_mbufg_rx_0 -pg 1 -lvl 2 -x 820 -y 1480 -swap {3 5 1 8 2 4 7 10 6 0 9} -defaultsOSRD -pinBusDir MBUFG_GT_I right -pinBusY MBUFG_GT_I 40R -pinBusDir MBUFG_GT_CE left -pinBusY MBUFG_GT_CE 140L -pinBusDir MBUFG_GT_CEMASK left -pinBusY MBUFG_GT_CEMASK 20L -pinBusDir MBUFG_GT_CLR right -pinBusY MBUFG_GT_CLR 100R -pinBusDir MBUFG_GT_CLRMASK left -pinBusY MBUFG_GT_CLRMASK 40L -pinBusDir MBUFG_GT_DIV left -pinBusY MBUFG_GT_DIV 60L -pinBusDir MBUFG_GT_CLRB_LEAF right -pinBusY MBUFG_GT_CLRB_LEAF 80R -pinBusDir MBUFG_GT_O1 right -pinBusY MBUFG_GT_O1 140R -pinBusDir MBUFG_GT_O2 right -pinBusY MBUFG_GT_O2 60R -pinBusDir MBUFG_GT_O3 right -pinBusY MBUFG_GT_O3 20R -pinBusDir MBUFG_GT_O4 right -pinBusY MBUFG_GT_O4 120R
+preplace inst dcmac_0 -pg 1 -lvl 2 -x 820 -y 2120 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 97 18 19 20 21 22 23 24 25 26 108 28 29 30 31 32 33 34 35 36 119 38 39 40 41 42 43 44 45 46 130 48 49 50 51 52 53 54 55 56 87 58 59 60 61 62 63 64 65 66 77 68 69 70 71 72 73 74 75 76 67 78 79 80 81 82 83 84 85 86 57 88 89 90 91 92 93 94 95 96 141 98 99 100 101 102 103 104 105 106 107 152 109 110 111 112 113 114 115 116 117 118 163 120 121 122 123 124 125 126 127 128 129 174 131 132 133 134 135 136 137 138 139 140 47 142 143 144 145 146 147 148 149 150 151 37 153 154 155 156 157 158 159 160 161 162 27 164 165 166 167 168 169 170 171 172 173 17 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 402 395 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 338 342 346 349 352 355 358 361 364 367 370 372 374 377 380 383 386 389 452 459 466 471 474 475 478 479 482 483 486 487 488 489 490 283 284 286 288 289 290 291 292 293 294 295 296 298 300 301 303 305 306 307 308 500 309 508 310 311 362 363 312 313 314 315 317 318 319 320 321 322 323 359 360 324 325 326 327 328 329 330 331 332 333 334 335 336 337 339 340 341 343 344 345 347 348 350 351 353 354 356 357 498 499 502 503 505 506 515 516 507 510 511 513 514 368 369 371 373 375 376 378 379 381 382 384 385 387 388 396 397 398 399 404 406 400 401 408 403 412 415 417 405 407 409 410 411 413 414 418 416 419 420 421 422 423 424 425 426 427 428 429 430 431 432 433 434 435 436 437 438 439 440 441 443 445 446 448 450 442 454 444 456 457 447 449 451 460 455 517 518 461 464 465 473 519 520 468 476 521 522 469 477 523 524 472 480 525 526 481 533 527 528 484 534 529 530 485 535 531 536 532 537 257 258 259 260 250 251 252 253 255 254 246 390 391 453 297 458 462 463 247 467 470 491 299 492 493 494 248 495 496 365 285 366 497 501 249 509 504 316 287 512 302 304 261 262 263 264 394 393 392 245 256 244} -defaultsOSRD -pinDir s_axi left -pinY s_axi 20L -pinDir gtm_tx_serdes_interface_0 right -pinY gtm_tx_serdes_interface_0 180R -pinDir gtm_tx_serdes_interface_1 right -pinY gtm_tx_serdes_interface_1 200R -pinDir gtm_tx_serdes_interface_2 right -pinY gtm_tx_serdes_interface_2 220R -pinDir gtm_tx_serdes_interface_3 right -pinY gtm_tx_serdes_interface_3 240R -pinDir gtm_tx_serdes_interface_4 right -pinY gtm_tx_serdes_interface_4 160R -pinDir gtm_tx_serdes_interface_5 right -pinY gtm_tx_serdes_interface_5 140R -pinDir gtm_tx_serdes_interface_6 right -pinY gtm_tx_serdes_interface_6 120R -pinDir gtm_tx_serdes_interface_7 right -pinY gtm_tx_serdes_interface_7 100R -pinDir gtm_rx_serdes_interface_0 right -pinY gtm_rx_serdes_interface_0 260R -pinDir gtm_rx_serdes_interface_1 right -pinY gtm_rx_serdes_interface_1 300R -pinDir gtm_rx_serdes_interface_2 right -pinY gtm_rx_serdes_interface_2 340R -pinDir gtm_rx_serdes_interface_3 right -pinY gtm_rx_serdes_interface_3 360R -pinDir gtm_rx_serdes_interface_4 right -pinY gtm_rx_serdes_interface_4 80R -pinDir gtm_rx_serdes_interface_5 right -pinY gtm_rx_serdes_interface_5 60R -pinDir gtm_rx_serdes_interface_6 right -pinY gtm_rx_serdes_interface_6 40R -pinDir gtm_rx_serdes_interface_7 right -pinY gtm_rx_serdes_interface_7 20R -pinDir ctl_txrx_port0 left -pinY ctl_txrx_port0 40L -pinDir ctl_txrx_port1 left -pinY ctl_txrx_port1 60L -pinDir ctl_txrx_port2 left -pinY ctl_txrx_port2 80L -pinDir ctl_txrx_port3 left -pinY ctl_txrx_port3 100L -pinDir ctl_txrx_port4 left -pinY ctl_txrx_port4 120L -pinDir ctl_txrx_port5 left -pinY ctl_txrx_port5 140L -pinDir ctl_port left -pinY ctl_port 160L -pinDir s_axi_aclk left -pinY s_axi_aclk 420L -pinDir s_axi_aresetn left -pinY s_axi_aresetn 280L -pinDir fec_tx_dout_start_0 right -pinY fec_tx_dout_start_0 1100R -pinDir fec_tx_dout_start_0_bh right -pinY fec_tx_dout_start_0_bh 1120R -pinDir fec_tx_dout_start_1 right -pinY fec_tx_dout_start_1 1140R -pinDir fec_tx_dout_start_1_bh right -pinY fec_tx_dout_start_1_bh 1160R -pinDir fec_tx_dout_start_2 right -pinY fec_tx_dout_start_2 1180R -pinDir fec_tx_dout_start_2_bh right -pinY fec_tx_dout_start_2_bh 1200R -pinDir fec_tx_dout_start_3 right -pinY fec_tx_dout_start_3 1220R -pinDir fec_tx_dout_start_3_bh right -pinY fec_tx_dout_start_3_bh 1240R -pinDir fec_tx_dout_start_4 right -pinY fec_tx_dout_start_4 1260R -pinDir fec_tx_dout_start_4_bh right -pinY fec_tx_dout_start_4_bh 1280R -pinDir fec_tx_dout_start_5 right -pinY fec_tx_dout_start_5 1300R -pinDir fec_tx_dout_start_5_bh right -pinY fec_tx_dout_start_5_bh 1320R -pinBusDir rsvd_out right -pinBusY rsvd_out 1340R -pinBusDir rsvd_out_rx_mac right -pinBusY rsvd_out_rx_mac 1360R -pinBusDir rsvd_out_rx_phy right -pinBusY rsvd_out_rx_phy 1380R -pinBusDir rsvd_out_tx_mac right -pinBusY rsvd_out_tx_mac 1400R -pinBusDir rsvd_out_tx_phy right -pinBusY rsvd_out_tx_phy 1420R -pinDir rx_all_channel_mac_pm_rdy right -pinY rx_all_channel_mac_pm_rdy 1440R -pinBusDir rx_axis_tdata0 right -pinBusY rx_axis_tdata0 2560R -pinBusDir rx_axis_tdata1 right -pinBusY rx_axis_tdata1 2640R -pinBusDir rx_axis_tdata2 right -pinBusY rx_axis_tdata2 2720R -pinBusDir rx_axis_tdata3 right -pinBusY rx_axis_tdata3 2780R -pinDir rx_axis_tuser_ena0 right -pinY rx_axis_tuser_ena0 2840R -pinDir rx_axis_tuser_ena1 right -pinY rx_axis_tuser_ena1 2900R -pinDir rx_axis_tuser_ena2 right -pinY rx_axis_tuser_ena2 2960R -pinDir rx_axis_tuser_ena3 right -pinY rx_axis_tuser_ena3 3020R -pinDir rx_axis_tuser_eop0 right -pinY rx_axis_tuser_eop0 3080R -pinDir rx_axis_tuser_eop1 right -pinY rx_axis_tuser_eop1 3140R -pinDir rx_axis_tuser_eop2 right -pinY rx_axis_tuser_eop2 3200R -pinDir rx_axis_tuser_eop3 right -pinY rx_axis_tuser_eop3 3240R -pinDir rx_axis_tuser_err0 right -pinY rx_axis_tuser_err0 3280R -pinDir rx_axis_tuser_err1 right -pinY rx_axis_tuser_err1 3340R -pinDir rx_axis_tuser_err2 right -pinY rx_axis_tuser_err2 3400R -pinDir rx_axis_tuser_err3 right -pinY rx_axis_tuser_err3 3460R -pinBusDir rx_axis_tuser_mty0 right -pinBusY rx_axis_tuser_mty0 3520R -pinBusDir rx_axis_tuser_mty1 right -pinBusY rx_axis_tuser_mty1 3580R -pinBusDir rx_axis_tuser_mty2 right -pinBusY rx_axis_tuser_mty2 3640R -pinBusDir rx_axis_tuser_mty3 right -pinBusY rx_axis_tuser_mty3 3700R -pinDir rx_axis_tuser_sop0 right -pinY rx_axis_tuser_sop0 3760R -pinDir rx_axis_tuser_sop1 right -pinY rx_axis_tuser_sop1 3820R -pinDir rx_axis_tuser_sop2 right -pinY rx_axis_tuser_sop2 3840R -pinDir rx_axis_tuser_sop3 right -pinY rx_axis_tuser_sop3 3860R -pinDir rx_axis_tvalid_0 right -pinY rx_axis_tvalid_0 3880R -pinDir rx_axis_tvalid_1 right -pinY rx_axis_tvalid_1 3900R -pinBusDir rx_lane_aligner_fill right -pinBusY rx_lane_aligner_fill 3920R -pinDir rx_lane_aligner_fill_start right -pinY rx_lane_aligner_fill_start 3940R -pinDir rx_lane_aligner_fill_valid right -pinY rx_lane_aligner_fill_valid 3960R -pinBusDir rx_pcs_tdm_stats_data right -pinBusY rx_pcs_tdm_stats_data 3980R -pinDir rx_pcs_tdm_stats_start right -pinY rx_pcs_tdm_stats_start 4000R -pinDir rx_pcs_tdm_stats_valid right -pinY rx_pcs_tdm_stats_valid 4020R -pinBusDir rx_port_pm_rdy right -pinBusY rx_port_pm_rdy 4040R -pinBusDir rx_preambleout_0 right -pinBusY rx_preambleout_0 1460R -pinBusDir rx_preambleout_1 right -pinBusY rx_preambleout_1 1480R -pinDir rx_serdes_albuf_restart_0 right -pinY rx_serdes_albuf_restart_0 1520R -pinDir rx_serdes_albuf_restart_1 right -pinY rx_serdes_albuf_restart_1 1560R -pinDir rx_serdes_albuf_restart_2 right -pinY rx_serdes_albuf_restart_2 1580R -pinDir rx_serdes_albuf_restart_3 right -pinY rx_serdes_albuf_restart_3 1600R -pinDir rx_serdes_albuf_restart_4 right -pinY rx_serdes_albuf_restart_4 1620R -pinDir rx_serdes_albuf_restart_5 right -pinY rx_serdes_albuf_restart_5 1640R -pinDir rx_serdes_albuf_slip_0 right -pinY rx_serdes_albuf_slip_0 1660R -pinDir rx_serdes_albuf_slip_1 right -pinY rx_serdes_albuf_slip_1 1680R -pinDir rx_serdes_albuf_slip_2 right -pinY rx_serdes_albuf_slip_2 1700R -pinDir rx_serdes_albuf_slip_3 right -pinY rx_serdes_albuf_slip_3 1720R -pinDir rx_serdes_albuf_slip_4 right -pinY rx_serdes_albuf_slip_4 1760R -pinDir rx_serdes_albuf_slip_5 right -pinY rx_serdes_albuf_slip_5 1800R -pinDir rx_serdes_albuf_slip_6 right -pinY rx_serdes_albuf_slip_6 1820R -pinDir rx_serdes_albuf_slip_7 right -pinY rx_serdes_albuf_slip_7 1860R -pinDir rx_serdes_albuf_slip_8 right -pinY rx_serdes_albuf_slip_8 1900R -pinDir rx_serdes_albuf_slip_9 right -pinY rx_serdes_albuf_slip_9 1920R -pinDir rx_serdes_albuf_slip_10 right -pinY rx_serdes_albuf_slip_10 1940R -pinDir rx_serdes_albuf_slip_11 right -pinY rx_serdes_albuf_slip_11 1960R -pinDir rx_serdes_albuf_slip_12 right -pinY rx_serdes_albuf_slip_12 4240R -pinDir rx_serdes_albuf_slip_13 right -pinY rx_serdes_albuf_slip_13 1980R -pinDir rx_serdes_albuf_slip_14 right -pinY rx_serdes_albuf_slip_14 4400R -pinDir rx_serdes_albuf_slip_15 right -pinY rx_serdes_albuf_slip_15 2000R -pinDir rx_serdes_albuf_slip_16 right -pinY rx_serdes_albuf_slip_16 2020R -pinDir rx_serdes_albuf_slip_17 right -pinY rx_serdes_albuf_slip_17 3040R -pinDir rx_serdes_albuf_slip_18 right -pinY rx_serdes_albuf_slip_18 3060R -pinDir rx_serdes_albuf_slip_19 right -pinY rx_serdes_albuf_slip_19 2040R -pinDir rx_serdes_albuf_slip_20 right -pinY rx_serdes_albuf_slip_20 2060R -pinDir rx_serdes_albuf_slip_21 right -pinY rx_serdes_albuf_slip_21 2080R -pinDir rx_serdes_albuf_slip_22 right -pinY rx_serdes_albuf_slip_22 2100R -pinDir rx_serdes_albuf_slip_23 right -pinY rx_serdes_albuf_slip_23 2140R -pinDir rx_serdes_fifo_flagout_0 right -pinY rx_serdes_fifo_flagout_0 2160R -pinDir rx_serdes_fifo_flagout_1 right -pinY rx_serdes_fifo_flagout_1 2180R -pinDir rx_serdes_fifo_flagout_2 right -pinY rx_serdes_fifo_flagout_2 2200R -pinDir rx_serdes_fifo_flagout_3 right -pinY rx_serdes_fifo_flagout_3 2220R -pinDir rx_serdes_fifo_flagout_4 right -pinY rx_serdes_fifo_flagout_4 2240R -pinDir rx_serdes_fifo_flagout_5 right -pinY rx_serdes_fifo_flagout_5 2260R -pinBusDir rx_tsmac_tdm_stats_data right -pinBusY rx_tsmac_tdm_stats_data 2980R -pinBusDir rx_tsmac_tdm_stats_id right -pinBusY rx_tsmac_tdm_stats_id 3000R -pinDir rx_tsmac_tdm_stats_valid right -pinY rx_tsmac_tdm_stats_valid 2280R -pinBusDir c0_stat_rx_corrected_lane_delay_0 right -pinBusY c0_stat_rx_corrected_lane_delay_0 2300R -pinBusDir c0_stat_rx_corrected_lane_delay_1 right -pinBusY c0_stat_rx_corrected_lane_delay_1 2320R -pinBusDir c0_stat_rx_corrected_lane_delay_2 right -pinBusY c0_stat_rx_corrected_lane_delay_2 2340R -pinBusDir c0_stat_rx_corrected_lane_delay_3 right -pinBusY c0_stat_rx_corrected_lane_delay_3 2360R -pinDir c0_stat_rx_corrected_lane_delay_valid right -pinY c0_stat_rx_corrected_lane_delay_valid 2380R -pinBusDir c1_stat_rx_corrected_lane_delay_0 right -pinBusY c1_stat_rx_corrected_lane_delay_0 2400R -pinBusDir c1_stat_rx_corrected_lane_delay_1 right -pinBusY c1_stat_rx_corrected_lane_delay_1 2420R -pinBusDir c1_stat_rx_corrected_lane_delay_2 right -pinBusY c1_stat_rx_corrected_lane_delay_2 2440R -pinBusDir c1_stat_rx_corrected_lane_delay_3 right -pinBusY c1_stat_rx_corrected_lane_delay_3 2460R -pinDir c1_stat_rx_corrected_lane_delay_valid right -pinY c1_stat_rx_corrected_lane_delay_valid 2480R -pinBusDir c2_stat_rx_corrected_lane_delay_0 right -pinBusY c2_stat_rx_corrected_lane_delay_0 2500R -pinBusDir c2_stat_rx_corrected_lane_delay_1 right -pinBusY c2_stat_rx_corrected_lane_delay_1 2520R -pinBusDir c2_stat_rx_corrected_lane_delay_2 right -pinBusY c2_stat_rx_corrected_lane_delay_2 2540R -pinBusDir c2_stat_rx_corrected_lane_delay_3 right -pinBusY c2_stat_rx_corrected_lane_delay_3 2580R -pinDir c2_stat_rx_corrected_lane_delay_valid right -pinY c2_stat_rx_corrected_lane_delay_valid 2600R -pinBusDir c3_stat_rx_corrected_lane_delay_0 right -pinBusY c3_stat_rx_corrected_lane_delay_0 2620R -pinBusDir c3_stat_rx_corrected_lane_delay_1 right -pinBusY c3_stat_rx_corrected_lane_delay_1 2660R -pinBusDir c3_stat_rx_corrected_lane_delay_2 right -pinBusY c3_stat_rx_corrected_lane_delay_2 2680R -pinBusDir c3_stat_rx_corrected_lane_delay_3 right -pinBusY c3_stat_rx_corrected_lane_delay_3 2700R -pinDir c3_stat_rx_corrected_lane_delay_valid right -pinY c3_stat_rx_corrected_lane_delay_valid 2740R -pinBusDir c4_stat_rx_corrected_lane_delay_0 right -pinBusY c4_stat_rx_corrected_lane_delay_0 2760R -pinBusDir c4_stat_rx_corrected_lane_delay_1 right -pinBusY c4_stat_rx_corrected_lane_delay_1 2800R -pinBusDir c4_stat_rx_corrected_lane_delay_2 right -pinBusY c4_stat_rx_corrected_lane_delay_2 2820R -pinBusDir c4_stat_rx_corrected_lane_delay_3 right -pinBusY c4_stat_rx_corrected_lane_delay_3 2860R -pinDir c4_stat_rx_corrected_lane_delay_valid right -pinY c4_stat_rx_corrected_lane_delay_valid 2880R -pinBusDir c5_stat_rx_corrected_lane_delay_0 right -pinBusY c5_stat_rx_corrected_lane_delay_0 2920R -pinBusDir c5_stat_rx_corrected_lane_delay_1 right -pinBusY c5_stat_rx_corrected_lane_delay_1 2940R -pinBusDir c5_stat_rx_corrected_lane_delay_2 right -pinBusY c5_stat_rx_corrected_lane_delay_2 4200R -pinBusDir c5_stat_rx_corrected_lane_delay_3 right -pinBusY c5_stat_rx_corrected_lane_delay_3 4220R -pinDir c5_stat_rx_corrected_lane_delay_valid right -pinY c5_stat_rx_corrected_lane_delay_valid 4280R -pinDir tx_all_channel_mac_pm_rdy right -pinY tx_all_channel_mac_pm_rdy 4300R -pinDir tx_axis_taf_0 right -pinY tx_axis_taf_0 4340R -pinDir tx_axis_taf_1 right -pinY tx_axis_taf_1 4360R -pinDir tx_axis_tready_0 right -pinY tx_axis_tready_0 4540R -pinDir tx_axis_tready_1 right -pinY tx_axis_tready_1 4560R -pinBusDir tx_pcs_tdm_stats_data right -pinBusY tx_pcs_tdm_stats_data 4380R -pinDir tx_pcs_tdm_stats_start right -pinY tx_pcs_tdm_stats_start 4440R -pinDir tx_pcs_tdm_stats_valid right -pinY tx_pcs_tdm_stats_valid 4460R -pinBusDir tx_port_pm_rdy right -pinBusY tx_port_pm_rdy 4500R -pinDir tx_serdes_is_am_0 right -pinY tx_serdes_is_am_0 4520R -pinDir tx_serdes_is_am_1 right -pinY tx_serdes_is_am_1 3160R -pinDir tx_serdes_is_am_2 right -pinY tx_serdes_is_am_2 3180R -pinDir tx_serdes_is_am_3 right -pinY tx_serdes_is_am_3 3220R -pinDir tx_serdes_is_am_4 right -pinY tx_serdes_is_am_4 3260R -pinDir tx_serdes_is_am_5 right -pinY tx_serdes_is_am_5 3300R -pinDir tx_serdes_is_am_prefifo_0 right -pinY tx_serdes_is_am_prefifo_0 3320R -pinDir tx_serdes_is_am_prefifo_1 right -pinY tx_serdes_is_am_prefifo_1 3360R -pinDir tx_serdes_is_am_prefifo_2 right -pinY tx_serdes_is_am_prefifo_2 3380R -pinDir tx_serdes_is_am_prefifo_3 right -pinY tx_serdes_is_am_prefifo_3 3420R -pinDir tx_serdes_is_am_prefifo_4 right -pinY tx_serdes_is_am_prefifo_4 3440R -pinDir tx_serdes_is_am_prefifo_5 right -pinY tx_serdes_is_am_prefifo_5 3480R -pinBusDir tx_tsmac_tdm_stats_data right -pinBusY tx_tsmac_tdm_stats_data 3500R -pinBusDir tx_tsmac_tdm_stats_id right -pinBusY tx_tsmac_tdm_stats_id 3540R -pinDir tx_tsmac_tdm_stats_valid right -pinY tx_tsmac_tdm_stats_valid 3560R -pinBusDir ctl_rsvd_in left -pinBusY ctl_rsvd_in 300L -pinBusDir rsvd_in_rx_mac left -pinBusY rsvd_in_rx_mac 320L -pinBusDir rsvd_in_rx_phy left -pinBusY rsvd_in_rx_phy 340L -pinDir rx_all_channel_mac_pm_tick left -pinY rx_all_channel_mac_pm_tick 360L -pinBusDir rx_alt_serdes_clk left -pinBusY rx_alt_serdes_clk 460L -pinDir rx_axi_clk left -pinY rx_axi_clk 500L -pinBusDir rx_port_pm_tick left -pinBusY rx_port_pm_tick 380L -pinBusDir rx_channel_flush left -pinBusY rx_channel_flush 400L -pinDir rx_core_clk left -pinY rx_core_clk 540L -pinDir rx_core_reset left -pinY rx_core_reset 440L -pinBusDir rx_flexif_clk left -pinBusY rx_flexif_clk 620L -pinDir rx_macif_clk left -pinY rx_macif_clk 680L -pinBusDir rx_serdes_clk left -pinBusY rx_serdes_clk 720L -pinDir rx_serdes_fifo_flagin_0 left -pinY rx_serdes_fifo_flagin_0 480L -pinDir rx_serdes_fifo_flagin_1 left -pinY rx_serdes_fifo_flagin_1 520L -pinDir rx_serdes_fifo_flagin_2 left -pinY rx_serdes_fifo_flagin_2 560L -pinDir rx_serdes_fifo_flagin_3 left -pinY rx_serdes_fifo_flagin_3 580L -pinDir rx_serdes_fifo_flagin_4 left -pinY rx_serdes_fifo_flagin_4 600L -pinDir rx_serdes_fifo_flagin_5 left -pinY rx_serdes_fifo_flagin_5 640L -pinBusDir rx_serdes_reset left -pinBusY rx_serdes_reset 660L -pinBusDir ts_clk left -pinBusY ts_clk 740L -pinDir tx_all_channel_mac_pm_tick left -pinY tx_all_channel_mac_pm_tick 700L -pinBusDir tx_alt_serdes_clk left -pinBusY tx_alt_serdes_clk 760L -pinBusDir tx_axis_tdata0 left -pinBusY tx_axis_tdata0 780L -pinBusDir tx_axis_tdata1 left -pinBusY tx_axis_tdata1 800L -pinBusDir tx_axis_tdata2 left -pinBusY tx_axis_tdata2 820L -pinBusDir tx_axis_tdata3 left -pinBusY tx_axis_tdata3 840L -pinDir tx_axis_tuser_ena0 left -pinY tx_axis_tuser_ena0 860L -pinDir tx_axis_tuser_ena1 left -pinY tx_axis_tuser_ena1 880L -pinDir tx_axis_tuser_ena2 left -pinY tx_axis_tuser_ena2 900L -pinDir tx_axis_tuser_ena3 left -pinY tx_axis_tuser_ena3 920L -pinDir tx_axis_tuser_eop0 left -pinY tx_axis_tuser_eop0 940L -pinDir tx_axis_tuser_eop1 left -pinY tx_axis_tuser_eop1 960L -pinDir tx_axis_tuser_eop2 left -pinY tx_axis_tuser_eop2 980L -pinDir tx_axis_tuser_eop3 left -pinY tx_axis_tuser_eop3 1000L -pinDir tx_axis_tuser_err0 left -pinY tx_axis_tuser_err0 1020L -pinDir tx_axis_tuser_err1 left -pinY tx_axis_tuser_err1 1040L -pinDir tx_axis_tuser_err2 left -pinY tx_axis_tuser_err2 1060L -pinDir tx_axis_tuser_err3 left -pinY tx_axis_tuser_err3 1080L -pinBusDir tx_axis_tuser_mty0 left -pinBusY tx_axis_tuser_mty0 1100L -pinBusDir tx_axis_tuser_mty1 left -pinBusY tx_axis_tuser_mty1 1120L -pinBusDir tx_axis_tuser_mty2 left -pinBusY tx_axis_tuser_mty2 1140L -pinBusDir tx_axis_tuser_mty3 left -pinBusY tx_axis_tuser_mty3 1160L -pinDir tx_axis_tuser_sop0 left -pinY tx_axis_tuser_sop0 1180L -pinDir tx_axis_tuser_sop1 left -pinY tx_axis_tuser_sop1 1200L -pinDir tx_axis_tuser_sop2 left -pinY tx_axis_tuser_sop2 1240L -pinDir tx_axis_tuser_sop3 left -pinY tx_axis_tuser_sop3 1280L -pinDir tx_axis_tvalid_0 left -pinY tx_axis_tvalid_0 1300L -pinDir tx_axis_tvalid_1 left -pinY tx_axis_tvalid_1 1340L -pinDir tx_axi_clk left -pinY tx_axi_clk 1380L -pinBusDir tx_channel_flush left -pinBusY tx_channel_flush 1220L -pinDir tx_core_clk left -pinY tx_core_clk 1420L -pinDir tx_core_reset left -pinY tx_core_reset 1260L -pinBusDir tx_flexif_clk left -pinBusY tx_flexif_clk 1460L -pinDir tx_macif_clk left -pinY tx_macif_clk 1480L -pinBusDir tx_port_pm_tick left -pinBusY tx_port_pm_tick 1320L -pinBusDir tx_preamblein_0 left -pinBusY tx_preamblein_0 1360L -pinBusDir tx_preamblein_1 left -pinBusY tx_preamblein_1 1400L -pinBusDir tx_serdes_clk left -pinBusY tx_serdes_clk 1500L -pinBusDir tx_serdes_reset left -pinBusY tx_serdes_reset 1440L -pinDir gt_tx_reset_done_out_0 right -pinY gt_tx_reset_done_out_0 4580R -pinDir gt_rx_reset_done_out_0 right -pinY gt_rx_reset_done_out_0 4600R -pinDir gtpowergood_in left -pinY gtpowergood_in 1520L -pinDir gt_reset_all_in left -pinY gt_reset_all_in 1540L -pinDir gt_reset_tx_datapath_in_0 left -pinY gt_reset_tx_datapath_in_0 1560L -pinDir gt_reset_rx_datapath_in_0 left -pinY gt_reset_rx_datapath_in_0 1640L -pinDir gt_tx_reset_done_out_1 right -pinY gt_tx_reset_done_out_1 4620R -pinDir gt_rx_reset_done_out_1 right -pinY gt_rx_reset_done_out_1 4640R -pinDir gt_reset_tx_datapath_in_1 left -pinY gt_reset_tx_datapath_in_1 1580L -pinDir gt_reset_rx_datapath_in_1 left -pinY gt_reset_rx_datapath_in_1 1660L -pinDir gt_tx_reset_done_out_2 right -pinY gt_tx_reset_done_out_2 4660R -pinDir gt_rx_reset_done_out_2 right -pinY gt_rx_reset_done_out_2 4680R -pinDir gt_reset_tx_datapath_in_2 left -pinY gt_reset_tx_datapath_in_2 1600L -pinDir gt_reset_rx_datapath_in_2 left -pinY gt_reset_rx_datapath_in_2 1680L -pinDir gt_tx_reset_done_out_3 right -pinY gt_tx_reset_done_out_3 4700R -pinDir gt_rx_reset_done_out_3 right -pinY gt_rx_reset_done_out_3 4720R -pinDir gt_reset_tx_datapath_in_3 left -pinY gt_reset_tx_datapath_in_3 1620L -pinDir gt_reset_rx_datapath_in_3 left -pinY gt_reset_rx_datapath_in_3 1700L -pinDir gt_tx_reset_done_out_4 right -pinY gt_tx_reset_done_out_4 4740R -pinDir gt_rx_reset_done_out_4 right -pinY gt_rx_reset_done_out_4 4760R -pinDir gt_reset_tx_datapath_in_4 left -pinY gt_reset_tx_datapath_in_4 1720L -pinDir gt_reset_rx_datapath_in_4 left -pinY gt_reset_rx_datapath_in_4 1800L -pinDir gt_tx_reset_done_out_5 right -pinY gt_tx_reset_done_out_5 4780R -pinDir gt_rx_reset_done_out_5 right -pinY gt_rx_reset_done_out_5 4800R -pinDir gt_reset_tx_datapath_in_5 left -pinY gt_reset_tx_datapath_in_5 1740L -pinDir gt_reset_rx_datapath_in_5 left -pinY gt_reset_rx_datapath_in_5 1820L -pinDir gt_tx_reset_done_out_6 right -pinY gt_tx_reset_done_out_6 4820R -pinDir gt_rx_reset_done_out_6 right -pinY gt_rx_reset_done_out_6 4840R -pinDir gt_reset_tx_datapath_in_6 left -pinY gt_reset_tx_datapath_in_6 1760L -pinDir gt_reset_rx_datapath_in_6 left -pinY gt_reset_rx_datapath_in_6 1840L -pinDir gt_tx_reset_done_out_7 right -pinY gt_tx_reset_done_out_7 4860R -pinDir gt_rx_reset_done_out_7 right -pinY gt_rx_reset_done_out_7 4880R -pinDir gt_reset_tx_datapath_in_7 left -pinY gt_reset_tx_datapath_in_7 1780L -pinDir gt_reset_rx_datapath_in_7 left -pinY gt_reset_rx_datapath_in_7 1860L -pinDir iloreset_out_0 right -pinY iloreset_out_0 940R -pinDir iloreset_out_1 right -pinY iloreset_out_1 960R -pinDir iloreset_out_2 right -pinY iloreset_out_2 980R -pinDir iloreset_out_3 right -pinY iloreset_out_3 1000R -pinDir iloreset_out_4 right -pinY iloreset_out_4 460R -pinDir iloreset_out_5 right -pinY iloreset_out_5 480R -pinDir iloreset_out_6 right -pinY iloreset_out_6 500R -pinDir iloreset_out_7 right -pinY iloreset_out_7 520R -pinDir pllreset_out_0 right -pinY pllreset_out_0 840R -pinDir pllreset_out_1 right -pinY pllreset_out_1 540R -pinDir tx_clr_out_0 right -pinY tx_clr_out_0 380R -pinDir tx_clr_out_1 right -pinY tx_clr_out_1 3600R -pinDir tx_clr_out_2 right -pinY tx_clr_out_2 3620R -pinDir tx_clr_out_3 right -pinY tx_clr_out_3 3660R -pinDir tx_clr_out_4 right -pinY tx_clr_out_4 1740R -pinDir tx_clr_out_5 right -pinY tx_clr_out_5 3680R -pinDir tx_clr_out_6 right -pinY tx_clr_out_6 3720R -pinDir tx_clr_out_7 right -pinY tx_clr_out_7 3740R -pinDir tx_clrb_leaf_out_0 right -pinY tx_clrb_leaf_out_0 400R -pinDir tx_clrb_leaf_out_1 right -pinY tx_clrb_leaf_out_1 3780R -pinDir tx_clrb_leaf_out_2 right -pinY tx_clrb_leaf_out_2 3800R -pinDir tx_clrb_leaf_out_3 right -pinY tx_clrb_leaf_out_3 4060R -pinDir tx_clrb_leaf_out_4 right -pinY tx_clrb_leaf_out_4 1780R -pinDir tx_clrb_leaf_out_5 right -pinY tx_clrb_leaf_out_5 4080R -pinDir tx_clrb_leaf_out_6 right -pinY tx_clrb_leaf_out_6 4100R -pinDir tx_clrb_leaf_out_7 right -pinY tx_clrb_leaf_out_7 4120R -pinDir rx_clr_out_0 right -pinY rx_clr_out_0 420R -pinDir rx_clr_out_1 right -pinY rx_clr_out_1 4140R -pinDir rx_clr_out_2 right -pinY rx_clr_out_2 4160R -pinDir rx_clr_out_3 right -pinY rx_clr_out_3 3100R -pinDir rx_clr_out_4 right -pinY rx_clr_out_4 1500R -pinDir rx_clr_out_5 right -pinY rx_clr_out_5 3120R -pinDir rx_clr_out_6 right -pinY rx_clr_out_6 4180R -pinDir rx_clr_out_7 right -pinY rx_clr_out_7 4260R -pinDir rx_clrb_leaf_out_0 right -pinY rx_clrb_leaf_out_0 440R -pinDir rx_clrb_leaf_out_1 right -pinY rx_clrb_leaf_out_1 4420R -pinDir rx_clrb_leaf_out_2 right -pinY rx_clrb_leaf_out_2 4320R -pinDir rx_clrb_leaf_out_3 right -pinY rx_clrb_leaf_out_3 2120R -pinDir rx_clrb_leaf_out_4 right -pinY rx_clrb_leaf_out_4 1540R -pinDir rx_clrb_leaf_out_5 right -pinY rx_clrb_leaf_out_5 4480R -pinDir rx_clrb_leaf_out_6 right -pinY rx_clrb_leaf_out_6 1840R -pinDir rx_clrb_leaf_out_7 right -pinY rx_clrb_leaf_out_7 1880R -pinDir ilo_reset_done_0 right -pinY ilo_reset_done_0 1020R -pinDir ilo_reset_done_1 right -pinY ilo_reset_done_1 1040R -pinDir ilo_reset_done_2 right -pinY ilo_reset_done_2 1060R -pinDir ilo_reset_done_3 right -pinY ilo_reset_done_3 1080R -pinDir ilo_reset_done_4 left -pinY ilo_reset_done_4 260L -pinDir ilo_reset_done_5 left -pinY ilo_reset_done_5 240L -pinDir ilo_reset_done_6 left -pinY ilo_reset_done_6 220L -pinDir ilo_reset_done_7 left -pinY ilo_reset_done_7 200L -pinDir plllock_in_0 right -pinY plllock_in_0 920R -pinDir plllock_in_1 left -pinY plllock_in_1 180L
+preplace inst xlconstant_0 -pg 1 -lvl 1 -x 240 -y 1760 -defaultsOSRD -pinBusDir dout right -pinBusY dout 20R
+preplace netloc apb3clk_quad_1 1 0 3 NJ 1080 470 1300 1880J
+preplace netloc bufg_gt_odiv2_usrclk 1 3 1 NJ 3300
+preplace netloc ch0_loopback_0_1 1 0 3 NJ 40 NJ 40 1960
+preplace netloc ch0_loopback_1_1 1 0 2 NJ 240 550
+preplace netloc ch0_rxcdrhold_0_1 1 0 3 NJ 1280 NJ 1280 1900
+preplace netloc dcmac_0_iloreset_out_0 1 2 1 N 3060
+preplace netloc dcmac_0_iloreset_out_1 1 2 1 N 3080
+preplace netloc dcmac_0_iloreset_out_2 1 2 1 N 3100
+preplace netloc dcmac_0_iloreset_out_3 1 2 1 N 3120
+preplace netloc dcmac_0_iloreset_out_4 1 2 1 1420 1080n
+preplace netloc dcmac_0_iloreset_out_5 1 2 1 1440 1060n
+preplace netloc dcmac_0_iloreset_out_6 1 2 1 1460 1040n
+preplace netloc dcmac_0_iloreset_out_7 1 2 1 1480 1020n
+preplace netloc dcmac_0_pllreset_out_0 1 2 1 1980 2720n
+preplace netloc dcmac_0_pllreset_out_1 1 2 1 1500 940n
+preplace netloc dcmac_0_rx_axis_tdata0 1 2 2 NJ 4680 NJ
+preplace netloc dcmac_0_rx_axis_tdata1 1 2 2 NJ 4760 NJ
+preplace netloc dcmac_0_rx_axis_tdata2 1 2 2 NJ 4840 NJ
+preplace netloc dcmac_0_rx_axis_tdata3 1 2 2 NJ 4900 NJ
+preplace netloc dcmac_0_rx_axis_tuser_ena0 1 2 2 NJ 4960 NJ
+preplace netloc dcmac_0_rx_axis_tuser_ena1 1 2 2 NJ 5020 NJ
+preplace netloc dcmac_0_rx_axis_tuser_ena2 1 2 2 NJ 5080 NJ
+preplace netloc dcmac_0_rx_axis_tuser_ena3 1 2 2 NJ 5140 NJ
+preplace netloc dcmac_0_rx_axis_tuser_eop0 1 2 2 NJ 5200 NJ
+preplace netloc dcmac_0_rx_axis_tuser_eop1 1 2 2 NJ 5260 NJ
+preplace netloc dcmac_0_rx_axis_tuser_eop2 1 2 2 NJ 5320 NJ
+preplace netloc dcmac_0_rx_axis_tuser_eop3 1 2 2 NJ 5360 NJ
+preplace netloc dcmac_0_rx_axis_tuser_err0 1 2 2 NJ 5400 NJ
+preplace netloc dcmac_0_rx_axis_tuser_err1 1 2 2 NJ 5460 NJ
+preplace netloc dcmac_0_rx_axis_tuser_err2 1 2 2 NJ 5520 NJ
+preplace netloc dcmac_0_rx_axis_tuser_err3 1 2 2 NJ 5580 NJ
+preplace netloc dcmac_0_rx_axis_tuser_mty0 1 2 2 NJ 5640 NJ
+preplace netloc dcmac_0_rx_axis_tuser_mty1 1 2 2 NJ 5700 NJ
+preplace netloc dcmac_0_rx_axis_tuser_mty2 1 2 2 NJ 5760 NJ
+preplace netloc dcmac_0_rx_axis_tuser_mty3 1 2 2 NJ 5820 NJ
+preplace netloc dcmac_0_rx_axis_tuser_sop0 1 2 2 NJ 5880 NJ
+preplace netloc dcmac_0_rx_axis_tuser_sop1 1 2 2 NJ 5940 NJ
+preplace netloc dcmac_0_rx_axis_tuser_sop2 1 2 2 NJ 5960 NJ
+preplace netloc dcmac_0_rx_axis_tuser_sop3 1 2 2 NJ 5980 NJ
+preplace netloc dcmac_0_rx_axis_tvalid_0 1 2 2 NJ 6000 NJ
+preplace netloc dcmac_0_rx_axis_tvalid_1 1 2 2 NJ 6020 NJ
+preplace netloc dcmac_0_rx_clr_out_0 1 2 1 1380 1580n
+preplace netloc dcmac_0_rx_clr_out_4 1 2 1 N 3620
+preplace netloc dcmac_0_rx_clrb_leaf_out_0 1 2 1 1400 1560n
+preplace netloc dcmac_0_rx_clrb_leaf_out_4 1 2 1 1980 3640n
+preplace netloc dcmac_0_rx_lane_aligner_fill 1 2 2 NJ 6040 NJ
+preplace netloc dcmac_0_rx_lane_aligner_fill_start 1 2 2 NJ 6060 NJ
+preplace netloc dcmac_0_rx_lane_aligner_fill_valid 1 2 2 NJ 6080 NJ
+preplace netloc dcmac_0_rx_pcs_tdm_stats_data 1 2 2 NJ 6100 NJ
+preplace netloc dcmac_0_rx_pcs_tdm_stats_start 1 2 2 NJ 6120 NJ
+preplace netloc dcmac_0_rx_pcs_tdm_stats_valid 1 2 2 NJ 6140 NJ
+preplace netloc dcmac_0_rx_port_pm_rdy 1 2 2 NJ 6160 NJ
+preplace netloc dcmac_0_tx_axis_tready_0 1 2 2 NJ 6660 NJ
+preplace netloc dcmac_0_tx_axis_tready_1 1 2 2 NJ 6680 NJ
+preplace netloc dcmac_0_tx_clr_out_0 1 2 1 1120 1900n
+preplace netloc dcmac_0_tx_clr_out_4 1 2 1 N 3860
+preplace netloc dcmac_0_tx_clrb_leaf_out_0 1 2 1 1160 1880n
+preplace netloc dcmac_0_tx_clrb_leaf_out_4 1 2 1 1980 3880n
+preplace netloc gt_quad_base_1_ch0_iloresetdone 1 1 2 470 2000 1100
+preplace netloc gt_quad_base_1_ch0_rxoutclk 1 2 1 1740 900n
+preplace netloc gt_quad_base_1_ch0_txoutclk 1 2 1 1640 920n
+preplace netloc gt_quad_base_1_ch1_iloresetdone 1 1 2 490 2020 1140
+preplace netloc gt_quad_base_1_ch2_iloresetdone 1 1 2 510 2040 1180
+preplace netloc gt_quad_base_1_ch3_iloresetdone 1 1 2 530 2060 1200
+preplace netloc gt_quad_base_1_gtpowergood 1 2 2 1320J 280 NJ
+preplace netloc gt_quad_base_1_hsclk0_lcplllock 1 1 2 550 2080 1220
+preplace netloc gt_quad_base_ch0_iloresetdone 1 2 1 N 3140
+preplace netloc gt_quad_base_ch0_rxoutclk 1 2 1 1680 1520n
+preplace netloc gt_quad_base_ch0_txoutclk 1 2 1 1600 1840n
+preplace netloc gt_quad_base_ch1_iloresetdone 1 2 1 N 3160
+preplace netloc gt_quad_base_ch2_iloresetdone 1 2 1 N 3180
+preplace netloc gt_quad_base_ch3_iloresetdone 1 2 1 N 3200
+preplace netloc gt_quad_base_gtpowergood 1 3 1 NJ 640
+preplace netloc gt_quad_base_hsclk0_lcplllock 1 2 1 N 3040
+preplace netloc gt_reset_all_in_1 1 0 2 NJ 3660 NJ
+preplace netloc gt_reset_rx_datapath_in_0_1 1 0 2 NJ 3760 550
+preplace netloc gt_reset_rx_datapath_in_4_1 1 0 2 NJ 3920 550
+preplace netloc gt_reset_tx_datapath_in_0_1 1 0 2 NJ 3680 450
+preplace netloc gt_reset_tx_datapath_in_4_1 1 0 2 NJ 3840 450
+preplace netloc gt_rxcdrhold_1 1 0 2 NJ 840 470
+preplace netloc gt_txmaincursor_1 1 0 3 NJ 20 NJ 20 1980
+preplace netloc gt_txpostcursor_1 1 0 3 NJ 1240 NJ 1240 1940
+preplace netloc gt_txprecursor_1 1 0 3 NJ 1260 NJ 1260 1920
+preplace netloc gtpowergood_in_1 1 0 2 NJ 3640 NJ
+preplace netloc rx_alt_serdes_clk_1 1 0 2 NJ 2580 NJ
+preplace netloc rx_axi_clk_1 1 0 2 NJ 2620 NJ
+preplace netloc rx_core_clk_1 1 0 2 NJ 2660 NJ
+preplace netloc rx_flexif_clk_1 1 0 2 NJ 2740 NJ
+preplace netloc rx_macif_clk_1 1 0 2 NJ 2800 NJ
+preplace netloc rx_serdes_clk_1 1 0 2 NJ 2840 NJ
+preplace netloc s_axi_aclk_1 1 0 2 NJ 2540 NJ
+preplace netloc s_axi_aresetn_1 1 0 3 NJ 1100 450 1320 1840J
+preplace netloc ts_clk_1 1 0 2 NJ 2860 NJ
+preplace netloc tx_alt_serdes_clk_1 1 0 2 NJ 2880 NJ
+preplace netloc tx_axi_clk_1 1 0 2 NJ 3500 NJ
+preplace netloc tx_axis_tdata0_1 1 0 2 NJ 2900 NJ
+preplace netloc tx_axis_tdata1_1 1 0 2 NJ 2920 NJ
+preplace netloc tx_axis_tdata2_1 1 0 2 NJ 2940 NJ
+preplace netloc tx_axis_tdata3_1 1 0 2 NJ 2960 NJ
+preplace netloc tx_axis_tuser_ena0_1 1 0 2 NJ 2980 NJ
+preplace netloc tx_axis_tuser_ena1_1 1 0 2 NJ 3000 NJ
+preplace netloc tx_axis_tuser_ena2_1 1 0 2 NJ 3020 NJ
+preplace netloc tx_axis_tuser_ena3_1 1 0 2 NJ 3040 NJ
+preplace netloc tx_axis_tuser_eop0_1 1 0 2 NJ 3060 NJ
+preplace netloc tx_axis_tuser_eop1_1 1 0 2 NJ 3080 NJ
+preplace netloc tx_axis_tuser_eop2_1 1 0 2 NJ 3100 NJ
+preplace netloc tx_axis_tuser_eop3_1 1 0 2 NJ 3120 NJ
+preplace netloc tx_axis_tuser_err0_1 1 0 2 NJ 3140 NJ
+preplace netloc tx_axis_tuser_err1_1 1 0 2 NJ 3160 NJ
+preplace netloc tx_axis_tuser_err2_1 1 0 2 NJ 3180 NJ
+preplace netloc tx_axis_tuser_err3_1 1 0 2 NJ 3200 NJ
+preplace netloc tx_axis_tuser_mty0_1 1 0 2 NJ 3220 NJ
+preplace netloc tx_axis_tuser_mty1_1 1 0 2 NJ 3240 NJ
+preplace netloc tx_axis_tuser_mty2_1 1 0 2 NJ 3260 NJ
+preplace netloc tx_axis_tuser_mty3_1 1 0 2 NJ 3280 NJ
+preplace netloc tx_axis_tuser_sop0_1 1 0 2 NJ 3300 NJ
+preplace netloc tx_axis_tuser_sop1_1 1 0 2 NJ 3320 NJ
+preplace netloc tx_axis_tuser_sop2_1 1 0 2 NJ 3360 NJ
+preplace netloc tx_axis_tuser_sop3_1 1 0 2 NJ 3400 NJ
+preplace netloc tx_axis_tvalid_0_1 1 0 2 NJ 3420 NJ
+preplace netloc tx_axis_tvalid_1_1 1 0 2 NJ 3460 NJ
+preplace netloc tx_core_clk_1 1 0 2 NJ 3540 NJ
+preplace netloc tx_flexif_clk_1 1 0 2 NJ 3580 NJ
+preplace netloc tx_macif_clk_1 1 0 2 NJ 3600 NJ
+preplace netloc tx_serdes_clk_1 1 0 2 NJ 3620 NJ
+preplace netloc util_ds_buf_0_IBUFDS_GTME5_O 1 2 1 1800 1380n
+preplace netloc util_ds_buf_0_IBUFDS_GTME5_ODIV2 1 2 1 1700J 1400n
+preplace netloc util_ds_buf_1_IBUFDS_GTME5_O 1 1 1 NJ 1180
+preplace netloc util_ds_buf_mbufg_rx_0_MBUFG_GT_O1 1 2 2 1580J 3760 NJ
+preplace netloc util_ds_buf_mbufg_rx_0_MBUFG_GT_O2 1 2 2 1620 3460 NJ
+preplace netloc util_ds_buf_mbufg_rx_1_MBUFG_GT_O1 1 3 1 NJ 3580
+preplace netloc util_ds_buf_mbufg_rx_1_MBUFG_GT_O2 1 2 2 1860 3480 2450
+preplace netloc util_ds_buf_mbufg_tx_0_MBUFG_GT_O1 1 2 2 1520J 4000 NJ
+preplace netloc util_ds_buf_mbufg_tx_0_MBUFG_GT_O2 1 2 2 1560 3500 NJ
+preplace netloc util_ds_buf_mbufg_tx_1_MBUFG_GT_O1 1 3 1 NJ 3820
+preplace netloc util_ds_buf_mbufg_tx_1_MBUFG_GT_O2 1 2 2 1780 3520 2430
+preplace netloc xlconstant_0_dout 1 1 2 470 1760 1540
+preplace netloc dcmac_0_gt_tx_reset_done_out_0 1 2 2 NJ 6700 NJ
+preplace netloc dcmac_0_gt_tx_reset_done_out_5 1 2 2 NJ 6900 NJ
+preplace netloc dcmac_0_gt_rx_reset_done_out_0 1 2 2 NJ 6720 NJ
+preplace netloc dcmac_0_gt_tx_reset_done_out_1 1 2 2 NJ 6740 NJ
+preplace netloc dcmac_0_gt_tx_reset_done_out_3 1 2 2 NJ 6820 NJ
+preplace netloc dcmac_0_gt_tx_reset_done_out_4 1 2 2 NJ 6860 NJ
+preplace netloc dcmac_0_gt_rx_reset_done_out_2 1 2 2 NJ 6800 NJ
+preplace netloc dcmac_0_gt_tx_reset_done_out_6 1 2 2 NJ 6940 NJ
+preplace netloc dcmac_0_gt_rx_reset_done_out_3 1 2 2 NJ 6840 NJ
+preplace netloc dcmac_0_gt_rx_reset_done_out_4 1 2 2 NJ 6880 NJ
+preplace netloc dcmac_0_gt_rx_reset_done_out_1 1 2 2 NJ 6760 NJ
+preplace netloc dcmac_0_gt_tx_reset_done_out_7 1 2 2 NJ 6980 NJ
+preplace netloc dcmac_0_gt_tx_reset_done_out_2 1 2 2 NJ 6780 NJ
+preplace netloc dcmac_0_gt_rx_reset_done_out_7 1 2 2 NJ 7000 NJ
+preplace netloc dcmac_0_gt_rx_reset_done_out_5 1 2 2 NJ 6920 NJ
+preplace netloc dcmac_0_gt_rx_reset_done_out_6 1 2 2 NJ 6960 NJ
+preplace netloc CLK_IN_D_0_1 1 0 2 NJ 1380 NJ
+preplace netloc CLK_IN_D_1_1 1 0 1 NJ 1160
+preplace netloc dcmac_0_gtm_rx_serdes_interface_0 1 2 1 N 2380
+preplace netloc dcmac_0_gtm_rx_serdes_interface_1 1 2 1 N 2420
+preplace netloc dcmac_0_gtm_rx_serdes_interface_2 1 2 1 N 2460
+preplace netloc dcmac_0_gtm_rx_serdes_interface_3 1 2 1 1660 2480n
+preplace netloc dcmac_0_gtm_rx_serdes_interface_4 1 1 2 550 1680 1360
+preplace netloc dcmac_0_gtm_rx_serdes_interface_5 1 1 2 530 1700 1340
+preplace netloc dcmac_0_gtm_rx_serdes_interface_6 1 1 2 510 1720 1320
+preplace netloc dcmac_0_gtm_rx_serdes_interface_7 1 1 2 490 1740 1080
+preplace netloc dcmac_0_gtm_tx_serdes_interface_0 1 2 1 1660 2060n
+preplace netloc dcmac_0_gtm_tx_serdes_interface_1 1 2 1 1720 2140n
+preplace netloc dcmac_0_gtm_tx_serdes_interface_2 1 2 1 1760 2220n
+preplace netloc dcmac_0_gtm_tx_serdes_interface_3 1 2 1 1820 2300n
+preplace netloc dcmac_0_gtm_tx_serdes_interface_4 1 2 1 1300 120n
+preplace netloc dcmac_0_gtm_tx_serdes_interface_5 1 2 1 1280 200n
+preplace netloc dcmac_0_gtm_tx_serdes_interface_6 1 2 1 1260 280n
+preplace netloc dcmac_0_gtm_tx_serdes_interface_7 1 2 1 1240 360n
+preplace netloc gt_quad_base_1_GT_NORTHIN_SOUTHOUT 1 2 1 N 440
+preplace netloc gt_quad_base_1_GT_Serial 1 2 2 NJ 100 NJ
+preplace netloc gt_quad_base_GT_Serial 1 3 1 NJ 360
+preplace netloc s_axi_1 1 0 2 NJ 2140 NJ
+levelinfo -pg 1 0 240 820 2210 2470
+pagesize -pg 1 -db -bbox -sgen -240 0 2730 7060
+",
+   "No Loops_ScaleFactor":"0.100071",
+   "No Loops_TopLeft":"-6316,0",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port CLK_IN_D_0 -pg 1 -lvl 0 -x 0 -y 1820 -defaultsOSRD
+preplace port CLK_IN_D_1 -pg 1 -lvl 0 -x 0 -y 1540 -defaultsOSRD
+preplace port GT_Serial -pg 1 -lvl 4 -x 2180 -y 1630 -defaultsOSRD
+preplace port GT_Serial_1 -pg 1 -lvl 4 -x 2180 -y 670 -defaultsOSRD
+preplace port s_axi -pg 1 -lvl 0 -x 0 -y 3880 -defaultsOSRD
+preplace port ctl_txrx_port0 -pg 1 -lvl 0 -x 0 -y 3900 -defaultsOSRD
+preplace port ctl_txrx_port1 -pg 1 -lvl 0 -x 0 -y 3920 -defaultsOSRD
+preplace port ctl_txrx_port2 -pg 1 -lvl 0 -x 0 -y 3940 -defaultsOSRD
+preplace port ctl_txrx_port3 -pg 1 -lvl 0 -x 0 -y 3960 -defaultsOSRD
+preplace port ctl_txrx_port4 -pg 1 -lvl 0 -x 0 -y 3980 -defaultsOSRD
+preplace port ctl_txrx_port5 -pg 1 -lvl 0 -x 0 -y 4000 -defaultsOSRD
+preplace port ctl_port -pg 1 -lvl 0 -x 0 -y 4020 -defaultsOSRD
+preplace port port-id_ch0_rx_usr_clk2_1 -pg 1 -lvl 4 -x 2180 -y 3230 -defaultsOSRD
+preplace port port-id_gtpowergood_0 -pg 1 -lvl 4 -x 2180 -y 1730 -defaultsOSRD
+preplace port port-id_gt_rxcdrhold -pg 1 -lvl 0 -x 0 -y 850 -defaultsOSRD
+preplace port port-id_apb3clk_quad -pg 1 -lvl 0 -x 0 -y 1610 -defaultsOSRD
+preplace port port-id_s_axi_aresetn -pg 1 -lvl 0 -x 0 -y 1630 -defaultsOSRD
+preplace port port-id_IBUFDS_ODIV2 -pg 1 -lvl 4 -x 2180 -y 2710 -defaultsOSRD
+preplace port port-id_ch0_tx_usr_clk2_1 -pg 1 -lvl 4 -x 2180 -y 2990 -defaultsOSRD
+preplace port port-id_gtpowergood_1 -pg 1 -lvl 4 -x 2180 -y 770 -defaultsOSRD
+preplace port port-id_s_axi_aclk -pg 1 -lvl 0 -x 0 -y 4040 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_ena0 -pg 1 -lvl 4 -x 2180 -y 3420 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_ena1 -pg 1 -lvl 4 -x 2180 -y 3440 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_ena2 -pg 1 -lvl 4 -x 2180 -y 3460 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_ena3 -pg 1 -lvl 4 -x 2180 -y 3480 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_eop0 -pg 1 -lvl 4 -x 2180 -y 3500 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_eop1 -pg 1 -lvl 4 -x 2180 -y 3520 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_eop2 -pg 1 -lvl 4 -x 2180 -y 3540 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_eop3 -pg 1 -lvl 4 -x 2180 -y 3560 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_err0 -pg 1 -lvl 4 -x 2180 -y 3580 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_err1 -pg 1 -lvl 4 -x 2180 -y 3600 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_err2 -pg 1 -lvl 4 -x 2180 -y 3620 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_err3 -pg 1 -lvl 4 -x 2180 -y 3640 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_sop0 -pg 1 -lvl 4 -x 2180 -y 3740 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_sop1 -pg 1 -lvl 4 -x 2180 -y 3760 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_sop2 -pg 1 -lvl 4 -x 2180 -y 3780 -defaultsOSRD
+preplace port port-id_rx_axis_tuser_sop3 -pg 1 -lvl 4 -x 2180 -y 3800 -defaultsOSRD
+preplace port port-id_rx_axis_tvalid_0 -pg 1 -lvl 4 -x 2180 -y 3820 -defaultsOSRD
+preplace port port-id_rx_axis_tvalid_1 -pg 1 -lvl 4 -x 2180 -y 3840 -defaultsOSRD
+preplace port port-id_rx_lane_aligner_fill_start -pg 1 -lvl 4 -x 2180 -y 3880 -defaultsOSRD
+preplace port port-id_rx_lane_aligner_fill_valid -pg 1 -lvl 4 -x 2180 -y 3900 -defaultsOSRD
+preplace port port-id_rx_pcs_tdm_stats_start -pg 1 -lvl 4 -x 2180 -y 3940 -defaultsOSRD
+preplace port port-id_rx_pcs_tdm_stats_valid -pg 1 -lvl 4 -x 2180 -y 3960 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_restart_0 -pg 1 -lvl 4 -x 2180 -y 4040 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_restart_1 -pg 1 -lvl 4 -x 2180 -y 4060 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_restart_2 -pg 1 -lvl 4 -x 2180 -y 4080 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_restart_3 -pg 1 -lvl 4 -x 2180 -y 4100 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_restart_4 -pg 1 -lvl 4 -x 2180 -y 4120 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_restart_5 -pg 1 -lvl 4 -x 2180 -y 4140 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_0 -pg 1 -lvl 4 -x 2180 -y 4160 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_1 -pg 1 -lvl 4 -x 2180 -y 4180 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_2 -pg 1 -lvl 4 -x 2180 -y 4200 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_3 -pg 1 -lvl 4 -x 2180 -y 4220 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_4 -pg 1 -lvl 4 -x 2180 -y 4240 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_5 -pg 1 -lvl 4 -x 2180 -y 4260 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_6 -pg 1 -lvl 4 -x 2180 -y 4280 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_7 -pg 1 -lvl 4 -x 2180 -y 4300 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_8 -pg 1 -lvl 4 -x 2180 -y 4320 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_9 -pg 1 -lvl 4 -x 2180 -y 4340 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_10 -pg 1 -lvl 4 -x 2180 -y 4360 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_11 -pg 1 -lvl 4 -x 2180 -y 4380 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_12 -pg 1 -lvl 4 -x 2180 -y 4400 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_13 -pg 1 -lvl 4 -x 2180 -y 4420 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_14 -pg 1 -lvl 4 -x 2180 -y 4440 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_15 -pg 1 -lvl 4 -x 2180 -y 4460 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_16 -pg 1 -lvl 4 -x 2180 -y 4480 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_17 -pg 1 -lvl 4 -x 2180 -y 4500 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_18 -pg 1 -lvl 4 -x 2180 -y 4520 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_19 -pg 1 -lvl 4 -x 2180 -y 4540 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_20 -pg 1 -lvl 4 -x 2180 -y 4560 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_21 -pg 1 -lvl 4 -x 2180 -y 4580 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_22 -pg 1 -lvl 4 -x 2180 -y 4600 -defaultsOSRD
+preplace port port-id_rx_serdes_albuf_slip_23 -pg 1 -lvl 4 -x 2180 -y 4620 -defaultsOSRD
+preplace port port-id_rx_serdes_fifo_flagout_0 -pg 1 -lvl 4 -x 2180 -y 4640 -defaultsOSRD
+preplace port port-id_rx_serdes_fifo_flagout_1 -pg 1 -lvl 4 -x 2180 -y 4660 -defaultsOSRD
+preplace port port-id_rx_serdes_fifo_flagout_2 -pg 1 -lvl 4 -x 2180 -y 4680 -defaultsOSRD
+preplace port port-id_rx_serdes_fifo_flagout_3 -pg 1 -lvl 4 -x 2180 -y 4700 -defaultsOSRD
+preplace port port-id_rx_serdes_fifo_flagout_4 -pg 1 -lvl 4 -x 2180 -y 4720 -defaultsOSRD
+preplace port port-id_rx_serdes_fifo_flagout_5 -pg 1 -lvl 4 -x 2180 -y 4740 -defaultsOSRD
+preplace port port-id_rx_tsmac_tdm_stats_valid -pg 1 -lvl 4 -x 2180 -y 4800 -defaultsOSRD
+preplace port port-id_c0_stat_rx_corrected_lane_delay_valid -pg 1 -lvl 4 -x 2180 -y 4900 -defaultsOSRD
+preplace port port-id_c1_stat_rx_corrected_lane_delay_valid -pg 1 -lvl 4 -x 2180 -y 5000 -defaultsOSRD
+preplace port port-id_c2_stat_rx_corrected_lane_delay_valid -pg 1 -lvl 4 -x 2180 -y 5100 -defaultsOSRD
+preplace port port-id_c3_stat_rx_corrected_lane_delay_valid -pg 1 -lvl 4 -x 2180 -y 5200 -defaultsOSRD
+preplace port port-id_c4_stat_rx_corrected_lane_delay_valid -pg 1 -lvl 4 -x 2180 -y 5300 -defaultsOSRD
+preplace port port-id_c5_stat_rx_corrected_lane_delay_valid -pg 1 -lvl 4 -x 2180 -y 5400 -defaultsOSRD
+preplace port port-id_tx_all_channel_mac_pm_rdy -pg 1 -lvl 4 -x 2180 -y 5420 -defaultsOSRD
+preplace port port-id_tx_axis_taf_0 -pg 1 -lvl 4 -x 2180 -y 5440 -defaultsOSRD
+preplace port port-id_tx_axis_taf_1 -pg 1 -lvl 4 -x 2180 -y 5460 -defaultsOSRD
+preplace port port-id_tx_axis_tready_0 -pg 1 -lvl 4 -x 2180 -y 5480 -defaultsOSRD
+preplace port port-id_tx_axis_tready_1 -pg 1 -lvl 4 -x 2180 -y 5500 -defaultsOSRD
+preplace port port-id_tx_pcs_tdm_stats_start -pg 1 -lvl 4 -x 2180 -y 5540 -defaultsOSRD
+preplace port port-id_tx_pcs_tdm_stats_valid -pg 1 -lvl 4 -x 2180 -y 5560 -defaultsOSRD
+preplace port port-id_tx_serdes_is_am_0 -pg 1 -lvl 4 -x 2180 -y 5600 -defaultsOSRD
+preplace port port-id_tx_serdes_is_am_1 -pg 1 -lvl 4 -x 2180 -y 5620 -defaultsOSRD
+preplace port port-id_tx_serdes_is_am_2 -pg 1 -lvl 4 -x 2180 -y 5640 -defaultsOSRD
+preplace port port-id_tx_serdes_is_am_3 -pg 1 -lvl 4 -x 2180 -y 5660 -defaultsOSRD
+preplace port port-id_tx_serdes_is_am_4 -pg 1 -lvl 4 -x 2180 -y 5680 -defaultsOSRD
+preplace port port-id_tx_serdes_is_am_5 -pg 1 -lvl 4 -x 2180 -y 5700 -defaultsOSRD
+preplace port port-id_tx_serdes_is_am_prefifo_0 -pg 1 -lvl 4 -x 2180 -y 5720 -defaultsOSRD
+preplace port port-id_tx_serdes_is_am_prefifo_1 -pg 1 -lvl 4 -x 2180 -y 5740 -defaultsOSRD
+preplace port port-id_tx_serdes_is_am_prefifo_2 -pg 1 -lvl 4 -x 2180 -y 5760 -defaultsOSRD
+preplace port port-id_tx_serdes_is_am_prefifo_3 -pg 1 -lvl 4 -x 2180 -y 5780 -defaultsOSRD
+preplace port port-id_tx_serdes_is_am_prefifo_4 -pg 1 -lvl 4 -x 2180 -y 5800 -defaultsOSRD
+preplace port port-id_tx_serdes_is_am_prefifo_5 -pg 1 -lvl 4 -x 2180 -y 5820 -defaultsOSRD
+preplace port port-id_tx_tsmac_tdm_stats_valid -pg 1 -lvl 4 -x 2180 -y 5880 -defaultsOSRD
+preplace port port-id_rx_all_channel_mac_pm_tick -pg 1 -lvl 0 -x 0 -y 4140 -defaultsOSRD
+preplace port port-id_rx_axi_clk -pg 1 -lvl 0 -x 0 -y 4180 -defaultsOSRD
+preplace port port-id_rx_core_clk -pg 1 -lvl 0 -x 0 -y 4240 -defaultsOSRD
+preplace port port-id_rx_core_reset -pg 1 -lvl 0 -x 0 -y 4260 -defaultsOSRD
+preplace port port-id_rx_macif_clk -pg 1 -lvl 0 -x 0 -y 4300 -defaultsOSRD
+preplace port port-id_rx_serdes_fifo_flagin_0 -pg 1 -lvl 0 -x 0 -y 4340 -defaultsOSRD
+preplace port port-id_rx_serdes_fifo_flagin_1 -pg 1 -lvl 0 -x 0 -y 4360 -defaultsOSRD
+preplace port port-id_rx_serdes_fifo_flagin_2 -pg 1 -lvl 0 -x 0 -y 4380 -defaultsOSRD
+preplace port port-id_rx_serdes_fifo_flagin_3 -pg 1 -lvl 0 -x 0 -y 4400 -defaultsOSRD
+preplace port port-id_rx_serdes_fifo_flagin_4 -pg 1 -lvl 0 -x 0 -y 4420 -defaultsOSRD
+preplace port port-id_rx_serdes_fifo_flagin_5 -pg 1 -lvl 0 -x 0 -y 4440 -defaultsOSRD
+preplace port port-id_tx_all_channel_mac_pm_tick -pg 1 -lvl 0 -x 0 -y 4500 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_ena0 -pg 1 -lvl 0 -x 0 -y 4620 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_ena1 -pg 1 -lvl 0 -x 0 -y 4640 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_ena2 -pg 1 -lvl 0 -x 0 -y 4660 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_ena3 -pg 1 -lvl 0 -x 0 -y 4680 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_eop0 -pg 1 -lvl 0 -x 0 -y 4700 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_eop1 -pg 1 -lvl 0 -x 0 -y 4720 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_eop2 -pg 1 -lvl 0 -x 0 -y 4740 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_eop3 -pg 1 -lvl 0 -x 0 -y 4760 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_err0 -pg 1 -lvl 0 -x 0 -y 4780 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_err1 -pg 1 -lvl 0 -x 0 -y 4800 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_err2 -pg 1 -lvl 0 -x 0 -y 4820 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_err3 -pg 1 -lvl 0 -x 0 -y 4840 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_sop0 -pg 1 -lvl 0 -x 0 -y 4940 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_sop1 -pg 1 -lvl 0 -x 0 -y 4960 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_sop2 -pg 1 -lvl 0 -x 0 -y 4980 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_sop3 -pg 1 -lvl 0 -x 0 -y 5000 -defaultsOSRD
+preplace port port-id_tx_axis_tvalid_0 -pg 1 -lvl 0 -x 0 -y 5020 -defaultsOSRD
+preplace port port-id_tx_axis_tvalid_1 -pg 1 -lvl 0 -x 0 -y 5040 -defaultsOSRD
+preplace port port-id_tx_axi_clk -pg 1 -lvl 0 -x 0 -y 5060 -defaultsOSRD
+preplace port port-id_tx_core_clk -pg 1 -lvl 0 -x 0 -y 5100 -defaultsOSRD
+preplace port port-id_tx_core_reset -pg 1 -lvl 0 -x 0 -y 5120 -defaultsOSRD
+preplace port port-id_tx_macif_clk -pg 1 -lvl 0 -x 0 -y 5160 -defaultsOSRD
+preplace port port-id_gt_tx_reset_done_out_0 -pg 1 -lvl 4 -x 2180 -y 5900 -defaultsOSRD
+preplace port port-id_gt_rx_reset_done_out_0 -pg 1 -lvl 4 -x 2180 -y 5920 -defaultsOSRD
+preplace port port-id_gtpowergood_in -pg 1 -lvl 0 -x 0 -y 5280 -defaultsOSRD
+preplace port port-id_gt_reset_all_in -pg 1 -lvl 0 -x 0 -y 5300 -defaultsOSRD
+preplace port port-id_gt_reset_tx_datapath_in_0 -pg 1 -lvl 0 -x 0 -y 5320 -defaultsOSRD
+preplace port port-id_gt_reset_rx_datapath_in_0 -pg 1 -lvl 0 -x 0 -y 5340 -defaultsOSRD
+preplace port port-id_gt_tx_reset_done_out_1 -pg 1 -lvl 4 -x 2180 -y 5940 -defaultsOSRD
+preplace port port-id_gt_rx_reset_done_out_1 -pg 1 -lvl 4 -x 2180 -y 5960 -defaultsOSRD
+preplace port port-id_gt_reset_tx_datapath_in_1 -pg 1 -lvl 0 -x 0 -y 5360 -defaultsOSRD
+preplace port port-id_gt_reset_rx_datapath_in_1 -pg 1 -lvl 0 -x 0 -y 5380 -defaultsOSRD
+preplace port port-id_gt_tx_reset_done_out_2 -pg 1 -lvl 4 -x 2180 -y 5980 -defaultsOSRD
+preplace port port-id_gt_rx_reset_done_out_2 -pg 1 -lvl 4 -x 2180 -y 6000 -defaultsOSRD
+preplace port port-id_gt_reset_tx_datapath_in_2 -pg 1 -lvl 0 -x 0 -y 5400 -defaultsOSRD
+preplace port port-id_gt_reset_rx_datapath_in_2 -pg 1 -lvl 0 -x 0 -y 5420 -defaultsOSRD
+preplace port port-id_gt_tx_reset_done_out_3 -pg 1 -lvl 4 -x 2180 -y 6020 -defaultsOSRD
+preplace port port-id_gt_rx_reset_done_out_3 -pg 1 -lvl 4 -x 2180 -y 6040 -defaultsOSRD
+preplace port port-id_gt_reset_tx_datapath_in_3 -pg 1 -lvl 0 -x 0 -y 5440 -defaultsOSRD
+preplace port port-id_gt_reset_rx_datapath_in_3 -pg 1 -lvl 0 -x 0 -y 5460 -defaultsOSRD
+preplace port port-id_gt_tx_reset_done_out_4 -pg 1 -lvl 4 -x 2180 -y 6060 -defaultsOSRD
+preplace port port-id_gt_rx_reset_done_out_4 -pg 1 -lvl 4 -x 2180 -y 6080 -defaultsOSRD
+preplace port port-id_gt_reset_tx_datapath_in_4 -pg 1 -lvl 0 -x 0 -y 5480 -defaultsOSRD
+preplace port port-id_gt_reset_rx_datapath_in_4 -pg 1 -lvl 0 -x 0 -y 5500 -defaultsOSRD
+preplace port port-id_gt_tx_reset_done_out_5 -pg 1 -lvl 4 -x 2180 -y 6100 -defaultsOSRD
+preplace port port-id_gt_rx_reset_done_out_5 -pg 1 -lvl 4 -x 2180 -y 6120 -defaultsOSRD
+preplace port port-id_gt_reset_tx_datapath_in_5 -pg 1 -lvl 0 -x 0 -y 5520 -defaultsOSRD
+preplace port port-id_gt_reset_rx_datapath_in_5 -pg 1 -lvl 0 -x 0 -y 5540 -defaultsOSRD
+preplace port port-id_gt_tx_reset_done_out_6 -pg 1 -lvl 4 -x 2180 -y 6140 -defaultsOSRD
+preplace port port-id_gt_rx_reset_done_out_6 -pg 1 -lvl 4 -x 2180 -y 6160 -defaultsOSRD
+preplace port port-id_gt_reset_tx_datapath_in_6 -pg 1 -lvl 0 -x 0 -y 5560 -defaultsOSRD
+preplace port port-id_gt_reset_rx_datapath_in_6 -pg 1 -lvl 0 -x 0 -y 5580 -defaultsOSRD
+preplace port port-id_gt_tx_reset_done_out_7 -pg 1 -lvl 4 -x 2180 -y 6180 -defaultsOSRD
+preplace port port-id_gt_rx_reset_done_out_7 -pg 1 -lvl 4 -x 2180 -y 6200 -defaultsOSRD
+preplace port port-id_gt_reset_tx_datapath_in_7 -pg 1 -lvl 0 -x 0 -y 5600 -defaultsOSRD
+preplace port port-id_gt_reset_rx_datapath_in_7 -pg 1 -lvl 0 -x 0 -y 5620 -defaultsOSRD
+preplace portBus ch0_rx_usr_clk_1 -pg 1 -lvl 4 -x 2180 -y 3210 -defaultsOSRD
+preplace portBus gt_txpostcursor -pg 1 -lvl 0 -x 0 -y 470 -defaultsOSRD
+preplace portBus gt_txprecursor -pg 1 -lvl 0 -x 0 -y 490 -defaultsOSRD
+preplace portBus gt_txmaincursor -pg 1 -lvl 0 -x 0 -y 450 -defaultsOSRD
+preplace portBus ch0_txrate_0 -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace portBus ch0_tx_usr_clk2_0 -pg 1 -lvl 4 -x 2180 -y 2890 -defaultsOSRD
+preplace portBus ch1_txrate_0 -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace portBus ch2_txrate_0 -pg 1 -lvl 0 -x 0 -y 1690 -defaultsOSRD
+preplace portBus ch3_txrate_0 -pg 1 -lvl 0 -x 0 -y 1750 -defaultsOSRD
+preplace portBus ch0_rxrate_0 -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
+preplace portBus ch0_rx_usr_clk2_0 -pg 1 -lvl 4 -x 2180 -y 2850 -defaultsOSRD
+preplace portBus ch1_rxrate_0 -pg 1 -lvl 0 -x 0 -y 1650 -defaultsOSRD
+preplace portBus ch2_rxrate_0 -pg 1 -lvl 0 -x 0 -y 1670 -defaultsOSRD
+preplace portBus ch3_rxrate_0 -pg 1 -lvl 0 -x 0 -y 1730 -defaultsOSRD
+preplace portBus ch0_loopback_0 -pg 1 -lvl 0 -x 0 -y 20 -defaultsOSRD
+preplace portBus ch1_loopback_0 -pg 1 -lvl 0 -x 0 -y 40 -defaultsOSRD
+preplace portBus ch2_loopback_0 -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace portBus ch3_loopback_0 -pg 1 -lvl 0 -x 0 -y 1710 -defaultsOSRD
+preplace portBus gpo -pg 1 -lvl 4 -x 2180 -y 650 -defaultsOSRD
+preplace portBus ch0_tx_usr_clk_0 -pg 1 -lvl 4 -x 2180 -y 2870 -defaultsOSRD
+preplace portBus ch0_tx_usr_clk_1 -pg 1 -lvl 4 -x 2180 -y 2970 -defaultsOSRD
+preplace portBus ch0_txrate_1 -pg 1 -lvl 0 -x 0 -y 510 -defaultsOSRD
+preplace portBus ch1_txrate_1 -pg 1 -lvl 0 -x 0 -y 610 -defaultsOSRD
+preplace portBus ch2_txrate_1 -pg 1 -lvl 0 -x 0 -y 710 -defaultsOSRD
+preplace portBus ch3_txrate_1 -pg 1 -lvl 0 -x 0 -y 810 -defaultsOSRD
+preplace portBus ch0_rxrate_1 -pg 1 -lvl 0 -x 0 -y 870 -defaultsOSRD
+preplace portBus ch1_rxrate_1 -pg 1 -lvl 0 -x 0 -y 930 -defaultsOSRD
+preplace portBus ch2_rxrate_1 -pg 1 -lvl 0 -x 0 -y 990 -defaultsOSRD
+preplace portBus ch3_rxrate_1 -pg 1 -lvl 0 -x 0 -y 1050 -defaultsOSRD
+preplace portBus ch0_loopback_1 -pg 1 -lvl 0 -x 0 -y 290 -defaultsOSRD
+preplace portBus ch1_loopback_1 -pg 1 -lvl 0 -x 0 -y 330 -defaultsOSRD
+preplace portBus ch2_loopback_1 -pg 1 -lvl 0 -x 0 -y 370 -defaultsOSRD
+preplace portBus ch3_loopback_1 -pg 1 -lvl 0 -x 0 -y 410 -defaultsOSRD
+preplace portBus ch0_rx_usr_clk_0 -pg 1 -lvl 4 -x 2180 -y 2830 -defaultsOSRD
+preplace portBus rx_axis_tdata0 -pg 1 -lvl 4 -x 2180 -y 3340 -defaultsOSRD
+preplace portBus rx_axis_tdata1 -pg 1 -lvl 4 -x 2180 -y 3360 -defaultsOSRD
+preplace portBus rx_axis_tdata2 -pg 1 -lvl 4 -x 2180 -y 3380 -defaultsOSRD
+preplace portBus rx_axis_tdata3 -pg 1 -lvl 4 -x 2180 -y 3400 -defaultsOSRD
+preplace portBus rx_axis_tuser_mty0 -pg 1 -lvl 4 -x 2180 -y 3660 -defaultsOSRD
+preplace portBus rx_axis_tuser_mty1 -pg 1 -lvl 4 -x 2180 -y 3680 -defaultsOSRD
+preplace portBus rx_axis_tuser_mty2 -pg 1 -lvl 4 -x 2180 -y 3700 -defaultsOSRD
+preplace portBus rx_axis_tuser_mty3 -pg 1 -lvl 4 -x 2180 -y 3720 -defaultsOSRD
+preplace portBus rx_lane_aligner_fill -pg 1 -lvl 4 -x 2180 -y 3860 -defaultsOSRD
+preplace portBus rx_pcs_tdm_stats_data -pg 1 -lvl 4 -x 2180 -y 3920 -defaultsOSRD
+preplace portBus rx_port_pm_rdy -pg 1 -lvl 4 -x 2180 -y 3980 -defaultsOSRD
+preplace portBus rx_preambleout_0 -pg 1 -lvl 4 -x 2180 -y 4000 -defaultsOSRD
+preplace portBus rx_preambleout_1 -pg 1 -lvl 4 -x 2180 -y 4020 -defaultsOSRD
+preplace portBus rx_tsmac_tdm_stats_data -pg 1 -lvl 4 -x 2180 -y 4760 -defaultsOSRD
+preplace portBus rx_tsmac_tdm_stats_id -pg 1 -lvl 4 -x 2180 -y 4780 -defaultsOSRD
+preplace portBus c0_stat_rx_corrected_lane_delay_0 -pg 1 -lvl 4 -x 2180 -y 4820 -defaultsOSRD
+preplace portBus c0_stat_rx_corrected_lane_delay_1 -pg 1 -lvl 4 -x 2180 -y 4840 -defaultsOSRD
+preplace portBus c0_stat_rx_corrected_lane_delay_2 -pg 1 -lvl 4 -x 2180 -y 4860 -defaultsOSRD
+preplace portBus c0_stat_rx_corrected_lane_delay_3 -pg 1 -lvl 4 -x 2180 -y 4880 -defaultsOSRD
+preplace portBus c1_stat_rx_corrected_lane_delay_0 -pg 1 -lvl 4 -x 2180 -y 4920 -defaultsOSRD
+preplace portBus c1_stat_rx_corrected_lane_delay_1 -pg 1 -lvl 4 -x 2180 -y 4940 -defaultsOSRD
+preplace portBus c1_stat_rx_corrected_lane_delay_2 -pg 1 -lvl 4 -x 2180 -y 4960 -defaultsOSRD
+preplace portBus c1_stat_rx_corrected_lane_delay_3 -pg 1 -lvl 4 -x 2180 -y 4980 -defaultsOSRD
+preplace portBus c2_stat_rx_corrected_lane_delay_0 -pg 1 -lvl 4 -x 2180 -y 5020 -defaultsOSRD
+preplace portBus c2_stat_rx_corrected_lane_delay_1 -pg 1 -lvl 4 -x 2180 -y 5040 -defaultsOSRD
+preplace portBus c2_stat_rx_corrected_lane_delay_2 -pg 1 -lvl 4 -x 2180 -y 5060 -defaultsOSRD
+preplace portBus c2_stat_rx_corrected_lane_delay_3 -pg 1 -lvl 4 -x 2180 -y 5080 -defaultsOSRD
+preplace portBus c3_stat_rx_corrected_lane_delay_0 -pg 1 -lvl 4 -x 2180 -y 5120 -defaultsOSRD
+preplace portBus c3_stat_rx_corrected_lane_delay_1 -pg 1 -lvl 4 -x 2180 -y 5140 -defaultsOSRD
+preplace portBus c3_stat_rx_corrected_lane_delay_2 -pg 1 -lvl 4 -x 2180 -y 5160 -defaultsOSRD
+preplace portBus c3_stat_rx_corrected_lane_delay_3 -pg 1 -lvl 4 -x 2180 -y 5180 -defaultsOSRD
+preplace portBus c4_stat_rx_corrected_lane_delay_0 -pg 1 -lvl 4 -x 2180 -y 5220 -defaultsOSRD
+preplace portBus c4_stat_rx_corrected_lane_delay_1 -pg 1 -lvl 4 -x 2180 -y 5240 -defaultsOSRD
+preplace portBus c4_stat_rx_corrected_lane_delay_2 -pg 1 -lvl 4 -x 2180 -y 5260 -defaultsOSRD
+preplace portBus c4_stat_rx_corrected_lane_delay_3 -pg 1 -lvl 4 -x 2180 -y 5280 -defaultsOSRD
+preplace portBus c5_stat_rx_corrected_lane_delay_0 -pg 1 -lvl 4 -x 2180 -y 5320 -defaultsOSRD
+preplace portBus c5_stat_rx_corrected_lane_delay_1 -pg 1 -lvl 4 -x 2180 -y 5340 -defaultsOSRD
+preplace portBus c5_stat_rx_corrected_lane_delay_2 -pg 1 -lvl 4 -x 2180 -y 5360 -defaultsOSRD
+preplace portBus c5_stat_rx_corrected_lane_delay_3 -pg 1 -lvl 4 -x 2180 -y 5380 -defaultsOSRD
+preplace portBus tx_pcs_tdm_stats_data -pg 1 -lvl 4 -x 2180 -y 5520 -defaultsOSRD
+preplace portBus tx_port_pm_rdy -pg 1 -lvl 4 -x 2180 -y 5580 -defaultsOSRD
+preplace portBus tx_tsmac_tdm_stats_data -pg 1 -lvl 4 -x 2180 -y 5840 -defaultsOSRD
+preplace portBus tx_tsmac_tdm_stats_id -pg 1 -lvl 4 -x 2180 -y 5860 -defaultsOSRD
+preplace portBus ctl_rsvd_in -pg 1 -lvl 0 -x 0 -y 4080 -defaultsOSRD
+preplace portBus rsvd_in_rx_mac -pg 1 -lvl 0 -x 0 -y 4100 -defaultsOSRD
+preplace portBus rsvd_in_rx_phy -pg 1 -lvl 0 -x 0 -y 4120 -defaultsOSRD
+preplace portBus rx_alt_serdes_clk -pg 1 -lvl 0 -x 0 -y 4160 -defaultsOSRD
+preplace portBus rx_port_pm_tick -pg 1 -lvl 0 -x 0 -y 4200 -defaultsOSRD
+preplace portBus rx_channel_flush -pg 1 -lvl 0 -x 0 -y 4220 -defaultsOSRD
+preplace portBus rx_flexif_clk -pg 1 -lvl 0 -x 0 -y 4280 -defaultsOSRD
+preplace portBus rx_serdes_clk -pg 1 -lvl 0 -x 0 -y 4320 -defaultsOSRD
+preplace portBus rx_serdes_reset -pg 1 -lvl 0 -x 0 -y 4460 -defaultsOSRD
+preplace portBus ts_clk -pg 1 -lvl 0 -x 0 -y 4480 -defaultsOSRD
+preplace portBus tx_alt_serdes_clk -pg 1 -lvl 0 -x 0 -y 4520 -defaultsOSRD
+preplace portBus tx_axis_tdata0 -pg 1 -lvl 0 -x 0 -y 4540 -defaultsOSRD
+preplace portBus tx_axis_tdata1 -pg 1 -lvl 0 -x 0 -y 4560 -defaultsOSRD
+preplace portBus tx_axis_tdata2 -pg 1 -lvl 0 -x 0 -y 4580 -defaultsOSRD
+preplace portBus tx_axis_tdata3 -pg 1 -lvl 0 -x 0 -y 4600 -defaultsOSRD
+preplace portBus tx_axis_tuser_mty0 -pg 1 -lvl 0 -x 0 -y 4860 -defaultsOSRD
+preplace portBus tx_axis_tuser_mty1 -pg 1 -lvl 0 -x 0 -y 4880 -defaultsOSRD
+preplace portBus tx_axis_tuser_mty2 -pg 1 -lvl 0 -x 0 -y 4900 -defaultsOSRD
+preplace portBus tx_axis_tuser_mty3 -pg 1 -lvl 0 -x 0 -y 4920 -defaultsOSRD
+preplace portBus tx_channel_flush -pg 1 -lvl 0 -x 0 -y 5080 -defaultsOSRD
+preplace portBus tx_flexif_clk -pg 1 -lvl 0 -x 0 -y 5140 -defaultsOSRD
+preplace portBus tx_port_pm_tick -pg 1 -lvl 0 -x 0 -y 5180 -defaultsOSRD
+preplace portBus tx_preamblein_0 -pg 1 -lvl 0 -x 0 -y 5200 -defaultsOSRD
+preplace portBus tx_preamblein_1 -pg 1 -lvl 0 -x 0 -y 5220 -defaultsOSRD
+preplace portBus tx_serdes_clk -pg 1 -lvl 0 -x 0 -y 5240 -defaultsOSRD
+preplace portBus tx_serdes_reset -pg 1 -lvl 0 -x 0 -y 5260 -defaultsOSRD
+preplace inst util_ds_buf_mbufg_rx_1 -pg 1 -lvl 3 -x 1890 -y 3240 -defaultsOSRD
+preplace inst util_ds_buf_0 -pg 1 -lvl 2 -x 910 -y 1830 -defaultsOSRD
+preplace inst util_ds_buf_1 -pg 1 -lvl 1 -x 200 -y 1550 -defaultsOSRD
+preplace inst gt_quad_base -pg 1 -lvl 3 -x 1890 -y 1830 -defaultsOSRD
+preplace inst bufg_gt_odiv2 -pg 1 -lvl 3 -x 1890 -y 2710 -defaultsOSRD
+preplace inst util_ds_buf_mbufg_tx_0 -pg 1 -lvl 2 -x 910 -y 2270 -defaultsOSRD
+preplace inst util_ds_buf_mbufg_tx_1 -pg 1 -lvl 3 -x 1890 -y 3000 -defaultsOSRD
+preplace inst gt_quad_base_1 -pg 1 -lvl 2 -x 910 -y 870 -defaultsOSRD
+preplace inst util_ds_buf_mbufg_rx_0 -pg 1 -lvl 2 -x 910 -y 2030 -defaultsOSRD
+preplace inst dcmac_0 -pg 1 -lvl 2 -x 910 -y 4850 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 1 -x 200 -y 2480 -defaultsOSRD
+preplace netloc gt_quad_base_1_ch0_rxoutclk 1 2 1 1540 1030n
+preplace netloc dcmac_0_rx_clr_out_4 1 2 1 1690 3240n
+preplace netloc dcmac_0_rx_clrb_leaf_out_4 1 2 1 1700 3300n
+preplace netloc util_ds_buf_0_IBUFDS_GTME5_O 1 2 1 1570 1820n
+preplace netloc util_ds_buf_0_IBUFDS_GTME5_ODIV2 1 2 1 1550J 1840n
+preplace netloc util_ds_buf_1_IBUFDS_GTME5_O 1 1 1 410J 1540n
+preplace netloc dcmac_0_pllreset_out_0 1 2 1 1610 2040n
+preplace netloc gt_quad_base_hsclk0_lcplllock 1 1 3 560 7140 NJ 7140 2140
+preplace netloc dcmac_0_iloreset_out_0 1 2 1 1590 2240n
+preplace netloc dcmac_0_iloreset_out_1 1 2 1 1600 2260n
+preplace netloc dcmac_0_iloreset_out_2 1 2 1 1630 2280n
+preplace netloc dcmac_0_iloreset_out_3 1 2 1 1650 2300n
+preplace netloc gt_quad_base_ch0_iloresetdone 1 1 3 610 7100 NJ 7100 2130
+preplace netloc gt_quad_base_ch1_iloresetdone 1 1 3 590 7110 NJ 7110 2120
+preplace netloc gt_quad_base_ch2_iloresetdone 1 1 3 580 7120 NJ 7120 2110
+preplace netloc gt_quad_base_ch3_iloresetdone 1 1 3 570 7130 NJ 7130 2100
+preplace netloc gt_quad_base_ch0_txoutclk 1 1 3 660 1910 1500J 2830 2090
+preplace netloc gt_quad_base_ch0_rxoutclk 1 1 3 650 1900 1520J 2820 2080
+preplace netloc dcmac_0_tx_clr_out_0 1 1 2 480 2540 1310
+preplace netloc dcmac_0_tx_clrb_leaf_out_0 1 1 2 470 2550 1330
+preplace netloc gt_quad_base_1_ch0_txoutclk 1 2 1 1560 950n
+preplace netloc dcmac_0_tx_clr_out_4 1 2 1 1670 3000n
+preplace netloc dcmac_0_tx_clrb_leaf_out_4 1 2 1 1680 3060n
+preplace netloc dcmac_0_pllreset_out_1 1 1 2 490 2530 1290
+preplace netloc gt_quad_base_1_hsclk0_lcplllock 1 1 2 660 2600 1280
+preplace netloc dcmac_0_iloreset_out_4 1 1 2 530 2490 1170
+preplace netloc dcmac_0_iloreset_out_5 1 1 2 520 2500 1200
+preplace netloc dcmac_0_iloreset_out_6 1 1 2 510 2510 1230
+preplace netloc dcmac_0_iloreset_out_7 1 1 2 500 2520 1260
+preplace netloc gt_quad_base_1_ch0_iloresetdone 1 1 2 600 2560 1250
+preplace netloc gt_quad_base_1_ch1_iloresetdone 1 1 2 620 2570 1220
+preplace netloc gt_quad_base_1_ch2_iloresetdone 1 1 2 640 2580 1190
+preplace netloc gt_quad_base_1_ch3_iloresetdone 1 1 2 650 2590 1160
+preplace netloc dcmac_0_rx_clr_out_0 1 1 2 460 7150 1190
+preplace netloc dcmac_0_rx_clrb_leaf_out_0 1 1 2 380 7160 1160
+preplace netloc xlconstant_0_dout 1 1 2 450 2480 1370
+preplace netloc util_ds_buf_mbufg_rx_1_MBUFG_GT_O1 1 3 1 NJ 3210
+preplace netloc util_ds_buf_mbufg_rx_1_MBUFG_GT_O2 1 1 3 540 2470 1390J 3120 2160
+preplace netloc gt_quad_base_gtpowergood 1 3 1 NJ 1730
+preplace netloc gt_txpostcursor_1 1 0 3 NJ 470 420 1690 1700
+preplace netloc gt_txprecursor_1 1 0 3 NJ 490 400 1700 1480
+preplace netloc gt_txmaincursor_1 1 0 3 NJ 450 450 1670 1670
+preplace netloc ch0_txrate_0_1 1 0 3 NJ 80 390J 70 1650J
+preplace netloc util_ds_buf_mbufg_tx_0_MBUFG_GT_O2 1 2 2 1420 2880 2160J
+preplace netloc ch1_txrate_0_1 1 0 3 NJ 100 400J 80 1640J
+preplace netloc ch2_txrate_0_1 1 0 3 NJ 1690 410J 1680 NJ
+preplace netloc ch3_txrate_0_1 1 0 3 NJ 1750 380J 1740 1610J
+preplace netloc gt_rxcdrhold_1 1 0 3 NJ 850 390 1710 1600
+preplace netloc ch0_rxrate_0_1 1 0 3 NJ 120 630J 90 1630J
+preplace netloc util_ds_buf_mbufg_rx_0_MBUFG_GT_O2 1 2 2 1460 2850 NJ
+preplace netloc ch1_rxrate_0_1 1 0 3 NJ 1650 NJ 1650 1620J
+preplace netloc ch2_rxrate_0_1 1 0 3 NJ 1670 410J 1660 1470J
+preplace netloc ch3_rxrate_0_1 1 0 3 NJ 1730 NJ 1730 1590J
+preplace netloc ch0_loopback_0_1 1 0 3 NJ 20 NJ 20 1690J
+preplace netloc ch1_loopback_0_1 1 0 3 NJ 40 NJ 40 1680J
+preplace netloc ch2_loopback_0_1 1 0 3 NJ 60 NJ 60 1670J
+preplace netloc ch3_loopback_0_1 1 0 3 NJ 1710 380J 1720 1380J
+preplace netloc gt_quad_base_gpo 1 2 2 1700 650 NJ
+preplace netloc apb3clk_quad_1 1 0 3 20J 1620 430 1750 1580
+preplace netloc s_axi_aresetn_1 1 0 3 NJ 1630 440 1760 1380
+preplace netloc bufg_gt_odiv2_usrclk 1 3 1 NJ 2710
+preplace netloc util_ds_buf_mbufg_tx_0_MBUFG_GT_O1 1 2 2 1430J 2870 NJ
+preplace netloc util_ds_buf_mbufg_tx_1_MBUFG_GT_O1 1 3 1 NJ 2970
+preplace netloc util_ds_buf_mbufg_tx_1_MBUFG_GT_O2 1 1 3 640 2150 1450J 2860 2150
+preplace netloc gt_quad_base_1_gtpowergood 1 2 2 NJ 770 NJ
+preplace netloc ch0_txrate_1_1 1 0 2 NJ 510 NJ
+preplace netloc ch1_txrate_1_1 1 0 2 NJ 610 NJ
+preplace netloc ch2_txrate_1_1 1 0 2 NJ 710 NJ
+preplace netloc ch3_txrate_1_1 1 0 2 NJ 810 NJ
+preplace netloc ch0_rxrate_1_1 1 0 2 NJ 870 NJ
+preplace netloc ch1_rxrate_1_1 1 0 2 NJ 930 NJ
+preplace netloc ch2_rxrate_1_1 1 0 2 NJ 990 NJ
+preplace netloc ch3_rxrate_1_1 1 0 2 NJ 1050 NJ
+preplace netloc ch0_loopback_1_1 1 0 2 NJ 290 NJ
+preplace netloc ch1_loopback_1_1 1 0 2 NJ 330 NJ
+preplace netloc ch2_loopback_1_1 1 0 2 NJ 370 NJ
+preplace netloc ch3_loopback_1_1 1 0 2 NJ 410 NJ
+preplace netloc util_ds_buf_mbufg_rx_0_MBUFG_GT_O1 1 2 2 1470J 2840 2160J
+preplace netloc s_axi_aclk_1 1 0 2 NJ 4040 NJ
+preplace netloc dcmac_0_rx_axis_tdata0 1 2 2 1550J 3360 2150J
+preplace netloc dcmac_0_rx_axis_tdata1 1 2 2 1470J 3370 2160J
+preplace netloc dcmac_0_rx_axis_tdata2 1 2 2 NJ 3380 NJ
+preplace netloc dcmac_0_rx_axis_tdata3 1 2 2 NJ 3400 NJ
+preplace netloc dcmac_0_rx_axis_tuser_ena0 1 2 2 NJ 3420 NJ
+preplace netloc dcmac_0_rx_axis_tuser_ena1 1 2 2 NJ 3440 NJ
+preplace netloc dcmac_0_rx_axis_tuser_ena2 1 2 2 NJ 3460 NJ
+preplace netloc dcmac_0_rx_axis_tuser_ena3 1 2 2 NJ 3480 NJ
+preplace netloc dcmac_0_rx_axis_tuser_eop0 1 2 2 NJ 3500 NJ
+preplace netloc dcmac_0_rx_axis_tuser_eop1 1 2 2 NJ 3520 NJ
+preplace netloc dcmac_0_rx_axis_tuser_eop2 1 2 2 NJ 3540 NJ
+preplace netloc dcmac_0_rx_axis_tuser_eop3 1 2 2 NJ 3560 NJ
+preplace netloc dcmac_0_rx_axis_tuser_err0 1 2 2 NJ 3580 NJ
+preplace netloc dcmac_0_rx_axis_tuser_err1 1 2 2 NJ 3600 NJ
+preplace netloc dcmac_0_rx_axis_tuser_err2 1 2 2 NJ 3620 NJ
+preplace netloc dcmac_0_rx_axis_tuser_err3 1 2 2 NJ 3640 NJ
+preplace netloc dcmac_0_rx_axis_tuser_mty0 1 2 2 NJ 3660 NJ
+preplace netloc dcmac_0_rx_axis_tuser_mty1 1 2 2 NJ 3680 NJ
+preplace netloc dcmac_0_rx_axis_tuser_mty2 1 2 2 NJ 3700 NJ
+preplace netloc dcmac_0_rx_axis_tuser_mty3 1 2 2 NJ 3720 NJ
+preplace netloc dcmac_0_rx_axis_tuser_sop0 1 2 2 NJ 3740 NJ
+preplace netloc dcmac_0_rx_axis_tuser_sop1 1 2 2 NJ 3760 NJ
+preplace netloc dcmac_0_rx_axis_tuser_sop2 1 2 2 NJ 3780 NJ
+preplace netloc dcmac_0_rx_axis_tuser_sop3 1 2 2 NJ 3800 NJ
+preplace netloc dcmac_0_rx_axis_tvalid_0 1 2 2 NJ 3820 NJ
+preplace netloc dcmac_0_rx_axis_tvalid_1 1 2 2 NJ 3840 NJ
+preplace netloc dcmac_0_rx_lane_aligner_fill 1 2 2 NJ 3860 NJ
+preplace netloc dcmac_0_rx_lane_aligner_fill_start 1 2 2 NJ 3880 NJ
+preplace netloc dcmac_0_rx_lane_aligner_fill_valid 1 2 2 NJ 3900 NJ
+preplace netloc dcmac_0_rx_pcs_tdm_stats_data 1 2 2 NJ 3920 NJ
+preplace netloc dcmac_0_rx_pcs_tdm_stats_start 1 2 2 NJ 3940 NJ
+preplace netloc dcmac_0_rx_pcs_tdm_stats_valid 1 2 2 NJ 3960 NJ
+preplace netloc dcmac_0_rx_port_pm_rdy 1 2 2 NJ 3980 NJ
+preplace netloc dcmac_0_rx_preambleout_0 1 2 2 NJ 4000 NJ
+preplace netloc dcmac_0_rx_preambleout_1 1 2 2 NJ 4020 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_restart_0 1 2 2 NJ 4040 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_restart_1 1 2 2 NJ 4060 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_restart_2 1 2 2 NJ 4080 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_restart_3 1 2 2 NJ 4100 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_restart_4 1 2 2 NJ 4120 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_restart_5 1 2 2 NJ 4140 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_0 1 2 2 NJ 4160 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_1 1 2 2 NJ 4180 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_2 1 2 2 NJ 4200 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_3 1 2 2 NJ 4220 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_4 1 2 2 NJ 4240 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_5 1 2 2 NJ 4260 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_6 1 2 2 NJ 4280 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_7 1 2 2 NJ 4300 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_8 1 2 2 NJ 4320 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_9 1 2 2 NJ 4340 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_10 1 2 2 NJ 4360 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_11 1 2 2 NJ 4380 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_12 1 2 2 NJ 4400 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_13 1 2 2 NJ 4420 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_14 1 2 2 NJ 4440 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_15 1 2 2 NJ 4460 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_16 1 2 2 NJ 4480 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_17 1 2 2 NJ 4500 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_18 1 2 2 NJ 4520 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_19 1 2 2 NJ 4540 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_20 1 2 2 NJ 4560 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_21 1 2 2 NJ 4580 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_22 1 2 2 NJ 4600 NJ
+preplace netloc dcmac_0_rx_serdes_albuf_slip_23 1 2 2 NJ 4620 NJ
+preplace netloc dcmac_0_rx_serdes_fifo_flagout_0 1 2 2 NJ 4640 NJ
+preplace netloc dcmac_0_rx_serdes_fifo_flagout_1 1 2 2 NJ 4660 NJ
+preplace netloc dcmac_0_rx_serdes_fifo_flagout_2 1 2 2 NJ 4680 NJ
+preplace netloc dcmac_0_rx_serdes_fifo_flagout_3 1 2 2 NJ 4700 NJ
+preplace netloc dcmac_0_rx_serdes_fifo_flagout_4 1 2 2 NJ 4720 NJ
+preplace netloc dcmac_0_rx_serdes_fifo_flagout_5 1 2 2 NJ 4740 NJ
+preplace netloc dcmac_0_rx_tsmac_tdm_stats_data 1 2 2 NJ 4760 NJ
+preplace netloc dcmac_0_rx_tsmac_tdm_stats_id 1 2 2 NJ 4780 NJ
+preplace netloc dcmac_0_rx_tsmac_tdm_stats_valid 1 2 2 NJ 4800 NJ
+preplace netloc dcmac_0_c0_stat_rx_corrected_lane_delay_0 1 2 2 NJ 4820 NJ
+preplace netloc dcmac_0_c0_stat_rx_corrected_lane_delay_1 1 2 2 NJ 4840 NJ
+preplace netloc dcmac_0_c0_stat_rx_corrected_lane_delay_2 1 2 2 NJ 4860 NJ
+preplace netloc dcmac_0_c0_stat_rx_corrected_lane_delay_3 1 2 2 NJ 4880 NJ
+preplace netloc dcmac_0_c0_stat_rx_corrected_lane_delay_valid 1 2 2 NJ 4900 NJ
+preplace netloc dcmac_0_c1_stat_rx_corrected_lane_delay_0 1 2 2 NJ 4920 NJ
+preplace netloc dcmac_0_c1_stat_rx_corrected_lane_delay_1 1 2 2 NJ 4940 NJ
+preplace netloc dcmac_0_c1_stat_rx_corrected_lane_delay_2 1 2 2 NJ 4960 NJ
+preplace netloc dcmac_0_c1_stat_rx_corrected_lane_delay_3 1 2 2 NJ 4980 NJ
+preplace netloc dcmac_0_c1_stat_rx_corrected_lane_delay_valid 1 2 2 NJ 5000 NJ
+preplace netloc dcmac_0_c2_stat_rx_corrected_lane_delay_0 1 2 2 NJ 5020 NJ
+preplace netloc dcmac_0_c2_stat_rx_corrected_lane_delay_1 1 2 2 NJ 5040 NJ
+preplace netloc dcmac_0_c2_stat_rx_corrected_lane_delay_2 1 2 2 NJ 5060 NJ
+preplace netloc dcmac_0_c2_stat_rx_corrected_lane_delay_3 1 2 2 NJ 5080 NJ
+preplace netloc dcmac_0_c2_stat_rx_corrected_lane_delay_valid 1 2 2 NJ 5100 NJ
+preplace netloc dcmac_0_c3_stat_rx_corrected_lane_delay_0 1 2 2 NJ 5120 NJ
+preplace netloc dcmac_0_c3_stat_rx_corrected_lane_delay_1 1 2 2 NJ 5140 NJ
+preplace netloc dcmac_0_c3_stat_rx_corrected_lane_delay_2 1 2 2 NJ 5160 NJ
+preplace netloc dcmac_0_c3_stat_rx_corrected_lane_delay_3 1 2 2 NJ 5180 NJ
+preplace netloc dcmac_0_c3_stat_rx_corrected_lane_delay_valid 1 2 2 NJ 5200 NJ
+preplace netloc dcmac_0_c4_stat_rx_corrected_lane_delay_0 1 2 2 NJ 5220 NJ
+preplace netloc dcmac_0_c4_stat_rx_corrected_lane_delay_1 1 2 2 NJ 5240 NJ
+preplace netloc dcmac_0_c4_stat_rx_corrected_lane_delay_2 1 2 2 NJ 5260 NJ
+preplace netloc dcmac_0_c4_stat_rx_corrected_lane_delay_3 1 2 2 NJ 5280 NJ
+preplace netloc dcmac_0_c4_stat_rx_corrected_lane_delay_valid 1 2 2 NJ 5300 NJ
+preplace netloc dcmac_0_c5_stat_rx_corrected_lane_delay_0 1 2 2 NJ 5320 NJ
+preplace netloc dcmac_0_c5_stat_rx_corrected_lane_delay_1 1 2 2 NJ 5340 NJ
+preplace netloc dcmac_0_c5_stat_rx_corrected_lane_delay_2 1 2 2 NJ 5360 NJ
+preplace netloc dcmac_0_c5_stat_rx_corrected_lane_delay_3 1 2 2 NJ 5380 NJ
+preplace netloc dcmac_0_c5_stat_rx_corrected_lane_delay_valid 1 2 2 NJ 5400 NJ
+preplace netloc dcmac_0_tx_all_channel_mac_pm_rdy 1 2 2 NJ 5420 NJ
+preplace netloc dcmac_0_tx_axis_taf_0 1 2 2 NJ 5440 NJ
+preplace netloc dcmac_0_tx_axis_taf_1 1 2 2 NJ 5460 NJ
+preplace netloc dcmac_0_tx_axis_tready_0 1 2 2 NJ 5480 NJ
+preplace netloc dcmac_0_tx_axis_tready_1 1 2 2 NJ 5500 NJ
+preplace netloc dcmac_0_tx_pcs_tdm_stats_data 1 2 2 NJ 5520 NJ
+preplace netloc dcmac_0_tx_pcs_tdm_stats_start 1 2 2 NJ 5540 NJ
+preplace netloc dcmac_0_tx_pcs_tdm_stats_valid 1 2 2 NJ 5560 NJ
+preplace netloc dcmac_0_tx_port_pm_rdy 1 2 2 NJ 5580 NJ
+preplace netloc dcmac_0_tx_serdes_is_am_0 1 2 2 NJ 5600 NJ
+preplace netloc dcmac_0_tx_serdes_is_am_1 1 2 2 NJ 5620 NJ
+preplace netloc dcmac_0_tx_serdes_is_am_2 1 2 2 NJ 5640 NJ
+preplace netloc dcmac_0_tx_serdes_is_am_3 1 2 2 NJ 5660 NJ
+preplace netloc dcmac_0_tx_serdes_is_am_4 1 2 2 NJ 5680 NJ
+preplace netloc dcmac_0_tx_serdes_is_am_5 1 2 2 NJ 5700 NJ
+preplace netloc dcmac_0_tx_serdes_is_am_prefifo_0 1 2 2 NJ 5720 NJ
+preplace netloc dcmac_0_tx_serdes_is_am_prefifo_1 1 2 2 NJ 5740 NJ
+preplace netloc dcmac_0_tx_serdes_is_am_prefifo_2 1 2 2 NJ 5760 NJ
+preplace netloc dcmac_0_tx_serdes_is_am_prefifo_3 1 2 2 NJ 5780 NJ
+preplace netloc dcmac_0_tx_serdes_is_am_prefifo_4 1 2 2 NJ 5800 NJ
+preplace netloc dcmac_0_tx_serdes_is_am_prefifo_5 1 2 2 NJ 5820 NJ
+preplace netloc dcmac_0_tx_tsmac_tdm_stats_data 1 2 2 NJ 5840 NJ
+preplace netloc dcmac_0_tx_tsmac_tdm_stats_id 1 2 2 NJ 5860 NJ
+preplace netloc dcmac_0_tx_tsmac_tdm_stats_valid 1 2 2 NJ 5880 NJ
+preplace netloc ctl_rsvd_in_1 1 0 2 NJ 4080 NJ
+preplace netloc rsvd_in_rx_mac_1 1 0 2 NJ 4100 NJ
+preplace netloc rsvd_in_rx_phy_1 1 0 2 NJ 4120 NJ
+preplace netloc rx_all_channel_mac_pm_tick_1 1 0 2 NJ 4140 NJ
+preplace netloc rx_alt_serdes_clk_1 1 0 2 NJ 4160 NJ
+preplace netloc rx_axi_clk_1 1 0 2 NJ 4180 NJ
+preplace netloc rx_port_pm_tick_1 1 0 2 NJ 4200 NJ
+preplace netloc rx_channel_flush_1 1 0 2 NJ 4220 NJ
+preplace netloc rx_core_clk_1 1 0 2 NJ 4240 NJ
+preplace netloc rx_core_reset_1 1 0 2 NJ 4260 NJ
+preplace netloc rx_flexif_clk_1 1 0 2 NJ 4280 NJ
+preplace netloc rx_macif_clk_1 1 0 2 NJ 4300 NJ
+preplace netloc rx_serdes_clk_1 1 0 2 NJ 4320 NJ
+preplace netloc rx_serdes_fifo_flagin_0_1 1 0 2 NJ 4340 NJ
+preplace netloc rx_serdes_fifo_flagin_1_1 1 0 2 NJ 4360 NJ
+preplace netloc rx_serdes_fifo_flagin_2_1 1 0 2 NJ 4380 NJ
+preplace netloc rx_serdes_fifo_flagin_3_1 1 0 2 NJ 4400 NJ
+preplace netloc rx_serdes_fifo_flagin_4_1 1 0 2 NJ 4420 NJ
+preplace netloc rx_serdes_fifo_flagin_5_1 1 0 2 NJ 4440 NJ
+preplace netloc rx_serdes_reset_1 1 0 2 NJ 4460 NJ
+preplace netloc ts_clk_1 1 0 2 NJ 4480 NJ
+preplace netloc tx_all_channel_mac_pm_tick_1 1 0 2 NJ 4500 NJ
+preplace netloc tx_alt_serdes_clk_1 1 0 2 NJ 4520 NJ
+preplace netloc tx_axis_tdata0_1 1 0 2 NJ 4540 NJ
+preplace netloc tx_axis_tdata1_1 1 0 2 NJ 4560 NJ
+preplace netloc tx_axis_tdata2_1 1 0 2 NJ 4580 NJ
+preplace netloc tx_axis_tdata3_1 1 0 2 NJ 4600 NJ
+preplace netloc tx_axis_tuser_ena0_1 1 0 2 NJ 4620 NJ
+preplace netloc tx_axis_tuser_ena1_1 1 0 2 NJ 4640 NJ
+preplace netloc tx_axis_tuser_ena2_1 1 0 2 NJ 4660 NJ
+preplace netloc tx_axis_tuser_ena3_1 1 0 2 NJ 4680 NJ
+preplace netloc tx_axis_tuser_eop0_1 1 0 2 NJ 4700 NJ
+preplace netloc tx_axis_tuser_eop1_1 1 0 2 NJ 4720 NJ
+preplace netloc tx_axis_tuser_eop2_1 1 0 2 NJ 4740 NJ
+preplace netloc tx_axis_tuser_eop3_1 1 0 2 NJ 4760 NJ
+preplace netloc tx_axis_tuser_err0_1 1 0 2 NJ 4780 NJ
+preplace netloc tx_axis_tuser_err1_1 1 0 2 NJ 4800 NJ
+preplace netloc tx_axis_tuser_err2_1 1 0 2 NJ 4820 NJ
+preplace netloc tx_axis_tuser_err3_1 1 0 2 NJ 4840 NJ
+preplace netloc tx_axis_tuser_mty0_1 1 0 2 NJ 4860 NJ
+preplace netloc tx_axis_tuser_mty1_1 1 0 2 NJ 4880 NJ
+preplace netloc tx_axis_tuser_mty2_1 1 0 2 NJ 4900 NJ
+preplace netloc tx_axis_tuser_mty3_1 1 0 2 NJ 4920 NJ
+preplace netloc tx_axis_tuser_sop0_1 1 0 2 NJ 4940 NJ
+preplace netloc tx_axis_tuser_sop1_1 1 0 2 NJ 4960 NJ
+preplace netloc tx_axis_tuser_sop2_1 1 0 2 NJ 4980 NJ
+preplace netloc tx_axis_tuser_sop3_1 1 0 2 NJ 5000 NJ
+preplace netloc tx_axis_tvalid_0_1 1 0 2 NJ 5020 NJ
+preplace netloc tx_axis_tvalid_1_1 1 0 2 NJ 5040 NJ
+preplace netloc tx_axi_clk_1 1 0 2 NJ 5060 NJ
+preplace netloc tx_channel_flush_1 1 0 2 NJ 5080 NJ
+preplace netloc tx_core_clk_1 1 0 2 NJ 5100 NJ
+preplace netloc tx_core_reset_1 1 0 2 NJ 5120 NJ
+preplace netloc tx_flexif_clk_1 1 0 2 NJ 5140 NJ
+preplace netloc tx_macif_clk_1 1 0 2 NJ 5160 NJ
+preplace netloc tx_port_pm_tick_1 1 0 2 NJ 5180 NJ
+preplace netloc tx_preamblein_0_1 1 0 2 NJ 5200 NJ
+preplace netloc tx_preamblein_1_1 1 0 2 NJ 5220 NJ
+preplace netloc tx_serdes_clk_1 1 0 2 NJ 5240 NJ
+preplace netloc tx_serdes_reset_1 1 0 2 NJ 5260 NJ
+preplace netloc dcmac_0_gt_tx_reset_done_out_0 1 2 2 NJ 5900 NJ
+preplace netloc dcmac_0_gt_rx_reset_done_out_0 1 2 2 NJ 5920 NJ
+preplace netloc gtpowergood_in_1 1 0 2 NJ 5280 NJ
+preplace netloc gt_reset_all_in_1 1 0 2 NJ 5300 NJ
+preplace netloc gt_reset_tx_datapath_in_0_1 1 0 2 NJ 5320 NJ
+preplace netloc gt_reset_rx_datapath_in_0_1 1 0 2 NJ 5340 NJ
+preplace netloc dcmac_0_gt_tx_reset_done_out_1 1 2 2 NJ 5940 NJ
+preplace netloc dcmac_0_gt_rx_reset_done_out_1 1 2 2 NJ 5960 NJ
+preplace netloc gt_reset_tx_datapath_in_1_1 1 0 2 NJ 5360 NJ
+preplace netloc gt_reset_rx_datapath_in_1_1 1 0 2 NJ 5380 NJ
+preplace netloc dcmac_0_gt_tx_reset_done_out_2 1 2 2 NJ 5980 NJ
+preplace netloc dcmac_0_gt_rx_reset_done_out_2 1 2 2 NJ 6000 NJ
+preplace netloc gt_reset_tx_datapath_in_2_1 1 0 2 NJ 5400 NJ
+preplace netloc gt_reset_rx_datapath_in_2_1 1 0 2 NJ 5420 NJ
+preplace netloc dcmac_0_gt_tx_reset_done_out_3 1 2 2 NJ 6020 NJ
+preplace netloc dcmac_0_gt_rx_reset_done_out_3 1 2 2 NJ 6040 NJ
+preplace netloc gt_reset_tx_datapath_in_3_1 1 0 2 NJ 5440 NJ
+preplace netloc gt_reset_rx_datapath_in_3_1 1 0 2 NJ 5460 NJ
+preplace netloc dcmac_0_gt_tx_reset_done_out_4 1 2 2 NJ 6060 NJ
+preplace netloc dcmac_0_gt_rx_reset_done_out_4 1 2 2 NJ 6080 NJ
+preplace netloc gt_reset_tx_datapath_in_4_1 1 0 2 NJ 5480 NJ
+preplace netloc gt_reset_rx_datapath_in_4_1 1 0 2 NJ 5500 NJ
+preplace netloc dcmac_0_gt_tx_reset_done_out_5 1 2 2 NJ 6100 NJ
+preplace netloc dcmac_0_gt_rx_reset_done_out_5 1 2 2 NJ 6120 NJ
+preplace netloc gt_reset_tx_datapath_in_5_1 1 0 2 NJ 5520 NJ
+preplace netloc gt_reset_rx_datapath_in_5_1 1 0 2 NJ 5540 NJ
+preplace netloc dcmac_0_gt_tx_reset_done_out_6 1 2 2 NJ 6140 NJ
+preplace netloc dcmac_0_gt_rx_reset_done_out_6 1 2 2 NJ 6160 NJ
+preplace netloc gt_reset_tx_datapath_in_6_1 1 0 2 NJ 5560 NJ
+preplace netloc gt_reset_rx_datapath_in_6_1 1 0 2 NJ 5580 NJ
+preplace netloc dcmac_0_gt_tx_reset_done_out_7 1 2 2 NJ 6180 NJ
+preplace netloc dcmac_0_gt_rx_reset_done_out_7 1 2 2 NJ 6200 NJ
+preplace netloc gt_reset_tx_datapath_in_7_1 1 0 2 NJ 5600 NJ
+preplace netloc gt_reset_rx_datapath_in_7_1 1 0 2 NJ 5620 NJ
+preplace netloc gt_quad_base_1_GT_NORTHIN_SOUTHOUT 1 2 1 1660 650n
+preplace netloc dcmac_0_gtm_tx_serdes_interface_0 1 2 1 1440 1400n
+preplace netloc dcmac_0_gtm_tx_serdes_interface_1 1 2 1 1490 1500n
+preplace netloc dcmac_0_gtm_tx_serdes_interface_2 1 2 1 1510 1600n
+preplace netloc dcmac_0_gtm_tx_serdes_interface_3 1 2 1 1530 1700n
+preplace netloc dcmac_0_gtm_rx_serdes_interface_0 1 2 1 1480 1800n
+preplace netloc dcmac_0_gtm_rx_serdes_interface_1 1 2 1 1360 1860n
+preplace netloc dcmac_0_gtm_rx_serdes_interface_2 1 2 1 1400 1920n
+preplace netloc dcmac_0_gtm_rx_serdes_interface_3 1 2 1 1410 1980n
+preplace netloc dcmac_0_gtm_tx_serdes_interface_4 1 1 2 630 2390 1180
+preplace netloc dcmac_0_gtm_tx_serdes_interface_5 1 1 2 620 2400 1210
+preplace netloc dcmac_0_gtm_tx_serdes_interface_6 1 1 2 600 2410 1240
+preplace netloc dcmac_0_gtm_tx_serdes_interface_7 1 1 2 590 2420 1270
+preplace netloc dcmac_0_gtm_rx_serdes_interface_4 1 1 2 580 2430 1300
+preplace netloc dcmac_0_gtm_rx_serdes_interface_5 1 1 2 570 2440 1320
+preplace netloc dcmac_0_gtm_rx_serdes_interface_6 1 1 2 560 2450 1340
+preplace netloc dcmac_0_gtm_rx_serdes_interface_7 1 1 2 550 2460 1350
+preplace netloc CLK_IN_D_0_1 1 0 2 NJ 1820 NJ
+preplace netloc CLK_IN_D_1_1 1 0 1 NJ 1540
+preplace netloc gt_quad_base_GT_Serial 1 3 1 NJ 1630
+preplace netloc gt_quad_base_1_GT_Serial 1 2 2 NJ 670 NJ
+preplace netloc s_axi_1 1 0 2 NJ 3880 NJ
+preplace netloc ctl_txrx_port0_1 1 0 2 NJ 3900 NJ
+preplace netloc ctl_txrx_port1_1 1 0 2 NJ 3920 NJ
+preplace netloc ctl_txrx_port2_1 1 0 2 NJ 3940 NJ
+preplace netloc ctl_txrx_port3_1 1 0 2 NJ 3960 NJ
+preplace netloc ctl_txrx_port4_1 1 0 2 NJ 3980 NJ
+preplace netloc ctl_txrx_port5_1 1 0 2 NJ 4000 NJ
+preplace netloc ctl_port_1 1 0 2 NJ 4020 NJ
+levelinfo -pg 1 0 200 910 1890 2180
+pagesize -pg 1 -db -bbox -sgen -240 0 2510 7170
+"
+}
+

@@ -1,0 +1,37 @@
+export project=project
+export folder=project
+
+if [ -d ${folder}/${project}.runs ]; then
+    echo "Refused!  This project is in a built state!" 1>&2
+    exit 1
+fi
+
+rm -rf ${folder}/${project}.hw/webtalk/*
+rm -rf ${folder}/${project}.hw/webtalk/\.x*
+rm -rf ${folder}/.Xil
+rm -rf ${folder}/runtime/.Xil
+
+
+git add ${folder}/${project}.gen
+git add ${folder}/${project}.hw
+git add ${folder}/${project}.srcs
+git add ${folder}/${project}.xpr
+
+folders=(
+    ${folder}/${project}.ip_user_files
+    ${folder}/${project}.sim
+)
+
+for dir in ${folders[@]}; do
+    test -d $dir && git add $dir
+done
+
+
+#git add pre_build.sh post_build.sh release_history.txt
+git add bdc push runtime README.md grab.sh
+git add ${folder}/src
+git add ${folder}/xdc
+
+
+git commit -m "No commit message"
+repo push origin main

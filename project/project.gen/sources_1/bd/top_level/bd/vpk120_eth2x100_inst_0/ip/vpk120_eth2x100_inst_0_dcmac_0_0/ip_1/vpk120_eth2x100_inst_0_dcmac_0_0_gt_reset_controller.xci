@@ -1,0 +1,97 @@
+{
+  "schema": "xilinx.com:schema:json_instance:1.0",
+  "ip_inst": {
+    "xci_name": "vpk120_eth2x100_inst_0_dcmac_0_0_gt_reset_controller",
+    "component_reference": "xilinx.com:ip:gt_reset_ip:1.1",
+    "ip_revision": "8",
+    "gen_directory": ".",
+    "parameters": {
+      "component_parameters": {
+        "MASTER_RESET_EN": [ { "value": "1", "value_src": "propagated", "resolve_type": "user", "format": "float", "usage": "all" } ],
+        "P_FREERUN_FREQUENCY": [ { "value": "200", "resolve_type": "user", "format": "float", "usage": "all" } ],
+        "P_TX_PLL_TYPE": [ { "value": "0", "value_src": "propagated", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "P_RX_PLL_TYPE": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "P_RX_LINE_RATE": [ { "value": "0", "value_src": "propagated", "resolve_type": "user", "format": "float", "usage": "all" } ],
+        "Component_Name": [ { "value": "vpk120_eth2x100_inst_0_dcmac_0_0_gt_reset_controller", "resolve_type": "user", "usage": "all" } ]
+      },
+      "model_parameters": {
+        "MASTER_RESET_EN": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "P_FREERUN_FREQUENCY": [ { "value": "200", "resolve_type": "generated", "format": "float", "usage": "all" } ],
+        "P_TX_PLL_TYPE": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "P_RX_PLL_TYPE": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "P_RX_LINE_RATE": [ { "value": "0", "resolve_type": "generated", "format": "float", "usage": "all" } ]
+      },
+      "project_parameters": {
+        "ARCHITECTURE": [ { "value": "versal" } ],
+        "BASE_BOARD_PART": [ { "value": "xilinx.com:vpk120:part0:1.2" } ],
+        "BOARD_CONNECTIONS": [ { "value": "" } ],
+        "DEVICE": [ { "value": "xcvp1202" } ],
+        "PACKAGE": [ { "value": "vsva2785" } ],
+        "PREFHDL": [ { "value": "VERILOG" } ],
+        "SILICON_REVISION": [ { "value": "" } ],
+        "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
+        "SPEEDGRADE": [ { "value": "-2MP" } ],
+        "STATIC_POWER": [ { "value": "S" } ],
+        "TEMPERATURE_GRADE": [ { "value": "E" } ]
+      },
+      "runtime_parameters": {
+        "IPCONTEXT": [ { "value": "IP_Flow" } ],
+        "IPREVISION": [ { "value": "8" } ],
+        "MANAGED": [ { "value": "TRUE" } ],
+        "OUTPUTDIR": [ { "value": "." } ],
+        "SELECTEDSIMMODEL": [ { "value": "" } ],
+        "SHAREDDIR": [ { "value": "../../../ipshared" } ],
+        "SWVERSION": [ { "value": "2024.2" } ],
+        "SYNTHESISFLOW": [ { "value": "GLOBAL" } ]
+      }
+    },
+    "boundary": {
+      "ports": {
+        "gtwiz_reset_clk_freerun_in": [ { "direction": "in" } ],
+        "gtwiz_reset_all_in": [ { "direction": "in" } ],
+        "gtwiz_reset_tx_pll_and_datapath_in": [ { "direction": "in" } ],
+        "gtwiz_reset_tx_datapath_in": [ { "direction": "in" } ],
+        "gtwiz_reset_rx_pll_and_datapath_in": [ { "direction": "in" } ],
+        "gtwiz_reset_rx_datapath_in": [ { "direction": "in" } ],
+        "gtwiz_reset_rx_cdr_stable_out": [ { "direction": "out" } ],
+        "gtwiz_reset_tx_done_out": [ { "direction": "out" } ],
+        "gtwiz_reset_rx_done_out": [ { "direction": "out" } ],
+        "gtwiz_reset_userclk_tx_active_in": [ { "direction": "in" } ],
+        "gtwiz_reset_userclk_rx_active_in": [ { "direction": "in" } ],
+        "gtpowergood_in": [ { "direction": "in" } ],
+        "txusrclk2_in": [ { "direction": "in" } ],
+        "ilo_reset_done": [ { "direction": "in" } ],
+        "plllock_tx_in": [ { "direction": "in" } ],
+        "txresetdone_in": [ { "direction": "in" } ],
+        "rxusrclk2_in": [ { "direction": "in" } ],
+        "plllock_rx_in": [ { "direction": "in" } ],
+        "rxcdrlock_in": [ { "direction": "in" } ],
+        "rxresetdone_in": [ { "direction": "in" } ],
+        "pllreset_tx_out": [ { "direction": "out", "driver_value": "0x0" } ],
+        "txprogdivreset_out": [ { "direction": "out" } ],
+        "iloreset_out": [ { "direction": "out", "driver_value": "0x0" } ],
+        "mst_tx_reset": [ { "direction": "out", "driver_value": "0x0" } ],
+        "mst_rx_reset": [ { "direction": "out", "driver_value": "0x0" } ],
+        "mst_tx_dp_reset": [ { "direction": "out", "driver_value": "0x0" } ],
+        "mst_rx_dp_reset": [ { "direction": "out", "driver_value": "0x0" } ],
+        "mst_tx_resetdone": [ { "direction": "in" } ],
+        "mst_rx_resetdone": [ { "direction": "in" } ],
+        "pcie_enable": [ { "direction": "in" } ],
+        "pcie_rstb_out": [ { "direction": "out", "driver_value": "0x0" } ],
+        "gttxreset_out": [ { "direction": "out", "driver_value": "0x1" } ],
+        "txuserrdy_out": [ { "direction": "out", "driver_value": "0x0" } ],
+        "pllreset_rx_out": [ { "direction": "out" } ],
+        "rxprogdivreset_out": [ { "direction": "out", "driver_value": "0x1" } ],
+        "gtrxreset_out": [ { "direction": "out", "driver_value": "0x1" } ],
+        "rxuserrdy_out": [ { "direction": "out", "driver_value": "0x0" } ],
+        "rx_clr_out": [ { "direction": "out", "driver_value": "0x0" } ],
+        "rx_clrb_leaf_out": [ { "direction": "out", "driver_value": "0x0" } ],
+        "tx_clr_out": [ { "direction": "out", "driver_value": "0x0" } ],
+        "tx_clrb_leaf_out": [ { "direction": "out", "driver_value": "0x0" } ],
+        "tx_enabled_tie_in": [ { "direction": "in" } ],
+        "rx_enabled_tie_in": [ { "direction": "in" } ],
+        "shared_pll_tie_in": [ { "direction": "in" } ]
+      }
+    }
+  }
+}
