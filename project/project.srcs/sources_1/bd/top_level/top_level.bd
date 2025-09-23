@@ -28,9 +28,9 @@
         "axi_uartlite": ""
       },
       "clk_and_reset": {
-        "versal_cips": "",
         "clk_wizard": "",
-        "proc_sys_reset": ""
+        "proc_sys_reset": "",
+        "versal_cips": ""
       }
     },
     "interface_ports": {
@@ -1181,7 +1181,7 @@
                     "value_src": "strong"
                   },
                   "ASSOCIATED_RESET": {
-                    "value": "s_axi_aresetn:s_axi_resetn",
+                    "value": "s_axi_aresetn",
                     "value_src": "strong"
                   },
                   "CLK_DOMAIN": {
@@ -1240,7 +1240,7 @@
             "variant_info": {
               "vpk120_eth2x100.bd": {
                 "scoped_diagram": "vpk120_eth2x100_inst_0.bd",
-                "design_checksum": "0xDD7599BFE7BB88C8",
+                "design_checksum": "0x3523348E83B89BAA",
                 "ref_name": "vpk120_eth2x100",
                 "ref_subinst_path": "top_level_vpk120_eth2x100_0",
                 "ref_type": "Block Design",
@@ -1791,8 +1791,8 @@
               "vpk120_eth2x100_axis_clk": {
                 "ports": [
                   "clk",
-                  "packet_gen/clk",
-                  "packet_config/clk"
+                  "packet_config/clk",
+                  "packet_gen/clk"
                 ]
               }
             }
@@ -2339,8 +2339,8 @@
               "vpk120_eth2x100_axis_clk": {
                 "ports": [
                   "clk",
-                  "packet_gen/clk",
-                  "packet_config/clk"
+                  "packet_config/clk",
+                  "packet_gen/clk"
                 ]
               }
             }
@@ -3022,33 +3022,6 @@
           }
         },
         "components": {
-          "versal_cips": {
-            "vlnv": "xilinx.com:ip:versal_cips:3.4",
-            "ip_revision": "4",
-            "xci_name": "top_level_versal_cips_0_0",
-            "xci_path": "ip/top_level_versal_cips_0_0/top_level_versal_cips_0_0.xci",
-            "inst_hier_path": "clk_and_reset/versal_cips",
-            "parameters": {
-              "DDR_MEMORY_MODE": {
-                "value": "Custom"
-              },
-              "DEBUG_MODE": {
-                "value": "JTAG"
-              },
-              "DESIGN_MODE": {
-                "value": "0"
-              },
-              "PS_BOARD_INTERFACE": {
-                "value": "Custom"
-              },
-              "PS_PMC_CONFIG": {
-                "value": [
-                  "DEBUG_MODE JTAG DESIGN_MODE 0 PS_BOARD_INTERFACE Custom PS_HSDP_EGRESS_TRAFFIC JTAG PS_HSDP_INGRESS_TRAFFIC JTAG PS_HSDP_MODE NONE PS_NUM_FABRIC_RESETS 1 PS_USE_PMCPL_CLK0 1 SMON_ALARMS Set_Alarms_On",
-                  "SMON_ENABLE_TEMP_AVERAGING 0 SMON_TEMP_AVERAGING_SAMPLES 0"
-                ]
-              }
-            }
-          },
           "clk_wizard": {
             "vlnv": "xilinx.com:ip:clk_wizard:1.0",
             "ip_revision": "15",
@@ -3109,6 +3082,33 @@
             "xci_name": "top_level_proc_sys_reset_0_0",
             "xci_path": "ip/top_level_proc_sys_reset_0_0/top_level_proc_sys_reset_0_0.xci",
             "inst_hier_path": "clk_and_reset/proc_sys_reset"
+          },
+          "versal_cips": {
+            "vlnv": "xilinx.com:ip:versal_cips:3.4",
+            "ip_revision": "4",
+            "xci_name": "top_level_versal_cips_0_0",
+            "xci_path": "ip/top_level_versal_cips_0_0/top_level_versal_cips_0_0.xci",
+            "inst_hier_path": "clk_and_reset/versal_cips",
+            "parameters": {
+              "DDR_MEMORY_MODE": {
+                "value": "Custom"
+              },
+              "DEBUG_MODE": {
+                "value": "JTAG"
+              },
+              "DESIGN_MODE": {
+                "value": "0"
+              },
+              "PS_BOARD_INTERFACE": {
+                "value": "Custom"
+              },
+              "PS_PMC_CONFIG": {
+                "value": [
+                  "DEBUG_MODE JTAG DESIGN_MODE 0 PS_BOARD_INTERFACE Custom PS_HSDP_EGRESS_TRAFFIC JTAG PS_HSDP_INGRESS_TRAFFIC JTAG PS_HSDP_MODE NONE PS_NUM_FABRIC_RESETS 1 PS_USE_PMCPL_CLK0 1 SMON_ALARMS Set_Alarms_On",
+                  "SMON_ENABLE_TEMP_AVERAGING 0 SMON_TEMP_AVERAGING_SAMPLES 0"
+                ]
+              }
+            }
           }
         },
         "nets": {

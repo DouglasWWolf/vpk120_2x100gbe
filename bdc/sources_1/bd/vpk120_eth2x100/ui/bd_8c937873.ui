@@ -7,134 +7,148 @@
    "No Loops_ExpandedHierarchyInLayout":"",
    "No Loops_Layout":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
 #  -string -flagsOSRD
-preplace port qsfp0_gt -pg 1 -lvl 5 -x 1640 -y 60 -defaultsOSRD
-preplace port qsfp1_gt -pg 1 -lvl 5 -x 1640 -y 120 -defaultsOSRD
-preplace port qsfp0_clk -pg 1 -lvl 5 -x 1640 -y 140 -defaultsOSRD -right
-preplace port qsfp1_clk -pg 1 -lvl 5 -x 1640 -y 100 -defaultsOSRD -right
-preplace port s_axi_dcmac -pg 1 -lvl 5 -x 1640 -y 80 -defaultsOSRD -right
-preplace port axis_in0 -pg 1 -lvl 0 -x 0 -y 580 -defaultsOSRD
-preplace port axis_in1 -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
-preplace port s_axi_ctl -pg 1 -lvl 0 -x 0 -y 380 -defaultsOSRD
-preplace port port-id_s_axi_aresetn -pg 1 -lvl 0 -x 0 -y 420 -defaultsOSRD
-preplace port port-id_axis_clk -pg 1 -lvl 0 -x 0 -y 180 -defaultsOSRD -left
-preplace port port-id_s_axi_clk -pg 1 -lvl 0 -x 0 -y 400 -defaultsOSRD
-preplace port port-id_axis0_resetn -pg 1 -lvl 0 -x 0 -y 600 -defaultsOSRD -left
-preplace port port-id_axis1_resetn -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD -left
-preplace inst dcmac_ip -pg 1 -lvl 4 -x 1400 -y 40 -swap {16 1 2 6 4 5 0 7 8 9 10 11 12 13 14 15 3 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 120 122 140 126 114 51 144 102 145 142 33 35 36 130 104 146 128 87 138 34 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 38 40 45 116 105 108 49 132 48 52 97 136 94 47 86 129 98 100 93 112 118 50 44 101 121 92 141 91 124 90 96 103 123 139 37 39 131 41 89 42 88 106 95 99 110 46 134 43 133 125 137 111 135 115 109 119 143 148 149 107 127 117 147 113} -defaultsOSRD -pinDir CLK_IN_D_0 right -pinY CLK_IN_D_0 100R -pinDir CLK_IN_D_1 right -pinY CLK_IN_D_1 60R -pinDir GT_Serial_0 right -pinY GT_Serial_0 20R -pinDir GT_Serial_1 right -pinY GT_Serial_1 80R -pinDir s_axi right -pinY s_axi 40R -pinBusDir ch0_rx_usr_clk_1 left -pinBusY ch0_rx_usr_clk_1 1180L -pinBusDir ch0_rx_usr_clk2_1 left -pinBusY ch0_rx_usr_clk2_1 1220L -pinDir gtpowergood_0 left -pinY gtpowergood_0 1580L -pinBusDir gt_txpostcursor left -pinBusY gt_txpostcursor 1300L -pinBusDir gt_txprecursor left -pinBusY gt_txprecursor 1060L -pinBusDir gt_txmaincursor left -pinBusY gt_txmaincursor 460L -pinBusDir ch0_tx_usr_clk2_0 left -pinBusY ch0_tx_usr_clk2_0 1660L -pinDir gt_rxcdrhold_1 left -pinY gt_rxcdrhold_1 820L -pinBusDir ch0_rx_usr_clk2_0 left -pinBusY ch0_rx_usr_clk2_0 1680L -pinBusDir gt_loopback_0 left -pinBusY gt_loopback_0 1620L -pinDir apb3clk_quad left -pinY apb3clk_quad 20L -pinDir s_axi_aresetn left -pinY s_axi_aresetn 60L -pinDir IBUFDS_ODIV2 left -pinY IBUFDS_ODIV2 80L -pinBusDir ch0_tx_usr_clk_0 left -pinBusY ch0_tx_usr_clk_0 1380L -pinBusDir ch0_tx_usr_clk_1 left -pinBusY ch0_tx_usr_clk_1 860L -pinBusDir ch0_tx_usr_clk2_1 left -pinBusY ch0_tx_usr_clk2_1 1700L -pinDir gtpowergood_1 left -pinY gtpowergood_1 1340L -pinBusDir gt_loopback_1 left -pinBusY gt_loopback_1 520L -pinBusDir ch0_rx_usr_clk_0 left -pinBusY ch0_rx_usr_clk_0 1540L -pinDir s_axi_aclk left -pinY s_axi_aclk 40L -pinBusDir rx_axis_tdata0 right -pinBusY rx_axis_tdata0 120R -pinBusDir rx_axis_tdata1 right -pinBusY rx_axis_tdata1 140R -pinBusDir rx_axis_tdata2 right -pinBusY rx_axis_tdata2 160R -pinBusDir rx_axis_tdata3 right -pinBusY rx_axis_tdata3 180R -pinDir rx_axis_tuser_ena0 right -pinY rx_axis_tuser_ena0 200R -pinDir rx_axis_tuser_ena1 right -pinY rx_axis_tuser_ena1 220R -pinDir rx_axis_tuser_ena2 right -pinY rx_axis_tuser_ena2 240R -pinDir rx_axis_tuser_ena3 right -pinY rx_axis_tuser_ena3 260R -pinDir rx_axis_tuser_eop0 right -pinY rx_axis_tuser_eop0 280R -pinDir rx_axis_tuser_eop1 right -pinY rx_axis_tuser_eop1 300R -pinDir rx_axis_tuser_eop2 right -pinY rx_axis_tuser_eop2 320R -pinDir rx_axis_tuser_eop3 right -pinY rx_axis_tuser_eop3 340R -pinDir rx_axis_tuser_err0 right -pinY rx_axis_tuser_err0 360R -pinDir rx_axis_tuser_err1 right -pinY rx_axis_tuser_err1 380R -pinDir rx_axis_tuser_err2 right -pinY rx_axis_tuser_err2 400R -pinDir rx_axis_tuser_err3 right -pinY rx_axis_tuser_err3 420R -pinBusDir rx_axis_tuser_mty0 right -pinBusY rx_axis_tuser_mty0 440R -pinBusDir rx_axis_tuser_mty1 right -pinBusY rx_axis_tuser_mty1 460R -pinBusDir rx_axis_tuser_mty2 right -pinBusY rx_axis_tuser_mty2 480R -pinBusDir rx_axis_tuser_mty3 right -pinBusY rx_axis_tuser_mty3 500R -pinDir rx_axis_tuser_sop0 right -pinY rx_axis_tuser_sop0 520R -pinDir rx_axis_tuser_sop1 right -pinY rx_axis_tuser_sop1 540R -pinDir rx_axis_tuser_sop2 right -pinY rx_axis_tuser_sop2 560R -pinDir rx_axis_tuser_sop3 right -pinY rx_axis_tuser_sop3 580R -pinDir rx_axis_tvalid_0 right -pinY rx_axis_tvalid_0 600R -pinDir rx_axis_tvalid_1 right -pinY rx_axis_tvalid_1 620R -pinBusDir rx_lane_aligner_fill right -pinBusY rx_lane_aligner_fill 640R -pinDir rx_lane_aligner_fill_start right -pinY rx_lane_aligner_fill_start 660R -pinDir rx_lane_aligner_fill_valid right -pinY rx_lane_aligner_fill_valid 680R -pinBusDir rx_pcs_tdm_stats_data right -pinBusY rx_pcs_tdm_stats_data 700R -pinDir rx_pcs_tdm_stats_start right -pinY rx_pcs_tdm_stats_start 720R -pinDir rx_pcs_tdm_stats_valid right -pinY rx_pcs_tdm_stats_valid 740R -pinBusDir rx_port_pm_rdy right -pinBusY rx_port_pm_rdy 760R -pinDir tx_axis_tready_0 left -pinY tx_axis_tready_0 180L -pinDir tx_axis_tready_1 left -pinY tx_axis_tready_1 240L -pinBusDir rx_alt_serdes_clk left -pinBusY rx_alt_serdes_clk 340L -pinDir rx_axi_clk left -pinY rx_axi_clk 1100L -pinDir rx_core_clk left -pinY rx_core_clk 880L -pinBusDir rx_flexif_clk left -pinBusY rx_flexif_clk 940L -pinDir rx_macif_clk left -pinY rx_macif_clk 420L -pinBusDir rx_serdes_clk left -pinBusY rx_serdes_clk 1420L -pinBusDir ts_clk left -pinBusY ts_clk 400L -pinBusDir tx_alt_serdes_clk left -pinBusY tx_alt_serdes_clk 480L -pinBusDir tx_axis_tdata0 left -pinBusY tx_axis_tdata0 720L -pinBusDir tx_axis_tdata1 left -pinBusY tx_axis_tdata1 1500L -pinBusDir tx_axis_tdata2 left -pinBusY tx_axis_tdata2 660L -pinBusDir tx_axis_tdata3 left -pinBusY tx_axis_tdata3 380L -pinDir tx_axis_tuser_ena0 left -pinY tx_axis_tuser_ena0 500L -pinDir tx_axis_tuser_ena1 left -pinY tx_axis_tuser_ena1 1360L -pinDir tx_axis_tuser_ena2 left -pinY tx_axis_tuser_ena2 740L -pinDir tx_axis_tuser_ena3 left -pinY tx_axis_tuser_ena3 780L -pinDir tx_axis_tuser_eop0 left -pinY tx_axis_tuser_eop0 640L -pinDir tx_axis_tuser_eop1 left -pinY tx_axis_tuser_eop1 1020L -pinDir tx_axis_tuser_eop2 left -pinY tx_axis_tuser_eop2 1140L -pinDir tx_axis_tuser_eop3 left -pinY tx_axis_tuser_eop3 440L -pinDir tx_axis_tuser_err0 left -pinY tx_axis_tuser_err0 320L -pinDir tx_axis_tuser_err1 left -pinY tx_axis_tuser_err1 800L -pinDir tx_axis_tuser_err2 left -pinY tx_axis_tuser_err2 1200L -pinDir tx_axis_tuser_err3 left -pinY tx_axis_tuser_err3 620L -pinBusDir tx_axis_tuser_mty0 left -pinBusY tx_axis_tuser_mty0 1600L -pinBusDir tx_axis_tuser_mty1 left -pinBusY tx_axis_tuser_mty1 600L -pinBusDir tx_axis_tuser_mty2 left -pinBusY tx_axis_tuser_mty2 1260L -pinBusDir tx_axis_tuser_mty3 left -pinBusY tx_axis_tuser_mty3 580L -pinDir tx_axis_tuser_sop0 left -pinY tx_axis_tuser_sop0 700L -pinDir tx_axis_tuser_sop1 left -pinY tx_axis_tuser_sop1 840L -pinDir tx_axis_tuser_sop2 left -pinY tx_axis_tuser_sop2 1240L -pinDir tx_axis_tuser_sop3 left -pinY tx_axis_tuser_sop3 1560L -pinDir tx_axis_tvalid_0 left -pinY tx_axis_tvalid_0 160L -pinDir tx_axis_tvalid_1 left -pinY tx_axis_tvalid_1 220L -pinDir tx_axi_clk left -pinY tx_axi_clk 1400L -pinDir tx_core_clk left -pinY tx_core_clk 260L -pinBusDir tx_flexif_clk left -pinBusY tx_flexif_clk 560L -pinDir tx_macif_clk left -pinY tx_macif_clk 280L -pinBusDir tx_serdes_clk left -pinBusY tx_serdes_clk 540L -pinDir gtpowergood_in left -pinY gtpowergood_in 900L -pinDir gt_reset_all_in left -pinY gt_reset_all_in 680L -pinDir gt_reset_tx_datapath_in_0 left -pinY gt_reset_tx_datapath_in_0 760L -pinDir gt_reset_rx_datapath_in_0 left -pinY gt_reset_rx_datapath_in_0 980L -pinDir gt_reset_tx_datapath_in_1 left -pinY gt_reset_tx_datapath_in_1 360L -pinDir gt_reset_rx_datapath_in_1 left -pinY gt_reset_rx_datapath_in_1 1460L -pinDir gt_rxcdrhold_0 left -pinY gt_rxcdrhold_0 300L -pinDir gt_tx_reset_done_out_0 left -pinY gt_tx_reset_done_out_0 1440L -pinDir gt_tx_reset_done_out_5 left -pinY gt_tx_reset_done_out_5 1280L -pinDir gt_rx_reset_done_out_0 left -pinY gt_rx_reset_done_out_0 1520L -pinDir gt_tx_reset_done_out_1 left -pinY gt_tx_reset_done_out_1 1000L -pinDir gt_tx_reset_done_out_3 left -pinY gt_tx_reset_done_out_3 1480L -pinDir gt_tx_reset_done_out_4 left -pinY gt_tx_reset_done_out_4 1080L -pinDir gt_rx_reset_done_out_2 left -pinY gt_rx_reset_done_out_2 960L -pinDir gt_tx_reset_done_out_6 left -pinY gt_tx_reset_done_out_6 1160L -pinDir gt_rx_reset_done_out_3 left -pinY gt_rx_reset_done_out_3 1640L -pinDir gt_rx_reset_done_out_4 left -pinY gt_rx_reset_done_out_4 1740L -pinDir gt_rx_reset_done_out_1 left -pinY gt_rx_reset_done_out_1 1760L -pinDir gt_tx_reset_done_out_7 left -pinY gt_tx_reset_done_out_7 920L -pinDir gt_tx_reset_done_out_2 left -pinY gt_tx_reset_done_out_2 1320L -pinDir gt_rx_reset_done_out_7 left -pinY gt_rx_reset_done_out_7 1120L -pinDir gt_rx_reset_done_out_5 left -pinY gt_rx_reset_done_out_5 1720L -pinDir gt_rx_reset_done_out_6 left -pinY gt_rx_reset_done_out_6 1040L
-preplace inst dcmac_helper -pg 1 -lvl 3 -x 940 -y 160 -swap {6 1 2 3 4 5 0 7 8 9 10 11 12 13 14 15 16 17 19 18 20 22 21 73 74 51 59 26 70 87 62 41 34 27 33 94 76 86 58 101 78 100 102 88 40 30 37 96 84 60 23 24 53 31 64 90 47 93 105 63 99 104 103 67 71 89 65 83 91 69 81 75 61 25 50 49 92 38 85 48 57 45 66 97 43 29 55 46 32 52 54 79 95 72 35 80 42 77 44 98 39 28 56 36 68 82} -defaultsOSRD -pinDir axis_in0 left -pinY axis_in0 120L -pinDir axis_in1 left -pinY axis_in1 20L -pinDir tx_axis_0 right -pinY tx_axis_0 20R -pinDir tx_axis_0.tx_axis_tvalid_0 right -pinY tx_axis_0.tx_axis_tvalid_0 40R -pinDir tx_axis_0.tx_axis_tready_0 right -pinY tx_axis_0.tx_axis_tready_0 60R -pinDir tx_axis_1 right -pinY tx_axis_1 80R -pinDir tx_axis_1.tx_axis_tvalid_1 right -pinY tx_axis_1.tx_axis_tvalid_1 100R -pinDir tx_axis_1.tx_axis_tready_1 right -pinY tx_axis_1.tx_axis_tready_1 120R -pinDir axis0_resetn left -pinY axis0_resetn 160L -pinDir axis1_resetn left -pinY axis1_resetn 140L -pinDir s_axi_clk left -pinY s_axi_clk 180L -pinBusDir gt_loopback_in left -pinBusY gt_loopback_in 220L -pinDir axis_clk_in left -pinY axis_clk_in 200L -pinDir core_clk_in left -pinY core_clk_in 560L -pinDir ts_clk_in left -pinY ts_clk_in 580L -pinDir clkwiz_locked left -pinY clkwiz_locked 360L -pinDir rx_core_clk right -pinY rx_core_clk 760R -pinDir tx_core_clk right -pinY tx_core_clk 140R -pinDir rx_axi_clk right -pinY rx_axi_clk 980R -pinDir tx_axi_clk right -pinY tx_axi_clk 1280R -pinBusDir rx_flexif_clk right -pinBusY rx_flexif_clk 820R -pinBusDir tx_flexif_clk right -pinBusY tx_flexif_clk 440R -pinDir rx_macif_clk right -pinY rx_macif_clk 300R -pinDir tx_macif_clk right -pinY tx_macif_clk 160R -pinBusDir ts_clk right -pinBusY ts_clk 280R -pinDir ch0_rx_usr_clk_0 right -pinY ch0_rx_usr_clk_0 1420R -pinDir ch0_rx_usr_clk_1 right -pinY ch0_rx_usr_clk_1 1060R -pinDir ch0_tx_usr_clk_0 right -pinY ch0_tx_usr_clk_0 1260R -pinDir ch0_tx_usr_clk_1 right -pinY ch0_tx_usr_clk_1 740R -pinDir ch0_rx_usr_clk2_0 right -pinY ch0_rx_usr_clk2_0 1560R -pinDir ch0_rx_usr_clk2_1 right -pinY ch0_rx_usr_clk2_1 1100R -pinDir ch0_tx_usr_clk2_0 right -pinY ch0_tx_usr_clk2_0 1540R -pinDir ch0_tx_usr_clk2_1 right -pinY ch0_tx_usr_clk2_1 1580R -pinBusDir rx_serdes_clk right -pinBusY rx_serdes_clk 1300R -pinBusDir tx_serdes_clk right -pinBusY tx_serdes_clk 420R -pinBusDir rx_alt_serdes_clk right -pinBusY rx_alt_serdes_clk 220R -pinBusDir tx_alt_serdes_clk right -pinBusY tx_alt_serdes_clk 360R -pinDir gtpowergood_0 right -pinY gtpowergood_0 1460R -pinDir gtpowergood_1 right -pinY gtpowergood_1 1220R -pinDir gtpowergood_in right -pinY gtpowergood_in 780R -pinBusDir user_gt_reset_rx_datapath left -pinBusY user_gt_reset_rx_datapath 240L -pinDir user_gt_reset_all left -pinY user_gt_reset_all 260L -pinDir gt_reset_tx_datapath_in_0 right -pinY gt_reset_tx_datapath_in_0 640R -pinDir gt_reset_tx_datapath_in_1 right -pinY gt_reset_tx_datapath_in_1 240R -pinDir gt_reset_rx_datapath_in_0 right -pinY gt_reset_rx_datapath_in_0 860R -pinDir gt_reset_rx_datapath_in_1 right -pinY gt_reset_rx_datapath_in_1 1340R -pinDir gt_reset_all_in right -pinY gt_reset_all_in 560R -pinDir gt_rx_reset_done_out_0 right -pinY gt_rx_reset_done_out_0 1400R -pinDir gt_rx_reset_done_out_1 right -pinY gt_rx_reset_done_out_1 1640R -pinDir gt_rx_reset_done_out_2 right -pinY gt_rx_reset_done_out_2 840R -pinDir gt_rx_reset_done_out_3 right -pinY gt_rx_reset_done_out_3 1520R -pinDir gt_rx_reset_done_out_4 right -pinY gt_rx_reset_done_out_4 1620R -pinDir gt_rx_reset_done_out_5 right -pinY gt_rx_reset_done_out_5 1600R -pinDir gt_rx_reset_done_out_6 right -pinY gt_rx_reset_done_out_6 920R -pinDir gt_rx_reset_done_out_7 right -pinY gt_rx_reset_done_out_7 1000R -pinDir gt_tx_reset_done_out_0 right -pinY gt_tx_reset_done_out_0 1320R -pinDir gt_tx_reset_done_out_1 right -pinY gt_tx_reset_done_out_1 880R -pinDir gt_tx_reset_done_out_2 right -pinY gt_tx_reset_done_out_2 1200R -pinDir gt_tx_reset_done_out_3 right -pinY gt_tx_reset_done_out_3 1360R -pinDir gt_tx_reset_done_out_4 right -pinY gt_tx_reset_done_out_4 960R -pinDir gt_tx_reset_done_out_5 right -pinY gt_tx_reset_done_out_5 1160R -pinDir gt_tx_reset_done_out_6 right -pinY gt_tx_reset_done_out_6 1040R -pinDir gt_tx_reset_done_out_7 right -pinY gt_tx_reset_done_out_7 800R -pinBusDir gt_rx_reset_done left -pinBusY gt_rx_reset_done 280L -pinBusDir gt_tx_reset_done left -pinBusY gt_tx_reset_done 300L -pinBusDir tx_axis_tdata0 right -pinBusY tx_axis_tdata0 600R -pinBusDir tx_axis_tdata1 right -pinBusY tx_axis_tdata1 1380R -pinDir tx_axis_tuser_ena0 right -pinY tx_axis_tuser_ena0 380R -pinDir tx_axis_tuser_ena1 right -pinY tx_axis_tuser_ena1 1240R -pinDir tx_axis_tuser_sop0 right -pinY tx_axis_tuser_sop0 580R -pinDir tx_axis_tuser_sop1 right -pinY tx_axis_tuser_sop1 720R -pinDir tx_axis_tuser_eop0 right -pinY tx_axis_tuser_eop0 520R -pinDir tx_axis_tuser_eop1 right -pinY tx_axis_tuser_eop1 900R -pinBusDir tx_axis_tuser_mty0 right -pinBusY tx_axis_tuser_mty0 1480R -pinBusDir tx_axis_tuser_mty1 right -pinBusY tx_axis_tuser_mty1 480R -pinDir tx_axis_tuser_err0 right -pinY tx_axis_tuser_err0 200R -pinDir tx_axis_tuser_err1 right -pinY tx_axis_tuser_err1 680R -pinBusDir tx_axis_tdata2 right -pinBusY tx_axis_tdata2 540R -pinBusDir tx_axis_tdata3 right -pinBusY tx_axis_tdata3 260R -pinDir tx_axis_tuser_ena2 right -pinY tx_axis_tuser_ena2 620R -pinDir tx_axis_tuser_ena3 right -pinY tx_axis_tuser_ena3 660R -pinDir tx_axis_tuser_sop2 right -pinY tx_axis_tuser_sop2 1120R -pinDir tx_axis_tuser_sop3 right -pinY tx_axis_tuser_sop3 1440R -pinDir tx_axis_tuser_eop2 right -pinY tx_axis_tuser_eop2 1020R -pinDir tx_axis_tuser_eop3 right -pinY tx_axis_tuser_eop3 320R -pinBusDir tx_axis_tuser_mty2 right -pinBusY tx_axis_tuser_mty2 1140R -pinBusDir tx_axis_tuser_mty3 right -pinBusY tx_axis_tuser_mty3 460R -pinDir tx_axis_tuser_err2 right -pinY tx_axis_tuser_err2 1080R -pinDir tx_axis_tuser_err3 right -pinY tx_axis_tuser_err3 500R -pinBusDir gt_loopback_0 right -pinBusY gt_loopback_0 1500R -pinBusDir gt_loopback_1 right -pinBusY gt_loopback_1 400R -pinDir gt_rxcdrhold_0 right -pinY gt_rxcdrhold_0 180R -pinDir gt_rxcdrhold_1 right -pinY gt_rxcdrhold_1 700R -pinBusDir gt_txmaincursor right -pinBusY gt_txmaincursor 340R -pinBusDir gt_txprecursor right -pinBusY gt_txprecursor 940R -pinBusDir gt_txpostcursor right -pinBusY gt_txpostcursor 1180R
-preplace inst clk_wizard -pg 1 -lvl 1 -x 110 -y 640 -swap {1 2 3 0 4} -defaultsOSRD -pinDir locked right -pinY locked 40R -pinDir clk_in1 right -pinY clk_in1 60R -pinDir core_clk right -pinY core_clk 80R -pinDir axis_clk right -pinY axis_clk 20R -pinDir ts_clk right -pinY ts_clk 100R
-preplace inst axis_register_slice_0 -pg 1 -lvl 2 -x 430 -y 560 -defaultsOSRD -pinDir S_AXIS left -pinY S_AXIS 20L -pinDir M_AXIS right -pinY M_AXIS 20R -pinDir aclk left -pinY aclk 40L -pinDir aresetn left -pinY aresetn 60L
-preplace inst axis_register_slice_1 -pg 1 -lvl 2 -x 430 -y 120 -swap {0 1 2 3 4 5 6 7 8 9 10 11 13 12} -defaultsOSRD -pinDir S_AXIS left -pinY S_AXIS 20L -pinDir M_AXIS right -pinY M_AXIS 60R -pinDir aclk left -pinY aclk 60L -pinDir aresetn left -pinY aresetn 40L
-preplace inst dcmac_ctrl -pg 1 -lvl 2 -x 430 -y 360 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 24 22 23 25 26} -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 20L -pinDir clk left -pinY clk 40L -pinDir resetn left -pinY resetn 60L -pinDir gt_reset_all right -pinY gt_reset_all 60R -pinBusDir gt_loopback right -pinBusY gt_loopback 20R -pinBusDir gt_reset_rx_datapath right -pinBusY gt_reset_rx_datapath 40R -pinBusDir rx_reset_done right -pinBusY rx_reset_done 80R -pinBusDir tx_reset_done right -pinBusY tx_reset_done 100R
-preplace netloc clk_wizard_axis_clk 1 0 3 NJ 180 220 320 600
-preplace netloc clk_wizard_core_clk1 1 1 2 NJ 720 N
-preplace netloc clk_wizard_locked 1 1 2 260J 520 N
-preplace netloc clk_wizard_ts_clk1 1 1 2 NJ 740 N
-preplace netloc dcmac_ctrl_0_gt_reset_all 1 2 1 N 420
-preplace netloc dcmac_ctrl_gt_loopback 1 2 1 N 380
-preplace netloc dcmac_ctrl_gt_reset_rx_datapath 1 2 1 N 400
-preplace netloc dcmac_helper_axis0_resetn 1 0 3 NJ 600 200 280 620
-preplace netloc dcmac_helper_axis1_resetn 1 0 3 NJ 200 260 240 700
-preplace netloc dcmac_helper_gt_reset_tx_datapath_in_0 1 3 1 N 800
-preplace netloc dcmac_helper_gt_rx_reset_done 1 2 1 N 440
-preplace netloc dcmac_helper_gt_tx_reset_done 1 2 1 N 460
-preplace netloc dcmac_helper_gtpowergood_in 1 3 1 N 940
-preplace netloc dcmac_helper_rx_alt_serdes_clk 1 3 1 N 380
-preplace netloc dcmac_helper_rx_axi_clk 1 3 1 N 1140
-preplace netloc dcmac_helper_rx_core_clk 1 3 1 N 920
-preplace netloc dcmac_helper_rx_macif_clk 1 3 1 N 460
-preplace netloc dcmac_helper_rx_serdes_clk 1 3 1 N 1460
-preplace netloc dcmac_helper_tx_alt_serdes_clk 1 3 1 N 520
-preplace netloc dcmac_helper_tx_axi_clk 1 3 1 N 1440
-preplace netloc dcmac_helper_tx_macif_clk 1 3 1 N 320
-preplace netloc dcmac_ip_IBUFDS_ODIV2 1 1 3 NJ 700 660J 120 N
+preplace port qsfp0_gt -pg 1 -lvl 6 -x 1960 -y 240 -defaultsOSRD
+preplace port qsfp1_gt -pg 1 -lvl 6 -x 1960 -y 260 -defaultsOSRD
+preplace port qsfp0_clk -pg 1 -lvl 6 -x 1960 -y 200 -defaultsOSRD -right
+preplace port qsfp1_clk -pg 1 -lvl 6 -x 1960 -y 220 -defaultsOSRD -right
+preplace port s_axi_dcmac -pg 1 -lvl 6 -x 1960 -y 280 -defaultsOSRD -right
+preplace port axis_in0 -pg 1 -lvl 0 -x 0 -y 660 -defaultsOSRD
+preplace port axis_in1 -pg 1 -lvl 0 -x 0 -y 520 -defaultsOSRD
+preplace port s_axi_ctl -pg 1 -lvl 0 -x 0 -y 340 -defaultsOSRD
+preplace port port-id_s_axi_aresetn -pg 1 -lvl 0 -x 0 -y 20 -defaultsOSRD
+preplace port port-id_axis_clk -pg 1 -lvl 0 -x 0 -y 540 -defaultsOSRD -left
+preplace port port-id_s_axi_clk -pg 1 -lvl 0 -x 0 -y 40 -defaultsOSRD
+preplace port port-id_axis0_resetn -pg 1 -lvl 0 -x 0 -y 680 -defaultsOSRD -left
+preplace port port-id_axis1_resetn -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD -left
+preplace inst dcmac_ip -pg 1 -lvl 4 -x 1540 -y 180 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 99 104 116 114 108 51 124 96 128 142 35 34 33 136 79 130 109 81 115 36 56 58 53 54 60 61 57 59 68 69 64 66 67 63 70 72 65 55 74 75 62 73 76 77 71 78 38 40 45 140 100 105 49 134 48 52 94 120 131 47 80 101 129 90 88 122 117 50 44 95 110 87 137 86 112 84 92 98 138 132 37 39 125 41 83 42 82 102 91 126 106 46 118 43 133 113 107 89 111 123 127 97 119 121 135 103 139 93 141 85} -defaultsOSRD -pinDir CLK_IN_D_0 right -pinY CLK_IN_D_0 20R -pinDir CLK_IN_D_1 right -pinY CLK_IN_D_1 40R -pinDir GT_Serial_0 right -pinY GT_Serial_0 60R -pinDir GT_Serial_1 right -pinY GT_Serial_1 80R -pinDir s_axi right -pinY s_axi 100R -pinBusDir ch0_rx_usr_clk_1 left -pinBusY ch0_rx_usr_clk_1 960L -pinBusDir ch0_rx_usr_clk2_1 left -pinBusY ch0_rx_usr_clk2_1 1060L -pinDir gtpowergood_0 left -pinY gtpowergood_0 1300L -pinBusDir gt_txpostcursor left -pinBusY gt_txpostcursor 1260L -pinBusDir gt_txprecursor left -pinBusY gt_txprecursor 1140L -pinBusDir gt_txmaincursor left -pinBusY gt_txmaincursor 520L -pinBusDir ch0_tx_usr_clk2_0 left -pinBusY ch0_tx_usr_clk2_0 1460L -pinDir gt_rxcdrhold_1 left -pinY gt_rxcdrhold_1 900L -pinBusDir ch0_rx_usr_clk2_0 left -pinBusY ch0_rx_usr_clk2_0 1540L -pinBusDir gt_loopback_0 left -pinBusY gt_loopback_0 1820L -pinDir apb3clk_quad left -pinY apb3clk_quad 120L -pinDir s_axi_aresetn left -pinY s_axi_aresetn 40L -pinDir IBUFDS_ODIV2 left -pinY IBUFDS_ODIV2 20L -pinBusDir ch0_tx_usr_clk_0 left -pinBusY ch0_tx_usr_clk_0 1700L -pinBusDir ch0_tx_usr_clk_1 left -pinBusY ch0_tx_usr_clk_1 560L -pinBusDir ch0_tx_usr_clk2_1 left -pinBusY ch0_tx_usr_clk2_1 1580L -pinDir gtpowergood_1 left -pinY gtpowergood_1 1160L -pinBusDir gt_loopback_1 left -pinBusY gt_loopback_1 600L -pinBusDir ch0_rx_usr_clk_0 left -pinBusY ch0_rx_usr_clk_0 1280L -pinDir s_axi_aclk left -pinY s_axi_aclk 140L -pinBusDir rx_axis_tdata0 right -pinBusY rx_axis_tdata0 220R -pinBusDir rx_axis_tdata1 right -pinBusY rx_axis_tdata1 260R -pinBusDir rx_axis_tdata2 right -pinBusY rx_axis_tdata2 120R -pinBusDir rx_axis_tdata3 right -pinBusY rx_axis_tdata3 140R -pinDir rx_axis_tuser_ena0 right -pinY rx_axis_tuser_ena0 300R -pinDir rx_axis_tuser_ena1 right -pinY rx_axis_tuser_ena1 320R -pinDir rx_axis_tuser_ena2 right -pinY rx_axis_tuser_ena2 240R -pinDir rx_axis_tuser_ena3 right -pinY rx_axis_tuser_ena3 280R -pinDir rx_axis_tuser_eop0 right -pinY rx_axis_tuser_eop0 460R -pinDir rx_axis_tuser_eop1 right -pinY rx_axis_tuser_eop1 480R -pinDir rx_axis_tuser_eop2 right -pinY rx_axis_tuser_eop2 380R -pinDir rx_axis_tuser_eop3 right -pinY rx_axis_tuser_eop3 420R -pinDir rx_axis_tuser_err0 right -pinY rx_axis_tuser_err0 440R -pinDir rx_axis_tuser_err1 right -pinY rx_axis_tuser_err1 360R -pinDir rx_axis_tuser_err2 right -pinY rx_axis_tuser_err2 500R -pinDir rx_axis_tuser_err3 right -pinY rx_axis_tuser_err3 540R -pinBusDir rx_axis_tuser_mty0 right -pinBusY rx_axis_tuser_mty0 400R -pinBusDir rx_axis_tuser_mty1 right -pinBusY rx_axis_tuser_mty1 200R -pinBusDir rx_axis_tuser_mty2 right -pinBusY rx_axis_tuser_mty2 580R -pinBusDir rx_axis_tuser_mty3 right -pinBusY rx_axis_tuser_mty3 600R -pinDir rx_axis_tuser_sop0 right -pinY rx_axis_tuser_sop0 340R -pinDir rx_axis_tuser_sop1 right -pinY rx_axis_tuser_sop1 560R -pinDir rx_axis_tuser_sop2 right -pinY rx_axis_tuser_sop2 620R -pinDir rx_axis_tuser_sop3 right -pinY rx_axis_tuser_sop3 640R -pinDir rx_axis_tvalid_0 right -pinY rx_axis_tvalid_0 520R -pinDir rx_axis_tvalid_1 right -pinY rx_axis_tvalid_1 660R -pinDir tx_axis_tready_0 left -pinY tx_axis_tready_0 220L -pinDir tx_axis_tready_1 left -pinY tx_axis_tready_1 280L -pinBusDir rx_alt_serdes_clk left -pinBusY rx_alt_serdes_clk 400L -pinDir rx_axi_clk left -pinY rx_axi_clk 1780L -pinDir rx_core_clk left -pinY rx_core_clk 980L -pinBusDir rx_flexif_clk left -pinBusY rx_flexif_clk 1080L -pinDir rx_macif_clk left -pinY rx_macif_clk 480L -pinBusDir rx_serdes_clk left -pinBusY rx_serdes_clk 1660L -pinBusDir ts_clk left -pinBusY ts_clk 460L -pinBusDir tx_alt_serdes_clk left -pinBusY tx_alt_serdes_clk 540L -pinBusDir tx_axis_tdata0 left -pinBusY tx_axis_tdata0 860L -pinBusDir tx_axis_tdata1 left -pinBusY tx_axis_tdata1 1380L -pinBusDir tx_axis_tdata2 left -pinBusY tx_axis_tdata2 1600L -pinBusDir tx_axis_tdata3 left -pinBusY tx_axis_tdata3 440L -pinDir tx_axis_tuser_ena0 left -pinY tx_axis_tuser_ena0 580L -pinDir tx_axis_tuser_ena1 left -pinY tx_axis_tuser_ena1 1000L -pinDir tx_axis_tuser_ena2 left -pinY tx_axis_tuser_ena2 1560L -pinDir tx_axis_tuser_ena3 left -pinY tx_axis_tuser_ena3 780L -pinDir tx_axis_tuser_eop0 left -pinY tx_axis_tuser_eop0 740L -pinDir tx_axis_tuser_eop1 left -pinY tx_axis_tuser_eop1 1420L -pinDir tx_axis_tuser_eop2 left -pinY tx_axis_tuser_eop2 1320L -pinDir tx_axis_tuser_eop3 left -pinY tx_axis_tuser_eop3 500L -pinDir tx_axis_tuser_err0 left -pinY tx_axis_tuser_err0 380L -pinDir tx_axis_tuser_err1 left -pinY tx_axis_tuser_err1 880L -pinDir tx_axis_tuser_err2 left -pinY tx_axis_tuser_err2 1180L -pinDir tx_axis_tuser_err3 left -pinY tx_axis_tuser_err3 720L -pinBusDir tx_axis_tuser_mty0 left -pinBusY tx_axis_tuser_mty0 1720L -pinBusDir tx_axis_tuser_mty1 left -pinBusY tx_axis_tuser_mty1 700L -pinBusDir tx_axis_tuser_mty2 left -pinBusY tx_axis_tuser_mty2 1220L -pinBusDir tx_axis_tuser_mty3 left -pinBusY tx_axis_tuser_mty3 660L -pinDir tx_axis_tuser_sop0 left -pinY tx_axis_tuser_sop0 820L -pinDir tx_axis_tuser_sop1 left -pinY tx_axis_tuser_sop1 940L -pinDir tx_axis_tuser_sop2 left -pinY tx_axis_tuser_sop2 1740L -pinDir tx_axis_tuser_sop3 left -pinY tx_axis_tuser_sop3 1620L -pinDir tx_axis_tvalid_0 left -pinY tx_axis_tvalid_0 200L -pinDir tx_axis_tvalid_1 left -pinY tx_axis_tvalid_1 260L -pinDir tx_axi_clk left -pinY tx_axi_clk 1480L -pinDir tx_core_clk left -pinY tx_core_clk 320L -pinBusDir tx_flexif_clk left -pinBusY tx_flexif_clk 640L -pinDir tx_macif_clk left -pinY tx_macif_clk 340L -pinBusDir tx_serdes_clk left -pinBusY tx_serdes_clk 620L -pinDir gtpowergood_in left -pinY gtpowergood_in 1020L -pinDir gt_reset_all_in left -pinY gt_reset_all_in 800L -pinDir gt_reset_tx_datapath_in_0 left -pinY gt_reset_tx_datapath_in_0 1500L -pinDir gt_reset_rx_datapath_in_0 left -pinY gt_reset_rx_datapath_in_0 1100L -pinDir gt_reset_tx_datapath_in_1 left -pinY gt_reset_tx_datapath_in_1 420L -pinDir gt_reset_rx_datapath_in_1 left -pinY gt_reset_rx_datapath_in_1 1340L -pinDir gt_rxcdrhold_0 left -pinY gt_rxcdrhold_0 360L -pinDir gt_tx_reset_done_out_0 left -pinY gt_tx_reset_done_out_0 1640L -pinDir gt_tx_reset_done_out_5 left -pinY gt_tx_reset_done_out_5 1240L -pinDir gt_rx_reset_done_out_0 left -pinY gt_rx_reset_done_out_0 1120L -pinDir gt_tx_reset_done_out_1 left -pinY gt_tx_reset_done_out_1 760L -pinDir gt_tx_reset_done_out_3 left -pinY gt_tx_reset_done_out_3 1200L -pinDir gt_tx_reset_done_out_4 left -pinY gt_tx_reset_done_out_4 1440L -pinDir gt_rx_reset_done_out_2 left -pinY gt_rx_reset_done_out_2 1520L -pinDir gt_tx_reset_done_out_6 left -pinY gt_tx_reset_done_out_6 920L -pinDir gt_rx_reset_done_out_3 left -pinY gt_rx_reset_done_out_3 1360L -pinDir gt_rx_reset_done_out_4 left -pinY gt_rx_reset_done_out_4 1400L -pinDir gt_rx_reset_done_out_1 left -pinY gt_rx_reset_done_out_1 1680L -pinDir gt_tx_reset_done_out_7 left -pinY gt_tx_reset_done_out_7 1040L -pinDir gt_tx_reset_done_out_2 left -pinY gt_tx_reset_done_out_2 1760L -pinDir gt_rx_reset_done_out_7 left -pinY gt_rx_reset_done_out_7 840L -pinDir gt_rx_reset_done_out_5 left -pinY gt_rx_reset_done_out_5 1800L -pinDir gt_rx_reset_done_out_6 left -pinY gt_rx_reset_done_out_6 680L
+preplace inst dcmac_helper -pg 1 -lvl 3 -x 1080 -y 340 -swap {6 1 2 3 4 5 0 7 8 9 10 11 12 13 14 15 16 17 18 23 24 25 21 20 22 19 61 26 103 88 66 42 34 27 33 78 60 99 38 91 65 87 93 97 41 30 37 79 70 63 50 51 89 31 67 81 52 68 98 90 82 84 104 44 54 96 48 102 72 86 76 58 64 73 74 55 83 39 62 53 59 47 85 100 45 29 56 94 32 92 49 101 95 80 35 75 43 71 46 105 40 28 57 36 69 77} -defaultsOSRD -pinDir axis_in0 left -pinY axis_in0 200L -pinDir axis_in1 left -pinY axis_in1 180L -pinDir tx_axis_0 right -pinY tx_axis_0 20R -pinDir tx_axis_0.tx_axis_tvalid_0 right -pinY tx_axis_0.tx_axis_tvalid_0 40R -pinDir tx_axis_0.tx_axis_tready_0 right -pinY tx_axis_0.tx_axis_tready_0 60R -pinDir tx_axis_1 right -pinY tx_axis_1 80R -pinDir tx_axis_1.tx_axis_tvalid_1 right -pinY tx_axis_1.tx_axis_tvalid_1 100R -pinDir tx_axis_1.tx_axis_tready_1 right -pinY tx_axis_1.tx_axis_tready_1 120R -pinDir axis0_resetn right -pinY axis0_resetn 140R -pinDir axis1_resetn left -pinY axis1_resetn 300L -pinDir s_axi_clk left -pinY s_axi_clk 320L -pinBusDir gt_loopback_in left -pinBusY gt_loopback_in 340L -pinDir axis_clk_in left -pinY axis_clk_in 260L -pinDir core_clk_in left -pinY core_clk_in 240L -pinDir ts_clk_in left -pinY ts_clk_in 280L -pinDir clkwiz_locked left -pinY clkwiz_locked 220L -pinDir rx_core_clk right -pinY rx_core_clk 820R -pinDir tx_core_clk right -pinY tx_core_clk 160R -pinDir rx_axi_clk right -pinY rx_axi_clk 1620R -pinDir tx_axi_clk right -pinY tx_axi_clk 1320R -pinBusDir rx_flexif_clk right -pinBusY rx_flexif_clk 920R -pinBusDir tx_flexif_clk right -pinBusY tx_flexif_clk 480R -pinDir rx_macif_clk right -pinY rx_macif_clk 320R -pinDir tx_macif_clk right -pinY tx_macif_clk 180R -pinBusDir ts_clk right -pinBusY ts_clk 300R -pinDir ch0_rx_usr_clk_0 right -pinY ch0_rx_usr_clk_0 1120R -pinDir ch0_rx_usr_clk_1 right -pinY ch0_rx_usr_clk_1 800R -pinDir ch0_tx_usr_clk_0 right -pinY ch0_tx_usr_clk_0 1540R -pinDir ch0_tx_usr_clk_1 right -pinY ch0_tx_usr_clk_1 400R -pinDir ch0_rx_usr_clk2_0 right -pinY ch0_rx_usr_clk2_0 1380R -pinDir ch0_rx_usr_clk2_1 right -pinY ch0_rx_usr_clk2_1 900R -pinDir ch0_tx_usr_clk2_0 right -pinY ch0_tx_usr_clk2_0 1300R -pinDir ch0_tx_usr_clk2_1 right -pinY ch0_tx_usr_clk2_1 1420R -pinBusDir rx_serdes_clk right -pinBusY rx_serdes_clk 1500R -pinBusDir tx_serdes_clk right -pinBusY tx_serdes_clk 460R -pinBusDir rx_alt_serdes_clk right -pinBusY rx_alt_serdes_clk 240R -pinBusDir tx_alt_serdes_clk right -pinBusY tx_alt_serdes_clk 380R -pinDir gtpowergood_0 right -pinY gtpowergood_0 1140R -pinDir gtpowergood_1 right -pinY gtpowergood_1 1000R -pinDir gtpowergood_in right -pinY gtpowergood_in 860R -pinBusDir user_gt_reset_rx_datapath left -pinBusY user_gt_reset_rx_datapath 360L -pinDir user_gt_reset_all left -pinY user_gt_reset_all 380L -pinDir gt_reset_tx_datapath_in_0 right -pinY gt_reset_tx_datapath_in_0 1340R -pinDir gt_reset_tx_datapath_in_1 right -pinY gt_reset_tx_datapath_in_1 260R -pinDir gt_reset_rx_datapath_in_0 right -pinY gt_reset_rx_datapath_in_0 940R -pinDir gt_reset_rx_datapath_in_1 right -pinY gt_reset_rx_datapath_in_1 1180R -pinDir gt_reset_all_in right -pinY gt_reset_all_in 640R -pinDir gt_rx_reset_done_out_0 right -pinY gt_rx_reset_done_out_0 960R -pinDir gt_rx_reset_done_out_1 right -pinY gt_rx_reset_done_out_1 1520R -pinDir gt_rx_reset_done_out_2 right -pinY gt_rx_reset_done_out_2 1360R -pinDir gt_rx_reset_done_out_3 right -pinY gt_rx_reset_done_out_3 1200R -pinDir gt_rx_reset_done_out_4 right -pinY gt_rx_reset_done_out_4 1240R -pinDir gt_rx_reset_done_out_5 right -pinY gt_rx_reset_done_out_5 1640R -pinDir gt_rx_reset_done_out_6 right -pinY gt_rx_reset_done_out_6 520R -pinDir gt_rx_reset_done_out_7 right -pinY gt_rx_reset_done_out_7 680R -pinDir gt_tx_reset_done_out_0 right -pinY gt_tx_reset_done_out_0 1480R -pinDir gt_tx_reset_done_out_1 right -pinY gt_tx_reset_done_out_1 600R -pinDir gt_tx_reset_done_out_2 right -pinY gt_tx_reset_done_out_2 1600R -pinDir gt_tx_reset_done_out_3 right -pinY gt_tx_reset_done_out_3 1040R -pinDir gt_tx_reset_done_out_4 right -pinY gt_tx_reset_done_out_4 1280R -pinDir gt_tx_reset_done_out_5 right -pinY gt_tx_reset_done_out_5 1080R -pinDir gt_tx_reset_done_out_6 right -pinY gt_tx_reset_done_out_6 760R -pinDir gt_tx_reset_done_out_7 right -pinY gt_tx_reset_done_out_7 880R -pinBusDir gt_rx_reset_done left -pinBusY gt_rx_reset_done 400L -pinBusDir gt_tx_reset_done left -pinBusY gt_tx_reset_done 420L -pinBusDir tx_axis_tdata0 right -pinBusY tx_axis_tdata0 700R -pinBusDir tx_axis_tdata1 right -pinBusY tx_axis_tdata1 1220R -pinDir tx_axis_tuser_ena0 right -pinY tx_axis_tuser_ena0 420R -pinDir tx_axis_tuser_ena1 right -pinY tx_axis_tuser_ena1 840R -pinDir tx_axis_tuser_sop0 right -pinY tx_axis_tuser_sop0 660R -pinDir tx_axis_tuser_sop1 right -pinY tx_axis_tuser_sop1 780R -pinDir tx_axis_tuser_eop0 right -pinY tx_axis_tuser_eop0 580R -pinDir tx_axis_tuser_eop1 right -pinY tx_axis_tuser_eop1 1260R -pinBusDir tx_axis_tuser_mty0 right -pinBusY tx_axis_tuser_mty0 1560R -pinBusDir tx_axis_tuser_mty1 right -pinBusY tx_axis_tuser_mty1 540R -pinDir tx_axis_tuser_err0 right -pinY tx_axis_tuser_err0 220R -pinDir tx_axis_tuser_err1 right -pinY tx_axis_tuser_err1 720R -pinBusDir tx_axis_tdata2 right -pinBusY tx_axis_tdata2 1440R -pinBusDir tx_axis_tdata3 right -pinBusY tx_axis_tdata3 280R -pinDir tx_axis_tuser_ena2 right -pinY tx_axis_tuser_ena2 1400R -pinDir tx_axis_tuser_ena3 right -pinY tx_axis_tuser_ena3 620R -pinDir tx_axis_tuser_sop2 right -pinY tx_axis_tuser_sop2 1580R -pinDir tx_axis_tuser_sop3 right -pinY tx_axis_tuser_sop3 1460R -pinDir tx_axis_tuser_eop2 right -pinY tx_axis_tuser_eop2 1160R -pinDir tx_axis_tuser_eop3 right -pinY tx_axis_tuser_eop3 340R -pinBusDir tx_axis_tuser_mty2 right -pinBusY tx_axis_tuser_mty2 1060R -pinBusDir tx_axis_tuser_mty3 right -pinBusY tx_axis_tuser_mty3 500R -pinDir tx_axis_tuser_err2 right -pinY tx_axis_tuser_err2 1020R -pinDir tx_axis_tuser_err3 right -pinY tx_axis_tuser_err3 560R -pinBusDir gt_loopback_0 right -pinBusY gt_loopback_0 1660R -pinBusDir gt_loopback_1 right -pinBusY gt_loopback_1 440R -pinDir gt_rxcdrhold_0 right -pinY gt_rxcdrhold_0 200R -pinDir gt_rxcdrhold_1 right -pinY gt_rxcdrhold_1 740R -pinBusDir gt_txmaincursor right -pinBusY gt_txmaincursor 360R -pinBusDir gt_txprecursor right -pinBusY gt_txprecursor 980R -pinBusDir gt_txpostcursor right -pinBusY gt_txpostcursor 1100R
+preplace inst clk_wizard -pg 1 -lvl 1 -x 110 -y 100 -defaultsOSRD -pinDir locked right -pinY locked 20R -pinDir clk_in1 right -pinY clk_in1 40R -pinDir core_clk right -pinY core_clk 60R -pinDir axis_clk right -pinY axis_clk 80R -pinDir ts_clk right -pinY ts_clk 100R
+preplace inst axis_register_slice_0 -pg 1 -lvl 2 -x 450 -y 640 -defaultsOSRD -pinDir S_AXIS left -pinY S_AXIS 20L -pinDir M_AXIS right -pinY M_AXIS 20R -pinDir aclk left -pinY aclk 40L -pinDir aresetn left -pinY aresetn 60L
+preplace inst axis_register_slice_1 -pg 1 -lvl 2 -x 450 -y 500 -swap {0 1 2 3 4 5 6 7 8 9 10 11 13 12} -defaultsOSRD -pinDir S_AXIS left -pinY S_AXIS 20L -pinDir M_AXIS right -pinY M_AXIS 20R -pinDir aclk left -pinY aclk 60L -pinDir aresetn left -pinY aresetn 40L
+preplace inst dcmac_ctrl -pg 1 -lvl 2 -x 450 -y 320 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 21 20 24 22 23 25 26} -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 20L -pinDir clk left -pinY clk 60L -pinDir resetn left -pinY resetn 40L -pinDir gt_reset_all right -pinY gt_reset_all 60R -pinBusDir gt_loopback right -pinBusY gt_loopback 20R -pinBusDir gt_reset_rx_datapath right -pinBusY gt_reset_rx_datapath 40R -pinBusDir rx_reset_done right -pinBusY rx_reset_done 80R -pinBusDir tx_reset_done right -pinBusY tx_reset_done 100R
+preplace inst hier_0 -pg 1 -lvl 5 -x 1850 -y 320 -swap {0 1 13 3 4 5 6 10 8 7 14 11 12 9 2} -defaultsOSRD -pinDir axis_clk left -pinY axis_clk 20L -pinDir axis_resetn left -pinY axis_resetn 40L -pinDir tvalid left -pinY tvalid 380L -pinBusDir data0 left -pinBusY data0 80L -pinBusDir data1 left -pinBusY data1 120L -pinDir ena0 left -pinY ena0 160L -pinDir ena1 left -pinY ena1 180L -pinDir err0 left -pinY err0 300L -pinDir err1 left -pinY err1 220L -pinDir sop0 left -pinY sop0 200L -pinDir sop1 left -pinY sop1 420L -pinDir eop0 left -pinY eop0 320L -pinDir eop1 left -pinY eop1 340L -pinBusDir mty0 left -pinBusY mty0 260L -pinBusDir mty1 left -pinBusY mty1 60L
+preplace netloc clk_wizard_axis_clk 1 0 5 NJ 540 220 180 840 120 NJ 120 1760J
+preplace netloc clk_wizard_core_clk1 1 1 2 NJ 160 820
+preplace netloc clk_wizard_locked 1 1 2 NJ 120 660
+preplace netloc clk_wizard_ts_clk1 1 1 2 NJ 200 800
+preplace netloc data0_1 1 4 1 N 400
+preplace netloc data1_1 1 4 1 N 440
+preplace netloc dcmac_ctrl_0_gt_reset_all 1 2 1 700 380n
+preplace netloc dcmac_ctrl_gt_loopback 1 2 1 740 340n
+preplace netloc dcmac_ctrl_gt_reset_rx_datapath 1 2 1 720 360n
+preplace netloc dcmac_helper_axis0_resetn 1 0 5 NJ 680 200 280 NJ 280 1340 140 1740
+preplace netloc dcmac_helper_axis1_resetn 1 0 3 NJ 60 240 240 780
+preplace netloc dcmac_helper_gt_reset_tx_datapath_in_0 1 3 1 N 1680
+preplace netloc dcmac_helper_gt_rx_reset_done 1 2 1 680 400n
+preplace netloc dcmac_helper_gt_tx_reset_done 1 2 1 620 420n
+preplace netloc dcmac_helper_gtpowergood_in 1 3 1 N 1200
+preplace netloc dcmac_helper_rx_alt_serdes_clk 1 3 1 N 580
+preplace netloc dcmac_helper_rx_axi_clk 1 3 1 N 1960
+preplace netloc dcmac_helper_rx_core_clk 1 3 1 N 1160
+preplace netloc dcmac_helper_rx_macif_clk 1 3 1 N 660
+preplace netloc dcmac_helper_rx_serdes_clk 1 3 1 N 1840
+preplace netloc dcmac_helper_tx_alt_serdes_clk 1 3 1 N 720
+preplace netloc dcmac_helper_tx_axi_clk 1 3 1 N 1660
+preplace netloc dcmac_helper_tx_macif_clk 1 3 1 N 520
+preplace netloc dcmac_ip_IBUFDS_ODIV2 1 1 3 NJ 140 NJ 140 1320
 preplace netloc dcmac_ip_ch0_rx_usr_clk2_0 1 3 1 N 1720
-preplace netloc dcmac_ip_ch0_rx_usr_clk2_1 1 3 1 N 1260
-preplace netloc dcmac_ip_ch0_rx_usr_clk_0 1 3 1 N 1580
-preplace netloc dcmac_ip_ch0_rx_usr_clk_1 1 3 1 N 1220
-preplace netloc dcmac_ip_ch0_tx_usr_clk2_0 1 3 1 N 1700
-preplace netloc dcmac_ip_ch0_tx_usr_clk2_1 1 3 1 N 1740
-preplace netloc dcmac_ip_ch0_tx_usr_clk_0 1 3 1 N 1420
-preplace netloc dcmac_ip_ch0_tx_usr_clk_1 1 3 1 N 900
-preplace netloc dcmac_ip_gt_rx_reset_done_out_0 1 3 1 N 1560
-preplace netloc dcmac_ip_gt_rx_reset_done_out_1 1 3 1 N 1800
-preplace netloc dcmac_ip_gt_rx_reset_done_out_2 1 3 1 N 1000
-preplace netloc dcmac_ip_gt_rx_reset_done_out_3 1 3 1 N 1680
-preplace netloc dcmac_ip_gt_rx_reset_done_out_4 1 3 1 N 1780
-preplace netloc dcmac_ip_gt_rx_reset_done_out_5 1 3 1 N 1760
-preplace netloc dcmac_ip_gt_rx_reset_done_out_6 1 3 1 N 1080
-preplace netloc dcmac_ip_gt_rx_reset_done_out_7 1 3 1 N 1160
-preplace netloc dcmac_ip_gt_tx_reset_done_out_0 1 3 1 N 1480
-preplace netloc dcmac_ip_gt_tx_reset_done_out_1 1 3 1 N 1040
-preplace netloc dcmac_ip_gt_tx_reset_done_out_2 1 3 1 N 1360
-preplace netloc dcmac_ip_gt_tx_reset_done_out_3 1 3 1 N 1520
-preplace netloc dcmac_ip_gt_tx_reset_done_out_4 1 3 1 N 1120
-preplace netloc dcmac_ip_gt_tx_reset_done_out_5 1 3 1 N 1320
-preplace netloc dcmac_ip_gt_tx_reset_done_out_6 1 3 1 N 1200
-preplace netloc dcmac_ip_gt_tx_reset_done_out_7 1 3 1 N 960
-preplace netloc dcmac_ip_gtpowergood_0 1 3 1 N 1620
-preplace netloc dcmac_ip_gtpowergood_1 1 3 1 N 1380
-preplace netloc dcmac_ip_tx_axis_tready_0 1 3 1 N 220
-preplace netloc dcmac_ip_tx_axis_tready_1 1 3 1 N 280
-preplace netloc gt_loopback_0_1 1 3 1 N 1660
-preplace netloc gt_loopback_1_1 1 3 1 N 560
-preplace netloc gt_reset_all_in_1 1 3 1 N 720
-preplace netloc gt_reset_rx_datapath_in_0_1 1 3 1 N 1020
-preplace netloc gt_reset_rx_datapath_in_1_1 1 3 1 N 1500
-preplace netloc gt_reset_tx_datapath_in_1_1 1 3 1 N 400
-preplace netloc gt_rxcdrhold_0_1 1 3 1 N 340
-preplace netloc gt_rxcdrhold_1_1 1 3 1 N 860
-preplace netloc gt_txmaincursor_1 1 3 1 N 500
-preplace netloc gt_txpostcursor_1 1 3 1 N 1340
-preplace netloc gt_txprecursor_1 1 3 1 N 1100
-preplace netloc rx_flexif_clk_1 1 3 1 N 980
-preplace netloc s_axi_aresetn_1 1 0 4 NJ 420 240 260 620J 100 N
-preplace netloc s_axi_clk_1 1 0 4 NJ 400 260 300 640 80 1180
-preplace netloc ts_clk_1 1 3 1 N 440
-preplace netloc tx_axis_tdata0_1 1 3 1 N 760
-preplace netloc tx_axis_tdata1_1 1 3 1 N 1540
-preplace netloc tx_axis_tdata2_1 1 3 1 N 700
-preplace netloc tx_axis_tdata3_1 1 3 1 N 420
-preplace netloc tx_axis_tuser_ena0_1 1 3 1 N 540
-preplace netloc tx_axis_tuser_ena1_1 1 3 1 N 1400
-preplace netloc tx_axis_tuser_ena2_1 1 3 1 N 780
-preplace netloc tx_axis_tuser_ena3_1 1 3 1 N 820
-preplace netloc tx_axis_tuser_eop0_1 1 3 1 N 680
-preplace netloc tx_axis_tuser_eop1_1 1 3 1 N 1060
-preplace netloc tx_axis_tuser_eop2_1 1 3 1 N 1180
-preplace netloc tx_axis_tuser_eop3_1 1 3 1 N 480
-preplace netloc tx_axis_tuser_err0_1 1 3 1 N 360
-preplace netloc tx_axis_tuser_err1_1 1 3 1 N 840
-preplace netloc tx_axis_tuser_err2_1 1 3 1 N 1240
-preplace netloc tx_axis_tuser_err3_1 1 3 1 N 660
-preplace netloc tx_axis_tuser_mty0_1 1 3 1 N 1640
-preplace netloc tx_axis_tuser_mty1_1 1 3 1 N 640
-preplace netloc tx_axis_tuser_mty2_1 1 3 1 N 1300
-preplace netloc tx_axis_tuser_mty3_1 1 3 1 N 620
-preplace netloc tx_axis_tuser_sop0_1 1 3 1 N 740
-preplace netloc tx_axis_tuser_sop1_1 1 3 1 N 880
-preplace netloc tx_axis_tuser_sop2_1 1 3 1 N 1280
-preplace netloc tx_axis_tuser_sop3_1 1 3 1 N 1600
-preplace netloc tx_axis_tvalid_0_1 1 3 1 N 200
-preplace netloc tx_axis_tvalid_1_1 1 3 1 N 260
-preplace netloc tx_core_clk_1 1 3 1 N 300
-preplace netloc tx_flexif_clk_1 1 3 1 N 600
-preplace netloc tx_serdes_clk_1 1 3 1 N 580
-preplace netloc CLK_IN_D_0_1 1 4 1 NJ 140
-preplace netloc CLK_IN_D_1_1 1 4 1 NJ 100
-preplace netloc S_AXI_CTL_1 1 0 2 NJ 380 NJ
-preplace netloc axis_in0_1 1 0 2 NJ 580 NJ
-preplace netloc axis_in1_1 1 0 2 NJ 140 NJ
-preplace netloc axis_register_slice_0_M_AXIS 1 2 1 680 280n
-preplace netloc axis_register_slice_1_M_AXIS 1 2 1 N 180
-preplace netloc gt_quad_base_1_GT_Serial 1 4 1 NJ 120
-preplace netloc gt_quad_base_GT_Serial 1 4 1 NJ 60
-preplace netloc s_axi_1 1 4 1 NJ 80
-levelinfo -pg 1 0 110 430 940 1400 1640
-pagesize -pg 1 -db -bbox -sgen -150 0 1780 1860
+preplace netloc dcmac_ip_ch0_rx_usr_clk2_1 1 3 1 N 1240
+preplace netloc dcmac_ip_ch0_rx_usr_clk_0 1 3 1 N 1460
+preplace netloc dcmac_ip_ch0_rx_usr_clk_1 1 3 1 N 1140
+preplace netloc dcmac_ip_ch0_tx_usr_clk2_0 1 3 1 N 1640
+preplace netloc dcmac_ip_ch0_tx_usr_clk2_1 1 3 1 N 1760
+preplace netloc dcmac_ip_ch0_tx_usr_clk_0 1 3 1 N 1880
+preplace netloc dcmac_ip_ch0_tx_usr_clk_1 1 3 1 N 740
+preplace netloc dcmac_ip_gt_rx_reset_done_out_0 1 3 1 N 1300
+preplace netloc dcmac_ip_gt_rx_reset_done_out_1 1 3 1 N 1860
+preplace netloc dcmac_ip_gt_rx_reset_done_out_2 1 3 1 N 1700
+preplace netloc dcmac_ip_gt_rx_reset_done_out_3 1 3 1 N 1540
+preplace netloc dcmac_ip_gt_rx_reset_done_out_4 1 3 1 N 1580
+preplace netloc dcmac_ip_gt_rx_reset_done_out_5 1 3 1 N 1980
+preplace netloc dcmac_ip_gt_rx_reset_done_out_6 1 3 1 N 860
+preplace netloc dcmac_ip_gt_rx_reset_done_out_7 1 3 1 N 1020
+preplace netloc dcmac_ip_gt_tx_reset_done_out_0 1 3 1 N 1820
+preplace netloc dcmac_ip_gt_tx_reset_done_out_1 1 3 1 N 940
+preplace netloc dcmac_ip_gt_tx_reset_done_out_2 1 3 1 N 1940
+preplace netloc dcmac_ip_gt_tx_reset_done_out_3 1 3 1 N 1380
+preplace netloc dcmac_ip_gt_tx_reset_done_out_4 1 3 1 N 1620
+preplace netloc dcmac_ip_gt_tx_reset_done_out_5 1 3 1 N 1420
+preplace netloc dcmac_ip_gt_tx_reset_done_out_6 1 3 1 N 1100
+preplace netloc dcmac_ip_gt_tx_reset_done_out_7 1 3 1 N 1220
+preplace netloc dcmac_ip_gtpowergood_0 1 3 1 N 1480
+preplace netloc dcmac_ip_gtpowergood_1 1 3 1 N 1340
+preplace netloc dcmac_ip_rx_axis_tuser_eop0 1 4 1 N 640
+preplace netloc dcmac_ip_rx_axis_tuser_eop1 1 4 1 N 660
+preplace netloc dcmac_ip_rx_axis_tuser_err0 1 4 1 N 620
+preplace netloc dcmac_ip_rx_axis_tuser_err1 1 4 1 N 540
+preplace netloc dcmac_ip_rx_axis_tuser_mty0 1 4 1 N 580
+preplace netloc dcmac_ip_rx_axis_tuser_mty1 1 4 1 N 380
+preplace netloc dcmac_ip_rx_axis_tuser_sop0 1 4 1 N 520
+preplace netloc dcmac_ip_rx_axis_tuser_sop1 1 4 1 N 740
+preplace netloc dcmac_ip_tx_axis_tready_0 1 3 1 N 400
+preplace netloc dcmac_ip_tx_axis_tready_1 1 3 1 N 460
+preplace netloc ena0_1 1 4 1 N 480
+preplace netloc ena1_1 1 4 1 N 500
+preplace netloc gt_loopback_0_1 1 3 1 N 2000
+preplace netloc gt_loopback_1_1 1 3 1 N 780
+preplace netloc gt_reset_all_in_1 1 3 1 N 980
+preplace netloc gt_reset_rx_datapath_in_0_1 1 3 1 N 1280
+preplace netloc gt_reset_rx_datapath_in_1_1 1 3 1 N 1520
+preplace netloc gt_reset_tx_datapath_in_1_1 1 3 1 N 600
+preplace netloc gt_rxcdrhold_0_1 1 3 1 N 540
+preplace netloc gt_rxcdrhold_1_1 1 3 1 N 1080
+preplace netloc gt_txmaincursor_1 1 3 1 N 700
+preplace netloc gt_txpostcursor_1 1 3 1 N 1440
+preplace netloc gt_txprecursor_1 1 3 1 N 1320
+preplace netloc rx_flexif_clk_1 1 3 1 N 1260
+preplace netloc s_axi_aresetn_1 1 0 4 NJ 20 280 220 NJ 220 N
+preplace netloc s_axi_clk_1 1 0 4 NJ 40 260 260 760 300 1320
+preplace netloc ts_clk_1 1 3 1 N 640
+preplace netloc tvalid_1 1 4 1 N 700
+preplace netloc tx_axis_tdata0_1 1 3 1 N 1040
+preplace netloc tx_axis_tdata1_1 1 3 1 N 1560
+preplace netloc tx_axis_tdata2_1 1 3 1 N 1780
+preplace netloc tx_axis_tdata3_1 1 3 1 N 620
+preplace netloc tx_axis_tuser_ena0_1 1 3 1 N 760
+preplace netloc tx_axis_tuser_ena1_1 1 3 1 N 1180
+preplace netloc tx_axis_tuser_ena2_1 1 3 1 N 1740
+preplace netloc tx_axis_tuser_ena3_1 1 3 1 N 960
+preplace netloc tx_axis_tuser_eop0_1 1 3 1 N 920
+preplace netloc tx_axis_tuser_eop1_1 1 3 1 N 1600
+preplace netloc tx_axis_tuser_eop2_1 1 3 1 N 1500
+preplace netloc tx_axis_tuser_eop3_1 1 3 1 N 680
+preplace netloc tx_axis_tuser_err0_1 1 3 1 N 560
+preplace netloc tx_axis_tuser_err1_1 1 3 1 N 1060
+preplace netloc tx_axis_tuser_err2_1 1 3 1 N 1360
+preplace netloc tx_axis_tuser_err3_1 1 3 1 N 900
+preplace netloc tx_axis_tuser_mty0_1 1 3 1 N 1900
+preplace netloc tx_axis_tuser_mty1_1 1 3 1 N 880
+preplace netloc tx_axis_tuser_mty2_1 1 3 1 N 1400
+preplace netloc tx_axis_tuser_mty3_1 1 3 1 N 840
+preplace netloc tx_axis_tuser_sop0_1 1 3 1 N 1000
+preplace netloc tx_axis_tuser_sop1_1 1 3 1 N 1120
+preplace netloc tx_axis_tuser_sop2_1 1 3 1 N 1920
+preplace netloc tx_axis_tuser_sop3_1 1 3 1 N 1800
+preplace netloc tx_axis_tvalid_0_1 1 3 1 N 380
+preplace netloc tx_axis_tvalid_1_1 1 3 1 N 440
+preplace netloc tx_core_clk_1 1 3 1 N 500
+preplace netloc tx_flexif_clk_1 1 3 1 N 820
+preplace netloc tx_serdes_clk_1 1 3 1 N 800
+preplace netloc CLK_IN_D_0_1 1 4 2 NJ 200 NJ
+preplace netloc CLK_IN_D_1_1 1 4 2 NJ 220 NJ
+preplace netloc S_AXI_CTL_1 1 0 2 NJ 340 NJ
+preplace netloc axis_in0_1 1 0 2 NJ 660 NJ
+preplace netloc axis_in1_1 1 0 2 NJ 520 NJ
+preplace netloc axis_register_slice_0_M_AXIS 1 2 1 640 540n
+preplace netloc axis_register_slice_1_M_AXIS 1 2 1 N 520
+preplace netloc gt_quad_base_1_GT_Serial 1 4 2 NJ 260 NJ
+preplace netloc gt_quad_base_GT_Serial 1 4 2 NJ 240 NJ
+preplace netloc s_axi_1 1 4 2 NJ 280 NJ
+levelinfo -pg 1 0 110 450 1080 1540 1850 1960
+pagesize -pg 1 -db -bbox -sgen -150 0 2100 2060
 ",
-   "No Loops_ScaleFactor":"0.595528",
-   "No Loops_TopLeft":"-531,-44",
+   "No Loops_ScaleFactor":"0.356691",
+   "No Loops_TopLeft":"-1152,3",
    "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
 #  -string -flagsOSRD
 preplace port GT_Serial -pg 1 -lvl 3 -x 950 -y 60 -defaultsOSRD

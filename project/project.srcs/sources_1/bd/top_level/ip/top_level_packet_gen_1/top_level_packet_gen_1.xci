@@ -9,10 +9,12 @@
     "parameters": {
       "component_parameters": {
         "DW": [ { "value": "256", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "DCMAC": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "Component_Name": [ { "value": "top_level_packet_gen_1", "resolve_type": "user", "usage": "all" } ]
       },
       "model_parameters": {
-        "DW": [ { "value": "256", "resolve_type": "generated", "format": "long", "usage": "all" } ]
+        "DW": [ { "value": "256", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "DCMAC": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ]
       },
       "project_parameters": {
         "ARCHITECTURE": [ { "value": "versal" } ],

@@ -84,7 +84,7 @@ release_all_reset()
 # Should per port that is in use
 assert_channel_resets()
 {
-    for i in {0..0}; do
+    for i in {0..3}; do
         axi $((DCMAC + C0_CHANNEL_CONTROL_RX + i*4096)) 1
         axi $((DCMAC + C0_CHANNEL_CONTROL_TX + i*4096)) 1 
         sleep .01
@@ -96,7 +96,7 @@ assert_channel_resets()
 
 release_channel_resets()
 {
-    for i in {0..0}; do
+    for i in {0..3}; do
         axi $((DCMAC + C0_CHANNEL_CONTROL_RX + i*4096)) 0
         axi $((DCMAC + C0_CHANNEL_CONTROL_TX + i*4096)) 0 
         sleep .01
@@ -109,8 +109,8 @@ release_channel_resets()
 
 config_mac()
 {
-    all_ports $C0_CHANNEL_CONFIG_TX 0x25800062
-    all_ports $C0_CHANNEL_CONFIG_RX 0xC01
+    all_ports $C0_CHANNEL_CONFIG_RX 0x25800062
+    all_ports $C0_CHANNEL_CONFIG_TX 0xC01
 }
 
 
@@ -179,7 +179,7 @@ align()
 initial_configure()
 {
     #  Near-end PCS loopback
-    axi $DCMAC_CTL_LOOPBACK 1
+    axi $DCMAC_CTL_LOOPBACK 0
 
     axi $DCMAC_CTL_RESET_ALL 1
     sleep .01

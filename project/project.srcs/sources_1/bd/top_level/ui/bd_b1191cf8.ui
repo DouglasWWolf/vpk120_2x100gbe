@@ -13,14 +13,14 @@ preplace port port-id_clk -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
 preplace port port-id_resetn -pg 1 -lvl 0 -x 0 -y 180 -defaultsOSRD
 preplace inst packet_config -pg 1 -lvl 1 -x 190 -y 120 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 23 22 24 25 26 27} -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 20L -pinDir clk left -pinY clk 40L -pinDir resetn left -pinY resetn 60L -pinBusDir packet_len right -pinBusY packet_len 40R -pinBusDir packet_count right -pinBusY packet_count 20R -pinBusDir idle_cycles right -pinBusY idle_cycles 60R -pinBusDir initial_value right -pinBusY initial_value 80R -pinDir start right -pinY start 100R -pinDir packet_gen_busy right -pinY packet_gen_busy 120R
 preplace inst packet_gen -pg 1 -lvl 2 -x 500 -y 40 -defaultsOSRD -pinDir axis_out right -pinY axis_out 20R -pinDir clk left -pinY clk 20L -pinDir resetn left -pinY resetn 40L -pinBusDir packet_count left -pinBusY packet_count 100L -pinBusDir packet_length left -pinBusY packet_length 120L -pinBusDir idle_cycles left -pinBusY idle_cycles 140L -pinBusDir initial_value left -pinBusY initial_value 160L -pinDir start left -pinY start 180L -pinDir busy left -pinY busy 200L
-preplace netloc vpk120_eth2x100_axis_clk 1 0 2 20 60 NJ
-preplace netloc resetn_1 1 0 2 40 80 NJ
-preplace netloc packet_gen_busy 1 1 1 N 240
-preplace netloc packet_config_packet_len 1 1 1 N 160
-preplace netloc packet_config_packet_count 1 1 1 N 140
-preplace netloc packet_config_initial_value 1 1 1 N 200
 preplace netloc packet_config_idle_cycles 1 1 1 N 180
+preplace netloc packet_config_initial_value 1 1 1 N 200
+preplace netloc packet_config_packet_count 1 1 1 N 140
+preplace netloc packet_config_packet_len 1 1 1 N 160
 preplace netloc packet_config_start 1 1 1 N 220
+preplace netloc packet_gen_busy 1 1 1 N 240
+preplace netloc resetn_1 1 0 2 40 80 NJ
+preplace netloc vpk120_eth2x100_axis_clk 1 0 2 20 60 NJ
 preplace netloc S_AXI_1 1 0 1 NJ 140
 preplace netloc packet_gen_axis_out 1 2 1 N 60
 levelinfo -pg 1 0 190 500 680
@@ -38,4 +38,4 @@ levelinfo -pg 1 0 190 360
 pagesize -pg 1 -db -bbox -sgen -70 0 360 400
 "
 }
-
+0

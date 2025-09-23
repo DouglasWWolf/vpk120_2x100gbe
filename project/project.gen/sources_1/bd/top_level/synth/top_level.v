@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-//Date        : Sat Sep 20 03:02:13 2025
+//Date        : Tue Sep 23 16:26:33 2025
 //Host        : wolf-super-server running 64-bit Ubuntu 20.04.6 LTS
 //Command     : generate_target top_level.bd
 //Design      : top_level
@@ -892,7 +892,7 @@ module pl_rtl_imp_QFYSB7
         .s_axi_dcmac_wvalid(interconnect_M00_AXI_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "top_level,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top_level,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=33,numReposBlks=26,numNonXlnxBlks=0,numHierBlks=7,maxHierDepth=3,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=1,bdsource=USER,da_cips_cnt=1,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "top_level.hwdef" *) 
+(* CORE_GENERATION_INFO = "top_level,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top_level,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=43,numReposBlks=35,numNonXlnxBlks=0,numHierBlks=8,maxHierDepth=3,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=9,numPkgbdBlks=1,bdsource=USER,da_cips_cnt=1,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "top_level.hwdef" *) 
 module top_level
    (UART_rxd,
     UART_txd,

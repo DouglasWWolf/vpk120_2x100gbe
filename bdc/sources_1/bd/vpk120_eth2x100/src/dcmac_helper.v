@@ -1,12 +1,12 @@
 
 module dcmac_helper # (parameter MAX_PORTS = 6, DW = 256)
 (
-    // Reset for the tx_axis_0 and rx_axis_0.  Synchronous to axis_clk
+    // Reset for the tx_axis_0 and rx_axis_0.  Synchronous to axis_clk_in
     (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 axis0_resetn RST" *)
     (* X_INTERFACE_PARAMETER = "POLARITY ACTIVE_LOW" *)
     output  axis0_resetn,
 
-    // Reset for the tx_axis_1 and rx_axis_1. Synchronous to axis_clk
+    // Reset for the tx_axis_1 and rx_axis_1. Synchronous to axis_clk_in
     (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 axis1_resetn RST" *)
     (* X_INTERFACE_PARAMETER = "POLARITY ACTIVE_LOW" *)
     output  axis1_resetn,
@@ -304,35 +304,25 @@ i_sync_tx_reset_done
 
 
 
-// These are the "reset" signals for [tx|rx]_axis0 and [tx|rx]_axis1
-wire async_axis0_resetn = clkwiz_locked & async_rx_reset_done[0];
-wire async_axis1_resetn = clkwiz_locked & async_rx_reset_done[1];
-
-// Synchronize async_axis0_resetn to axis_clk
-xpm_cdc_async_rst #
+// Now synchronize async_rx_reset_done[1:0] to axis_clk_in
+wire[1:0] sync_rx_reset_done;
+xpm_cdc_array_single #
 (
    .DEST_SYNC_FF    (4),
-   .RST_ACTIVE_HIGH (0)
+   .SRC_INPUT_REG   (0),
+   .WIDTH           (2)
 )
-i_axis0_resetn
+i_sync_axis_rx_reset_done
 (
-   .src_arst    (async_axis0_resetn),    
-   .dest_arst   (axis0_resetn), 
-   .dest_clk    (axis_clk)   
+    .src_clk    (),
+    .src_in     (async_rx_reset_done),
+    .dest_clk   (axis_clk_in),
+    .dest_out   (sync_rx_reset_done)
 );
+assign axis0_resetn = sync_rx_reset_done[0];
+assign axis1_resetn = sync_rx_reset_done[1];
 
-// Synchronize async_axis1_resetn to axis_clk
-xpm_cdc_async_rst #
-(
-   .DEST_SYNC_FF    (4),
-   .RST_ACTIVE_HIGH (0)
-)
-i_axis1_resetn
-(
-   .src_arst    (async_axis1_resetn),    
-   .dest_arst   (axis1_resetn), 
-   .dest_clk    (axis_clk)   
-);
+
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //      Create an ordinary AXI stream for TX to QSFP_0
@@ -344,8 +334,8 @@ axis_to_dcmac #
 )
 i_axis_to_dcmac_0
 (
-    .clk                (axis_clk),
-    .resetn             (axis_resetn),
+    .clk                (axis_clk_in),
+    .resetn             (axis0_resetn),
     .axis_in_tdata      (axis_in0_tdata),
     .axis_in_tkeep      (axis_in0_tkeep),
     .axis_in_tlast      (axis_in0_tlast),
@@ -396,8 +386,8 @@ axis_to_dcmac #
 )
 i_axis_to_dcmac_1
 (
-    .clk                (axis_clk),
-    .resetn             (axis_resetn),
+    .clk                (axis_clk_in),
+    .resetn             (axis1_resetn),
     .axis_in_tdata      (axis_in1_tdata),
     .axis_in_tkeep      (axis_in1_tkeep),
     .axis_in_tlast      (axis_in1_tlast),

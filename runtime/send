@@ -1,3 +1,4 @@
+export axi_uart_device=/dev/ttyUSB2
 #==============================================================================
 # This script is used to trigger the sending of packets in RTL designs
 # "nexys_packet_demo" and "xuppl4_packet_demo".  It assumes you have the 
@@ -119,17 +120,18 @@ fi
 
 # Does the specified channel have PCS alignment?
 #aligned=$(($(axi -dec $REG_PCS) & (1 << $channel)))
+aligned=1
 
 # If this channel doesn't have PCS alignment, bail
-#if [ $aligned -eq 0 ]; then
-#    echo "No PCS alignment on channel $channel"
-#    exit 1
-#fi
+if [ $aligned -eq 0 ]; then
+    echo "No PCS alignment on channel $channel"
+    exit 1
+fi
 
 
 # Determine the base address of AXI registers for this channel
-test $channel -eq 0 && base_addr=0xA5040000
-test $channel -eq 1 && base_addr=0xA5040000
+test $channel -eq 0 && base_addr=0x1000
+test $channel -eq 1 && base_addr=0x2000
 
 # Ensure that the specified packet count is valid
 if [ -z $packet_count ] || [ $packet_count -lt 1 ]; then

@@ -5,17 +5,21 @@
 //   Date     Who   Ver  Changes
 //====================================================================================
 // 15-Aug-24  DWW     1  Initial creation
+//
+// 23-Sep-25  DWW     2  Added features to support DCMAC segmentation
 //====================================================================================
 
 /*
-
     This module generates an arbitrary number of AXI4-Stream packets of arbitrary
     size and arbitrary spacing.
 
+    If "DCMAC = 1", the data in each output segment will be the segment number.
+
+    If "DCMAC = 0", the output data will be an incrementing 16-bit counter,
+    replicated across the field
 */
 
-
-module packet_gen # (parameter DW=256)
+module packet_gen # (parameter DW=256, DCMAC=1)
 (
     input   clk, resetn,
 
@@ -35,6 +39,17 @@ module packet_gen # (parameter DW=256)
     output                 axis_out_tvalid,
     input                  axis_out_tready
 );
+
+// A DCMAC segment is 128 bits (16 bytes) wide
+localparam SEG_WIDTH = 128;
+
+// A segment is 16 bytes wide.   Eight 16-bit words will fit into a segment
+localparam SEG_WORDS = SEG_WIDTH/16;
+
+// On every data-cycle, we will increment the data value by this much
+localparam INCREMENT = (DCMAC ==   0) ? 1 :
+                       (DW    == 256) ? 2 :
+                       (DW    == 512) ? 4 : 0;
 
 // This is the number of bytes in axis_out_tdata
 localparam DB = (DW/8);
@@ -77,17 +92,32 @@ end
 reg[1:0] fsm_state;
 
 // This is a rolling counter that will be replicated across axis_out_tdata
-reg[15:0] data;
+reg [15:0] data0;
+wire[15:0] data1 = data0 + 1;
+wire[15:0] data2 = data0 + 2;
+wire[15:0] data3 = data0 + 3;
 
 // axis_out_tlast is asserted on the last cycle of the packet
 assign axis_out_tlast = (cycle == total_data_cycles);
 
 // Repeat 'data' across the width of axis_out_tdata
-assign axis_out_tdata = {(DW/16){data}};
+if (DCMAC == 0) begin
+    assign axis_out_tdata = {(DW/16){data0}};
+end
 
+// If we're outputting two segments, the data is the sequential segment number
+if (DCMAC == 1 && DW == 256) begin 
+    assign axis_out_tdata = { {SEG_WORDS{data1}}, {SEG_WORDS{data0}} };
+end
+
+// If we're outputting four segments, the data is the sequential segment number
+if (DCMAC == 1 && DW == 512) begin 
+    assign axis_out_tdata = { {SEG_WORDS{data3}}, {SEG_WORDS{data2}}, {SEG_WORDS{data1}}, {SEG_WORDS{data0}} };
+end
+ 
 // This is the number of the packet currently being emitted
 reg[31:0] packet_number;
-
+      
 // The number of clock cycles to pause for
 reg[15:0] delay_count;
 
@@ -107,7 +137,7 @@ always @(posedge clk) begin
 
         // Are we being told to start generating packets?
         0:  if (start) begin
-                data          <= initial_value;
+                data0         <= initial_value;
                 cycle         <= 1;
                 packet_number <= 1;
                 fsm_state     <= 1;
@@ -115,7 +145,7 @@ always @(posedge clk) begin
 
 
         1:  if (axis_out_tready & axis_out_tvalid) begin       // If this data-cycle has a handshake...
-                data  <= data  + 1;                            //  Next data-cycle has new data
+                data0 <= data0 + INCREMENT;                   //  Next data-cycle has new data
                 cycle <= cycle + 1;                            //  Keep track of the data-cycle number
                 if (axis_out_tlast) begin                      //  If this was the last cycle of the packet...
                     cycle <= 1;                                //   Reset the cycle number
