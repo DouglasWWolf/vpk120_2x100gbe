@@ -217,7 +217,7 @@ end
 //==========================================================================
 // This connects us to an AXI4-Lite slave core
 //==========================================================================
-axi4_lite_slave#(ADDR_MASK) i_axi4lite_slave
+axi4_lite_slave#(.AW(AW)) i_axi4lite_slave
 (
     .clk            (clk),
     .resetn         (resetn),

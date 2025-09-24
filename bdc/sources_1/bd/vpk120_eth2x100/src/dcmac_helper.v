@@ -329,8 +329,7 @@ assign axis1_resetn = sync_rx_reset_done[1];
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 axis_to_dcmac #
 (
-    .DW(DW),
-    .SW(128)
+    .SEG_COUNT(DW/128)
 )
 i_axis_to_dcmac_0
 (
@@ -381,8 +380,7 @@ i_axis_to_dcmac_0
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 axis_to_dcmac #
 (
-    .DW(DW),
-    .SW(128)
+    .SEG_COUNT(DW/128)
 )
 i_axis_to_dcmac_1
 (

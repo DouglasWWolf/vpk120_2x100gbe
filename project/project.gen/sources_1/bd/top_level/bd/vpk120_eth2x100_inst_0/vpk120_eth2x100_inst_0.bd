@@ -39,7 +39,8 @@
         "zero_4": "",
         "dcmac_deskew": "",
         "axis_ila_0": "",
-        "axis_ila_1": ""
+        "axis_ila_1": "",
+        "dcmac_to_axis": ""
       }
     },
     "interface_ports": {
@@ -4273,7 +4274,7 @@
                     "value_src": "constant"
                   },
                   "TUSER_WIDTH": {
-                    "value": "3",
+                    "value": "2",
                     "value_src": "constant"
                   },
                   "HAS_TREADY": {
@@ -4325,7 +4326,7 @@
                   "TUSER": {
                     "physical_name": "seg0_tuser",
                     "direction": "O",
-                    "left": "2",
+                    "left": "1",
                     "right": "0"
                   },
                   "TVALID": {
@@ -4356,7 +4357,7 @@
                     "value_src": "constant"
                   },
                   "TUSER_WIDTH": {
-                    "value": "3",
+                    "value": "2",
                     "value_src": "constant"
                   },
                   "HAS_TREADY": {
@@ -4408,7 +4409,7 @@
                   "TUSER": {
                     "physical_name": "seg1_tuser",
                     "direction": "O",
-                    "left": "2",
+                    "left": "1",
                     "right": "0"
                   },
                   "TVALID": {
@@ -4439,7 +4440,7 @@
                     "value_src": "constant"
                   },
                   "TUSER_WIDTH": {
-                    "value": "3",
+                    "value": "2",
                     "value_src": "constant"
                   },
                   "HAS_TREADY": {
@@ -4491,7 +4492,7 @@
                   "TUSER": {
                     "physical_name": "seg2_tuser",
                     "direction": "O",
-                    "left": "2",
+                    "left": "1",
                     "right": "0"
                   },
                   "TVALID": {
@@ -4522,7 +4523,7 @@
                     "value_src": "constant"
                   },
                   "TUSER_WIDTH": {
-                    "value": "3",
+                    "value": "2",
                     "value_src": "constant"
                   },
                   "HAS_TREADY": {
@@ -4574,7 +4575,7 @@
                   "TUSER": {
                     "physical_name": "seg3_tuser",
                     "direction": "O",
-                    "left": "2",
+                    "left": "1",
                     "right": "0"
                   },
                   "TVALID": {
@@ -4625,93 +4626,93 @@
                   }
                 }
               },
-              "valid": {
+              "i_valid": {
                 "direction": "I"
               },
-              "data0": {
+              "i_data0": {
                 "direction": "I",
                 "left": "127",
                 "right": "0"
               },
-              "data1": {
+              "i_data1": {
                 "direction": "I",
                 "left": "127",
                 "right": "0"
               },
-              "data2": {
+              "i_data2": {
                 "direction": "I",
                 "left": "127",
                 "right": "0"
               },
-              "data3": {
+              "i_data3": {
                 "direction": "I",
                 "left": "127",
                 "right": "0"
               },
-              "ena0": {
+              "i_ena0": {
                 "direction": "I"
               },
-              "ena1": {
+              "i_ena1": {
                 "direction": "I"
               },
-              "ena2": {
+              "i_ena2": {
                 "direction": "I"
               },
-              "ena3": {
+              "i_ena3": {
                 "direction": "I"
               },
-              "err0": {
+              "i_err0": {
                 "direction": "I"
               },
-              "err1": {
+              "i_err1": {
                 "direction": "I"
               },
-              "err2": {
+              "i_err2": {
                 "direction": "I"
               },
-              "err3": {
+              "i_err3": {
                 "direction": "I"
               },
-              "sop0": {
+              "i_sop0": {
                 "direction": "I"
               },
-              "sop1": {
+              "i_sop1": {
                 "direction": "I"
               },
-              "sop2": {
+              "i_sop2": {
                 "direction": "I"
               },
-              "sop3": {
+              "i_sop3": {
                 "direction": "I"
               },
-              "eop0": {
+              "i_eop0": {
                 "direction": "I"
               },
-              "eop1": {
+              "i_eop1": {
                 "direction": "I"
               },
-              "eop2": {
+              "i_eop2": {
                 "direction": "I"
               },
-              "eop3": {
+              "i_eop3": {
                 "direction": "I"
               },
-              "mty0": {
+              "i_mty0": {
                 "direction": "I",
                 "left": "3",
                 "right": "0"
               },
-              "mty1": {
+              "i_mty1": {
                 "direction": "I",
                 "left": "3",
                 "right": "0"
               },
-              "mty2": {
+              "i_mty2": {
                 "direction": "I",
                 "left": "3",
                 "right": "0"
               },
-              "mty3": {
+              "i_mty3": {
                 "direction": "I",
                 "left": "3",
                 "right": "0"
@@ -4835,7 +4836,7 @@
                     "value_src": "constant"
                   },
                   "TUSER_WIDTH": {
-                    "value": "3",
+                    "value": "2",
                     "value_src": "constant"
                   },
                   "HAS_TREADY": {
@@ -4887,7 +4888,7 @@
                   "TUSER": {
                     "physical_name": "in0_tuser",
                     "direction": "I",
-                    "left": "2",
+                    "left": "1",
                     "right": "0"
                   },
                   "TVALID": {
@@ -4918,7 +4919,7 @@
                     "value_src": "constant"
                   },
                   "TUSER_WIDTH": {
-                    "value": "3",
+                    "value": "2",
                     "value_src": "constant"
                   },
                   "HAS_TREADY": {
@@ -4970,7 +4971,7 @@
                   "TUSER": {
                     "physical_name": "in1_tuser",
                     "direction": "I",
-                    "left": "2",
+                    "left": "1",
                     "right": "0"
                   },
                   "TVALID": {
@@ -5001,7 +5002,7 @@
                     "value_src": "constant"
                   },
                   "TUSER_WIDTH": {
-                    "value": "3",
+                    "value": "2",
                     "value_src": "constant"
                   },
                   "HAS_TREADY": {
@@ -5053,7 +5054,7 @@
                   "TUSER": {
                     "physical_name": "in2_tuser",
                     "direction": "I",
-                    "left": "2",
+                    "left": "1",
                     "right": "0"
                   },
                   "TVALID": {
@@ -5084,7 +5085,7 @@
                     "value_src": "constant"
                   },
                   "TUSER_WIDTH": {
-                    "value": "3",
+                    "value": "2",
                     "value_src": "constant"
                   },
                   "HAS_TREADY": {
@@ -5136,7 +5137,7 @@
                   "TUSER": {
                     "physical_name": "in3_tuser",
                     "direction": "I",
-                    "left": "2",
+                    "left": "1",
                     "right": "0"
                   },
                   "TVALID": {
@@ -5167,7 +5168,7 @@
                     "value_src": "constant"
                   },
                   "TUSER_WIDTH": {
-                    "value": "3",
+                    "value": "2",
                     "value_src": "constant"
                   },
                   "HAS_TREADY": {
@@ -5219,7 +5220,7 @@
                   "TUSER": {
                     "physical_name": "out0_tuser",
                     "direction": "O",
-                    "left": "2",
+                    "left": "1",
                     "right": "0"
                   },
                   "TVALID": {
@@ -5246,7 +5247,7 @@
                     "value_src": "constant"
                   },
                   "TUSER_WIDTH": {
-                    "value": "3",
+                    "value": "2",
                     "value_src": "constant"
                   },
                   "HAS_TREADY": {
@@ -5298,7 +5299,7 @@
                   "TUSER": {
                     "physical_name": "out1_tuser",
                     "direction": "O",
-                    "left": "2",
+                    "left": "1",
                     "right": "0"
                   },
                   "TVALID": {
@@ -5325,7 +5326,7 @@
                     "value_src": "constant"
                   },
                   "TUSER_WIDTH": {
-                    "value": "3",
+                    "value": "2",
                     "value_src": "constant"
                   },
                   "HAS_TREADY": {
@@ -5377,7 +5378,7 @@
                   "TUSER": {
                     "physical_name": "out2_tuser",
                     "direction": "O",
-                    "left": "2",
+                    "left": "1",
                     "right": "0"
                   },
                   "TVALID": {
@@ -5404,7 +5405,7 @@
                     "value_src": "constant"
                   },
                   "TUSER_WIDTH": {
-                    "value": "3",
+                    "value": "2",
                     "value_src": "constant"
                   },
                   "HAS_TREADY": {
@@ -5456,7 +5457,7 @@
                   "TUSER": {
                     "physical_name": "out3_tuser",
                     "direction": "O",
-                    "left": "2",
+                    "left": "1",
                     "right": "0"
                   },
                   "TVALID": {
@@ -5625,10 +5626,10 @@
                 "value": "Interface_Monitor"
               },
               "C_NUM_MONITOR_SLOTS": {
-                "value": "4"
+                "value": "5"
               },
               "C_SLOT": {
-                "value": "3"
+                "value": "4"
               },
               "C_SLOT_0_INTF_TYPE": {
                 "value": "xilinx.com:interface:axis_rtl:1.0"
@@ -5640,6 +5641,9 @@
                 "value": "xilinx.com:interface:axis_rtl:1.0"
               },
               "C_SLOT_3_INTF_TYPE": {
+                "value": "xilinx.com:interface:axis_rtl:1.0"
+              },
+              "C_SLOT_4_INTF_TYPE": {
                 "value": "xilinx.com:interface:axis_rtl:1.0"
               }
             },
@@ -5667,6 +5671,459 @@
                 "monitor_type": "SlaveType",
                 "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
                 "vlnv": "xilinx.com:interface:axis_rtl:1.0"
+              },
+              "SLOT_4_AXIS": {
+                "mode": "Monitor",
+                "monitor_type": "SlaveType",
+                "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
+                "vlnv": "xilinx.com:interface:axis_rtl:1.0"
+              }
+            }
+          },
+          "dcmac_to_axis": {
+            "vlnv": "xilinx.com:module_ref:dcmac_to_axis:1.0",
+            "ip_revision": "1",
+            "xci_name": "vpk120_eth2x100_inst_0_dcmac_to_axis_0",
+            "xci_path": "ip/vpk120_eth2x100_inst_0_dcmac_to_axis_0/vpk120_eth2x100_inst_0_dcmac_to_axis_0.xci",
+            "inst_hier_path": "hier_0/dcmac_to_axis",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "dcmac_to_axis",
+              "boundary_crc": "0x0"
+            },
+            "interface_ports": {
+              "axis_out": {
+                "mode": "Master",
+                "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
+                "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+                "parameters": {
+                  "TDATA_NUM_BYTES": {
+                    "value": "32",
+                    "value_src": "auto"
+                  },
+                  "TDEST_WIDTH": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "TID_WIDTH": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "TUSER_WIDTH": {
+                    "value": "2",
+                    "value_src": "constant"
+                  },
+                  "HAS_TREADY": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "HAS_TSTRB": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "HAS_TKEEP": {
+                    "value": "1",
+                    "value_src": "auto"
+                  },
+                  "HAS_TLAST": {
+                    "value": "1",
+                    "value_src": "constant"
+                  },
+                  "FREQ_HZ": {
+                    "value": "391000600",
+                    "value_src": "ip_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "ip_prop"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
+                    "value_src": "ip_prop"
+                  }
+                },
+                "port_maps": {
+                  "TDATA": {
+                    "physical_name": "axis_out_tdata",
+                    "direction": "O",
+                    "left": "255",
+                    "right": "0"
+                  },
+                  "TKEEP": {
+                    "physical_name": "axis_out_tkeep",
+                    "direction": "O",
+                    "left": "31",
+                    "right": "0"
+                  },
+                  "TLAST": {
+                    "physical_name": "axis_out_tlast",
+                    "direction": "O"
+                  },
+                  "TUSER": {
+                    "physical_name": "axis_out_tuser",
+                    "direction": "O",
+                    "left": "1",
+                    "right": "0"
+                  },
+                  "TVALID": {
+                    "physical_name": "axis_out_tvalid",
+                    "direction": "O"
+                  }
+                }
+              },
+              "i_in0": {
+                "mode": "Slave",
+                "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
+                "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+                "parameters": {
+                  "TDATA_NUM_BYTES": {
+                    "value": "16",
+                    "value_src": "constant"
+                  },
+                  "TDEST_WIDTH": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "TID_WIDTH": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "TUSER_WIDTH": {
+                    "value": "2",
+                    "value_src": "constant"
+                  },
+                  "HAS_TREADY": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "HAS_TSTRB": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "HAS_TKEEP": {
+                    "value": "1",
+                    "value_src": "constant"
+                  },
+                  "HAS_TLAST": {
+                    "value": "1",
+                    "value_src": "constant"
+                  },
+                  "FREQ_HZ": {
+                    "value": "391000600",
+                    "value_src": "ip_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "ip_prop"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
+                    "value_src": "ip_prop"
+                  }
+                },
+                "port_maps": {
+                  "TDATA": {
+                    "physical_name": "i_in0_tdata",
+                    "direction": "I",
+                    "left": "127",
+                    "right": "0"
+                  },
+                  "TKEEP": {
+                    "physical_name": "i_in0_tkeep",
+                    "direction": "I",
+                    "left": "15",
+                    "right": "0"
+                  },
+                  "TLAST": {
+                    "physical_name": "i_in0_tlast",
+                    "direction": "I"
+                  },
+                  "TUSER": {
+                    "physical_name": "i_in0_tuser",
+                    "direction": "I",
+                    "left": "1",
+                    "right": "0"
+                  },
+                  "TVALID": {
+                    "physical_name": "i_in0_tvalid",
+                    "direction": "I"
+                  }
+                }
+              },
+              "i_in1": {
+                "mode": "Slave",
+                "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
+                "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+                "parameters": {
+                  "TDATA_NUM_BYTES": {
+                    "value": "16",
+                    "value_src": "constant"
+                  },
+                  "TDEST_WIDTH": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "TID_WIDTH": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "TUSER_WIDTH": {
+                    "value": "2",
+                    "value_src": "constant"
+                  },
+                  "HAS_TREADY": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "HAS_TSTRB": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "HAS_TKEEP": {
+                    "value": "1",
+                    "value_src": "constant"
+                  },
+                  "HAS_TLAST": {
+                    "value": "1",
+                    "value_src": "constant"
+                  },
+                  "FREQ_HZ": {
+                    "value": "391000600",
+                    "value_src": "ip_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "ip_prop"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
+                    "value_src": "ip_prop"
+                  }
+                },
+                "port_maps": {
+                  "TDATA": {
+                    "physical_name": "i_in1_tdata",
+                    "direction": "I",
+                    "left": "127",
+                    "right": "0"
+                  },
+                  "TKEEP": {
+                    "physical_name": "i_in1_tkeep",
+                    "direction": "I",
+                    "left": "15",
+                    "right": "0"
+                  },
+                  "TLAST": {
+                    "physical_name": "i_in1_tlast",
+                    "direction": "I"
+                  },
+                  "TUSER": {
+                    "physical_name": "i_in1_tuser",
+                    "direction": "I",
+                    "left": "1",
+                    "right": "0"
+                  },
+                  "TVALID": {
+                    "physical_name": "i_in1_tvalid",
+                    "direction": "I"
+                  }
+                }
+              },
+              "i_in2": {
+                "mode": "Slave",
+                "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
+                "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+                "parameters": {
+                  "TDATA_NUM_BYTES": {
+                    "value": "16",
+                    "value_src": "constant"
+                  },
+                  "TDEST_WIDTH": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "TID_WIDTH": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "TUSER_WIDTH": {
+                    "value": "2",
+                    "value_src": "constant"
+                  },
+                  "HAS_TREADY": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "HAS_TSTRB": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "HAS_TKEEP": {
+                    "value": "1",
+                    "value_src": "constant"
+                  },
+                  "HAS_TLAST": {
+                    "value": "1",
+                    "value_src": "constant"
+                  },
+                  "FREQ_HZ": {
+                    "value": "391000600",
+                    "value_src": "ip_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "ip_prop"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
+                    "value_src": "ip_prop"
+                  }
+                },
+                "port_maps": {
+                  "TDATA": {
+                    "physical_name": "i_in2_tdata",
+                    "direction": "I",
+                    "left": "127",
+                    "right": "0"
+                  },
+                  "TKEEP": {
+                    "physical_name": "i_in2_tkeep",
+                    "direction": "I",
+                    "left": "15",
+                    "right": "0"
+                  },
+                  "TLAST": {
+                    "physical_name": "i_in2_tlast",
+                    "direction": "I"
+                  },
+                  "TUSER": {
+                    "physical_name": "i_in2_tuser",
+                    "direction": "I",
+                    "left": "1",
+                    "right": "0"
+                  },
+                  "TVALID": {
+                    "physical_name": "i_in2_tvalid",
+                    "direction": "I"
+                  }
+                }
+              },
+              "i_in3": {
+                "mode": "Slave",
+                "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
+                "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+                "parameters": {
+                  "TDATA_NUM_BYTES": {
+                    "value": "16",
+                    "value_src": "constant"
+                  },
+                  "TDEST_WIDTH": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "TID_WIDTH": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "TUSER_WIDTH": {
+                    "value": "2",
+                    "value_src": "constant"
+                  },
+                  "HAS_TREADY": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "HAS_TSTRB": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "HAS_TKEEP": {
+                    "value": "1",
+                    "value_src": "constant"
+                  },
+                  "HAS_TLAST": {
+                    "value": "1",
+                    "value_src": "constant"
+                  },
+                  "FREQ_HZ": {
+                    "value": "391000600",
+                    "value_src": "ip_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "ip_prop"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
+                    "value_src": "ip_prop"
+                  }
+                },
+                "port_maps": {
+                  "TDATA": {
+                    "physical_name": "i_in3_tdata",
+                    "direction": "I",
+                    "left": "127",
+                    "right": "0"
+                  },
+                  "TKEEP": {
+                    "physical_name": "i_in3_tkeep",
+                    "direction": "I",
+                    "left": "15",
+                    "right": "0"
+                  },
+                  "TLAST": {
+                    "physical_name": "i_in3_tlast",
+                    "direction": "I"
+                  },
+                  "TUSER": {
+                    "physical_name": "i_in3_tuser",
+                    "direction": "I",
+                    "left": "1",
+                    "right": "0"
+                  },
+                  "TVALID": {
+                    "physical_name": "i_in3_tvalid",
+                    "direction": "I"
+                  }
+                }
+              }
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "axis_out:i_in0:i_in1:i_in2:i_in3",
+                    "value_src": "constant"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "resetn",
+                    "value_src": "constant"
+                  },
+                  "FREQ_HZ": {
+                    "value": "391000600",
+                    "value_src": "ip_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "ip_prop"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
+                    "value_src": "ip_prop"
+                  }
+                }
+              },
+              "resetn": {
+                "type": "rst",
+                "direction": "I",
+                "parameters": {
+                  "POLARITY": {
+                    "value": "ACTIVE_LOW",
+                    "value_src": "constant"
+                  }
+                }
               }
             }
           }
@@ -5675,24 +6132,28 @@
           "dcmac_deskew_out0": {
             "interface_ports": [
               "dcmac_deskew/out0",
+              "dcmac_to_axis/i_in0",
               "axis_ila_1/SLOT_0_AXIS"
             ]
           },
           "dcmac_deskew_out1": {
             "interface_ports": [
               "dcmac_deskew/out1",
+              "dcmac_to_axis/i_in1",
               "axis_ila_1/SLOT_1_AXIS"
             ]
           },
           "dcmac_deskew_out2": {
             "interface_ports": [
               "dcmac_deskew/out2",
+              "dcmac_to_axis/i_in2",
               "axis_ila_1/SLOT_2_AXIS"
             ]
           },
           "dcmac_deskew_out3": {
             "interface_ports": [
               "dcmac_deskew/out3",
+              "dcmac_to_axis/i_in3",
               "axis_ila_1/SLOT_3_AXIS"
             ]
           },
@@ -5723,6 +6184,12 @@
               "dcmac_rx/seg3",
               "axis_ila_0/SLOT_3_AXIS"
             ]
+          },
+          "dcmac_to_axis_axis_out": {
+            "interface_ports": [
+              "dcmac_to_axis/axis_out",
+              "axis_ila_1/SLOT_4_AXIS"
+            ]
           }
         },
         "nets": {
@@ -5730,9 +6197,10 @@
             "ports": [
               "axis_clk",
               "axis_rx0/clk",
-              "dcmac_rx/clk",
               "axis_ila_0/clk",
               "axis_ila_1/clk",
+              "dcmac_rx/clk",
+              "dcmac_to_axis/clk",
               "dcmac_deskew/clk"
             ]
           },
@@ -5740,14 +6208,14 @@
             "ports": [
               "data0",
               "axis_rx0/probe1",
-              "dcmac_rx/data0"
+              "dcmac_rx/i_data0"
             ]
           },
           "data1_1": {
             "ports": [
               "data1",
               "axis_rx0/probe2",
-              "dcmac_rx/data1"
+              "dcmac_rx/i_data1"
             ]
           },
           "dcmac_deskew_dbg_first_seg": {
@@ -5813,9 +6281,10 @@
           "dcmac_helper_axis0_resetn": {
             "ports": [
               "axis_resetn",
-              "dcmac_rx/resetn",
               "axis_ila_0/resetn",
               "axis_ila_1/resetn",
+              "dcmac_rx/resetn",
+              "dcmac_to_axis/resetn",
               "dcmac_deskew/resetn"
             ]
           },
@@ -5823,104 +6292,104 @@
             "ports": [
               "ena0",
               "axis_rx0/probe3",
-              "dcmac_rx/ena0"
+              "dcmac_rx/i_ena0"
             ]
           },
           "ena1_1": {
             "ports": [
               "ena1",
               "axis_rx0/probe4",
-              "dcmac_rx/ena1"
+              "dcmac_rx/i_ena1"
             ]
           },
           "eop0_1": {
             "ports": [
               "eop0",
               "axis_rx0/probe7",
-              "dcmac_rx/eop0"
+              "dcmac_rx/i_eop0"
             ]
           },
           "eop1_1": {
             "ports": [
               "eop1",
               "axis_rx0/probe8",
-              "dcmac_rx/eop1"
+              "dcmac_rx/i_eop1"
             ]
           },
           "err0_1": {
             "ports": [
               "err0",
               "axis_rx0/probe9",
-              "dcmac_rx/err0"
+              "dcmac_rx/i_err0"
             ]
           },
           "err1_1": {
             "ports": [
               "err1",
               "axis_rx0/probe10",
-              "dcmac_rx/err1"
+              "dcmac_rx/i_err1"
             ]
           },
           "mty0_1": {
             "ports": [
               "mty0",
               "axis_rx0/probe11",
-              "dcmac_rx/mty0"
+              "dcmac_rx/i_mty0"
             ]
           },
           "mty1_1": {
             "ports": [
               "mty1",
               "axis_rx0/probe12",
-              "dcmac_rx/mty1"
+              "dcmac_rx/i_mty1"
             ]
           },
           "sop0_1": {
             "ports": [
               "sop0",
               "axis_rx0/probe5",
-              "dcmac_rx/sop0"
+              "dcmac_rx/i_sop0"
             ]
           },
           "sop1_1": {
             "ports": [
               "sop1",
               "axis_rx0/probe6",
-              "dcmac_rx/sop1"
+              "dcmac_rx/i_sop1"
             ]
           },
           "tvalid_1": {
             "ports": [
               "tvalid",
               "axis_rx0/probe0",
-              "dcmac_rx/valid"
+              "dcmac_rx/i_valid"
             ]
           },
           "zero_128_dout": {
             "ports": [
               "zero_128/dout",
-              "dcmac_rx/data2",
-              "dcmac_rx/data3"
+              "dcmac_rx/i_data2",
+              "dcmac_rx/i_data3"
             ]
           },
           "zero_4_dout": {
             "ports": [
               "zero_4/dout",
-              "dcmac_rx/mty2",
-              "dcmac_rx/mty3"
+              "dcmac_rx/i_mty2",
+              "dcmac_rx/i_mty3"
             ]
           },
           "zero_dout": {
             "ports": [
               "zero/dout",
-              "dcmac_rx/ena2",
-              "dcmac_rx/ena3",
-              "dcmac_rx/err2",
-              "dcmac_rx/err3",
-              "dcmac_rx/sop2",
-              "dcmac_rx/sop3",
-              "dcmac_rx/eop2",
-              "dcmac_rx/eop3"
+              "dcmac_rx/i_ena2",
+              "dcmac_rx/i_ena3",
+              "dcmac_rx/i_err2",
+              "dcmac_rx/i_err3",
+              "dcmac_rx/i_sop2",
+              "dcmac_rx/i_sop3",
+              "dcmac_rx/i_eop2",
+              "dcmac_rx/i_eop3"
             ]
           }
         }
@@ -5995,8 +6464,8 @@
           "axis_clk",
           "axis_register_slice_0/aclk",
           "axis_register_slice_1/aclk",
-          "dcmac_helper/axis_clk_in",
-          "hier_0/axis_clk"
+          "hier_0/axis_clk",
+          "dcmac_helper/axis_clk_in"
         ]
       },
       "clk_wizard_core_clk1": {

@@ -1240,7 +1240,7 @@
             "variant_info": {
               "vpk120_eth2x100.bd": {
                 "scoped_diagram": "vpk120_eth2x100_inst_0.bd",
-                "design_checksum": "0x3523348E83B89BAA",
+                "design_checksum": "0x2A210836AEECB66D",
                 "ref_name": "vpk120_eth2x100",
                 "ref_subinst_path": "top_level_vpk120_eth2x100_0",
                 "ref_type": "Block Design",
@@ -1784,15 +1784,15 @@
               "resetn_1": {
                 "ports": [
                   "resetn",
-                  "packet_config/resetn",
-                  "packet_gen/resetn"
+                  "packet_gen/resetn",
+                  "packet_config/resetn"
                 ]
               },
               "vpk120_eth2x100_axis_clk": {
                 "ports": [
                   "clk",
-                  "packet_config/clk",
-                  "packet_gen/clk"
+                  "packet_gen/clk",
+                  "packet_config/clk"
                 ]
               }
             }
@@ -2332,15 +2332,15 @@
               "resetn_1": {
                 "ports": [
                   "resetn",
-                  "packet_config/resetn",
-                  "packet_gen/resetn"
+                  "packet_gen/resetn",
+                  "packet_config/resetn"
                 ]
               },
               "vpk120_eth2x100_axis_clk": {
                 "ports": [
                   "clk",
-                  "packet_config/clk",
-                  "packet_gen/clk"
+                  "packet_gen/clk",
+                  "packet_config/clk"
                 ]
               }
             }

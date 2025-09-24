@@ -10,37 +10,28 @@
 /*
     This converts an ordinary AXI stream into the oddball stream that 
     the DCMAC wants for an input.  This module supports either 2 or 4
-    output segments.  DW (Data Width) must be either 2x or 4x the SW 
-    (Segment Width)
+    output segments.
 */
 
-module axis_to_dcmac # (parameter DW = 256, SW=128)
+module axis_to_dcmac # (parameter SEG_COUNT = 2)
 (
     input   clk,
     input   resetn,
 
     // A standard AXI-Stream input
-    input[DW-1:0]   axis_in_tdata,
-    input[DW/8-1:0] axis_in_tkeep,
-    input           axis_in_tlast,
-    input           axis_in_tvalid,
-    output          axis_in_tready,
+    input[SEG_COUNT*128-1:0] axis_in_tdata,
+    input[SEG_COUNT* 16-1:0] axis_in_tkeep,
+    input                    axis_in_tlast,
+    input                    axis_in_tvalid,
+    output                   axis_in_tready,
 
     // A DCMAC compatible output stream
-    output[SW-1:0]           tx_axis_tdata0,     tx_axis_tdata1,         
-    output                   tx_axis_tuser_ena0, tx_axis_tuser_ena1,      
-    output                   tx_axis_tuser_sop0, tx_axis_tuser_sop1,           
-    output                   tx_axis_tuser_eop0, tx_axis_tuser_eop1,        
-    output                   tx_axis_tuser_err0, tx_axis_tuser_err1,         
-    output[$clog2(SW/8)-1:0] tx_axis_tuser_mty0, tx_axis_tuser_mty1,          
-
-    // In a 2-segment system, these are all driven to 0
-    output[SW-1:0]           tx_axis_tdata2,     tx_axis_tdata3,         
-    output                   tx_axis_tuser_ena2, tx_axis_tuser_ena3,      
-    output                   tx_axis_tuser_sop2, tx_axis_tuser_sop3,           
-    output                   tx_axis_tuser_eop2, tx_axis_tuser_eop3,        
-    output                   tx_axis_tuser_err2, tx_axis_tuser_err3,         
-    output[$clog2(SW/8)-1:0] tx_axis_tuser_mty2, tx_axis_tuser_mty3,          
+    output[127:0] tx_axis_tdata0,     tx_axis_tdata1,     tx_axis_tdata2,     tx_axis_tdata3,         
+    output        tx_axis_tuser_ena0, tx_axis_tuser_ena1, tx_axis_tuser_ena2, tx_axis_tuser_ena3,      
+    output        tx_axis_tuser_sop0, tx_axis_tuser_sop1, tx_axis_tuser_sop2, tx_axis_tuser_sop3,           
+    output        tx_axis_tuser_eop0, tx_axis_tuser_eop1, tx_axis_tuser_eop2, tx_axis_tuser_eop3,        
+    output        tx_axis_tuser_err0, tx_axis_tuser_err1, tx_axis_tuser_err2, tx_axis_tuser_err3,         
+    output[  3:0] tx_axis_tuser_mty0, tx_axis_tuser_mty1, tx_axis_tuser_mty2, tx_axis_tuser_mty3,          
 
     // DCMAC AXI stream VALID and READY signals
     output                   tx_axis_tvalid,
@@ -51,17 +42,14 @@ module axis_to_dcmac # (parameter DW = 256, SW=128)
 genvar i;
 integer n;
 
-// Figure out how many segments we'll use.  Must be 2 or 4
-localparam SEG_COUNT = DW / SW;
-
-// This is the maximum number of segments we support
-localparam MAX_SEGS = 4;
+// A segment is 128 bits wide
+localparam SW = 128;
 
 // This is the width of a single tx_axis_tdata<N> in bytes
 localparam SEG_BYTES = SW/8;
 
-// How many bits does it take to hold the value SEG_BYTES?
-localparam SEG_BYTES_W = $clog2(SEG_BYTES);
+// This is the maximum number of segments we support
+localparam MAX_SEGS = 4;
 
 // Split "axis_in_tkeep" into segments, 1 bit per segment byte
 wire[SEG_BYTES-1:0] tkeep[0:SEG_COUNT - 1];
@@ -86,7 +74,7 @@ endfunction
 //=============================================================================
 // Keep track of how many empty bytes are in each segment
 //=============================================================================
-wire[15:0] empty_bytes[0:MAX_SEGS-1];
+wire[4:0] empty_bytes[0:MAX_SEGS-1];
 wire[MAX_SEGS-1:0] segment_has_data;
 for (i=0; i<MAX_SEGS; i=i+1) begin
     if (i < SEG_COUNT) begin
@@ -133,10 +121,10 @@ assign tx_axis_tuser_sop1 = 0; // We'll never start a packet in the 2nd segment
 assign tx_axis_tuser_sop2 = 0; // We'll never start a packet in the 3rd segment
 assign tx_axis_tuser_sop3 = 0; // We'll never start a packet in the 4th segment
 
-assign tx_axis_tuser_mty0 = empty_bytes[0][SEG_BYTES_W-1:0];
-assign tx_axis_tuser_mty1 = empty_bytes[1][SEG_BYTES_W-1:0];
-assign tx_axis_tuser_mty2 = empty_bytes[2][SEG_BYTES_W-1:0];
-assign tx_axis_tuser_mty3 = empty_bytes[3][SEG_BYTES_W-1:0];
+assign tx_axis_tuser_mty0 = empty_bytes[0][3:0];
+assign tx_axis_tuser_mty1 = empty_bytes[1][3:0];
+assign tx_axis_tuser_mty2 = empty_bytes[2][3:0];
+assign tx_axis_tuser_mty3 = empty_bytes[3][3:0];
 
 assign tx_axis_tuser_ena0 = axis_in_tvalid & segment_has_data[0];
 assign tx_axis_tuser_ena1 = axis_in_tvalid & segment_has_data[1];

@@ -189,11 +189,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Sep 23 23:27:32 UTC 2025</spirit:value>
+            <spirit:value>Wed Sep 24 05:42:27 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:e2d783de</spirit:value>
+            <spirit:value>9:6d5b45d8</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -207,11 +207,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Sep 23 23:27:29 UTC 2025</spirit:value>
+            <spirit:value>Wed Sep 24 05:42:25 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:9b4248bd</spirit:value>
+            <spirit:value>9:6ad79b5b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -548,7 +548,7 @@ _N PMC_MIO1_500} {IO_P PMC_MIO0_500} {MODE {1 V unipolar}} {NAME VAUX_CH9} {SUPP
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PS_PMC_CONFIG_APPLIED</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.PS_PMC_CONFIG_APPLIED" spirit:choiceRef="choice_pairs_4873554b" spirit:order="4">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.PS_PMC_CONFIG_APPLIED" spirit:choiceRef="choice_pairs_4873554b" spirit:order="4">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>CPM_CONFIG</spirit:name>

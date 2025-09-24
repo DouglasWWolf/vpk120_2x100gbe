@@ -11,6 +11,9 @@
 /*
     This deskews the data segments coming from a DCMAC, re-arranging segments
     to ensure that a new packet always starts on segment 0.
+
+    This module supports DCMAC configurations that have either 2 or 4 segments
+    per logical port.
 */
 
 
@@ -29,7 +32,7 @@ module dcmac_deskew # (parameter SEG_COUNT=2)
     // Input streams, one per segment
     input [127:0]   in0_tdata,  in1_tdata,  in2_tdata,  in3_tdata,
     input [ 15:0]   in0_tkeep,  in1_tkeep,  in2_tkeep,  in3_tkeep,
-    input [  2:0]   in0_tuser,  in1_tuser,  in2_tuser,  in3_tuser,
+    input [  1:0]   in0_tuser,  in1_tuser,  in2_tuser,  in3_tuser,
     input           in0_tlast,  in1_tlast,  in2_tlast,  in3_tlast,
     input           in0_tvalid, in1_tvalid, in2_tvalid, in3_tvalid,
     output          in0_tready, in1_tready, in2_tready, in3_tready,
@@ -37,7 +40,7 @@ module dcmac_deskew # (parameter SEG_COUNT=2)
     // Output streams, one per segment
     output reg [127:0] out0_tdata,  out1_tdata,  out2_tdata,  out3_tdata,
     output reg [ 15:0] out0_tkeep,  out1_tkeep,  out2_tkeep,  out3_tkeep,
-    output reg [  2:0] out0_tuser,  out1_tuser,  out2_tuser,  out3_tuser,
+    output reg [  1:0] out0_tuser,  out1_tuser,  out2_tuser,  out3_tuser,
     output reg         out0_tlast,  out1_tlast,  out2_tlast,  out3_tlast,
     output             out0_tvalid, out1_tvalid, out2_tvalid, out3_tvalid
 
@@ -46,9 +49,6 @@ module dcmac_deskew # (parameter SEG_COUNT=2)
 
 // This will be a '1' if we're in four-segment mode
 localparam[0:0] FOUR_SEGS = (SEG_COUNT == 4);
-
-// This will be a '1' if we're in two-segment mode
-localparam[0:0] TWO_SEGS  = (SEG_COUNT == 2);
 
 //=============================================================================
 // This drives out<n>_tvalid
@@ -76,7 +76,7 @@ reg [1:0] first_seg;
 
 // Determine the order that input segments go in
 wire[1:0] idx0, idx1, idx2, idx3;
-if (TWO_SEGS) begin
+if (SEG_COUNT == 2) begin
     assign idx0 = (first_seg + 0) & 1;
     assign idx1 = (first_seg + 1) & 1;
     assign idx2 = 0;
@@ -103,7 +103,7 @@ assign in_tkeep[2] = in2_tkeep;
 assign in_tkeep[3] = in3_tkeep;
 
 // Make in<n>_tuser indexable
-wire [2:0] in_tuser[0:3];
+wire [1:0] in_tuser[0:3];
 assign in_tuser[0] = in0_tuser;
 assign in_tuser[1] = in1_tuser;
 assign in_tuser[2] = in2_tuser;
@@ -165,7 +165,7 @@ wire has_sop = seg_sop[0] | seg_sop[1] | seg_sop[2] | seg_sop[3];
 //=============================================================================
 reg is_active[0:3];
 //-----------------------------------------------------------------------------
-if (TWO_SEGS) begin
+if (SEG_COUNT == 2) begin
     always @* begin
 
         // Determine which segments are active (meaning their data will be output)
@@ -183,7 +183,7 @@ if (TWO_SEGS) begin
     end
 end
 
-if (FOUR_SEGS) begin
+if (SEG_COUNT == 4) begin
     always @* begin
 
         // Determine which segments are active (meaning their data will be output)
@@ -224,7 +224,20 @@ end
 
 //=============================================================================
 // Determine how the input segments will be mapped at the beginning of the 
-// next cycle
+// next cycle.   The rules are:
+//
+// (1) Examine the SOP flags in the segments as they are currently mapped.
+//     If one of the segments has an SOP flag, that becomes segment 0 on
+//     the next clock cycle.
+//
+// (2) If no segment had an SOP, did any segment an an EOP?  An "end-of-packet"
+//     marker (with no start-of-packet marker on the same cycle) means that
+//     the current packet has completed, and the next packet will begin on
+//     segment 0.
+//
+// (3) If there was neither a start-of-packet nor end-of-packet marker on
+//     any segment, it means that the ordering of the segments won't change
+//     on the next clock cycle
 //=============================================================================
 reg [1:0] next_seg;
 //-----------------------------------------------------------------------------
