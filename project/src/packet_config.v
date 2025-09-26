@@ -88,20 +88,20 @@ localparam DEFAULT_IDLE_CYCLES  = 1;
 // We'll communicate with the AXI4-Lite Slave core with these signals.
 //==========================================================================
 // AXI Slave Handler Interface for write requests
-wire[31:0]  ashi_windx;     // Input   Write register-index
-wire[31:0]  ashi_waddr;     // Input:  Write-address
-wire[31:0]  ashi_wdata;     // Input:  Write-data
-wire        ashi_write;     // Input:  1 = Handle a write request
-reg[1:0]    ashi_wresp;     // Output: Write-response (OKAY, DECERR, SLVERR)
-wire        ashi_widle;     // Output: 1 = Write state machine is idle
+wire[  31:0] ashi_windx;     // Input   Write register-index
+wire[AW-1:0] ashi_waddr;     // Input:  Write-address
+wire[  31:0] ashi_wdata;     // Input:  Write-data
+wire         ashi_write;     // Input:  1 = Handle a write request
+reg [   1:0] ashi_wresp;     // Output: Write-response (OKAY, DECERR, SLVERR)
+wire         ashi_widle;     // Output: 1 = Write state machine is idle
 
 // AXI Slave Handler Interface for read requests
-wire[31:0]  ashi_rindx;     // Input   Read register-index
-wire[31:0]  ashi_raddr;     // Input:  Read-address
-wire        ashi_read;      // Input:  1 = Handle a read request
-reg[31:0]   ashi_rdata;     // Output: Read data
-reg[1:0]    ashi_rresp;     // Output: Read-response (OKAY, DECERR, SLVERR);
-wire        ashi_ridle;     // Output: 1 = Read state machine is idle
+wire[  31:0] ashi_rindx;     // Input   Read register-index
+wire[AW-1:0] ashi_raddr;     // Input:  Read-address
+wire         ashi_read;      // Input:  1 = Handle a read request
+reg [  31:0] ashi_rdata;     // Output: Read data
+reg [   1:0] ashi_rresp;     // Output: Read-response (OKAY, DECERR, SLVERR);
+wire         ashi_ridle;     // Output: 1 = Read state machine is idle
 //==========================================================================
 
 // The state of the state-machines that handle AXI4-Lite read and AXI4-Lite write
@@ -224,6 +224,7 @@ axi4_lite_slave#(.AW(AW)) i_axi4lite_slave
     
     // AXI AW channel
     .AXI_AWADDR     (S_AXI_AWADDR),
+    .AXI_AWPROT     (S_AXI_AWPROT),
     .AXI_AWVALID    (S_AXI_AWVALID),   
     .AXI_AWREADY    (S_AXI_AWREADY),
     
@@ -240,6 +241,7 @@ axi4_lite_slave#(.AW(AW)) i_axi4lite_slave
 
     // AXI AR channel
     .AXI_ARADDR     (S_AXI_ARADDR), 
+    .AXI_ARPROT     (S_AXI_ARPROT),
     .AXI_ARVALID    (S_AXI_ARVALID),
     .AXI_ARREADY    (S_AXI_ARREADY),
 

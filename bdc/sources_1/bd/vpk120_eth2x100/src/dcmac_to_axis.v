@@ -15,6 +15,8 @@
 
 module dcmac_to_axis # (parameter SEG_COUNT = 2)
 (
+    (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
+    (* X_INTERFACE_PARAMETER = "FREQ_HZ 391000600, ASSOCIATED_BUSIF axis_out:i_in0:i_in1:i_in2:i_in3" *)
     input   clk,
     input   resetn,
 

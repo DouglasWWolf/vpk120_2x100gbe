@@ -64,11 +64,11 @@ assign out3_tvalid = out_tvalid & FOUR_SEGS;
 //=============================================================================
 // Make the in<n>tready signals indexable
 //=============================================================================
-reg in_tready[0:3];
+reg[3:0] in_tready;
 assign in0_tready = in_tready[0];
 assign in1_tready = in_tready[1];
-assign in2_tready = in_tready[2];
-assign in3_tready = in_tready[3];
+assign in2_tready = in_tready[2] & FOUR_SEGS;
+assign in3_tready = in_tready[3] & FOUR_SEGS;
 //=============================================================================
 
 // This is the index of the first input segment
@@ -158,64 +158,89 @@ assign seg_sop[3] = in3_tvalid & in3_tuser[1] & FOUR_SEGS;
 wire has_sop = seg_sop[0] | seg_sop[1] | seg_sop[2] | seg_sop[3];
 //=============================================================================
 
-
-
 //=============================================================================
-// Determine which segments will be output at the next clock-cycle
+// "valid_segs" is a 4-bit map of which segments are valid
 //=============================================================================
-reg is_active[0:3];
+wire[3:0] valid_segs;
 //-----------------------------------------------------------------------------
 if (SEG_COUNT == 2) begin
-    always @* begin
-
-        // Determine which segments are active (meaning their data will be output)
-        is_active[idx0] = seg_valid[idx0];
-        is_active[idx1] = seg_valid[idx1];
-        
-        // If the first segment has the end-of-packet, inactivate the other segment
-        if (seg_eop[idx0]) begin
-            is_active[idx1] = 0;
-        end
-
-        // If we have input data, we will acknowledge it at the clock cycle
-        in_tready[idx0] = is_active[idx0];
-        in_tready[idx1] = is_active[idx1];
-    end
+    assign valid_segs = {2'b0, seg_valid[idx1], seg_valid[idx0]};
 end
 
 if (SEG_COUNT == 4) begin
+    assign valid_segs = {seg_valid[idx3], seg_valid[idx2],
+                         seg_valid[idx1], seg_valid[idx0]};
+end
+//=============================================================================
+
+
+//=============================================================================
+// If there is an end-of-packer market on a segment, all higher numbered
+// segments are inactive.
+//=============================================================================
+reg[3:0] is_active;
+//-----------------------------------------------------------------------------
+wire[3:0] active_segs = seg_eop[idx0] ? valid_segs & 4'b0001 :
+                        seg_eop[idx1] ? valid_segs & 4'b0011 :
+                        seg_eop[idx2] ? valid_segs & 4'b0111 : valid_segs;
+//=============================================================================
+
+
+//=============================================================================
+// This is the equivalent of:
+//     is_active[idx0] = active_segs[0];
+//     is_active[idx1] = active_segs[1];
+//=============================================================================
+if (SEG_COUNT == 2) begin
     always @* begin
-
-        // Determine which segments are active (meaning their data will be output)
-        is_active[idx0] = seg_valid[idx0];
-        is_active[idx1] = seg_valid[idx1];
-        is_active[idx2] = seg_valid[idx2];
-        is_active[idx3] = seg_valid[idx3];
-
-        // If the first segment has the end-of-packet, inactivate the next 3 segments
-        if (seg_eop[idx0]) begin
-            is_active[idx1] = 0;
-            is_active[idx2] = 0;
-            is_active[idx3] = 0;
-        end
+        case(first_seg[0])
     
-        // If the second segment has the end-of-packet, inactivate the next 2 segments
-        else if (seg_eop[idx1]) begin
-            is_active[idx2] = 0;
-            is_active[idx3] = 0;
-        end
+            0:  begin
+                    is_active = active_segs;
+                    in_tready = active_segs;
+                end
 
-        // If the third segment has the end-of-packet, inactivate the next segment
-        else if (seg_eop[idx2]) begin
-            is_active[idx3] = 0;
-        end
+            1:  begin
+                    is_active = {2'b0, active_segs[0], active_segs[1]};
+                    in_tready = {2'b0, active_segs[0], active_segs[1]};
+                end
+        endcase
+    end
+end
+//=============================================================================
 
-        // If we have input data, we will acknowledge it at the clock cycle
-        in_tready[idx0] = is_active[idx0];
-        in_tready[idx1] = is_active[idx1];
-        in_tready[idx2] = is_active[idx2];
-        in_tready[idx3] = is_active[idx3];
 
+//=============================================================================
+// This is the equivalent of:
+//     is_active[idx0] = active_segs[0];
+//     is_active[idx1] = active_segs[1];
+//     is_active[idx2] = active_segs[2];
+//     is_active[idx3] = active_segs[3];
+//=============================================================================
+if (SEG_COUNT == 4) begin
+    always @* begin
+        case(first_seg)
+
+            0:  begin
+                    is_active = active_segs;
+                    in_tready = active_segs;
+                end
+
+            1:  begin
+                    is_active = {active_segs[2:0], active_segs[3:3]};
+                    in_tready = {active_segs[2:0], active_segs[3:3]};
+                end
+
+            2:  begin
+                    is_active = {active_segs[1:0], active_segs[3:2]};
+                    in_tready = {active_segs[1:0], active_segs[3:2]};
+                end
+
+            3:  begin
+                    is_active = {active_segs[0:0], active_segs[3:1]};
+                    in_tready = {active_segs[0:0], active_segs[3:1]};
+                end
+        endcase
     end
 end
 //=============================================================================
@@ -265,6 +290,17 @@ end
 
 
 //=============================================================================
+// Make is_active[] indexable
+//=============================================================================
+wire   seg_active[0:3];
+assign seg_active[0] = is_active[0];
+assign seg_active[1] = is_active[1];
+assign seg_active[2] = is_active[2];
+assign seg_active[3] = is_active[3];
+//=============================================================================
+
+
+//=============================================================================
 // This is the main logic that clocks data from input to output
 //=============================================================================
 always @(posedge clk) begin
@@ -299,28 +335,28 @@ always @(posedge clk) begin
     // our input segments contains an end-of-packet marker...
     else if (valid_seg_count == SEG_COUNT || has_eop) begin
 
-        if (is_active[idx0]) begin
+        if (seg_active[idx0]) begin
             out0_tdata <= in_tdata[idx0];
             out0_tkeep <= in_tkeep[idx0];
             out0_tuser <= in_tuser[idx0];
             out0_tlast <= in_tlast[idx0];
         end
 
-        if (is_active[idx1]) begin
+        if (seg_active[idx1]) begin
             out1_tdata <= in_tdata[idx1];
             out1_tkeep <= in_tkeep[idx1];
             out1_tuser <= in_tuser[idx1];
             out1_tlast <= in_tlast[idx1];
         end
 
-        if (FOUR_SEGS & is_active[idx2]) begin
+        if (FOUR_SEGS & seg_active[idx2]) begin
             out2_tdata <= in_tdata[idx2];
             out2_tkeep <= in_tkeep[idx2];
             out2_tuser <= in_tuser[idx2];
             out2_tlast <= in_tlast[idx2];
         end
 
-        if (FOUR_SEGS & is_active[idx3]) begin
+        if (FOUR_SEGS & seg_active[idx3]) begin
             out3_tdata <= in_tdata[idx3];
             out3_tkeep <= in_tkeep[idx3];
             out3_tuser <= in_tuser[idx3];

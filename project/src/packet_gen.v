@@ -19,9 +19,13 @@
     replicated across the field
 */
 
-module packet_gen # (parameter DW=256, DCMAC=1)
+module packet_gen # (parameter DW=512, DCMAC=1)
 (
-    input   clk, resetn,
+
+    (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
+    (* X_INTERFACE_PARAMETER = "ASSOCIATED_BUSIF axis_out" *)
+    input   clk,
+    input   resetn,
 
     input[31:0] packet_count, 
     input[15:0] packet_length, idle_cycles, initial_value,

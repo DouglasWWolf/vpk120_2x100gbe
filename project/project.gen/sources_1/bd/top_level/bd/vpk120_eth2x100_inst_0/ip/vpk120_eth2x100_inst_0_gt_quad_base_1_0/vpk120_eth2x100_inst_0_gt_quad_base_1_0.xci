@@ -21,7 +21,7 @@
         "SIM_SPEEDUP": [ { "value": "false", "resolve_type": "user", "format": "bool", "usage": "all" } ],
         "ANLT_PARAMETERS": [ { "value": " ", "resolve_type": "user", "usage": "all" } ],
         "DISABLE_APB_WORKAROUND": [ { "value": "false", "resolve_type": "user", "format": "bool", "usage": "all" } ],
-        "APB3_CLK_FREQUENCY": [ { "value": "199.999995", "value_src": "user", "value_permission": "bd_and_user", "resolve_type": "user", "format": "float", "usage": "all" } ],
+        "APB3_CLK_FREQUENCY": [ { "value": "249.997499", "value_src": "user", "value_permission": "bd_and_user", "resolve_type": "user", "format": "float", "usage": "all" } ],
         "GT_TYPE": [ { "value": "GTM", "value_permission": "bd_and_user", "resolve_type": "user", "value_mode": "manual", "usage": "all" } ],
         "BYPASS_DRC_58G": [ { "value": "false", "value_permission": "bd_and_user", "resolve_type": "user", "format": "bool", "usage": "all" } ],
         "MASTER_RESET_EN": [ { "value": "true", "resolve_type": "user", "format": "bool", "usage": "all" } ],
@@ -1183,7 +1183,7 @@
           "abstraction_type": "xilinx.com:signal:clock_rtl:1.0",
           "mode": "slave",
           "parameters": {
-            "FREQ_HZ": [ { "value": "199999995", "value_src": "user", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "FREQ_HZ": [ { "value": "249997499", "value_src": "user", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "FREQ_TOLERANCE_HZ": [ { "value": "0", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "PHASE": [ { "value": "0.0", "value_src": "ip_propagated", "value_permission": "bd", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
             "CLK_DOMAIN": [ { "value": "bd_0477_pspmc_0_0_pl0_ref_clk", "value_src": "ip_propagated", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],

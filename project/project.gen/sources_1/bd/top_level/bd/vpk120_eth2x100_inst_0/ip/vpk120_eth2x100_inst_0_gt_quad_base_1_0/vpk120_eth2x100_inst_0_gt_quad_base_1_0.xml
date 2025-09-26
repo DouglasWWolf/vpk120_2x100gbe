@@ -1059,7 +1059,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.APB3CLK.FREQ_HZ">199999995</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.APB3CLK.FREQ_HZ">249997499</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -6302,7 +6302,7 @@ ERCLK_FREQ 250 RX_JTOL_FC 10 RX_JTOL_LF_SLOPE -20 RX_BUFFER_BYPASS_MODE Fast_Syn
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:8849be29</spirit:value>
+            <spirit:value>9:8bf95fbb</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6313,7 +6313,7 @@ ERCLK_FREQ 250 RX_JTOL_FC 10 RX_JTOL_LF_SLOPE -20 RX_BUFFER_BYPASS_MODE Fast_Syn
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:0bd56303</spirit:value>
+            <spirit:value>9:58c522a6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -15513,7 +15513,7 @@ MMA_VALID_ONLY 0} LR1_SETTINGS { } LR2_SETTINGS { } LR3_SETTINGS { } LR4_SETTING
       <spirit:name>APB3_CLK_FREQUENCY</spirit:name>
       <spirit:displayName>APB3 clock frequency (MHz)</spirit:displayName>
       <spirit:description>Select APB3 clock frequency</spirit:description>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.APB3_CLK_FREQUENCY" spirit:order="15" spirit:minimum="99.99" spirit:maximum="300">199.999995</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.APB3_CLK_FREQUENCY" spirit:order="15" spirit:minimum="99.99" spirit:maximum="300">249.997499</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>GT_TYPE</spirit:name>
