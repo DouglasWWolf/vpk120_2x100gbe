@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="43">
   <CompositeFile CompositeFileTopName="top_level" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1758906162"/>
-    <Generation Name="SIMULATION" State="STALE" Timestamp="1758906162"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1758906162"/>
-    <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1758906236"/>
+    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1759101145"/>
+    <Generation Name="SIMULATION" State="STALE" Timestamp="1759101145"/>
+    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1759101145"/>
+    <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1759101219"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="synth/top_level.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
@@ -65,9 +65,10 @@
           <File Name="../../../../../bdc/sources_1/bd/vpk120_eth2x100/src/dcmac_helper.v"/>
           <File Name="../../../../src/common/axi4_lite_slave.v"/>
           <File Name="../../../../../bdc/sources_1/bd/vpk120_eth2x100/src/dcmac_ctrl.v"/>
-          <File Name="../../../../../bdc/sources_1/bd/vpk120_eth2x100/src/dcmac_rx.v"/>
-          <File Name="../../../../../bdc/sources_1/bd/vpk120_eth2x100/src/dcmac_deskew.v"/>
-          <File Name="../../../../../bdc/sources_1/bd/vpk120_eth2x100/src/seg_consumer.v"/>
+          <File Name="../../../../../bdc/sources_1/bd/vpk120_eth2x100/src/rxpath/dcmac_rx.v"/>
+          <File Name="../../../../../bdc/sources_1/bd/vpk120_eth2x100/src/rxpath/dcmac_rx_deskew.v"/>
+          <File Name="../../../../../bdc/sources_1/bd/vpk120_eth2x100/src/rxpath/dcmac_rx_2to4.v"/>
+          <File Name="../../../../../bdc/sources_1/bd/vpk120_eth2x100/src/rxpath/dcmac_to_axis64.v"/>
           <File Name="../../../../../bdc/sources_1/bd/vpk120_eth2x100/src/txpath/dcmac_packetizer.v"/>
           <File Name="../../../../../bdc/sources_1/bd/vpk120_eth2x100/src/txpath/dcmac_tx_2seg.v"/>
           <File Name="../../../../../bdc/sources_1/bd/vpk120_eth2x100/src/txpath/axis64_to_dcmac.v"/>

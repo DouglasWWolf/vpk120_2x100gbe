@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-//Date        : Fri Sep 26 10:02:41 2025
+//Date        : Sun Sep 28 16:12:24 2025
 //Host        : wolf-super-server running 64-bit Ubuntu 20.04.6 LTS
 //Command     : generate_target top_level.bd
 //Design      : top_level
@@ -206,6 +206,12 @@ module packet_gen_0_imp_WS1ECX
     S_AXI_wready,
     S_AXI_wstrb,
     S_AXI_wvalid,
+    axis_in_tdata,
+    axis_in_tkeep,
+    axis_in_tlast,
+    axis_in_tready,
+    axis_in_tuser,
+    axis_in_tvalid,
     axis_out_tdata,
     axis_out_tkeep,
     axis_out_tlast,
@@ -232,6 +238,12 @@ module packet_gen_0_imp_WS1ECX
   output S_AXI_wready;
   input [0:0]S_AXI_wstrb;
   input S_AXI_wvalid;
+  input [511:0]axis_in_tdata;
+  input [63:0]axis_in_tkeep;
+  input axis_in_tlast;
+  output axis_in_tready;
+  input [1:0]axis_in_tuser;
+  input axis_in_tvalid;
   output [511:0]axis_out_tdata;
   output [63:0]axis_out_tkeep;
   output axis_out_tlast;
@@ -259,20 +271,85 @@ module packet_gen_0_imp_WS1ECX
   wire S_AXI_wready;
   wire [0:0]S_AXI_wstrb;
   wire S_AXI_wvalid;
-  wire [511:0]axis_out_tdata;
-  wire [63:0]axis_out_tkeep;
-  wire axis_out_tlast;
-  wire axis_out_tready;
-  wire axis_out_tvalid;
-  wire clk;
+  (* CONN_BUS_INFO = "axis_in_1 xilinx.com:interface:axis:1.0 None TDATA" *) (* DONT_TOUCH *) wire [511:0]axis_in_1_TDATA;
+  (* CONN_BUS_INFO = "axis_in_1 xilinx.com:interface:axis:1.0 None TKEEP" *) (* DONT_TOUCH *) wire [63:0]axis_in_1_TKEEP;
+  (* CONN_BUS_INFO = "axis_in_1 xilinx.com:interface:axis:1.0 None TLAST" *) (* DONT_TOUCH *) wire axis_in_1_TLAST;
+  (* CONN_BUS_INFO = "axis_in_1 xilinx.com:interface:axis:1.0 None TREADY" *) (* DONT_TOUCH *) wire axis_in_1_TREADY;
+  (* CONN_BUS_INFO = "axis_in_1 xilinx.com:interface:axis:1.0 None TUSER" *) (* DONT_TOUCH *) wire [1:0]axis_in_1_TUSER;
+  (* CONN_BUS_INFO = "axis_in_1 xilinx.com:interface:axis:1.0 None TVALID" *) (* DONT_TOUCH *) wire axis_in_1_TVALID;
+  wire packet_check_alarm;
+  wire [511:0]packet_check_mismatch_rx;
+  wire [511:0]packet_check_mismatch_tx;
   wire [15:0]packet_config_idle_cycles;
   wire [15:0]packet_config_initial_value;
   wire [31:0]packet_config_packet_count;
   wire [15:0]packet_config_packet_len;
+  wire packet_config_resetn_out;
   wire packet_config_start;
+  (* CONN_BUS_INFO = "packet_gen_axis_out xilinx.com:interface:axis:1.0 None TDATA" *) (* DONT_TOUCH *) wire [511:0]packet_gen_axis_out_TDATA;
+  (* CONN_BUS_INFO = "packet_gen_axis_out xilinx.com:interface:axis:1.0 None TKEEP" *) (* DONT_TOUCH *) wire [63:0]packet_gen_axis_out_TKEEP;
+  (* CONN_BUS_INFO = "packet_gen_axis_out xilinx.com:interface:axis:1.0 None TLAST" *) (* DONT_TOUCH *) wire packet_gen_axis_out_TLAST;
+  (* CONN_BUS_INFO = "packet_gen_axis_out xilinx.com:interface:axis:1.0 None TREADY" *) (* DONT_TOUCH *) wire packet_gen_axis_out_TREADY;
+  (* CONN_BUS_INFO = "packet_gen_axis_out xilinx.com:interface:axis:1.0 None TVALID" *) (* DONT_TOUCH *) wire packet_gen_axis_out_TVALID;
   wire packet_gen_busy;
-  wire resetn;
+  wire resetn_1;
+  wire vpk120_eth2x100_axis_clk;
 
+  assign axis_in_1_TDATA = axis_in_tdata[511:0];
+  assign axis_in_1_TKEEP = axis_in_tkeep[63:0];
+  assign axis_in_1_TLAST = axis_in_tlast;
+  assign axis_in_1_TUSER = axis_in_tuser[1:0];
+  assign axis_in_1_TVALID = axis_in_tvalid;
+  assign axis_in_tready = axis_in_1_TREADY;
+  assign axis_out_tdata[511:0] = packet_gen_axis_out_TDATA;
+  assign axis_out_tkeep[63:0] = packet_gen_axis_out_TKEEP;
+  assign axis_out_tlast = packet_gen_axis_out_TLAST;
+  assign axis_out_tvalid = packet_gen_axis_out_TVALID;
+  assign packet_gen_axis_out_TREADY = axis_out_tready;
+  assign resetn_1 = resetn;
+  assign vpk120_eth2x100_axis_clk = clk;
+  top_level_axis_ila_0_1 axis_ila
+       (.SLOT_0_AXIS_tdata(packet_gen_axis_out_TDATA[7:0]),
+        .SLOT_0_AXIS_tdest(1'b0),
+        .SLOT_0_AXIS_tid(1'b0),
+        .SLOT_0_AXIS_tkeep(packet_gen_axis_out_TKEEP[0]),
+        .SLOT_0_AXIS_tlast(packet_gen_axis_out_TLAST),
+        .SLOT_0_AXIS_tready(packet_gen_axis_out_TREADY),
+        .SLOT_0_AXIS_tstrb(1'b1),
+        .SLOT_0_AXIS_tuser(1'b0),
+        .SLOT_0_AXIS_tvalid(packet_gen_axis_out_TVALID),
+        .SLOT_1_AXIS_tdata(axis_in_1_TDATA[7:0]),
+        .SLOT_1_AXIS_tdest(1'b0),
+        .SLOT_1_AXIS_tid(1'b0),
+        .SLOT_1_AXIS_tkeep(axis_in_1_TKEEP[0]),
+        .SLOT_1_AXIS_tlast(axis_in_1_TLAST),
+        .SLOT_1_AXIS_tready(axis_in_1_TREADY),
+        .SLOT_1_AXIS_tstrb(1'b1),
+        .SLOT_1_AXIS_tuser(axis_in_1_TUSER[0]),
+        .SLOT_1_AXIS_tvalid(axis_in_1_TVALID),
+        .clk(vpk120_eth2x100_axis_clk),
+        .probe0(packet_check_alarm),
+        .probe1(packet_check_mismatch_tx),
+        .probe2(packet_check_mismatch_rx),
+        .resetn(resetn_1));
+  top_level_packet_check_0_0 packet_check
+       (.alarm(packet_check_alarm),
+        .axis_rx_tdata(axis_in_1_TDATA),
+        .axis_rx_tkeep(axis_in_1_TKEEP),
+        .axis_rx_tlast(axis_in_1_TLAST),
+        .axis_rx_tready(axis_in_1_TREADY),
+        .axis_rx_tuser(axis_in_1_TUSER),
+        .axis_rx_tvalid(axis_in_1_TVALID),
+        .axis_tx_tdata(packet_gen_axis_out_TDATA),
+        .axis_tx_tkeep(packet_gen_axis_out_TKEEP),
+        .axis_tx_tlast(packet_gen_axis_out_TLAST),
+        .axis_tx_tready(packet_gen_axis_out_TREADY),
+        .axis_tx_tuser({1'b0,1'b0}),
+        .axis_tx_tvalid(packet_gen_axis_out_TVALID),
+        .clk(vpk120_eth2x100_axis_clk),
+        .mismatch_rx(packet_check_mismatch_rx),
+        .mismatch_tx(packet_check_mismatch_tx),
+        .resetn(packet_config_resetn_out));
   top_level_packet_config_0_0 packet_config
        (.S_AXI_ARADDR({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,S_AXI_araddr}),
         .S_AXI_ARPROT(S_AXI_arprot),
@@ -293,27 +370,29 @@ module packet_gen_0_imp_WS1ECX
         .S_AXI_WREADY(S_AXI_wready),
         .S_AXI_WSTRB({1'b1,1'b1,1'b1,S_AXI_wstrb}),
         .S_AXI_WVALID(S_AXI_wvalid),
-        .clk(clk),
+        .alarm(packet_check_alarm),
+        .clk(vpk120_eth2x100_axis_clk),
         .idle_cycles(packet_config_idle_cycles),
         .initial_value(packet_config_initial_value),
         .packet_count(packet_config_packet_count),
         .packet_gen_busy(packet_gen_busy),
         .packet_len(packet_config_packet_len),
-        .resetn(resetn),
+        .resetn(resetn_1),
+        .resetn_out(packet_config_resetn_out),
         .start(packet_config_start));
   top_level_packet_gen_0_0 packet_gen
-       (.axis_out_tdata(axis_out_tdata),
-        .axis_out_tkeep(axis_out_tkeep),
-        .axis_out_tlast(axis_out_tlast),
-        .axis_out_tready(axis_out_tready),
-        .axis_out_tvalid(axis_out_tvalid),
+       (.axis_out_tdata(packet_gen_axis_out_TDATA),
+        .axis_out_tkeep(packet_gen_axis_out_TKEEP),
+        .axis_out_tlast(packet_gen_axis_out_TLAST),
+        .axis_out_tready(packet_gen_axis_out_TREADY),
+        .axis_out_tvalid(packet_gen_axis_out_TVALID),
         .busy(packet_gen_busy),
-        .clk(clk),
+        .clk(vpk120_eth2x100_axis_clk),
         .idle_cycles(packet_config_idle_cycles),
         .initial_value(packet_config_initial_value),
         .packet_count(packet_config_packet_count),
         .packet_length(packet_config_packet_len),
-        .resetn(resetn),
+        .resetn(resetn_1),
         .start(packet_config_start));
 endmodule
 
@@ -337,6 +416,11 @@ module packet_gen_1_imp_16P2JTB
     S_AXI_wready,
     S_AXI_wstrb,
     S_AXI_wvalid,
+    axis_in_tdata,
+    axis_in_tkeep,
+    axis_in_tlast,
+    axis_in_tready,
+    axis_in_tvalid,
     axis_out_tdata,
     axis_out_tkeep,
     axis_out_tlast,
@@ -363,6 +447,11 @@ module packet_gen_1_imp_16P2JTB
   output S_AXI_wready;
   input [0:0]S_AXI_wstrb;
   input S_AXI_wvalid;
+  input axis_in_tdata;
+  input axis_in_tkeep;
+  input axis_in_tlast;
+  output axis_in_tready;
+  input axis_in_tvalid;
   output [511:0]axis_out_tdata;
   output [63:0]axis_out_tkeep;
   output axis_out_tlast;
@@ -390,6 +479,11 @@ module packet_gen_1_imp_16P2JTB
   wire S_AXI_wready;
   wire [0:0]S_AXI_wstrb;
   wire S_AXI_wvalid;
+  wire axis_in_tdata;
+  wire axis_in_tkeep;
+  wire axis_in_tlast;
+  wire axis_in_tready;
+  wire axis_in_tvalid;
   wire [511:0]axis_out_tdata;
   wire [63:0]axis_out_tkeep;
   wire axis_out_tlast;
@@ -404,6 +498,14 @@ module packet_gen_1_imp_16P2JTB
   wire packet_gen_busy;
   wire resetn;
 
+  top_level_data_consumer_0_0 data_consumer
+       (.AXIS_RX_TDATA({axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata,axis_in_tdata}),
+        .AXIS_RX_TKEEP({axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep,axis_in_tkeep}),
+        .AXIS_RX_TLAST(axis_in_tlast),
+        .AXIS_RX_TREADY(axis_in_tready),
+        .AXIS_RX_TVALID(axis_in_tvalid),
+        .clk(clk),
+        .resetn(resetn));
   top_level_packet_config_1 packet_config
        (.S_AXI_ARADDR({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,S_AXI_araddr}),
         .S_AXI_ARPROT(S_AXI_arprot),
@@ -424,6 +526,7 @@ module packet_gen_1_imp_16P2JTB
         .S_AXI_WREADY(S_AXI_wready),
         .S_AXI_WSTRB({1'b1,1'b1,1'b1,S_AXI_wstrb}),
         .S_AXI_WVALID(S_AXI_wvalid),
+        .alarm(1'b0),
         .clk(clk),
         .idle_cycles(packet_config_idle_cycles),
         .initial_value(packet_config_initial_value),
@@ -567,7 +670,14 @@ module pl_rtl_imp_QFYSB7
   wire S_AXI_2_WREADY;
   wire S_AXI_2_WSTRB;
   wire [0:0]S_AXI_2_WVALID;
-  wire clk_wizard_0_clk_out1;
+  wire aclk;
+  wire aresetn;
+  wire [511:0]axis_in_1_TDATA;
+  wire [63:0]axis_in_1_TKEEP;
+  wire axis_in_1_TLAST;
+  wire axis_in_1_TREADY;
+  wire [1:0]axis_in_1_TUSER;
+  wire axis_in_1_TVALID;
   wire interconnect_M00_AXI_ARADDR;
   wire interconnect_M00_AXI_ARREADY;
   wire [0:0]interconnect_M00_AXI_ARVALID;
@@ -603,17 +713,16 @@ module pl_rtl_imp_QFYSB7
   wire interconnect_M01_AXI_WREADY;
   wire interconnect_M01_AXI_WSTRB;
   wire [0:0]interconnect_M01_AXI_WVALID;
-  (* CONN_BUS_INFO = "packet_gen_0_axis_out xilinx.com:interface:axis:1.0 None TDATA" *) (* DONT_TOUCH *) wire [511:0]packet_gen_0_axis_out_TDATA;
-  (* CONN_BUS_INFO = "packet_gen_0_axis_out xilinx.com:interface:axis:1.0 None TKEEP" *) (* DONT_TOUCH *) wire [63:0]packet_gen_0_axis_out_TKEEP;
-  (* CONN_BUS_INFO = "packet_gen_0_axis_out xilinx.com:interface:axis:1.0 None TLAST" *) (* DONT_TOUCH *) wire packet_gen_0_axis_out_TLAST;
-  (* CONN_BUS_INFO = "packet_gen_0_axis_out xilinx.com:interface:axis:1.0 None TREADY" *) (* DONT_TOUCH *) wire packet_gen_0_axis_out_TREADY;
-  (* CONN_BUS_INFO = "packet_gen_0_axis_out xilinx.com:interface:axis:1.0 None TVALID" *) (* DONT_TOUCH *) wire packet_gen_0_axis_out_TVALID;
-  (* CONN_BUS_INFO = "packet_gen_1_axis_out xilinx.com:interface:axis:1.0 None TDATA" *) (* DONT_TOUCH *) wire [511:0]packet_gen_1_axis_out_TDATA;
-  (* CONN_BUS_INFO = "packet_gen_1_axis_out xilinx.com:interface:axis:1.0 None TKEEP" *) (* DONT_TOUCH *) wire [63:0]packet_gen_1_axis_out_TKEEP;
-  (* CONN_BUS_INFO = "packet_gen_1_axis_out xilinx.com:interface:axis:1.0 None TLAST" *) (* DONT_TOUCH *) wire packet_gen_1_axis_out_TLAST;
-  (* CONN_BUS_INFO = "packet_gen_1_axis_out xilinx.com:interface:axis:1.0 None TREADY" *) (* DONT_TOUCH *) wire packet_gen_1_axis_out_TREADY;
-  (* CONN_BUS_INFO = "packet_gen_1_axis_out xilinx.com:interface:axis:1.0 None TVALID" *) (* DONT_TOUCH *) wire packet_gen_1_axis_out_TVALID;
-  wire proc_sys_reset_0_peripheral_aresetn;
+  wire [511:0]packet_gen_0_axis_out_TDATA;
+  wire [63:0]packet_gen_0_axis_out_TKEEP;
+  wire packet_gen_0_axis_out_TLAST;
+  wire packet_gen_0_axis_out_TREADY;
+  wire packet_gen_0_axis_out_TVALID;
+  wire [511:0]packet_gen_1_axis_out_TDATA;
+  wire [63:0]packet_gen_1_axis_out_TKEEP;
+  wire packet_gen_1_axis_out_TLAST;
+  wire packet_gen_1_axis_out_TREADY;
+  wire packet_gen_1_axis_out_TVALID;
   wire [0:0]qsfp0_clk_clk_n;
   wire [0:0]qsfp0_clk_clk_p;
   wire [3:0]qsfp0_gt_grx_n;
@@ -633,29 +742,6 @@ module pl_rtl_imp_QFYSB7
   assign S00_AXI_rdata[0] = \^S00_AXI_rdata ;
   assign S00_AXI_rvalid = \^S00_AXI_rvalid [0];
   assign S00_AXI_wready = \^S00_AXI_wready [0];
-  assign clk_wizard_0_clk_out1 = aclk;
-  assign proc_sys_reset_0_peripheral_aresetn = aresetn;
-  top_level_axis_ila_0_0 axis_ila
-       (.SLOT_0_AXIS_tdata(packet_gen_0_axis_out_TDATA[7:0]),
-        .SLOT_0_AXIS_tdest(1'b0),
-        .SLOT_0_AXIS_tid(1'b0),
-        .SLOT_0_AXIS_tkeep(packet_gen_0_axis_out_TKEEP[0]),
-        .SLOT_0_AXIS_tlast(packet_gen_0_axis_out_TLAST),
-        .SLOT_0_AXIS_tready(packet_gen_0_axis_out_TREADY),
-        .SLOT_0_AXIS_tstrb(1'b1),
-        .SLOT_0_AXIS_tuser(1'b0),
-        .SLOT_0_AXIS_tvalid(packet_gen_0_axis_out_TVALID),
-        .SLOT_1_AXIS_tdata(packet_gen_1_axis_out_TDATA[7:0]),
-        .SLOT_1_AXIS_tdest(1'b0),
-        .SLOT_1_AXIS_tid(1'b0),
-        .SLOT_1_AXIS_tkeep(packet_gen_1_axis_out_TKEEP[0]),
-        .SLOT_1_AXIS_tlast(packet_gen_1_axis_out_TLAST),
-        .SLOT_1_AXIS_tready(packet_gen_1_axis_out_TREADY),
-        .SLOT_1_AXIS_tstrb(1'b1),
-        .SLOT_1_AXIS_tuser(1'b0),
-        .SLOT_1_AXIS_tvalid(packet_gen_1_axis_out_TVALID),
-        .clk(clk_wizard_0_clk_out1),
-        .resetn(proc_sys_reset_0_peripheral_aresetn));
   top_level_icn_ctrl_0 interconnect
        (.M00_AXI_araddr(interconnect_M00_AXI_ARADDR),
         .M00_AXI_arready(interconnect_M00_AXI_ARREADY),
@@ -790,8 +876,8 @@ module pl_rtl_imp_QFYSB7
         .S00_AXI_wstrb(S00_AXI_wstrb[0]),
         .S00_AXI_wuser(1'b0),
         .S00_AXI_wvalid(S00_AXI_wvalid),
-        .aclk(clk_wizard_0_clk_out1),
-        .aresetn(proc_sys_reset_0_peripheral_aresetn));
+        .aclk(aclk),
+        .aresetn(aresetn));
   packet_gen_0_imp_WS1ECX packet_gen_0
        (.S_AXI_araddr(S_AXI_1_ARADDR),
         .S_AXI_arprot(S_AXI_1_ARPROT),
@@ -812,13 +898,19 @@ module pl_rtl_imp_QFYSB7
         .S_AXI_wready(S_AXI_1_WREADY),
         .S_AXI_wstrb(S_AXI_1_WSTRB),
         .S_AXI_wvalid(S_AXI_1_WVALID),
+        .axis_in_tdata(axis_in_1_TDATA),
+        .axis_in_tkeep(axis_in_1_TKEEP),
+        .axis_in_tlast(axis_in_1_TLAST),
+        .axis_in_tready(axis_in_1_TREADY),
+        .axis_in_tuser(axis_in_1_TUSER),
+        .axis_in_tvalid(axis_in_1_TVALID),
         .axis_out_tdata(packet_gen_0_axis_out_TDATA),
         .axis_out_tkeep(packet_gen_0_axis_out_TKEEP),
         .axis_out_tlast(packet_gen_0_axis_out_TLAST),
         .axis_out_tready(packet_gen_0_axis_out_TREADY),
         .axis_out_tvalid(packet_gen_0_axis_out_TVALID),
-        .clk(clk_wizard_0_clk_out1),
-        .resetn(proc_sys_reset_0_peripheral_aresetn));
+        .clk(aclk),
+        .resetn(aresetn));
   packet_gen_1_imp_16P2JTB packet_gen_1
        (.S_AXI_araddr(S_AXI_2_ARADDR),
         .S_AXI_arprot(S_AXI_2_ARPROT),
@@ -839,13 +931,17 @@ module pl_rtl_imp_QFYSB7
         .S_AXI_wready(S_AXI_2_WREADY),
         .S_AXI_wstrb(S_AXI_2_WSTRB),
         .S_AXI_wvalid(S_AXI_2_WVALID),
+        .axis_in_tdata(1'b0),
+        .axis_in_tkeep(1'b1),
+        .axis_in_tlast(1'b0),
+        .axis_in_tvalid(1'b0),
         .axis_out_tdata(packet_gen_1_axis_out_TDATA),
         .axis_out_tkeep(packet_gen_1_axis_out_TKEEP),
         .axis_out_tlast(packet_gen_1_axis_out_TLAST),
         .axis_out_tready(packet_gen_1_axis_out_TREADY),
         .axis_out_tvalid(packet_gen_1_axis_out_TVALID),
-        .clk(clk_wizard_0_clk_out1),
-        .resetn(proc_sys_reset_0_peripheral_aresetn));
+        .clk(aclk),
+        .resetn(aresetn));
   vpk120_eth2x100_inst_0 vpk120_eth2x100
        (.qsfp0_clk_clk_n(qsfp0_clk_clk_n),
         .qsfp0_clk_clk_p(qsfp0_clk_clk_p),
@@ -859,8 +955,15 @@ module pl_rtl_imp_QFYSB7
         .qsfp1_gt_grx_p(qsfp1_gt_grx_p),
         .qsfp1_gt_gtx_n(qsfp1_gt_gtx_n),
         .qsfp1_gt_gtx_p(qsfp1_gt_gtx_p),
-        .s_axi_aresetn(proc_sys_reset_0_peripheral_aresetn),
-        .s_axi_clk(clk_wizard_0_clk_out1),
+        .rx0_user_clk(aclk),
+        .rx0_user_tdata(axis_in_1_TDATA),
+        .rx0_user_tkeep(axis_in_1_TKEEP),
+        .rx0_user_tlast(axis_in_1_TLAST),
+        .rx0_user_tready(axis_in_1_TREADY),
+        .rx0_user_tuser(axis_in_1_TUSER),
+        .rx0_user_tvalid(axis_in_1_TVALID),
+        .s_axi_aresetn(aresetn),
+        .s_axi_clk(aclk),
         .s_axi_ctl_araddr(interconnect_M01_AXI_ARADDR),
         .s_axi_ctl_arprot(interconnect_M01_AXI_ARPROT),
         .s_axi_ctl_arready(interconnect_M01_AXI_ARREADY),
@@ -896,15 +999,15 @@ module pl_rtl_imp_QFYSB7
         .s_axi_dcmac_wdata(interconnect_M00_AXI_WDATA),
         .s_axi_dcmac_wready(interconnect_M00_AXI_WREADY),
         .s_axi_dcmac_wvalid(interconnect_M00_AXI_WVALID),
-        .tx0_user_clk(clk_wizard_0_clk_out1),
-        .tx0_user_resetn(proc_sys_reset_0_peripheral_aresetn),
+        .tx0_user_clk(aclk),
+        .tx0_user_resetn(aresetn),
         .tx0_user_tdata(packet_gen_0_axis_out_TDATA),
         .tx0_user_tkeep(packet_gen_0_axis_out_TKEEP),
         .tx0_user_tlast(packet_gen_0_axis_out_TLAST),
         .tx0_user_tready(packet_gen_0_axis_out_TREADY),
         .tx0_user_tvalid(packet_gen_0_axis_out_TVALID),
-        .tx1_user_clk(clk_wizard_0_clk_out1),
-        .tx1_user_resetn(proc_sys_reset_0_peripheral_aresetn),
+        .tx1_user_clk(aclk),
+        .tx1_user_resetn(aresetn),
         .tx1_user_tdata(packet_gen_1_axis_out_TDATA),
         .tx1_user_tkeep(packet_gen_1_axis_out_TKEEP),
         .tx1_user_tlast(packet_gen_1_axis_out_TLAST),
@@ -912,7 +1015,7 @@ module pl_rtl_imp_QFYSB7
         .tx1_user_tvalid(packet_gen_1_axis_out_TVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "top_level,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top_level,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=58,numReposBlks=47,numNonXlnxBlks=0,numHierBlks=11,maxHierDepth=3,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=21,numPkgbdBlks=1,bdsource=USER,da_cips_cnt=1,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "top_level.hwdef" *) 
+(* CORE_GENERATION_INFO = "top_level,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top_level,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=58,numReposBlks=47,numNonXlnxBlks=0,numHierBlks=11,maxHierDepth=3,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=22,numPkgbdBlks=1,bdsource=USER,da_cips_cnt=1,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "top_level.hwdef" *) 
 module top_level
    (UART_rxd,
     UART_txd,

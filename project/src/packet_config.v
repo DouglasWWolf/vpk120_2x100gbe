@@ -31,8 +31,14 @@ module packet_config # (parameter AW=8, parameter DEFAULT_INIT_VALUE = 16'h0000)
     // Tells the packet-generator to start generating packets
     output reg start,
 
+    // We use this to reset external logic
+    output resetn_out,
+
+    // This is the mismatch alarm that can be raised by the packet checker
+    input  alarm,
+
     // This is asserted when the packet generator is busy generating packets
-    input      packet_gen_busy,
+    input  packet_gen_busy,
 
     //================== This is an AXI4-Lite slave interface ==================
         
@@ -73,6 +79,7 @@ localparam REG_PACKET_COUNT = 0;
 localparam REG_PACKET_LEN   = 1;
 localparam REG_IDLE_CYCLES  = 2;
 localparam REG_INIT_VALUE   = 3;
+localparam REG_MISMATCH     = 4;
 //==========================================================================
 
 
@@ -116,8 +123,8 @@ localparam OKAY   = 0;
 localparam SLVERR = 2;
 localparam DECERR = 3;
 
-// The address mask is 'AW' 1-bits in a row
-localparam ADDR_MASK = (1 << AW) - 1;
+reg[7:0] reset_counter;
+assign resetn_out = (resetn == 1) & (reset_counter < 10);
 
 //==========================================================================
 // This state machine handles AXI4-Lite write requests
@@ -127,8 +134,12 @@ always @(posedge clk) begin
     // This strobes high for only a single clock-cycle at a time
     start <= 0;
 
+    // When this is non-zero, resetn_out is asserted
+    if (reset_counter) reset_counter <= reset_counter - 1;
+
     // If we're in reset, initialize important registers
     if (resetn == 0) begin
+        reset_counter     <= 0;
         ashi_write_state  <= 0;
         packet_count      <= 0;
         packet_len        <= DEFAULT_PACKET_LEN;
@@ -159,8 +170,9 @@ always @(posedge clk) begin
 
                     REG_PACKET_COUNT:
                         if (ashi_wdata) begin
-                            packet_count <= ashi_wdata;
-                            start        <= 1;
+                            packet_count     <= ashi_wdata;
+                            reset_counter    <= 64;
+                            ashi_write_state <= 1;
                          end
                     
  
@@ -170,7 +182,10 @@ always @(posedge clk) begin
             end
 
         // Dummy state, doesn't do anything
-        1: ashi_write_state <= 0;
+        1:  if (reset_counter == 0) begin
+                start            <= 1;
+                ashi_write_state <= 0;
+            end
 
     endcase
 end
@@ -195,7 +210,7 @@ always @(posedge clk) begin
         // Assume for the moment that the result will be OKAY
         ashi_rresp <= OKAY;              
         
-        // ashi_rindex = index of register to be read
+        // ashi_rindex = index of register to be reads
         case (ashi_rindx)
             
             // Allow a read from any valid register                
@@ -203,6 +218,7 @@ always @(posedge clk) begin
             REG_PACKET_COUNT:   ashi_rdata <= packet_count;
             REG_IDLE_CYCLES:    ashi_rdata <= idle_cycles;
             REG_INIT_VALUE:     ashi_rdata <= initial_value;
+            REG_MISMATCH:       ashi_rdata <= alarm;
 
             // Reads of any other register are a decode-error
             default: ashi_rresp <= DECERR;
