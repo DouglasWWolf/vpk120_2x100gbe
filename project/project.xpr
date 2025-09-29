@@ -281,7 +281,7 @@
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/xdc/vpk120_eth2x200.xdc">
+      <File Path="$PPRDIR/../bdc/sources_1/bd/vpk120_eth2x100/xdc/vpk120_eth2x100.xdc">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
