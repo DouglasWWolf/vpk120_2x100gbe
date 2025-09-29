@@ -55,7 +55,7 @@ end
 //=============================================================================
 
 // We're always ready to receive data on axis_rx
-assign axis_rx_tready = (resetn == 0);
+assign axis_rx_tready = (resetn == 1);
 
 // These are the output bus of the FIFO
 wire[  DW-1:0] fifo_tdata;

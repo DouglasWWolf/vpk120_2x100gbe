@@ -1,5 +1,5 @@
 dest=bitstream
-base=vpk120_2x200
+base=vpk120_2x100
 
 mkdir $dest 2>/dev/null
 
