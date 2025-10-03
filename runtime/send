@@ -1,14 +1,6 @@
 export axi_uart_device=/dev/ttyUSB2
 #==============================================================================
-# This script is used to trigger the sending of packets in RTL designs
-# "nexys_packet_demo" and "xuppl4_packet_demo".  It assumes you have the 
-# usual complement of FPGA utilities installed, notably "axireg" and "pcireg".
-#
-# The local directory should contain a file called "board_type".  The contents
-# of that file should be either "xuppl4" or "nexys_a7" (sans quotes)
-#
-# If you're running this on a Nexys-A7, move the two right-most slide-switches
-# into the "up" position to simulate PCS alignment on the two channels.
+# This script is used to trigger the sending of packets.
 #==============================================================================
 
 # Declare the register offsets
