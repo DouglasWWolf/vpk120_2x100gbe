@@ -212,11 +212,29 @@
                 "HA": "0xA40FFFFF",
                 "BP": "C_BASEADDR",
                 "HP": "C_HIGHADDR",
-                "MA": "s_axi_dcmac",
-                "MX": "/",
-                "MI": "s_axi_dcmac",
+                "MA": "M_AXI",
+                "MX": "/dcmac_ctrl",
+                "MI": "M_AXI",
                 "MS": "SEG_dcmac_0_Reg",
-                "MV": ":::",
+                "MV": "xilinx.com:module_ref:dcmac_ctrl:1.0",
+                "SX": "/dcmac_ip/dcmac_0",
+                "SI": "s_axi",
+                "SS": "Reg",
+                "SV": "xilinx.com:ip:dcmac:2.5",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V5": {
+                "VT": "AC",
+                "BA": "0xA4000000",
+                "HA": "0xA40FFFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "M_AXI",
+                "MX": "/dcmac_iface",
+                "MI": "M_AXI",
+                "MS": "SEG_dcmac_0_Reg",
+                "MV": "xilinx.com:module_ref:dcmac_iface:1.0",
                 "SX": "/dcmac_ip/dcmac_0",
                 "SI": "s_axi",
                 "SS": "Reg",
@@ -241,6 +259,11 @@
             },
             {
                 "src": "V4",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V5",
                 "trg": "V2",
                 "EH": "2"
             }

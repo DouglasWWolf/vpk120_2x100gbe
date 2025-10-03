@@ -78,7 +78,7 @@ module dcmac_helper # (parameter MAX_PORTS = 6, DW = 256)
     input ch0_rx_usr_clk2_1,
     input ch0_tx_usr_clk2_0,
     input ch0_tx_usr_clk2_1,
-
+ 
     // Clocks from the GT Quad that connect to the DCMAC
     (* X_INTERFACE_INFO = "xilinx.com:signal:gt_usrclk:1.0 rx_serdes_clk CLK" *)
     (* X_INTERFACE_PARAMETER = "FREQ_HZ 644531000" *)
@@ -96,14 +96,17 @@ module dcmac_helper # (parameter MAX_PORTS = 6, DW = 256)
     (* X_INTERFACE_PARAMETER = "FREQ_HZ 322265500" *)
     output[MAX_PORTS-1:0] tx_alt_serdes_clk,
 
-
-
     // From the GT Quads
     input           gtpowergood_0,
     input           gtpowergood_1,
 
     // To the DCMAC
     output          gtpowergood_in,
+
+    // From user-logic
+    input[5:0]      user_gt_precursor,
+    input[5:0]      user_gt_postcursor,
+    input[6:0]      user_gt_maincursor,
 
     // From user-logic
     input[1:0]      user_gt_reset_rx_datapath,
@@ -182,13 +185,9 @@ assign gt_rxcdrhold_1 = (gt_loopback_1 == 1);
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //            Various signal shaping for the GT Quads
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-localparam DFL_TXMAINCURSOR = 75;
-localparam DFL_TXPOSTCURSOR = 9;
-localparam DFL_TXPRECURSOR  = 3;
-assign gt_txmaincursor = DFL_TXMAINCURSOR;
-assign gt_txpostcursor = DFL_TXPOSTCURSOR;
-assign gt_txprecursor  = DFL_TXPRECURSOR;
-
+assign gt_txmaincursor = user_gt_maincursor;
+assign gt_txpostcursor = user_gt_postcursor;
+assign gt_txprecursor  = user_gt_precursor ;
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //                         GT resets

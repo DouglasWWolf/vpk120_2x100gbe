@@ -20,14 +20,6 @@ module dcmac_rx_deskew # (parameter SEG_COUNT=2)
 (
     input   clk, resetn,
 
-    output dbg_is_active0, dbg_is_active1, dbg_is_active2, dbg_is_active3,
-
-    output[1:0] dbg_first_seg,
-    output[1:0] dbg_next_seg,
-    output      dbg_has_sop, dbg_has_eop,
-    output[2:0] dbg_valid_seg_count,
-    output[3:0] dbg_in_tvalid,
-
     // Input streams, one per segment
     input [127:0]   in0_tdata,  in1_tdata,  in2_tdata,  in3_tdata,
     input [  3:0]   in0_tid,    in1_tid,    in2_tid,    in3_tid,
@@ -68,7 +60,7 @@ assign out3_tvalid = out_tvalid & FOUR_SEGS;
 //=============================================================================
 // Make the in<n>tready signals indexable
 //=============================================================================
-reg[3:0] in_tready;
+wire[3:0] in_tready;
 assign in0_tready = in_tready[0];
 assign in1_tready = in_tready[1];
 assign in2_tready = in_tready[2] & FOUR_SEGS;
@@ -178,6 +170,7 @@ end
 //=============================================================================
 
 
+
 //=============================================================================
 // If there is an end-of-packer market on a segment, all higher numbered
 // segments are inactive.
@@ -189,6 +182,14 @@ wire[3:0] active_segs = seg_eop[idx0] ? valid_segs & 4'b0001 :
                         seg_eop[idx2] ? valid_segs & 4'b0111 : valid_segs;
 //=============================================================================
 
+// It's legal to output data when either all segments are valid, or one 
+// segment contains an end-of-packet marker.  
+wire is_valid_output_state = (valid_seg_count == SEG_COUNT || has_eop);
+
+// If we're in a valid output state, allow any active segment to advance
+// by one data-cycle.  We must not acknowledge any read of the segment
+// FIFOs until they have acheived a valid arrangement.
+assign in_tready = (is_valid_output_state) ? is_active : 4'b0000;
 
 //=============================================================================
 // This is the equivalent of:
@@ -209,15 +210,9 @@ if (SEG_COUNT == 2) begin
     always @* begin
         case(first_seg[0])
     
-            0:  begin
-                    is_active = active_segs;
-                    in_tready = active_segs;
-                end
+            0:  is_active = active_segs;
+            1:  is_active = {2'b0, active_segs[0], active_segs[1]};
 
-            1:  begin
-                    is_active = {2'b0, active_segs[0], active_segs[1]};
-                    in_tready = {2'b0, active_segs[0], active_segs[1]};
-                end
         endcase
     end
 end
@@ -261,25 +256,11 @@ if (SEG_COUNT == 4) begin
     always @* begin
         case(first_seg)
 
-            0:  begin
-                    is_active = active_segs;
-                    in_tready = active_segs;
-                end
+            0:  is_active = active_segs;
+            1:  is_active = {active_segs[2:0], active_segs[3:3]};
+            2:  is_active = {active_segs[1:0], active_segs[3:2]};
+            3:  is_active = {active_segs[0:0], active_segs[3:1]};
 
-            1:  begin
-                    is_active = {active_segs[2:0], active_segs[3:3]};
-                    in_tready = {active_segs[2:0], active_segs[3:3]};
-                end
-
-            2:  begin
-                    is_active = {active_segs[1:0], active_segs[3:2]};
-                    in_tready = {active_segs[1:0], active_segs[3:2]};
-                end
-
-            3:  begin
-                    is_active = {active_segs[0:0], active_segs[3:1]};
-                    in_tready = {active_segs[0:0], active_segs[3:1]};
-                end
         endcase
     end
 end
@@ -373,7 +354,7 @@ always @(posedge clk) begin
     
     // If either all input segments are ready or one of 
     // our input segments contains an end-of-packet marker...
-    else if (valid_seg_count == SEG_COUNT || has_eop) begin
+    else if (is_valid_output_state) begin
 
         if (seg_active[idx0]) begin
             out0_tdata <= in_tdata[idx0];
@@ -412,14 +393,4 @@ always @(posedge clk) begin
 end
 //=============================================================================
 
-assign dbg_is_active0      = is_active[0];
-assign dbg_is_active1      = is_active[1];
-assign dbg_is_active2      = is_active[2];
-assign dbg_is_active3      = is_active[3];
-assign dbg_first_seg       = first_seg;
-assign dbg_next_seg        = next_seg;
-assign dbg_has_sop         = has_sop;
-assign dbg_has_eop         = has_eop;
-assign dbg_valid_seg_count = valid_seg_count;
-assign dbg_in_tvalid       = {in3_tvalid, in2_tvalid, in1_tvalid, in0_tvalid};
 endmodule

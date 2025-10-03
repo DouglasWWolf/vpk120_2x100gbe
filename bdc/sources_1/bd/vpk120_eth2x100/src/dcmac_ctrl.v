@@ -4,40 +4,57 @@
 //
 //   Date     Who   Ver  Changes
 //====================================================================================
-// 10-Sep-25  DWW     1  Initial creation
+// 01-Oct-25  DWW     1  Initial creation
 //====================================================================================
 
 /*
-        This controls resets for a DCMAC via the "dcmac_helper" module
+    Provides a register interface to "dcmac_helper", "dcmac_iface", and the DCMAC
 */ 
+ 
 
-
-module dcmac_ctrl # (parameter AW=8)
+module dcmac_ctrl #
 (
+    parameter AW=8,
+    parameter DEFAULT_PRECURSOR   = 3,
+    parameter DEFAULT_POSTCURSOR  = 9,
+    parameter DEFAULT_MAINCURSOR  = 75,
+    parameter DCMAC_BASE_ADDR     = 32'hA400_0000,
+    parameter DEFAULT_QSFP_POWER  = 0  /* 0 = QSFP Power Off, 1 = QSFP Power On */
+)
+(  
     input clk, resetn,
 
-    output reg gt_reset_all,
+    // PCS-Aligned signals 
+    input rx0_aligned, rx1_aligned,
 
+    // Reset output for re-initializing dcmac_iface
+    output resetn_out,
+
+    // Used to enable or disable Ethernet RS-FEC
+    output reg enable_rsfec,
+
+    // Connect this to an active-low QSFP_LPMODE signal
+    output reg qsfp_lpmode,
+
+    // GTM configuration values
     output reg[2:0] gt_loopback,
-
-    // One per MAC port    
-    output reg [1:0] gt_reset_rx_datapath,
-    input      [1:0] rx_reset_done,
-    input      [1:0] tx_reset_done,
+    output reg[5:0] gt_precursor,
+    output reg[5:0] gt_postcursor,
+    output reg[6:0] gt_maincursor, 
 
     //================== This is an AXI4-Lite slave interface ==================
         
     // "Specify write address"              -- Master --    -- Slave --
-    input[AW-1:0]                           S_AXI_AWADDR,   
+    input [AW-1:0]                          S_AXI_AWADDR,   
     input                                   S_AXI_AWVALID,  
-    input[   2:0]                           S_AXI_AWPROT,
+    input [   2:0]                          S_AXI_AWPROT,
     output                                                  S_AXI_AWREADY,
 
 
     // "Write Data"                         -- Master --    -- Slave --
-    input[31:0]                             S_AXI_WDATA,      
+    input [31:0]                            S_AXI_WDATA,      
     input                                   S_AXI_WVALID,
-    input[ 3:0]                             S_AXI_WSTRB,
+    input [ 3:0]                            S_AXI_WSTRB,
     output                                                  S_AXI_WREADY,
 
     // "Send Write Response"                -- Master --    -- Slave --
@@ -46,8 +63,8 @@ module dcmac_ctrl # (parameter AW=8)
     input                                   S_AXI_BREADY,
 
     // "Specify read address"               -- Master --    -- Slave --
-    input[AW-1:0]                           S_AXI_ARADDR,     
-    input[   2:0]                           S_AXI_ARPROT,     
+    input [AW-1:0]                          S_AXI_ARADDR,     
+    input [   2:0]                          S_AXI_ARPROT,     
     input                                   S_AXI_ARVALID,
     output                                                  S_AXI_ARREADY,
 
@@ -55,7 +72,40 @@ module dcmac_ctrl # (parameter AW=8)
     output[31:0]                                            S_AXI_RDATA,
     output                                                  S_AXI_RVALID,
     output[ 1:0]                                            S_AXI_RRESP,
-    input                                   S_AXI_RREADY
+    input                                   S_AXI_RREADY,
+    //==========================================================================
+
+
+
+    //====================  An AXI-Lite Master Interface  ======================
+    // "Specify write address"          -- Master --    -- Slave --
+    output[31:0]                        M_AXI_AWADDR,   
+    output                              M_AXI_AWVALID,  
+    output [2:0]                        M_AXI_AWPROT,
+    input                                               M_AXI_AWREADY,
+
+    // "Write Data"                     -- Master --    -- Slave --
+    output[31:0]                        M_AXI_WDATA,
+    output[3:0]                         M_AXI_WSTRB,      
+    output                              M_AXI_WVALID,
+    input                                               M_AXI_WREADY,
+
+    // "Send Write Response"            -- Master --    -- Slave --
+    input [1:0]                                         M_AXI_BRESP,
+    input                                               M_AXI_BVALID,
+    output                              M_AXI_BREADY,
+
+    // "Specify read address"           -- Master --    -- Slave --
+    output [31:0]                       M_AXI_ARADDR,     
+    output [ 2:0]                       M_AXI_ARPROT,
+    output                              M_AXI_ARVALID,
+    input                                               M_AXI_ARREADY,
+
+    // "Read data back to master"       -- Master --    -- Slave --
+    input [31:0]                                        M_AXI_RDATA,
+    input                                               M_AXI_RVALID,
+    input [1:0]                                         M_AXI_RRESP,
+    output                              M_AXI_RREADY
     //==========================================================================
 );  
 
@@ -81,40 +131,81 @@ reg [   1:0]  ashi_rresp;     // Output: Read-response (OKAY, DECERR, SLVERR);
 wire          ashi_ridle;     // Output: 1 = Read state machine is idle
 //==========================================================================
 
+
+
+//==================  The AXI Master Control Interface  ====================
+// AMCI signals for performing AXI writes
+reg [31:0]  amci_waddr;
+reg [31:0]  amci_wdata;
+reg         amci_write;
+wire[ 1:0]  amci_wresp;
+wire        amci_widle;
+
+// AMCI signals for performing AXI reads
+reg [31:0]  amci_raddr;
+reg         amci_read ;
+wire[31:0]  amci_rdata;
+wire[ 1:0]  amci_rresp;
+wire        amci_ridle;
+//==========================================================================
+
+
+
 // The state of the state-machines that handle AXI4-Lite read and AXI4-Lite write
 reg ashi_write_state, ashi_read_state;
 
 // The AXI4 slave state machines are idle when in state 0 and their "start" signals are low
 assign ashi_widle = (ashi_write == 0) && (ashi_write_state == 0);
 assign ashi_ridle = (ashi_read  == 0) && (ashi_read_state  == 0);
-   
+
+// "resetn_out" is asserted while the resetn_out timer is countdown down
+reg[7:0] resetn_out_timer;
+assign resetn_out = (resetn == 1) & (resetn_out_timer == 0);
+
+// This address will be the target of an AXI-Lite read/write operation
+reg[31:0] dcmac_addr;
+
 // These are the valid values for ashi_rresp and ashi_wresp
 localparam OKAY   = 0;
 localparam SLVERR = 2;
 localparam DECERR = 3;
 
-// User accessible registers
-localparam REG_LOOPBACK      = 0;
-localparam REG_RESET_ALL     = 1;
-localparam REG_RESET_RX0     = 2;
-localparam REG_RESET_RX1     = 3;
-localparam REG_RX_RESET_DONE = 4;
-localparam REG_TX_RESET_DONE = 5;
+// These are user accessible control/status registers
+localparam REG_LINK_STATUS = 0;
+localparam REG_RESET       = 1;
+localparam REG_LOOPBACK    = 2;
+localparam REG_RSFEC       = 3;
+localparam REG_QSFP_POWER  = 4;
+localparam REG_PRECURSOR   = 5;
+localparam REG_POSTCURSOR  = 6;
+localparam REG_MAINCURSOR  = 7;
+localparam REG_DCMAC_ADDR  = 16;
+localparam REG_DCMAC_DATA  = 17;
+
 
 //==========================================================================
 // This state machine handles AXI4-Lite write requests
 //==========================================================================
 always @(posedge clk) begin
 
+    // This strobes high for one clock-cycle at a time
+    amci_write <= 0;
+
+    // The "resetn_out" timer always counts down to zero
+    if (resetn_out_timer) resetn_out_timer <= resetn_out_timer - 1;
+
     // If we're in reset, initialize important registers
     if (resetn == 0) begin
-        ashi_write_state     <= 0;
-        gt_loopback          <= 0;
-        gt_reset_all         <= 0;
-        gt_reset_rx_datapath <= 0;
+        ashi_write_state <= 0;
+        gt_loopback      <= 0;
+        gt_precursor     <= DEFAULT_PRECURSOR;
+        gt_postcursor    <= DEFAULT_POSTCURSOR;
+        gt_maincursor    <= DEFAULT_MAINCURSOR;
+        enable_rsfec     <= 1;
+        qsfp_lpmode      <= ~DEFAULT_QSFP_POWER;
     end
     
-    // Otherwise, we're not in reset...
+    // Otherwise, we're not in reset...  
     else case (ashi_write_state)
         
         // If an AXI write-request has occured...
@@ -126,56 +217,93 @@ always @(posedge clk) begin
                 // ashi_windex = index of register to be written
                 case (ashi_windx)
                
-                    REG_LOOPBACK:   gt_loopback             <= ashi_wdata[2:0];
-                    REG_RESET_ALL:  gt_reset_all            <= ashi_wdata[0];
-                    REG_RESET_RX0:  gt_reset_rx_datapath[0] <= ashi_wdata[0];
-                    REG_RESET_RX1:  gt_reset_rx_datapath[1] <= ashi_wdata[0];
-                
+
+                    REG_RESET:      resetn_out_timer <= 64;
+                    REG_RSFEC:      enable_rsfec     <= ashi_wdata[0];
+                    REG_LOOPBACK:   gt_loopback      <= {2'b0, ashi_wdata[0]};
+                    REG_QSFP_POWER: qsfp_lpmode      <= ~ashi_wdata[0];
+                    REG_PRECURSOR:  gt_precursor     <= ashi_wdata[5:0];                
+                    REG_POSTCURSOR: gt_precursor     <= ashi_wdata[5:0];
+                    REG_MAINCURSOR: gt_maincursor    <= ashi_wdata[6:0];  
+                    REG_DCMAC_ADDR: dcmac_addr       <= ashi_wdata | DCMAC_BASE_ADDR;
+                    REG_DCMAC_DATA:
+                        begin
+                            amci_waddr       <= dcmac_addr;
+                            amci_wdata       <= ashi_wdata;
+                            amci_write       <= 1;
+                            ashi_write_state <= ashi_write_state + 1;
+                        end
+
                     // Writes to any other register are a decode-error
                     default: ashi_wresp <= DECERR;
                 endcase
             end
 
-        // Dummy state, doesn't do anything
-        1: ashi_write_state <= 0;
+        // Here we wait for an AXI-Lite write to the M_AXI bus to complete
+        1:  if (amci_widle) begin
+                ashi_wresp       <= amci_wresp;
+                ashi_write_state <= 0;
+            end
 
     endcase
 end
 //==========================================================================
 
 
-
+ 
 //==========================================================================
 // World's simplest state machine for handling AXI4-Lite read requests
 //==========================================================================
 always @(posedge clk) begin
 
+    // This strobes high for one clock-cycle at a time
+    amci_read <= 0;
+
     // If we're in reset, initialize important registers
     if (resetn == 0) begin
         ashi_read_state <= 0;
+    end    
     
-    // If we're not in reset, and a read-request has occured...        
-    end else if (ashi_read) begin
+    else case(ashi_read_state)
    
-        // Assume for the moment that the result will be OKAY
-        ashi_rresp <= OKAY;              
-        
-        // ashi_rindex = index of register to be read
-        case (ashi_rindx)
+        0:  if (ashi_read) begin
+   
+                // Assume for the moment that the result will be OKAY
+                ashi_rresp <= OKAY;              
 
-            // Allow a read from any valid register                
-            REG_LOOPBACK:       ashi_rdata <= gt_loopback;
-            REG_RESET_ALL:      ashi_rdata <= gt_reset_all;
-            REG_RESET_RX0:      ashi_rdata <= gt_reset_rx_datapath[0];
-            REG_RESET_RX1:      ashi_rdata <= gt_reset_rx_datapath[1];
-            REG_RX_RESET_DONE:  ashi_rdata <= rx_reset_done;
-            REG_TX_RESET_DONE:  ashi_rdata <= tx_reset_done;
+                // ashi_rindex = index of register to be read
+                case (ashi_rindx)
 
-            // Reads of any other register are a decode-error
-            default: ashi_rresp <= DECERR;
+                    // Allow a read from any valid register                
+                    REG_LINK_STATUS:    ashi_rdata <= {rx1_aligned, rx0_aligned};
+                    REG_RESET:          ashi_rdata <= (resetn_out == 0);
+                    REG_RSFEC:          ashi_rdata <= enable_rsfec;
+                    REG_QSFP_POWER:     ashi_rdata <= ~qsfp_lpmode;
+                    REG_LOOPBACK:       ashi_rdata <= gt_loopback;
+                    REG_PRECURSOR:      ashi_rdata <= gt_precursor;
+                    REG_POSTCURSOR:     ashi_rdata <= gt_postcursor;
+                    REG_MAINCURSOR:     ashi_rdata <= gt_maincursor;
+                    REG_DCMAC_ADDR:     ashi_rdata <= dcmac_addr;
+                    REG_DCMAC_DATA:
+                        begin
+                            amci_raddr      <= dcmac_addr;
+                            amci_read       <= 1;
+                            ashi_read_state <= ashi_read_state + 1;
+                        end
 
-        endcase
-    end
+                    // Reads of any other register are a decode-error
+                    default: ashi_rresp <= DECERR;
+                endcase
+            end
+
+        // Here we wait for a read of the M_AXI bus to complete
+        1:  if (amci_ridle) begin
+                ashi_rdata      <= amci_rdata;
+                ashi_rresp      <= amci_rresp;
+                ashi_read_state <= 0;
+            end
+
+    endcase
 end
 //==========================================================================
 
@@ -233,6 +361,59 @@ axi4_lite_slave#(.AW(AW)) i_axi4lite_slave
     .ASHI_READ      (ashi_read ),
     .ASHI_RRESP     (ashi_rresp),
     .ASHI_RIDLE     (ashi_ridle)
+);
+//==========================================================================
+
+
+//==========================================================================
+// This instantiates an AXI4-Lite master
+//==========================================================================
+axi4_lite_master # (.DW(32), .AW(32)) i_axi4lite_master
+(
+    // Clock and reset
+    .clk            (clk),
+    .resetn         (resetn),
+
+    // AXI Master Control Interface for performing writes
+    .AMCI_WADDR     (amci_waddr),
+    .AMCI_WDATA     (amci_wdata),
+    .AMCI_WRITE     (amci_write),
+    .AMCI_WRESP     (amci_wresp),
+    .AMCI_WIDLE     (amci_widle),
+
+    // AXI Master Control Interface for performing reads
+    .AMCI_RADDR     (amci_raddr),
+    .AMCI_READ      (amci_read ),
+    .AMCI_RDATA     (amci_rdata),
+    .AMCI_RRESP     (amci_rresp),
+    .AMCI_RIDLE     (amci_ridle),
+
+    // AXI4-Lite AW channel
+    .AXI_AWADDR     (M_AXI_AWADDR ),
+    .AXI_AWVALID    (M_AXI_AWVALID),
+    .AXI_AWPROT     (M_AXI_AWPROT ),
+    .AXI_AWREADY    (M_AXI_AWREADY),
+
+    // AXI4-Lite W channel
+    .AXI_WDATA      (M_AXI_WDATA  ),
+    .AXI_WSTRB      (M_AXI_WSTRB  ),
+    .AXI_WVALID     (M_AXI_WVALID ),
+    .AXI_WREADY     (M_AXI_WREADY ),
+
+    // AXI4-Lite B channel
+    .AXI_BRESP      (M_AXI_BRESP  ),
+    .AXI_BVALID     (M_AXI_BVALID ),
+    .AXI_BREADY     (M_AXI_BREADY ),
+
+    // AXI4-Lite AR channel
+    .AXI_ARADDR     (M_AXI_ARADDR ),
+    .AXI_ARPROT     (M_AXI_ARPROT ),
+    .AXI_ARVALID    (M_AXI_ARVALID),
+    .AXI_ARREADY    (M_AXI_ARREADY),
+    .AXI_RDATA      (M_AXI_RDATA  ),
+    .AXI_RVALID     (M_AXI_RVALID ),
+    .AXI_RRESP      (M_AXI_RRESP  ),
+    .AXI_RREADY     (M_AXI_RREADY )
 );
 //==========================================================================
 

@@ -19,7 +19,10 @@ module top_level (
   qsfp0_clk_clk_n,
   qsfp0_clk_clk_p,
   qsfp1_clk_clk_n,
-  qsfp1_clk_clk_p
+  qsfp1_clk_clk_p,
+  rx0_aligned,
+  rx1_aligned,
+  qsfp_lpmode
 );
 
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 UART RxD" *)
@@ -59,6 +62,12 @@ module top_level (
   input [0:0]qsfp1_clk_clk_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 qsfp1_clk CLK_P" *)
   input [0:0]qsfp1_clk_clk_p;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output rx0_aligned;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output rx1_aligned;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output qsfp_lpmode;
 
   // stub module has no contents
 

@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-//Date        : Sun Sep 28 18:59:35 2025
+//Date        : Fri Oct  3 01:29:30 2025
 //Host        : wolf-super-server running 64-bit Ubuntu 20.04.6 LTS
 //Command     : generate_target top_level_wrapper.bd
 //Design      : top_level_wrapper
@@ -24,7 +24,10 @@ module top_level_wrapper
     qsfp1_gt_grx_n,
     qsfp1_gt_grx_p,
     qsfp1_gt_gtx_n,
-    qsfp1_gt_gtx_p);
+    qsfp1_gt_gtx_p,
+    qsfp_lpmode,
+    rx0_aligned,
+    rx1_aligned);
   input UART_rxd;
   output UART_txd;
   input [0:0]qsfp0_clk_clk_n;
@@ -39,6 +42,9 @@ module top_level_wrapper
   input [3:0]qsfp1_gt_grx_p;
   output [3:0]qsfp1_gt_gtx_n;
   output [3:0]qsfp1_gt_gtx_p;
+  output qsfp_lpmode;
+  output rx0_aligned;
+  output rx1_aligned;
 
   wire UART_rxd;
   wire UART_txd;
@@ -54,6 +60,9 @@ module top_level_wrapper
   wire [3:0]qsfp1_gt_grx_p;
   wire [3:0]qsfp1_gt_gtx_n;
   wire [3:0]qsfp1_gt_gtx_p;
+  wire qsfp_lpmode;
+  wire rx0_aligned;
+  wire rx1_aligned;
 
   top_level top_level_i
        (.UART_rxd(UART_rxd),
@@ -69,5 +78,8 @@ module top_level_wrapper
         .qsfp1_gt_grx_n(qsfp1_gt_grx_n),
         .qsfp1_gt_grx_p(qsfp1_gt_grx_p),
         .qsfp1_gt_gtx_n(qsfp1_gt_gtx_n),
-        .qsfp1_gt_gtx_p(qsfp1_gt_gtx_p));
+        .qsfp1_gt_gtx_p(qsfp1_gt_gtx_p),
+        .qsfp_lpmode(qsfp_lpmode),
+        .rx0_aligned(rx0_aligned),
+        .rx1_aligned(rx1_aligned));
 endmodule

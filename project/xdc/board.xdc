@@ -13,3 +13,9 @@ set_property BITSTREAM.GENERAL.COMPRESS TRUE  [current_design]
 set_property -dict {PACKAGE_PIN V32  IOSTANDARD LVCMOS15}  [get_ports UART_txd]
 set_property -dict {PACKAGE_PIN U32  IOSTANDARD LVCMOS15}  [get_ports UART_rxd]
 
+
+#
+#  LEDS used to indicate PCS alignment
+#
+set_property -dict {PACKAGE_PIN T33  IOSTANDARD LVCMOS15}  [get_ports rx0_aligned]
+set_property -dict {PACKAGE_PIN U33  IOSTANDARD LVCMOS15}  [get_ports rx1_aligned]

@@ -1,4 +1,7 @@
 
+# The QSFP "low power mode" pin
+set_property -dict {PACKAGE_PIN T36  IOSTANDARD LVCMOS15}  [get_ports qsfp_lpmode]
+
 # Quad placement constraints will need this list of GT quads
 set gt_quads [get_cells -hierarchical -filter {REF_NAME =~ "GT*QUAD*"}]
 
