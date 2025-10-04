@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "vpk120_eth2x100_inst_0_dcmac_rx_3",
-    "cell_name": "rx1/dcmac_rx",
+    "cell_name": "pl_rtl/vpk120_eth2x100/rx1/dcmac_rx",
     "component_reference": "xilinx.com:module_ref:dcmac_rx:1.0",
     "ip_revision": "1",
     "gen_directory": ".",

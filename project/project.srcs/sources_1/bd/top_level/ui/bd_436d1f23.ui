@@ -1,2 +1,119 @@
-0
+{
+   "ActiveEmotionalView":"No Loops",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-242,-183",
+   "DisplayTieOff":"1",
+   "ExpandedHierarchyInLayout":"",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port tx_user -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace port port-id_axis_clk -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
+preplace port port-id_axis_resetn -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_ena0 -pg 1 -lvl 4 -x 960 -y 100 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_ena1 -pg 1 -lvl 4 -x 960 -y 120 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_sop0 -pg 1 -lvl 4 -x 960 -y 140 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_sop1 -pg 1 -lvl 4 -x 960 -y 160 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_eop0 -pg 1 -lvl 4 -x 960 -y 180 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_eop1 -pg 1 -lvl 4 -x 960 -y 200 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_err0 -pg 1 -lvl 4 -x 960 -y 260 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_err1 -pg 1 -lvl 4 -x 960 -y 280 -defaultsOSRD
+preplace port port-id_tx_axis_valid -pg 1 -lvl 4 -x 960 -y 300 -defaultsOSRD
+preplace port port-id_tx_axis_ready -pg 1 -lvl 4 -x 960 -y 320 -defaultsOSRD -right
+preplace port port-id_tx_user_clk -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace port port-id_tx_user_resetn -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace portBus tx_axis_tdata0 -pg 1 -lvl 4 -x 960 -y 60 -defaultsOSRD
+preplace portBus tx_axis_tdata1 -pg 1 -lvl 4 -x 960 -y 80 -defaultsOSRD
+preplace portBus tx_axis_tuser_mty0 -pg 1 -lvl 4 -x 960 -y 220 -defaultsOSRD
+preplace portBus tx_axis_tuser_mty1 -pg 1 -lvl 4 -x 960 -y 240 -defaultsOSRD
+preplace inst dcmac_packetizer -pg 1 -lvl 2 -x 460 -y 40 -defaultsOSRD -pinDir axis0_in left -pinY axis0_in 20L -pinDir axis0_out right -pinY axis0_out 20R -pinDir axis1_in left -pinY axis1_in 40L -pinDir axis1_out right -pinY axis1_out 40R -pinDir axis2_in left -pinY axis2_in 60L -pinDir axis2_out right -pinY axis2_out 60R -pinDir axis3_in left -pinY axis3_in 80L -pinDir axis3_out right -pinY axis3_out 80R -pinDir clk left -pinY clk 100L -pinDir resetn left -pinY resetn 120L
+preplace inst dcmac_tx_2seg -pg 1 -lvl 3 -x 770 -y 40 -defaultsOSRD -pinDir axis0_in left -pinY axis0_in 20L -pinDir axis1_in left -pinY axis1_in 40L -pinDir axis2_in left -pinY axis2_in 60L -pinDir axis3_in left -pinY axis3_in 80L -pinDir clk left -pinY clk 180L -pinDir resetn left -pinY resetn 200L -pinBusDir tx_axis_tdata0 right -pinBusY tx_axis_tdata0 20R -pinBusDir tx_axis_tdata1 right -pinBusY tx_axis_tdata1 40R -pinDir tx_axis_tuser_ena0 right -pinY tx_axis_tuser_ena0 60R -pinDir tx_axis_tuser_ena1 right -pinY tx_axis_tuser_ena1 80R -pinDir tx_axis_tuser_sop0 right -pinY tx_axis_tuser_sop0 100R -pinDir tx_axis_tuser_sop1 right -pinY tx_axis_tuser_sop1 120R -pinDir tx_axis_tuser_eop0 right -pinY tx_axis_tuser_eop0 140R -pinDir tx_axis_tuser_eop1 right -pinY tx_axis_tuser_eop1 160R -pinBusDir tx_axis_tuser_mty0 right -pinBusY tx_axis_tuser_mty0 180R -pinBusDir tx_axis_tuser_mty1 right -pinBusY tx_axis_tuser_mty1 200R -pinDir tx_axis_tuser_err0 right -pinY tx_axis_tuser_err0 220R -pinDir tx_axis_tuser_err1 right -pinY tx_axis_tuser_err1 240R -pinDir tx_axis_valid right -pinY tx_axis_valid 260R -pinDir tx_axis_ready right -pinY tx_axis_ready 280R
+preplace inst axis64_to_dcmac -pg 1 -lvl 1 -x 160 -y 40 -defaultsOSRD -pinDir axis0_out right -pinY axis0_out 20R -pinDir axis1_out right -pinY axis1_out 40R -pinDir axis2_out right -pinY axis2_out 60R -pinDir axis3_out right -pinY axis3_out 80R -pinDir axis_in left -pinY axis_in 20L -pinDir s_axis_clk left -pinY s_axis_clk 40L -pinDir s_resetn left -pinY s_resetn 60L -pinDir m_axis_clk left -pinY m_axis_clk 80L
+preplace netloc clk_wizard_axis_clk 1 0 3 20 180 300 220 N
+preplace netloc dcmac_helper_axis0_resetn 1 0 3 NJ 200 320 240 N
+preplace netloc dcmac_ip_tx_axis_tready_0 1 3 1 NJ 320
+preplace netloc tx1_user_clk_1 1 0 1 NJ 80
+preplace netloc tx1_user_resetn_1 1 0 1 NJ 100
+preplace netloc tx_axis_tdata0_1 1 3 1 NJ 60
+preplace netloc tx_axis_tdata1_1 1 3 1 NJ 80
+preplace netloc tx_axis_tuser_ena0_1 1 3 1 NJ 100
+preplace netloc tx_axis_tuser_ena1_1 1 3 1 NJ 120
+preplace netloc tx_axis_tuser_eop0_1 1 3 1 NJ 180
+preplace netloc tx_axis_tuser_eop1_1 1 3 1 NJ 200
+preplace netloc tx_axis_tuser_err0_1 1 3 1 NJ 260
+preplace netloc tx_axis_tuser_err1_1 1 3 1 NJ 280
+preplace netloc tx_axis_tuser_mty0_1 1 3 1 NJ 220
+preplace netloc tx_axis_tuser_mty1_1 1 3 1 NJ 240
+preplace netloc tx_axis_tuser_sop0_1 1 3 1 NJ 140
+preplace netloc tx_axis_tuser_sop1_1 1 3 1 NJ 160
+preplace netloc tx_axis_tvalid_0_1 1 3 1 NJ 300
+preplace netloc Conn1 1 0 1 NJ 60
+preplace netloc axis64_to_dcmac_axis0_out 1 1 1 N 60
+preplace netloc axis64_to_dcmac_axis1_out 1 1 1 N 80
+preplace netloc axis64_to_dcmac_axis2_out 1 1 1 N 100
+preplace netloc axis64_to_dcmac_axis3_out 1 1 1 N 120
+preplace netloc dcmac_packetizer_axis0_out 1 2 1 N 60
+preplace netloc dcmac_packetizer_axis1_out 1 2 1 N 80
+preplace netloc dcmac_packetizer_axis2_out 1 2 1 N 100
+preplace netloc dcmac_packetizer_axis3_out 1 2 1 N 120
+levelinfo -pg 1 0 160 460 770 960
+pagesize -pg 1 -db -bbox -sgen -160 0 1190 380
+",
+   "No Loops_ScaleFactor":"1.0",
+   "No Loops_TopLeft":"-233,-169",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port axis_in -pg 1 -lvl 0 -x 0 -y 90 -defaultsOSRD
+preplace port port-id_axis_clk -pg 1 -lvl 0 -x 0 -y 150 -defaultsOSRD
+preplace port port-id_axis0_resetn -pg 1 -lvl 0 -x 0 -y 210 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_ena0 -pg 1 -lvl 4 -x 950 -y 90 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_ena1 -pg 1 -lvl 4 -x 950 -y 110 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_sop0 -pg 1 -lvl 4 -x 950 -y 130 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_sop1 -pg 1 -lvl 4 -x 950 -y 150 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_eop0 -pg 1 -lvl 4 -x 950 -y 170 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_eop1 -pg 1 -lvl 4 -x 950 -y 190 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_err0 -pg 1 -lvl 4 -x 950 -y 250 -defaultsOSRD
+preplace port port-id_tx_axis_tuser_err1 -pg 1 -lvl 4 -x 950 -y 270 -defaultsOSRD
+preplace port port-id_tx_axis_valid -pg 1 -lvl 4 -x 950 -y 290 -defaultsOSRD
+preplace port port-id_tx_axis_ready -pg 1 -lvl 0 -x 0 -y 270 -defaultsOSRD
+preplace port port-id_txuser_resetn -pg 1 -lvl 0 -x 0 -y 130 -defaultsOSRD
+preplace port port-id_txuser_clk -pg 1 -lvl 0 -x 0 -y 110 -defaultsOSRD
+preplace portBus tx_axis_tdata0 -pg 1 -lvl 4 -x 950 -y 50 -defaultsOSRD
+preplace portBus tx_axis_tdata1 -pg 1 -lvl 4 -x 950 -y 70 -defaultsOSRD
+preplace portBus tx_axis_tuser_mty0 -pg 1 -lvl 4 -x 950 -y 210 -defaultsOSRD
+preplace portBus tx_axis_tuser_mty1 -pg 1 -lvl 4 -x 950 -y 230 -defaultsOSRD
+preplace inst dcmac_packetizer -pg 1 -lvl 2 -x 420 -y 140 -defaultsOSRD
+preplace inst dcmac_tx_2seg -pg 1 -lvl 3 -x 750 -y 170 -defaultsOSRD
+preplace inst axis64_to_dcmac -pg 1 -lvl 1 -x 150 -y 120 -defaultsOSRD
+preplace netloc clk_wizard_axis_clk 1 0 3 20 220 280 250 550J
+preplace netloc dcmac_helper_axis0_resetn 1 0 3 NJ 210 290 260 560J
+preplace netloc tx_axis_tdata0_1 1 3 1 NJ 50
+preplace netloc tx_axis_tdata1_1 1 3 1 NJ 70
+preplace netloc tx_axis_tuser_ena0_1 1 3 1 NJ 90
+preplace netloc tx_axis_tuser_ena1_1 1 3 1 NJ 110
+preplace netloc tx_axis_tuser_sop0_1 1 3 1 NJ 130
+preplace netloc tx_axis_tuser_sop1_1 1 3 1 NJ 150
+preplace netloc tx_axis_tuser_eop0_1 1 3 1 NJ 170
+preplace netloc tx_axis_tuser_eop1_1 1 3 1 NJ 190
+preplace netloc tx_axis_tuser_mty0_1 1 3 1 NJ 210
+preplace netloc tx_axis_tuser_mty1_1 1 3 1 NJ 230
+preplace netloc tx_axis_tuser_err0_1 1 3 1 NJ 250
+preplace netloc tx_axis_tuser_err1_1 1 3 1 NJ 270
+preplace netloc tx_axis_tvalid_0_1 1 3 1 NJ 290
+preplace netloc dcmac_ip_tx_axis_tready_0 1 0 3 NJ 270 NJ 270 570J
+preplace netloc txuser_resetn_1 1 0 1 NJ 130
+preplace netloc txuser_clk_1 1 0 1 NJ 110
+preplace netloc axis64_to_dcmac_axis0_out 1 1 1 N 90
+preplace netloc dcmac_packetizer_axis0_out 1 2 1 N 110
+preplace netloc dcmac_packetizer_axis1_out 1 2 1 N 130
+preplace netloc dcmac_packetizer_axis2_out 1 2 1 N 150
+preplace netloc dcmac_packetizer_axis3_out 1 2 1 N 170
+preplace netloc axis64_to_dcmac_axis1_out 1 1 1 N 110
+preplace netloc axis64_to_dcmac_axis2_out 1 1 1 N 130
+preplace netloc axis64_to_dcmac_axis3_out 1 1 1 N 150
+preplace netloc axis_in_1 1 0 1 NJ 90
+levelinfo -pg 1 0 150 420 750 950
+pagesize -pg 1 -db -bbox -sgen -150 0 1170 340
+"
+}
 

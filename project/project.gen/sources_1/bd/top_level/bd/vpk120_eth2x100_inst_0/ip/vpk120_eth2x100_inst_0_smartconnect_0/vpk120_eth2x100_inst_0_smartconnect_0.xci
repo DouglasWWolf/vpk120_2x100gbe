@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "vpk120_eth2x100_inst_0_smartconnect_0",
-    "cell_name": "smartconnect",
+    "cell_name": "pl_rtl/vpk120_eth2x100/smartconnect",
     "component_reference": "xilinx.com:ip:smartconnect:1.0",
     "ip_revision": "25",
     "gen_directory": ".",

@@ -16,7 +16,7 @@ preplace port qsfp1_clk -pg 1 -lvl 4 -x 730 -y 160 -defaultsOSRD -right
 preplace port port-id_rx0_aligned -pg 1 -lvl 4 -x 730 -y 200 -defaultsOSRD
 preplace port port-id_rx1_aligned -pg 1 -lvl 4 -x 730 -y 220 -defaultsOSRD
 preplace port port-id_qsfp_lpmode -pg 1 -lvl 4 -x 730 -y 240 -defaultsOSRD
-preplace inst pl_rtl -pg 1 -lvl 3 -x 590 -y 100 -swap {5 1 2 3 4 0 6 7 8 9 13 11 12 10 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 37 36 38 39 40} -defaultsOSRD -pinDir qsfp1_gt right -pinY qsfp1_gt 40R -pinDir qsfp0_gt right -pinY qsfp0_gt 20R -pinDir qsfp0_clk right -pinY qsfp0_clk 80R -pinDir qsfp1_clk right -pinY qsfp1_clk 60R -pinDir S00_AXI left -pinY S00_AXI 20L -pinDir aclk left -pinY aclk 90L -pinDir aresetn left -pinY aresetn 70L -pinDir rx0_aligned right -pinY rx0_aligned 100R -pinDir rx1_aligned right -pinY rx1_aligned 120R -pinDir qsfp_lpmode right -pinY qsfp_lpmode 140R
+preplace inst pl_rtl -pg 1 -lvl 3 -x 590 -y 100 -swap {5 1 2 3 4 0 6 7 8 9 13 11 12 10 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 35 34 36 37 38} -defaultsOSRD -pinDir qsfp1_gt right -pinY qsfp1_gt 40R -pinDir qsfp0_gt right -pinY qsfp0_gt 20R -pinDir qsfp0_clk right -pinY qsfp0_clk 80R -pinDir qsfp1_clk right -pinY qsfp1_clk 60R -pinDir S00_AXI left -pinY S00_AXI 20L -pinDir aclk left -pinY aclk 90L -pinDir aresetn left -pinY aresetn 70L -pinDir rx0_aligned right -pinY rx0_aligned 100R -pinDir rx1_aligned right -pinY rx1_aligned 120R -pinDir qsfp_lpmode right -pinY qsfp_lpmode 140R
 preplace inst axi_uart_bridge -pg 1 -lvl 2 -x 370 -y 40 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 22 21} -defaultsOSRD -pinDir UART right -pinY UART 20R -pinDir M_AXI right -pinY M_AXI 80R -pinDir aclk left -pinY aclk 80L -pinDir aresetn left -pinY aresetn 60L
 preplace inst clk_and_reset -pg 1 -lvl 1 -x 120 -y 80 -defaultsOSRD -pinBusDir peripheral_aresetn right -pinBusY peripheral_aresetn 20R -pinDir sys_clk right -pinY sys_clk 40R
 preplace netloc clk_wizard_0_clk_out1 1 1 2 250 190 N
@@ -34,7 +34,7 @@ levelinfo -pg 1 0 120 370 590 730
 pagesize -pg 1 -db -bbox -sgen 0 0 870 290
 ",
    "No Loops_ScaleFactor":"1.0",
-   "No Loops_TopLeft":"-324,-221",
+   "No Loops_TopLeft":"-312,-214",
    "commentid":"",
    "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
 #  -string -flagsOSRD

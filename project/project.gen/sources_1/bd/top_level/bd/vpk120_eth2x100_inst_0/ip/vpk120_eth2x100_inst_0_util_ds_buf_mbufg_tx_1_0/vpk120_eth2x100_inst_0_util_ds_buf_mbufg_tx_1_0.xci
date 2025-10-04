@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "vpk120_eth2x100_inst_0_util_ds_buf_mbufg_tx_1_0",
-    "cell_name": "dcmac_ip/util_ds_buf_mbufg_tx_1",
+    "cell_name": "pl_rtl/vpk120_eth2x100/dcmac_ip/util_ds_buf_mbufg_tx_1",
     "component_reference": "xilinx.com:ip:util_ds_buf:2.2",
     "ip_revision": "7",
     "gen_directory": ".",

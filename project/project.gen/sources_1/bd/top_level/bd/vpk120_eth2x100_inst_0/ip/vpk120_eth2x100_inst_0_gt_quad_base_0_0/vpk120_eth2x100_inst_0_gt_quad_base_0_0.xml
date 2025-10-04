@@ -16899,7 +16899,7 @@ thernet_dcmac_0_0.IP_CH3 MSTRCLK 1,0,0,0 IS_CURRENT_QUAD 1} RXQuad_1_/gt_quad_ba
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.APB3CLK.ASSOCIATED_PORT" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.APB3CLK.ASSOCIATED_RESET" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.APB3CLK.CLK_DOMAIN" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.APB3CLK.FREQ_HZ" xilinx:valueSource="user" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.APB3CLK.FREQ_HZ" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.APB3CLK.FREQ_TOLERANCE_HZ" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.APB3CLK.PHASE" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.APB3PRESETN.POLARITY" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
@@ -16921,12 +16921,12 @@ thernet_dcmac_0_0.IP_CH3 MSTRCLK 1,0,0,0 IS_CURRENT_QUAD 1} RXQuad_1_/gt_quad_ba
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.HSCLK1_RPLLRESET.POLARITY" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX0_GT_IP_INTERFACE.ADDITIONAL_CONFIG_ENABLE" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX0_GT_IP_INTERFACE.ADDITIONAL_CONFIG_FILE" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX0_GT_IP_INTERFACE.ADDITIONAL_QUAD_SETTINGS" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX0_GT_IP_INTERFACE.CHNL_NUMBER" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX0_GT_IP_INTERFACE.GT_DIRECTION" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX0_GT_IP_INTERFACE.MASTERCLK_SRC" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX0_GT_IP_INTERFACE.PARENT_ID" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX0_GT_IP_INTERFACE.RX_SETTINGS" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX0_GT_IP_INTERFACE.ADDITIONAL_QUAD_SETTINGS" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX0_GT_IP_INTERFACE.CHNL_NUMBER" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX0_GT_IP_INTERFACE.GT_DIRECTION" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX0_GT_IP_INTERFACE.MASTERCLK_SRC" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX0_GT_IP_INTERFACE.PARENT_ID" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX0_GT_IP_INTERFACE.RX_SETTINGS" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX0_OUTCLK.CLK_DOMAIN" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX0_OUTCLK.FREQ_HZ" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX0_OUTCLK.IS_MASTER" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
@@ -16940,12 +16940,12 @@ thernet_dcmac_0_0.IP_CH3 MSTRCLK 1,0,0,0 IS_CURRENT_QUAD 1} RXQuad_1_/gt_quad_ba
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX0_USRCLK.PHASE" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX1_GT_IP_INTERFACE.ADDITIONAL_CONFIG_ENABLE" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX1_GT_IP_INTERFACE.ADDITIONAL_CONFIG_FILE" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX1_GT_IP_INTERFACE.ADDITIONAL_QUAD_SETTINGS" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX1_GT_IP_INTERFACE.CHNL_NUMBER" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX1_GT_IP_INTERFACE.GT_DIRECTION" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX1_GT_IP_INTERFACE.MASTERCLK_SRC" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX1_GT_IP_INTERFACE.PARENT_ID" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX1_GT_IP_INTERFACE.RX_SETTINGS" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX1_GT_IP_INTERFACE.ADDITIONAL_QUAD_SETTINGS" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX1_GT_IP_INTERFACE.CHNL_NUMBER" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX1_GT_IP_INTERFACE.GT_DIRECTION" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX1_GT_IP_INTERFACE.MASTERCLK_SRC" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX1_GT_IP_INTERFACE.PARENT_ID" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX1_GT_IP_INTERFACE.RX_SETTINGS" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX1_OUTCLK.CLK_DOMAIN" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX1_OUTCLK.FREQ_HZ" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX1_OUTCLK.IS_MASTER" xilinx:valuePermission="bd"/>
@@ -16959,12 +16959,12 @@ thernet_dcmac_0_0.IP_CH3 MSTRCLK 1,0,0,0 IS_CURRENT_QUAD 1} RXQuad_1_/gt_quad_ba
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX1_USRCLK.PHASE" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX2_GT_IP_INTERFACE.ADDITIONAL_CONFIG_ENABLE" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX2_GT_IP_INTERFACE.ADDITIONAL_CONFIG_FILE" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX2_GT_IP_INTERFACE.ADDITIONAL_QUAD_SETTINGS" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX2_GT_IP_INTERFACE.CHNL_NUMBER" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX2_GT_IP_INTERFACE.GT_DIRECTION" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX2_GT_IP_INTERFACE.MASTERCLK_SRC" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX2_GT_IP_INTERFACE.PARENT_ID" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX2_GT_IP_INTERFACE.RX_SETTINGS" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX2_GT_IP_INTERFACE.ADDITIONAL_QUAD_SETTINGS" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX2_GT_IP_INTERFACE.CHNL_NUMBER" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX2_GT_IP_INTERFACE.GT_DIRECTION" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX2_GT_IP_INTERFACE.MASTERCLK_SRC" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX2_GT_IP_INTERFACE.PARENT_ID" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX2_GT_IP_INTERFACE.RX_SETTINGS" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX2_OUTCLK.CLK_DOMAIN" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX2_OUTCLK.FREQ_HZ" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX2_OUTCLK.IS_MASTER" xilinx:valuePermission="bd"/>
@@ -16978,12 +16978,12 @@ thernet_dcmac_0_0.IP_CH3 MSTRCLK 1,0,0,0 IS_CURRENT_QUAD 1} RXQuad_1_/gt_quad_ba
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX2_USRCLK.PHASE" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX3_GT_IP_INTERFACE.ADDITIONAL_CONFIG_ENABLE" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX3_GT_IP_INTERFACE.ADDITIONAL_CONFIG_FILE" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX3_GT_IP_INTERFACE.ADDITIONAL_QUAD_SETTINGS" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX3_GT_IP_INTERFACE.CHNL_NUMBER" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX3_GT_IP_INTERFACE.GT_DIRECTION" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX3_GT_IP_INTERFACE.MASTERCLK_SRC" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX3_GT_IP_INTERFACE.PARENT_ID" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX3_GT_IP_INTERFACE.RX_SETTINGS" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX3_GT_IP_INTERFACE.ADDITIONAL_QUAD_SETTINGS" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX3_GT_IP_INTERFACE.CHNL_NUMBER" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX3_GT_IP_INTERFACE.GT_DIRECTION" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX3_GT_IP_INTERFACE.MASTERCLK_SRC" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX3_GT_IP_INTERFACE.PARENT_ID" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX3_GT_IP_INTERFACE.RX_SETTINGS" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX3_OUTCLK.CLK_DOMAIN" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX3_OUTCLK.FREQ_HZ" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX3_OUTCLK.IS_MASTER" xilinx:valuePermission="bd"/>
@@ -16997,12 +16997,12 @@ thernet_dcmac_0_0.IP_CH3 MSTRCLK 1,0,0,0 IS_CURRENT_QUAD 1} RXQuad_1_/gt_quad_ba
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RX3_USRCLK.PHASE" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX0_GT_IP_INTERFACE.ADDITIONAL_CONFIG_ENABLE" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX0_GT_IP_INTERFACE.ADDITIONAL_CONFIG_FILE" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX0_GT_IP_INTERFACE.ADDITIONAL_QUAD_SETTINGS" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX0_GT_IP_INTERFACE.CHNL_NUMBER" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX0_GT_IP_INTERFACE.GT_DIRECTION" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX0_GT_IP_INTERFACE.MASTERCLK_SRC" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX0_GT_IP_INTERFACE.PARENT_ID" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX0_GT_IP_INTERFACE.TX_SETTINGS" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX0_GT_IP_INTERFACE.ADDITIONAL_QUAD_SETTINGS" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX0_GT_IP_INTERFACE.CHNL_NUMBER" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX0_GT_IP_INTERFACE.GT_DIRECTION" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX0_GT_IP_INTERFACE.MASTERCLK_SRC" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX0_GT_IP_INTERFACE.PARENT_ID" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX0_GT_IP_INTERFACE.TX_SETTINGS" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX0_OUTCLK.CLK_DOMAIN" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX0_OUTCLK.FREQ_HZ" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX0_OUTCLK.IS_MASTER" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
@@ -17016,12 +17016,12 @@ thernet_dcmac_0_0.IP_CH3 MSTRCLK 1,0,0,0 IS_CURRENT_QUAD 1} RXQuad_1_/gt_quad_ba
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX0_USRCLK.PHASE" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX1_GT_IP_INTERFACE.ADDITIONAL_CONFIG_ENABLE" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX1_GT_IP_INTERFACE.ADDITIONAL_CONFIG_FILE" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX1_GT_IP_INTERFACE.ADDITIONAL_QUAD_SETTINGS" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX1_GT_IP_INTERFACE.CHNL_NUMBER" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX1_GT_IP_INTERFACE.GT_DIRECTION" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX1_GT_IP_INTERFACE.MASTERCLK_SRC" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX1_GT_IP_INTERFACE.PARENT_ID" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX1_GT_IP_INTERFACE.TX_SETTINGS" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX1_GT_IP_INTERFACE.ADDITIONAL_QUAD_SETTINGS" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX1_GT_IP_INTERFACE.CHNL_NUMBER" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX1_GT_IP_INTERFACE.GT_DIRECTION" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX1_GT_IP_INTERFACE.MASTERCLK_SRC" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX1_GT_IP_INTERFACE.PARENT_ID" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX1_GT_IP_INTERFACE.TX_SETTINGS" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX1_OUTCLK.CLK_DOMAIN" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX1_OUTCLK.FREQ_HZ" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX1_OUTCLK.IS_MASTER" xilinx:valuePermission="bd"/>
@@ -17035,12 +17035,12 @@ thernet_dcmac_0_0.IP_CH3 MSTRCLK 1,0,0,0 IS_CURRENT_QUAD 1} RXQuad_1_/gt_quad_ba
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX1_USRCLK.PHASE" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX2_GT_IP_INTERFACE.ADDITIONAL_CONFIG_ENABLE" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX2_GT_IP_INTERFACE.ADDITIONAL_CONFIG_FILE" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX2_GT_IP_INTERFACE.ADDITIONAL_QUAD_SETTINGS" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX2_GT_IP_INTERFACE.CHNL_NUMBER" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX2_GT_IP_INTERFACE.GT_DIRECTION" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX2_GT_IP_INTERFACE.MASTERCLK_SRC" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX2_GT_IP_INTERFACE.PARENT_ID" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX2_GT_IP_INTERFACE.TX_SETTINGS" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX2_GT_IP_INTERFACE.ADDITIONAL_QUAD_SETTINGS" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX2_GT_IP_INTERFACE.CHNL_NUMBER" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX2_GT_IP_INTERFACE.GT_DIRECTION" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX2_GT_IP_INTERFACE.MASTERCLK_SRC" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX2_GT_IP_INTERFACE.PARENT_ID" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX2_GT_IP_INTERFACE.TX_SETTINGS" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX2_OUTCLK.CLK_DOMAIN" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX2_OUTCLK.FREQ_HZ" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX2_OUTCLK.IS_MASTER" xilinx:valuePermission="bd"/>
@@ -17054,12 +17054,12 @@ thernet_dcmac_0_0.IP_CH3 MSTRCLK 1,0,0,0 IS_CURRENT_QUAD 1} RXQuad_1_/gt_quad_ba
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX2_USRCLK.PHASE" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX3_GT_IP_INTERFACE.ADDITIONAL_CONFIG_ENABLE" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX3_GT_IP_INTERFACE.ADDITIONAL_CONFIG_FILE" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX3_GT_IP_INTERFACE.ADDITIONAL_QUAD_SETTINGS" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX3_GT_IP_INTERFACE.CHNL_NUMBER" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX3_GT_IP_INTERFACE.GT_DIRECTION" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX3_GT_IP_INTERFACE.MASTERCLK_SRC" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX3_GT_IP_INTERFACE.PARENT_ID" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX3_GT_IP_INTERFACE.TX_SETTINGS" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX3_GT_IP_INTERFACE.ADDITIONAL_QUAD_SETTINGS" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX3_GT_IP_INTERFACE.CHNL_NUMBER" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX3_GT_IP_INTERFACE.GT_DIRECTION" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX3_GT_IP_INTERFACE.MASTERCLK_SRC" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX3_GT_IP_INTERFACE.PARENT_ID" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX3_GT_IP_INTERFACE.TX_SETTINGS" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX3_OUTCLK.CLK_DOMAIN" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX3_OUTCLK.FREQ_HZ" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX3_OUTCLK.IS_MASTER" xilinx:valuePermission="bd"/>

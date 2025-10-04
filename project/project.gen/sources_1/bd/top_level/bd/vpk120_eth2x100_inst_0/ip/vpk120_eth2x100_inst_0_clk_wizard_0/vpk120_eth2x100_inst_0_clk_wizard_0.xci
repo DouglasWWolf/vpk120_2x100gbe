@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "vpk120_eth2x100_inst_0_clk_wizard_0",
-    "cell_name": "clk_wizard",
+    "cell_name": "pl_rtl/vpk120_eth2x100/clk_wizard",
     "component_reference": "xilinx.com:ip:clk_wizard:1.0",
     "ip_revision": "15",
     "gen_directory": ".",

@@ -3817,7 +3817,7 @@
       },
       "rx0": {
         "interface_ports": {
-          "rx0_user": {
+          "rx_user": {
             "mode": "Master",
             "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
             "vlnv": "xilinx.com:interface:axis_rtl:1.0"
@@ -3879,7 +3879,7 @@
             "left": "3",
             "right": "0"
           },
-          "rx0_user_clk": {
+          "rx_user_clk": {
             "type": "clk",
             "direction": "I"
           }
@@ -6084,7 +6084,7 @@
           "Conn1": {
             "interface_ports": [
               "dcmac_to_axis64/m_axis",
-              "rx0_user"
+              "rx_user"
             ]
           },
           "dcmac_rx_0_seg0": {
@@ -6229,7 +6229,7 @@
           },
           "rx0_user_clk_1": {
             "ports": [
-              "rx0_user_clk",
+              "rx_user_clk",
               "dcmac_to_axis64/m_axis_clk"
             ]
           },
@@ -6282,7 +6282,7 @@
       },
       "tx0": {
         "interface_ports": {
-          "tx0_user": {
+          "tx_user": {
             "mode": "Slave",
             "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
             "vlnv": "xilinx.com:interface:axis_rtl:1.0"
@@ -6347,11 +6347,11 @@
           "tx_axis_ready": {
             "direction": "I"
           },
-          "tx0_user_clk": {
+          "tx_user_clk": {
             "type": "clk",
             "direction": "I"
           },
-          "tx0_user_resetn": {
+          "tx_user_resetn": {
             "type": "rst",
             "direction": "I"
           }
@@ -7886,7 +7886,7 @@
           "Conn1": {
             "interface_ports": [
               "axis64_to_dcmac/axis_in",
-              "tx0_user"
+              "tx_user"
             ]
           },
           "axis64_to_dcmac_axis0_out": {
@@ -7962,13 +7962,13 @@
           },
           "tx0_user_clk_1": {
             "ports": [
-              "tx0_user_clk",
+              "tx_user_clk",
               "axis64_to_dcmac/s_axis_clk"
             ]
           },
           "tx0_user_resetn_1": {
             "ports": [
-              "tx0_user_resetn",
+              "tx_user_resetn",
               "axis64_to_dcmac/s_resetn"
             ]
           },
@@ -8054,7 +8054,7 @@
       },
       "tx1": {
         "interface_ports": {
-          "tx1_user": {
+          "tx_user": {
             "mode": "Slave",
             "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
             "vlnv": "xilinx.com:interface:axis_rtl:1.0"
@@ -8119,11 +8119,11 @@
           "tx_axis_ready": {
             "direction": "I"
           },
-          "tx1_user_clk": {
+          "tx_user_clk": {
             "type": "clk",
             "direction": "I"
           },
-          "tx1_user_resetn": {
+          "tx_user_resetn": {
             "type": "rst",
             "direction": "I"
           }
@@ -9658,7 +9658,7 @@
           "Conn1": {
             "interface_ports": [
               "axis64_to_dcmac/axis_in",
-              "tx1_user"
+              "tx_user"
             ]
           },
           "axis64_to_dcmac_axis0_out": {
@@ -9734,13 +9734,13 @@
           },
           "tx1_user_clk_1": {
             "ports": [
-              "tx1_user_clk",
+              "tx_user_clk",
               "axis64_to_dcmac/s_axis_clk"
             ]
           },
           "tx1_user_resetn_1": {
             "ports": [
-              "tx1_user_resetn",
+              "tx_user_resetn",
               "axis64_to_dcmac/s_resetn"
             ]
           },
@@ -9826,7 +9826,7 @@
       },
       "rx1": {
         "interface_ports": {
-          "rx1_user": {
+          "rx_user": {
             "mode": "Master",
             "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
             "vlnv": "xilinx.com:interface:axis_rtl:1.0"
@@ -9888,7 +9888,7 @@
             "left": "3",
             "right": "0"
           },
-          "rx1_user_clk": {
+          "rx_user_clk": {
             "type": "clk",
             "direction": "I"
           }
@@ -12095,7 +12095,7 @@
           "Conn1": {
             "interface_ports": [
               "dcmac_to_axis64/m_axis",
-              "rx1_user"
+              "rx_user"
             ]
           },
           "dcmac_rx_2to4_out0": {
@@ -12240,7 +12240,7 @@
           },
           "rx1_user_clk_1": {
             "ports": [
-              "rx1_user_clk",
+              "rx_user_clk",
               "dcmac_to_axis64/m_axis_clk"
             ]
           },
@@ -12696,13 +12696,13 @@
       "rx0_rx0_user": {
         "interface_ports": [
           "rx0_user",
-          "rx0/rx0_user"
+          "rx0/rx_user"
         ]
       },
       "rx1_rx1_user": {
         "interface_ports": [
           "rx1_user",
-          "rx1/rx1_user"
+          "rx1/rx_user"
         ]
       },
       "smartconnect_0_M00_AXI": {
@@ -12714,13 +12714,13 @@
       "tx0_user_1": {
         "interface_ports": [
           "tx0_user",
-          "tx0/tx0_user"
+          "tx0/tx_user"
         ]
       },
       "tx1_user_1": {
         "interface_ports": [
           "tx1_user",
-          "tx1/tx1_user"
+          "tx1/tx_user"
         ]
       }
     },
@@ -13294,13 +13294,13 @@
       "rx0_user_clk_1": {
         "ports": [
           "rx0_user_clk",
-          "rx0/rx0_user_clk"
+          "rx0/rx_user_clk"
         ]
       },
       "rx1_user_clk_1": {
         "ports": [
           "rx1_user_clk",
-          "rx1/rx1_user_clk"
+          "rx1/rx_user_clk"
         ]
       },
       "rx_flexif_clk_1": {
@@ -13349,13 +13349,13 @@
       "tx0_user_clk_1": {
         "ports": [
           "tx0_user_clk",
-          "tx0/tx0_user_clk"
+          "tx0/tx_user_clk"
         ]
       },
       "tx0_user_resetn_1": {
         "ports": [
           "tx0_user_resetn",
-          "tx0/tx0_user_resetn"
+          "tx0/tx_user_resetn"
         ]
       },
       "tx1_tx_axis_tdata0": {
@@ -13373,13 +13373,13 @@
       "tx1_user_clk_1": {
         "ports": [
           "tx1_user_clk",
-          "tx1/tx1_user_clk"
+          "tx1/tx_user_clk"
         ]
       },
       "tx1_user_resetn_1": {
         "ports": [
           "tx1_user_resetn",
-          "tx1/tx1_user_resetn"
+          "tx1/tx_user_resetn"
         ]
       },
       "tx_axis_tdata0_1": {

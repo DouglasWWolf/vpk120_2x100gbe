@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "vpk120_eth2x100_inst_0_dcmac_to_axis64_0",
-    "cell_name": "rx0/dcmac_to_axis64",
+    "cell_name": "pl_rtl/vpk120_eth2x100/rx0/dcmac_to_axis64",
     "component_reference": "xilinx.com:module_ref:dcmac_to_axis64:1.0",
     "ip_revision": "1",
     "gen_directory": ".",
