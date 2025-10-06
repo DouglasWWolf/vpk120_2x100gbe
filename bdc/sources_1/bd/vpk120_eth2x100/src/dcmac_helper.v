@@ -1,5 +1,5 @@
 
-module dcmac_helper # (parameter MAX_PORTS = 6, DW = 256)
+module dcmac_helper # (parameter MAX_PORTS = 6)
 (
     // Reset for the tx_axis_0 and rx_axis_0.  Synchronous to axis_clk_in
     (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 axis0_resetn RST" *)

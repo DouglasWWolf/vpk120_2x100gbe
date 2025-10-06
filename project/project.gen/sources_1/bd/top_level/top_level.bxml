@@ -50,7 +50,7 @@
       </File>
     </FileCollection>
     <BlockContainerCollection>
-      <BlockContainer InstPath="/pl_rtl/vpk120_eth2x100" IsPR="false" State="Validated">
+      <BlockContainer InstPath="/pl_rtl/vpk120_eth2x100" IsPR="false" State="Stale">
         <ActiveVariantSynth FileName="bd/vpk120_eth2x100_inst_0/vpk120_eth2x100_inst_0.bd"/>
         <ActiveVariantSim FileName="bd/vpk120_eth2x100_inst_0/vpk120_eth2x100_inst_0.bd"/>
         <VariantsCollection>

@@ -389,7 +389,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ee4e8d2e</spirit:value>
+            <spirit:value>8d8fe0d0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -402,7 +402,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ee4e8d2e</spirit:value>
+            <spirit:value>8d8fe0d0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1370,11 +1370,6 @@
         <spirit:displayName>Max Ports</spirit:displayName>
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.MAX_PORTS">6</spirit:value>
       </spirit:modelParameter>
-      <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>DW</spirit:name>
-        <spirit:displayName>Dw</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DW">256</spirit:value>
-      </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
   <spirit:fileSets>
@@ -1383,7 +1378,7 @@
       <spirit:file>
         <spirit:name>xgui/dcmac_helper_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_69b6189f</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_05d838ef</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1394,11 +1389,6 @@
       <spirit:name>MAX_PORTS</spirit:name>
       <spirit:displayName>Max Ports</spirit:displayName>
       <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.MAX_PORTS">6</spirit:value>
-    </spirit:parameter>
-    <spirit:parameter>
-      <spirit:name>DW</spirit:name>
-      <spirit:displayName>Dw</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DW">256</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
@@ -1420,7 +1410,7 @@
         <xilinx:designToolContext>IPI</xilinx:designToolContext>
       </xilinx:designToolContexts>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2025-10-03T08:28:33Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2025-10-06T08:26:27Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2024.2</xilinx:xilinxVersion>

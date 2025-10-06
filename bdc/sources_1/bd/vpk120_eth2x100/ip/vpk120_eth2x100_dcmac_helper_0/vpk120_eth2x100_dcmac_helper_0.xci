@@ -9,12 +9,10 @@
     "parameters": {
       "component_parameters": {
         "MAX_PORTS": [ { "value": "6", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "DW": [ { "value": "256", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "Component_Name": [ { "value": "vpk120_eth2x100_dcmac_helper_0", "resolve_type": "user", "usage": "all" } ]
       },
       "model_parameters": {
-        "MAX_PORTS": [ { "value": "6", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "DW": [ { "value": "256", "resolve_type": "generated", "format": "long", "usage": "all" } ]
+        "MAX_PORTS": [ { "value": "6", "resolve_type": "generated", "format": "long", "usage": "all" } ]
       },
       "project_parameters": {
         "ARCHITECTURE": [ { "value": "versal" } ],

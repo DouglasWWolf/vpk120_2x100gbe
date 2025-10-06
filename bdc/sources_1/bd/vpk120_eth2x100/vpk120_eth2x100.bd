@@ -13323,9 +13323,9 @@
           "dcmac_ip/apb3clk_quad",
           "dcmac_ip/s_axi_aclk",
           "smartconnect/aclk",
-          "dcmac_helper/s_axi_clk",
           "dcmac_iface/clk",
-          "dcmac_ctrl/clk"
+          "dcmac_ctrl/clk",
+          "dcmac_helper/s_axi_clk"
         ]
       },
       "ts_clk_1": {
