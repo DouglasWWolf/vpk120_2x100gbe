@@ -42,6 +42,11 @@ module dcmac_ctrl #
     output reg[5:0] gt_postcursor,
     output reg[6:0] gt_maincursor, 
 
+    // These are used to manually override the reset controls
+    output reg      override,
+    output reg      ovr_gt_reset_all,
+    output reg[1:0] ovr_gt_reset_rxdp,
+
     //================== This is an AXI4-Lite slave interface ==================
         
     // "Specify write address"              -- Master --    -- Slave --
@@ -171,16 +176,19 @@ localparam SLVERR = 2;
 localparam DECERR = 3;
 
 // These are user accessible control/status registers
-localparam REG_LINK_STATUS = 0;
-localparam REG_RESET       = 1;
-localparam REG_LOOPBACK    = 2;
-localparam REG_RSFEC       = 3;
-localparam REG_QSFP_POWER  = 4;
-localparam REG_PRECURSOR   = 5;
-localparam REG_POSTCURSOR  = 6;
-localparam REG_MAINCURSOR  = 7;
-localparam REG_DCMAC_ADDR  = 16;
-localparam REG_DCMAC_DATA  = 17;
+localparam REG_LINK_STATUS       = 0;
+localparam REG_RESET             = 1;
+localparam REG_LOOPBACK          = 2;
+localparam REG_RSFEC             = 3;
+localparam REG_QSFP_POWER        = 4;
+localparam REG_PRECURSOR         = 5;
+localparam REG_POSTCURSOR        = 6;
+localparam REG_MAINCURSOR        = 7;
+localparam REG_OVERRIDE          = 8;
+localparam REG_OVR_GT_RESET_ALL  = 9;
+localparam REG_OVR_GT_RESET_RXDP = 10;
+localparam REG_DCMAC_ADDR        = 16;
+localparam REG_DCMAC_DATA        = 17;
 
 
 //==========================================================================
@@ -196,18 +204,21 @@ always @(posedge clk) begin
 
     // If we're in reset, initialize important registers
     if (resetn == 0) begin
-        ashi_write_state <= 0;
-        gt_loopback      <= 0;
-        gt_precursor     <= DEFAULT_PRECURSOR;
-        gt_postcursor    <= DEFAULT_POSTCURSOR;
-        gt_maincursor    <= DEFAULT_MAINCURSOR;
-        enable_rsfec     <= 1;
-        qsfp_lpmode      <= ~DEFAULT_QSFP_POWER;
+        override          <= 0;
+        ovr_gt_reset_all  <= 0;
+        ovr_gt_reset_rxdp <= 0;
+        ashi_write_state  <= 0;
+        gt_loopback       <= 0;
+        gt_precursor      <= DEFAULT_PRECURSOR;
+        gt_postcursor     <= DEFAULT_POSTCURSOR;
+        gt_maincursor     <= DEFAULT_MAINCURSOR;
+        enable_rsfec      <= 1;
+        qsfp_lpmode       <= ~DEFAULT_QSFP_POWER;
     end
     
     // Otherwise, we're not in reset...  
     else case (ashi_write_state)
-        
+          
         // If an AXI write-request has occured...
         0:  if (ashi_write) begin
        
@@ -216,16 +227,19 @@ always @(posedge clk) begin
             
                 // ashi_windex = index of register to be written
                 case (ashi_windx)
-               
 
-                    REG_RESET:      resetn_out_timer <= 64;
-                    REG_RSFEC:      enable_rsfec     <= ashi_wdata[0];
-                    REG_LOOPBACK:   gt_loopback      <= {2'b0, ashi_wdata[0]};
-                    REG_QSFP_POWER: qsfp_lpmode      <= ~ashi_wdata[0];
-                    REG_PRECURSOR:  gt_precursor     <= ashi_wdata[5:0];                
-                    REG_POSTCURSOR: gt_precursor     <= ashi_wdata[5:0];
-                    REG_MAINCURSOR: gt_maincursor    <= ashi_wdata[6:0];  
-                    REG_DCMAC_ADDR: dcmac_addr       <= ashi_wdata | DCMAC_BASE_ADDR;
+                    REG_RESET:             resetn_out_timer  <= 64;
+                    REG_RSFEC:             enable_rsfec      <= ashi_wdata[0];
+                    REG_LOOPBACK:          gt_loopback       <= {2'b0, ashi_wdata[0]};
+                    REG_QSFP_POWER:        qsfp_lpmode       <= ~ashi_wdata[0];
+                    REG_PRECURSOR:         gt_precursor      <= ashi_wdata[5:0];                
+                    REG_POSTCURSOR:        gt_precursor      <= ashi_wdata[5:0];
+                    REG_MAINCURSOR:        gt_maincursor     <= ashi_wdata[6:0];  
+                    REG_DCMAC_ADDR:        dcmac_addr        <= ashi_wdata | DCMAC_BASE_ADDR;
+                    REG_OVERRIDE:          override          <= ashi_wdata[0];
+                    REG_OVR_GT_RESET_ALL:  ovr_gt_reset_all  <= ashi_wdata[0];
+                    REG_OVR_GT_RESET_RXDP: ovr_gt_reset_rxdp <= ashi_wdata[1:0];
+
                     REG_DCMAC_DATA:
                         begin
                             amci_waddr       <= dcmac_addr;
@@ -275,15 +289,19 @@ always @(posedge clk) begin
                 case (ashi_rindx)
 
                     // Allow a read from any valid register                
-                    REG_LINK_STATUS:    ashi_rdata <= {rx1_aligned, rx0_aligned};
-                    REG_RESET:          ashi_rdata <= (resetn_out == 0);
-                    REG_RSFEC:          ashi_rdata <= enable_rsfec;
-                    REG_QSFP_POWER:     ashi_rdata <= ~qsfp_lpmode;
-                    REG_LOOPBACK:       ashi_rdata <= gt_loopback;
-                    REG_PRECURSOR:      ashi_rdata <= gt_precursor;
-                    REG_POSTCURSOR:     ashi_rdata <= gt_postcursor;
-                    REG_MAINCURSOR:     ashi_rdata <= gt_maincursor;
-                    REG_DCMAC_ADDR:     ashi_rdata <= dcmac_addr;
+                    REG_LINK_STATUS:       ashi_rdata <= {rx1_aligned, rx0_aligned};
+                    REG_RESET:             ashi_rdata <= (resetn_out == 0);
+                    REG_RSFEC:             ashi_rdata <= enable_rsfec;
+                    REG_QSFP_POWER:        ashi_rdata <= ~qsfp_lpmode;
+                    REG_LOOPBACK:          ashi_rdata <= gt_loopback;
+                    REG_PRECURSOR:         ashi_rdata <= gt_precursor;
+                    REG_POSTCURSOR:        ashi_rdata <= gt_postcursor;
+                    REG_MAINCURSOR:        ashi_rdata <= gt_maincursor;
+                    REG_DCMAC_ADDR:        ashi_rdata <= dcmac_addr;
+                    REG_OVERRIDE:          ashi_rdata <= override;
+                    REG_OVR_GT_RESET_ALL:  ashi_rdata <= ovr_gt_reset_all;
+                    REG_OVR_GT_RESET_RXDP: ashi_rdata <= ovr_gt_reset_rxdp;
+                    
                     REG_DCMAC_DATA:
                         begin
                             amci_raddr      <= dcmac_addr;

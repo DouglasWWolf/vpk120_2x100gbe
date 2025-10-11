@@ -79,7 +79,8 @@ localparam REG_PACKET_COUNT = 0;
 localparam REG_PACKET_LEN   = 1;
 localparam REG_IDLE_CYCLES  = 2;
 localparam REG_INIT_VALUE   = 3;
-localparam REG_MISMATCH     = 4;
+localparam REG_BUSY         = 4;
+localparam REG_MISMATCH     = 5;
 //==========================================================================
 
 
@@ -219,6 +220,7 @@ always @(posedge clk) begin
             REG_IDLE_CYCLES:    ashi_rdata <= idle_cycles;
             REG_INIT_VALUE:     ashi_rdata <= initial_value;
             REG_MISMATCH:       ashi_rdata <= alarm;
+            REG_BUSY:           ashi_rdata <= packet_gen_busy;
 
             // Reads of any other register are a decode-error
             default: ashi_rresp <= DECERR;

@@ -3804,6 +3804,17 @@
             "direction": "O",
             "left": "6",
             "right": "0"
+          },
+          "override": {
+            "direction": "O"
+          },
+          "ovr_gt_reset_all": {
+            "direction": "O"
+          },
+          "ovr_gt_reset_rxdp": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
           }
         },
         "addressing": {
@@ -7943,8 +7954,8 @@
             "ports": [
               "axis_clk",
               "dcmac_tx_2seg/clk",
-              "dcmac_packetizer/clk",
-              "axis64_to_dcmac/m_axis_clk"
+              "axis64_to_dcmac/m_axis_clk",
+              "dcmac_packetizer/clk"
             ]
           },
           "dcmac_helper_axis0_resetn": {
@@ -9715,8 +9726,8 @@
             "ports": [
               "axis_clk",
               "dcmac_tx_2seg/clk",
-              "dcmac_packetizer/clk",
-              "axis64_to_dcmac/m_axis_clk"
+              "axis64_to_dcmac/m_axis_clk",
+              "dcmac_packetizer/clk"
             ]
           },
           "dcmac_helper_axis0_resetn": {
@@ -12335,6 +12346,9 @@
             "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
             "parameters": {
+              "MAX_BURST_LENGTH": {
+                "value": "1"
+              },
               "NUM_READ_OUTSTANDING": {
                 "value": "1"
               },
@@ -12348,6 +12362,9 @@
                 "value": "1"
               },
               "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "SUPPORTS_NARROW_BURST": {
                 "value": "0"
               },
               "WUSER_BITS_PER_BYTE": {
@@ -12618,6 +12635,17 @@
           "enable_rsfec": {
             "direction": "I"
           },
+          "override": {
+            "direction": "I"
+          },
+          "ovr_gt_reset_rx_datapath": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "ovr_gt_reset_all": {
+            "direction": "I"
+          },
           "gt_reset_rx_datapath": {
             "direction": "O",
             "left": "1",
@@ -12805,6 +12833,24 @@
         "ports": [
           "dcmac_ctrl/gt_precursor",
           "dcmac_helper/user_gt_precursor"
+        ]
+      },
+      "dcmac_ctrl_override": {
+        "ports": [
+          "dcmac_ctrl/override",
+          "dcmac_iface/override"
+        ]
+      },
+      "dcmac_ctrl_ovr_gt_reset_all": {
+        "ports": [
+          "dcmac_ctrl/ovr_gt_reset_all",
+          "dcmac_iface/ovr_gt_reset_all"
+        ]
+      },
+      "dcmac_ctrl_ovr_gt_reset_rxdp": {
+        "ports": [
+          "dcmac_ctrl/ovr_gt_reset_rxdp",
+          "dcmac_iface/ovr_gt_reset_rx_datapath"
         ]
       },
       "dcmac_ctrl_qsfp_lpmode": {
@@ -13323,9 +13369,9 @@
           "dcmac_ip/apb3clk_quad",
           "dcmac_ip/s_axi_aclk",
           "smartconnect/aclk",
-          "dcmac_iface/clk",
           "dcmac_ctrl/clk",
-          "dcmac_helper/s_axi_clk"
+          "dcmac_helper/s_axi_clk",
+          "dcmac_iface/clk"
         ]
       },
       "ts_clk_1": {

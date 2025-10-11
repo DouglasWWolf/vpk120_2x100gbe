@@ -389,7 +389,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>8d8fe0d0</spirit:value>
+            <spirit:value>23bb3700</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -402,7 +402,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>8d8fe0d0</spirit:value>
+            <spirit:value>23bb3700</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1366,6 +1366,11 @@
     </spirit:ports>
     <spirit:modelParameters>
       <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
+        <spirit:name>SPEED</spirit:name>
+        <spirit:displayName>Speed</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.SPEED">100</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>MAX_PORTS</spirit:name>
         <spirit:displayName>Max Ports</spirit:displayName>
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.MAX_PORTS">6</spirit:value>
@@ -1378,13 +1383,18 @@
       <spirit:file>
         <spirit:name>xgui/dcmac_helper_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_05d838ef</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_4cf31775</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
   </spirit:fileSets>
   <spirit:description>xilinx.com:module_ref:dcmac_helper:1.0</spirit:description>
   <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>SPEED</spirit:name>
+      <spirit:displayName>Speed</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SPEED">100</spirit:value>
+    </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MAX_PORTS</spirit:name>
       <spirit:displayName>Max Ports</spirit:displayName>
@@ -1410,7 +1420,7 @@
         <xilinx:designToolContext>IPI</xilinx:designToolContext>
       </xilinx:designToolContexts>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2025-10-06T08:26:27Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2025-10-11T03:33:09Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2024.2</xilinx:xilinxVersion>

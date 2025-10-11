@@ -8,10 +8,12 @@
     "gen_directory": "../../../../../../project.gen/sources_1/bd/vpk120_eth2x100/ip/vpk120_eth2x100_dcmac_helper_0",
     "parameters": {
       "component_parameters": {
+        "SPEED": [ { "value": "100", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "MAX_PORTS": [ { "value": "6", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "Component_Name": [ { "value": "vpk120_eth2x100_dcmac_helper_0", "resolve_type": "user", "usage": "all" } ]
       },
       "model_parameters": {
+        "SPEED": [ { "value": "100", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "MAX_PORTS": [ { "value": "6", "resolve_type": "generated", "format": "long", "usage": "all" } ]
       },
       "project_parameters": {

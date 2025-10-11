@@ -1,5 +1,5 @@
 
-module dcmac_helper # (parameter MAX_PORTS = 6)
+module dcmac_helper # (parameter SPEED = 100, MAX_PORTS = 6)
 (
     // Reset for the tx_axis_0 and rx_axis_0.  Synchronous to axis_clk_in
     (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 axis0_resetn RST" *)
@@ -165,11 +165,17 @@ assign ts_clk        = {MAX_PORTS{ts_clk_in}};
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //            The DCMAC serdes clock inputs from the GT Quads
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-assign rx_alt_serdes_clk = {1'b0,1'b0,1'b0,1'b0, ch0_rx_usr_clk2_1, ch0_rx_usr_clk2_0};
-assign tx_alt_serdes_clk = {1'b0,1'b0,1'b0,1'b0, ch0_tx_usr_clk2_1, ch0_tx_usr_clk2_0};
-assign rx_serdes_clk     = {1'b0,1'b0,1'b0,1'b0, ch0_rx_usr_clk_1 , ch0_rx_usr_clk_0 };
-assign tx_serdes_clk     = {1'b0,1'b0,1'b0,1'b0, ch0_tx_usr_clk_1 , ch0_tx_usr_clk_0 };
-
+if (SPEED == 100) begin
+    assign rx_alt_serdes_clk = {4'b0, ch0_rx_usr_clk2_1, ch0_rx_usr_clk2_0};
+    assign tx_alt_serdes_clk = {4'b0, ch0_tx_usr_clk2_1, ch0_tx_usr_clk2_0};
+    assign rx_serdes_clk     = {4'b0, ch0_rx_usr_clk_1 , ch0_rx_usr_clk_0 };
+    assign tx_serdes_clk     = {4'b0, ch0_tx_usr_clk_1 , ch0_tx_usr_clk_0 };
+end else begin
+    assign rx_alt_serdes_clk = {2'b0, ch0_rx_usr_clk2_1, ch0_rx_usr_clk2_1, ch0_rx_usr_clk2_0, ch0_rx_usr_clk2_0};
+    assign tx_alt_serdes_clk = {2'b0, ch0_tx_usr_clk2_1, ch0_tx_usr_clk2_1, ch0_tx_usr_clk2_0, ch0_tx_usr_clk2_0};
+    assign rx_serdes_clk     = {2'b0, ch0_rx_usr_clk_1 , ch0_rx_usr_clk_1 , ch0_rx_usr_clk_0 , ch0_rx_usr_clk_0 };
+    assign tx_serdes_clk     = {2'b0, ch0_tx_usr_clk_1 , ch0_tx_usr_clk_1 , ch0_tx_usr_clk_0 , ch0_tx_usr_clk_0 };
+end
 
 // Tell the DCMAC when the GT Quads both have good power
 assign gtpowergood_in = gtpowergood_0 & gtpowergood_1;
@@ -285,10 +291,6 @@ i_sync_axis_rx_reset_done
 );
 assign axis0_resetn = sync_rx_reset_done[0];
 assign axis1_resetn = sync_rx_reset_done[1];
-
-
-
-
 
 
 endmodule

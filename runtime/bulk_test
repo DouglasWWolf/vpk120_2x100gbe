@@ -1,0 +1,107 @@
+export axi_uart_device=/dev/ttyUSB2
+board_type=0
+#==============================================================================
+# This script performs a bulk send/receive test
+#==============================================================================
+
+# Declare the register offsets
+REG_PACKET_COUNT=$((0*4))
+  REG_PACKET_LEN=$((1*4))
+ REG_IDLE_CYCLES=$((2*4))
+  REG_INIT_VALUE=$((3*4))
+        REG_BUSY=$((4*4))
+       REG_ALARM=$((5*4))
+
+
+
+# Declare link status register addresses
+REG_PCS=0xA410_0000
+
+#==============================================================================
+# axi() - Reads or writes a value to an AXI-addressable register
+#==============================================================================
+axi()
+{
+    if [ $board_type -eq 0 ]; then
+        axireg $1 $2 $3 $4 $5 $6
+    else
+        pcireg $1 $2 $3 $4 $5 $6
+    fi
+}
+#==============================================================================
+
+#==============================================================================
+# busy_state() - Returns a bitmap of which channels are still busy
+#==============================================================================
+busy_state()
+{
+    local busy0=$(axireg -dec $((0x1000 + REG_BUSY)))
+    local busy1=$(axireg -dec $((0x1000 + REG_BUSY)))    
+    echo $(( 2*busy1 + busy0 ))
+}
+#==============================================================================
+
+#==============================================================================
+# alarm_state() - Returns a bitmap of which channels have alarms
+#==============================================================================
+alarm_state()
+{
+    local alarm0=$(axireg -dec $((0x1000 + REG_ALARM)))
+    local alarm1=$(axireg -dec $((0x1000 + REG_ALARM)))    
+    echo $(( 2*alarm1 + alarm0 ))
+}
+#==============================================================================
+
+
+if [ $(busy_state) -ne 0 ]; then
+    echo "One or both channels are busy"
+    exit 1
+fi
+
+# Does the specified channel have PCS alignment?
+aligned=$(axi -dec $REG_PCS)
+
+# If we don't have PCS alignment, bail
+if [ $aligned -ne 3 ]; then
+    echo "No PCS alignment.   Status = $aligned"
+    exit 1
+fi
+
+# A single pass through the loop is a billion packets of 4K each
+# which equals 4TB per pass through the loop
+packet_count=1000000000
+packet_length=4096
+          ipg=2
+
+# Set the packet length on both channels
+axi $((0x1000 + REG_PACKET_LEN)) $packet_length
+axi $((0x2000 + REG_PACKET_LEN)) $packet_length
+
+# Set the inter-packet gap on both channels
+axi $((0x1000 + REG_IDLE_CYCLES)) $ipg
+axi $((0x2000 + REG_IDLE_CYCLES)) $ipg
+
+counter=0;
+while :; do
+
+    # Send packets on both channels
+    axi $((0x1000 + REG_PACKET_COUNT)) $packet_count
+    axi $((0x2000 + REG_PACKET_COUNT)) $packet_count
+
+    # Sleep until we've finished sending
+    while [ $(busy_state) -ne 0 ]; do
+        sleep 1
+    done 
+
+    # Increment the counter and display it
+    counter=$((counter + 1))
+    echo "Loop $counter complete"
+    
+    # Check to see if either data-mismatch alarm triggered
+    alarms=$(alarm_state)
+    if [ $alarms -ne 0 ]; then
+        echo "Alarm(s) detected! ($alarms)"
+        exit 1
+    fi
+
+done

@@ -9,6 +9,9 @@
 
 /*
     This serves an a "pin controlled" interface to important DCMAC registers
+
+    This module will support either a 100G or 200G interface by setting the
+    parameter "SPEED" to either 100 or 200
 */
 
 module dcmac_iface #
@@ -20,13 +23,24 @@ module dcmac_iface #
     parameter FREQ_HZ = 250000000
 )
 ( 
+
     input  clk, resetn,
-         
+
+    // This drives the "gt_reset_all_in" pin on dcmac_helper         
     output reg  gt_reset_all,
 
     // This should normally be asserted, to enable RS-FEC
-    input  enable_rsfec,
- 
+    input       enable_rsfec,
+
+    // If this is asserted when we come out of reset,
+    // no automatic configuration occurs
+    input      override,
+    
+    // When we're in over-ride mode, these drive the
+    // gt_reset_rx_datapath and gt_reset_all output signals
+    input[1:0] ovr_gt_reset_rx_datapath,
+    input      ovr_gt_reset_all,
+
     // One per MAC port    
     output reg [1:0] gt_reset_rx_datapath,
     input      [1:0] rx_reset_done,
@@ -103,18 +117,41 @@ localparam LPORT0_STATUS   = C0_RX_PHY_STATUS;
 localparam LPORT1_STATUS   = C0_RX_PHY_STATUS + ((SPEED == 100) ? 32'h1000 : 32'h2000);
 localparam LPORT0_CHANNELS = (SPEED == 100) ? 6'b000001 : 6'b000011;
 localparam LPORT1_CHANNELS = (SPEED == 100) ? 6'b000010 : 6'b001100;
-localparam ALL_CHANNELS    = (LPORT0_CHANNELS | LPORT1_CHANNELS);
+localparam KEY_CHANNELS    = (SPEED == 100) ? 6'b000011 : 6'b000101;
+localparam ALL_CHANNELS    = 6'b111111;
 
+
+// These are for programming Cn_TX_MODE and Cn_RX_MODE
+localparam PMA_MUX    = (SPEED == 100) ? 0 : 1;
+localparam RSFEC_MODE = (SPEED == 100) ? 5 : 8; // 5=100G KR4, 8=200G
+localparam DATA_RATE  = (SPEED == 100) ? 0 : 1; // 0=100G,     1=200G
+localparam IDLE_MODE  = 5;                      // KR4
+localparam IDLE_RATE  = 0;                      // 100G
+
+// Determine the RS-FEC setting for Cn_TX_MODE and Cn_RX_MODE
+wire[31:0]      rsfec_mode = (enable_rsfec) ? (RSFEC_MODE << 16): 0;
+wire[31:0] idle_rsfec_mode = (enable_rsfec) ? (IDLE_MODE  << 16): 0;
+
+// Determine the Cn_TX_MODE and Cn_RX_MODE settings for both the key channels
+// and the idle channels.
+wire[31:0]      ch_tx_mode = DATA_RATE |      rsfec_mode | (PMA_MUX << 9);
+wire[31:0] idle_ch_tx_mode = IDLE_RATE | idle_rsfec_mode | (PMA_MUX << 9);
+wire[31:0]      ch_rx_mode = DATA_RATE |      rsfec_mode | (PMA_MUX << 12);
+wire[31:0] idle_ch_rx_mode = IDLE_RATE | idle_rsfec_mode | (PMA_MUX << 12);
+
+// Define the geometry of our state machine and call stack
 localparam FSMW = 6;
 localparam STACK_DEPTH=5;
 
-// These are for programming Cn_TX_MODE and Cn_RX_MODE
-localparam RSFEC_MODE = (SPEED == 100) ? 5 : 8; // 5=100G KR4, 8=200G
-localparam DATA_RATE  = (SPEED == 100) ? 0 : 1; // 0=100G,     1=200G
-wire[4:0] rsfec_mode = (enable_rsfec) ? RSFEC_MODE : 0;
+// This is a call stack
+reg[FSMW*STACK_DEPTH-1:0] stack;
 
 // This is the state of our state machine
 reg[FSMW-1:0] fsm_state;
+
+// Ordinary stackable call and return operations
+`define call(x) stack<=(stack<<FSMW)|fsm_state+1;fsm_state<=x
+`define return  fsm_state<=stack[FSMW-1:0];stack<=(stack>>FSMW)
 
 // This is a countdown timer for implementing delays
 reg[31:0] sleep;
@@ -122,12 +159,6 @@ reg[31:0] sleep;
 // When this non-zero, we're waiting for PCS alignment
 reg[31:0] wait_for_alignment;
 
-// This is a call stack
-reg[FSMW*STACK_DEPTH-1:0] stack;
-
-// Ordinary stackable call and return operations
-`define call(x) stack<=(stack<<FSMW)|fsm_state+1;fsm_state<=x
-`define return  fsm_state<=stack[FSMW-1:0];stack<=(stack>>FSMW)
 
 
 //=============================================================================
@@ -138,7 +169,7 @@ reg[1:0] rx_aligned;
 reg[5:0] alignment_channels;
 always @* begin
     case (rx_aligned)
-        0:  alignment_channels = ALL_CHANNELS;
+        0:  alignment_channels = (LPORT0_CHANNELS | LPORT1_CHANNELS);
         1:  alignment_channels = LPORT1_CHANNELS;
         2:  alignment_channels = LPORT0_CHANNELS;
         3:  alignment_channels = 0;
@@ -194,14 +225,22 @@ always @(posedge clk) begin
 
         // As we come out of reset, initialize the DCMAC registers
         FSM_TOP:
-            if (sleep == 0) begin
+            if (override) begin
+                gt_reset_all         <= ovr_gt_reset_all;
+                gt_reset_rx_datapath <= ovr_gt_reset_rx_datapath;
+            end
+            else if (sleep == 0) begin
                 `call(FSM_INIT_DCMAC);
             end
 
         // After DCMAC initialization, we'll sit in a loop attempting
         // to maintain PCS alignment on each of the logical ports
         FSM_LOOP:
-            if (AMCI_RIDLE) begin
+            if (override) begin
+                gt_reset_all         <= ovr_gt_reset_all;
+                gt_reset_rx_datapath <= ovr_gt_reset_rx_datapath;
+            end
+            else if (AMCI_RIDLE) begin
                 AMCI_RADDR <= LPORT0_STATUS;
                 AMCI_READ  <= 1;
                 fsm_state  <= fsm_state + 1;
@@ -248,7 +287,7 @@ always @(posedge clk) begin
                 `call(FSM_SPAM);
             end
 
-        // Leave resert asserted for a bit
+        // Leave reset asserted for a bit
         FSM_LOOP+6:
             begin
                 sleep     <= 1000;
@@ -330,26 +369,45 @@ always @(posedge clk) begin
                 `call(FSM_SPAM);
             end
 
-        // Set the FEC mode for TX
+        // Set the FEC mode for TX for idle channels 
         FSM_INIT_DCMAC + 6:
             if (AMCI_WIDLE) begin
                 AMCI_WADDR <= C0_TX_MODE;
-                AMCI_WDATA <= (DATA_RATE | rsfec_mode << 16);
+                AMCI_WDATA <= idle_ch_tx_mode;
                 channels   <= ALL_CHANNELS;
                 `call(FSM_SPAM);
             end
 
-        // Set the FEC mode for RX
+        // Set the FEC mode for TX for key channels 
         FSM_INIT_DCMAC + 7:
             if (AMCI_WIDLE) begin
+                AMCI_WADDR <= C0_TX_MODE;
+                AMCI_WDATA <= ch_tx_mode;
+                channels   <= KEY_CHANNELS;
+                `call(FSM_SPAM);
+            end
+
+        // Set the FEC mode for RX for idle channels 
+        FSM_INIT_DCMAC + 8:
+            if (AMCI_WIDLE) begin
                 AMCI_WADDR <= C0_RX_MODE;
-                AMCI_WDATA <= (DATA_RATE | rsfec_mode << 16);
+                AMCI_WDATA <= idle_ch_rx_mode;
                 channels   <= ALL_CHANNELS;
                 `call(FSM_SPAM);
             end
 
+        // Set the FEC mode for RX for key channels 
+        FSM_INIT_DCMAC + 9:
+            if (AMCI_WIDLE) begin
+                AMCI_WADDR <= C0_RX_MODE;
+                AMCI_WDATA <= ch_rx_mode;
+                channels   <= KEY_CHANNELS;
+                `call(FSM_SPAM);
+            end
+
+
         // Release all of the DCMAC's resets
-        FSM_INIT_DCMAC + 8:
+        FSM_INIT_DCMAC + 10:
             if (AMCI_WIDLE) begin
                 dcmac_reset <= 0;
                 sleep       <= 1000;
@@ -357,7 +415,7 @@ always @(posedge clk) begin
             end
 
         // When the sleep is completed, return
-        FSM_INIT_DCMAC + 9:
+        FSM_INIT_DCMAC + 11:
             if (AMCI_WIDLE && sleep == 0) begin
                 wait_for_alignment <= ALIGNMENT_TIME;
                 `return;
@@ -503,6 +561,5 @@ axi4_lite_master # (.DW(DW), .AW(AW)) axi4_master
     .AXI_RREADY     (M_AXI_RREADY )
 );
 //=============================================================================
-
 
 endmodule

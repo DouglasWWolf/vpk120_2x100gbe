@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "vpk120_eth2x100_dcmac_packetizer_0_0",
-    "cell_name": "tx0/dcmac_packetizer",
+    "cell_name": "dcmac_packetizer",
     "component_reference": "xilinx.com:module_ref:dcmac_packetizer:1.0",
     "ip_revision": "1",
     "gen_directory": "../../../../../../project.gen/sources_1/bd/vpk120_eth2x100/ip/vpk120_eth2x100_dcmac_packetizer_0_0",

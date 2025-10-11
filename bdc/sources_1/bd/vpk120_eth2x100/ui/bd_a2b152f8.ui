@@ -7,6 +7,7 @@
    "No Loops_ExpandedHierarchyInLayout":"",
    "No Loops_Layout":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
 #  -string -flagsOSRD
+preplace port rx_user -pg 1 -lvl 6 -x 1350 -y 90 -defaultsOSRD
 preplace port port-id_axis_clk -pg 1 -lvl 0 -x -70 -y 350 -defaultsOSRD
 preplace port port-id_axis_resetn -pg 1 -lvl 0 -x -70 -y 330 -defaultsOSRD
 preplace port port-id_tvalid -pg 1 -lvl 0 -x -70 -y 370 -defaultsOSRD
@@ -19,7 +20,6 @@ preplace port port-id_sop1 -pg 1 -lvl 0 -x -70 -y 530 -defaultsOSRD
 preplace port port-id_eop0 -pg 1 -lvl 0 -x -70 -y 550 -defaultsOSRD
 preplace port port-id_eop1 -pg 1 -lvl 0 -x -70 -y 570 -defaultsOSRD
 preplace port port-id_rx_user_clk -pg 1 -lvl 6 -x 1350 -y 110 -defaultsOSRD -right
-preplace port rx_user -pg 1 -lvl 6 -x 1350 -y 90 -defaultsOSRD
 preplace portBus data0 -pg 1 -lvl 0 -x -70 -y 390 -defaultsOSRD
 preplace portBus data1 -pg 1 -lvl 0 -x -70 -y 410 -defaultsOSRD
 preplace portBus mty0 -pg 1 -lvl 0 -x -70 -y 590 -defaultsOSRD
@@ -31,10 +31,10 @@ preplace inst zero_4 -pg 1 -lvl 1 -x 40 -y 250 -defaultsOSRD -pinBusDir dout rig
 preplace inst dcmac_rx_deskew -pg 1 -lvl 3 -x 710 -y 70 -defaultsOSRD -pinDir in0 left -pinY in0 20L -pinDir in1 left -pinY in1 40L -pinDir in2 left -pinY in2 60L -pinDir in3 left -pinY in3 80L -pinDir out0 right -pinY out0 20R -pinDir out1 right -pinY out1 40R -pinDir out2 right -pinY out2 60R -pinDir out3 right -pinY out3 80R -pinDir clk left -pinY clk 100L -pinDir resetn left -pinY resetn 120L
 preplace inst dcmac_rx_2to4 -pg 1 -lvl 4 -x 960 -y 70 -defaultsOSRD -pinDir in0 left -pinY in0 20L -pinDir in1 left -pinY in1 40L -pinDir out0 right -pinY out0 20R -pinDir out1 right -pinY out1 40R -pinDir out2 right -pinY out2 60R -pinDir out3 right -pinY out3 80R -pinDir clk left -pinY clk 60L -pinDir resetn left -pinY resetn 80L
 preplace inst dcmac_to_axis64 -pg 1 -lvl 5 -x 1210 -y 70 -defaultsOSRD -pinDir in0 left -pinY in0 20L -pinDir in1 left -pinY in1 40L -pinDir in2 left -pinY in2 60L -pinDir in3 left -pinY in3 80L -pinDir m_axis right -pinY m_axis 20R -pinDir s_clk left -pinY s_clk 100L -pinDir s_resetn left -pinY s_resetn 120L -pinDir m_axis_clk right -pinY m_axis_clk 40R
-preplace netloc clk_wizard_axis_clk 1 0 5 NJ 350 270 10 590 10 850 10 1090
+preplace netloc clk_wizard_axis_clk 1 0 5 NJ 350 270 10 610 10 860 10 1080
 preplace netloc data0_1 1 0 2 NJ 390 NJ
 preplace netloc data1_1 1 0 2 NJ 410 NJ
-preplace netloc dcmac_helper_axis0_resetn 1 0 5 NJ 330 290 30 570 30 830 30 1070
+preplace netloc dcmac_helper_axis0_resetn 1 0 5 NJ 330 290 30 590 30 840 30 1060
 preplace netloc ena0_1 1 0 2 NJ 430 NJ
 preplace netloc ena1_1 1 0 2 NJ 450 NJ
 preplace netloc eop0_1 1 0 2 NJ 550 NJ
@@ -65,8 +65,8 @@ levelinfo -pg 1 -70 40 440 710 960 1210 1350
 pagesize -pg 1 -db -bbox -sgen -220 -50 1630 990
 ",
    "No Loops_PinnedBlocks":"/rx1/dcmac_rx|/rx1/dcmac_deskew|/rx1/dcmac_to_axis|",
-   "No Loops_ScaleFactor":"0.881936",
-   "No Loops_TopLeft":"-214,-59",
+   "No Loops_ScaleFactor":"0.896104",
+   "No Loops_TopLeft":"-214,-60",
    "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
 #  -string -flagsOSRD
 preplace port port-id_axis_clk -pg 1 -lvl 0 -x 0 -y 20 -defaultsOSRD

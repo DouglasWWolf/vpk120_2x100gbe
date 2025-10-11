@@ -1,13 +1,14 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x741B5F3669151577",
+      "boundary_crc": "0x741B5F36387D7EFA",
       "design_src": "/home/wolf/fpga/vpk120_2x100gbe/bdc/sources_1/bd/vpk120_eth2x100/vpk120_eth2x100.bd",
       "device": "xcvp1202-vsva2785-2MP-e-S",
       "name": "vpk120_eth2x100_inst_0",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
       "tool_version": "2024.2",
+      "validated": "true",
       "variant": "true"
     },
     "design_tree": {
@@ -144,7 +145,7 @@
           },
           "FREQ_HZ": {
             "value": "156250000",
-            "value_src": "strong"
+            "value_src": "user_prop"
           }
         },
         "port_maps": {
@@ -173,7 +174,7 @@
           },
           "FREQ_HZ": {
             "value": "156250000",
-            "value_src": "strong"
+            "value_src": "user_prop"
           }
         },
         "port_maps": {
@@ -202,15 +203,15 @@
           },
           "ARUSER_WIDTH": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "default_prop"
           },
           "AWUSER_WIDTH": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "default_prop"
           },
           "BUSER_WIDTH": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "default_prop"
           },
           "CLK_DOMAIN": {
             "value": "bd_0477_pspmc_0_0_pl0_ref_clk",
@@ -222,7 +223,7 @@
           },
           "FREQ_HZ": {
             "value": "249997499",
-            "value_src": "strong"
+            "value_src": "ip_prop"
           },
           "HAS_BRESP": {
             "value": "1",
@@ -230,15 +231,15 @@
           },
           "HAS_BURST": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "ip_prop"
           },
           "HAS_CACHE": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "ip_prop"
           },
           "HAS_LOCK": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "ip_prop"
           },
           "HAS_PROT": {
             "value": "1",
@@ -246,11 +247,11 @@
           },
           "HAS_QOS": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "ip_prop"
           },
           "HAS_REGION": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "const_prop"
           },
           "HAS_RRESP": {
             "value": "1",
@@ -262,7 +263,7 @@
           },
           "ID_WIDTH": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "default_prop"
           },
           "INSERT_VIP": {
             "value": "0",
@@ -270,31 +271,31 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "1",
-            "value_src": "strong"
+            "value_src": "default_prop"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "1",
-            "value_src": "strong"
+            "value_src": "user_prop"
           },
           "NUM_READ_THREADS": {
             "value": "1",
-            "value_src": "strong"
+            "value_src": "user_prop"
           },
           "NUM_WRITE_OUTSTANDING": {
             "value": "1",
-            "value_src": "strong"
+            "value_src": "user_prop"
           },
           "NUM_WRITE_THREADS": {
             "value": "1",
-            "value_src": "strong"
+            "value_src": "user_prop"
           },
           "PHASE": {
             "value": "0.0",
-            "value_src": "strong"
+            "value_src": "ip_prop"
           },
           "PROTOCOL": {
             "value": "AXI4LITE",
-            "value_src": "strong"
+            "value_src": "ip_prop"
           },
           "READ_WRITE_MODE": {
             "value": "READ_WRITE",
@@ -302,23 +303,23 @@
           },
           "RUSER_BITS_PER_BYTE": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "user_prop"
           },
           "RUSER_WIDTH": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "default_prop"
           },
           "SUPPORTS_NARROW_BURST": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "default_prop"
           },
           "WUSER_BITS_PER_BYTE": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "user_prop"
           },
           "WUSER_WIDTH": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "default_prop"
           }
         },
         "address_space_ref": "s_axi_ctl",
@@ -435,23 +436,23 @@
           },
           "FREQ_HZ": {
             "value": "249997499",
-            "value_src": "strong"
+            "value_src": "ip_prop"
           },
           "HAS_TKEEP": {
             "value": "1",
-            "value_src": "strong"
+            "value_src": "auto_prop"
           },
           "HAS_TLAST": {
             "value": "1",
-            "value_src": "strong"
+            "value_src": "const_prop"
           },
           "HAS_TREADY": {
             "value": "1",
-            "value_src": "strong"
+            "value_src": "const_prop"
           },
           "HAS_TSTRB": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "const_prop"
           },
           "INSERT_VIP": {
             "value": "0",
@@ -459,27 +460,27 @@
           },
           "LAYERED_METADATA": {
             "value": "undef",
-            "value_src": "strong"
+            "value_src": "default_prop"
           },
           "PHASE": {
             "value": "0.0",
-            "value_src": "strong"
+            "value_src": "ip_prop"
           },
           "TDATA_NUM_BYTES": {
             "value": "64",
-            "value_src": "strong"
+            "value_src": "auto_prop"
           },
           "TDEST_WIDTH": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "const_prop"
           },
           "TID_WIDTH": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "const_prop"
           },
           "TUSER_WIDTH": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "const_prop"
           }
         },
         "port_maps": {
@@ -520,23 +521,23 @@
           },
           "FREQ_HZ": {
             "value": "249997499",
-            "value_src": "strong"
+            "value_src": "ip_prop"
           },
           "HAS_TKEEP": {
             "value": "1",
-            "value_src": "strong"
+            "value_src": "auto_prop"
           },
           "HAS_TLAST": {
             "value": "1",
-            "value_src": "strong"
+            "value_src": "const_prop"
           },
           "HAS_TREADY": {
             "value": "1",
-            "value_src": "strong"
+            "value_src": "const_prop"
           },
           "HAS_TSTRB": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "const_prop"
           },
           "INSERT_VIP": {
             "value": "0",
@@ -544,27 +545,27 @@
           },
           "LAYERED_METADATA": {
             "value": "undef",
-            "value_src": "strong"
+            "value_src": "default_prop"
           },
           "PHASE": {
             "value": "0.0",
-            "value_src": "strong"
+            "value_src": "ip_prop"
           },
           "TDATA_NUM_BYTES": {
             "value": "64",
-            "value_src": "strong"
+            "value_src": "auto_prop"
           },
           "TDEST_WIDTH": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "const_prop"
           },
           "TID_WIDTH": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "const_prop"
           },
           "TUSER_WIDTH": {
             "value": "0",
-            "value_src": "strong"
+            "value_src": "const_prop"
           }
         },
         "port_maps": {
@@ -604,24 +605,24 @@
             "value_src": "ip_prop"
           },
           "FREQ_HZ": {
-            "value": "100000000",
-            "value_src": "default"
+            "value": "249997499",
+            "value_src": "ip_prop"
           },
           "HAS_TKEEP": {
             "value": "1",
-            "value_src": "default"
+            "value_src": "const_prop"
           },
           "HAS_TLAST": {
             "value": "1",
-            "value_src": "default"
+            "value_src": "const_prop"
           },
           "HAS_TREADY": {
             "value": "1",
-            "value_src": "default"
+            "value_src": "const_prop"
           },
           "HAS_TSTRB": {
             "value": "0",
-            "value_src": "default"
+            "value_src": "const_prop"
           },
           "INSERT_VIP": {
             "value": "0",
@@ -633,23 +634,23 @@
           },
           "PHASE": {
             "value": "0.0",
-            "value_src": "default"
+            "value_src": "ip_prop"
           },
           "TDATA_NUM_BYTES": {
             "value": "64",
-            "value_src": "default"
+            "value_src": "const_prop"
           },
           "TDEST_WIDTH": {
             "value": "0",
-            "value_src": "default"
+            "value_src": "const_prop"
           },
           "TID_WIDTH": {
             "value": "0",
-            "value_src": "default"
+            "value_src": "const_prop"
           },
           "TUSER_WIDTH": {
             "value": "2",
-            "value_src": "default"
+            "value_src": "const_prop"
           }
         },
         "port_maps": {
@@ -696,23 +697,23 @@
           },
           "FREQ_HZ": {
             "value": "249997499",
-            "value_src": "default"
+            "value_src": "ip_prop"
           },
           "HAS_TKEEP": {
             "value": "1",
-            "value_src": "default"
+            "value_src": "const_prop"
           },
           "HAS_TLAST": {
             "value": "1",
-            "value_src": "default"
+            "value_src": "const_prop"
           },
           "HAS_TREADY": {
             "value": "1",
-            "value_src": "default"
+            "value_src": "const_prop"
           },
           "HAS_TSTRB": {
             "value": "0",
-            "value_src": "default"
+            "value_src": "const_prop"
           },
           "INSERT_VIP": {
             "value": "0",
@@ -724,23 +725,23 @@
           },
           "PHASE": {
             "value": "0.0",
-            "value_src": "default"
+            "value_src": "ip_prop"
           },
           "TDATA_NUM_BYTES": {
             "value": "64",
-            "value_src": "default"
+            "value_src": "const_prop"
           },
           "TDEST_WIDTH": {
             "value": "0",
-            "value_src": "default"
+            "value_src": "const_prop"
           },
           "TID_WIDTH": {
             "value": "0",
-            "value_src": "default"
+            "value_src": "const_prop"
           },
           "TUSER_WIDTH": {
             "value": "2",
-            "value_src": "default"
+            "value_src": "const_prop"
           }
         },
         "port_maps": {
@@ -788,7 +789,7 @@
           },
           "POLARITY": {
             "value": "ACTIVE_LOW",
-            "value_src": "strong"
+            "value_src": "const_prop"
           }
         }
       },
@@ -805,12 +806,12 @@
             "value_src": "strong"
           },
           "CLK_DOMAIN": {
-            "value": "vpk120_eth2x100_s_axi_clk",
-            "value_src": "strong"
+            "value": "bd_0477_pspmc_0_0_pl0_ref_clk",
+            "value_src": "ip_prop"
           },
           "FREQ_HZ": {
             "value": "249997499",
-            "value_src": "strong"
+            "value_src": "ip_prop"
           },
           "FREQ_TOLERANCE_HZ": {
             "value": "0",
@@ -822,15 +823,27 @@
           },
           "PHASE": {
             "value": "0.0",
-            "value_src": "strong"
+            "value_src": "ip_prop"
           }
         }
       },
       "tx0_user_resetn": {
-        "direction": "I"
+        "direction": "I",
+        "parameters": {
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "const_prop"
+          }
+        }
       },
       "tx1_user_resetn": {
-        "direction": "I"
+        "direction": "I",
+        "parameters": {
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "const_prop"
+          }
+        }
       },
       "tx0_user_clk": {
         "type": "clk",
@@ -841,12 +854,12 @@
             "value_src": "strong"
           },
           "CLK_DOMAIN": {
-            "value": "vpk120_eth2x100_tx0_user_clk",
-            "value_src": "strong"
+            "value": "bd_0477_pspmc_0_0_pl0_ref_clk",
+            "value_src": "ip_prop"
           },
           "FREQ_HZ": {
             "value": "249997499",
-            "value_src": "strong"
+            "value_src": "ip_prop"
           },
           "FREQ_TOLERANCE_HZ": {
             "value": "0",
@@ -858,7 +871,7 @@
           },
           "PHASE": {
             "value": "0.0",
-            "value_src": "strong"
+            "value_src": "ip_prop"
           }
         }
       },
@@ -871,12 +884,12 @@
             "value_src": "strong"
           },
           "CLK_DOMAIN": {
-            "value": "vpk120_eth2x100_tx1_user_clk",
-            "value_src": "strong"
+            "value": "bd_0477_pspmc_0_0_pl0_ref_clk",
+            "value_src": "ip_prop"
           },
           "FREQ_HZ": {
             "value": "249997499",
-            "value_src": "strong"
+            "value_src": "ip_prop"
           },
           "FREQ_TOLERANCE_HZ": {
             "value": "0",
@@ -888,7 +901,7 @@
           },
           "PHASE": {
             "value": "0.0",
-            "value_src": "strong"
+            "value_src": "ip_prop"
           }
         }
       },
@@ -901,12 +914,12 @@
             "value_src": "strong"
           },
           "CLK_DOMAIN": {
-            "value": "vpk120_eth2x100_rx1_user_clk",
-            "value_src": "strong"
+            "value": "bd_0477_pspmc_0_0_pl0_ref_clk",
+            "value_src": "ip_prop"
           },
           "FREQ_HZ": {
-            "value": "100000000",
-            "value_src": "strong"
+            "value": "249997499",
+            "value_src": "ip_prop"
           },
           "FREQ_TOLERANCE_HZ": {
             "value": "0",
@@ -918,7 +931,7 @@
           },
           "PHASE": {
             "value": "0.0",
-            "value_src": "strong"
+            "value_src": "ip_prop"
           }
         }
       },
@@ -931,12 +944,12 @@
             "value_src": "strong"
           },
           "CLK_DOMAIN": {
-            "value": "vpk120_eth2x100_rx0_user_clk",
-            "value_src": "strong"
+            "value": "bd_0477_pspmc_0_0_pl0_ref_clk",
+            "value_src": "ip_prop"
           },
           "FREQ_HZ": {
             "value": "249997499",
-            "value_src": "strong"
+            "value_src": "ip_prop"
           },
           "FREQ_TOLERANCE_HZ": {
             "value": "0",
@@ -948,7 +961,7 @@
           },
           "PHASE": {
             "value": "0.0",
-            "value_src": "strong"
+            "value_src": "ip_prop"
           }
         }
       },
@@ -972,11 +985,15 @@
             "port_maps": {
               "CLK_N": {
                 "physical_name": "CLK_IN_D_0_clk_n",
-                "direction": "I"
+                "direction": "I",
+                "left": "0",
+                "right": "0"
               },
               "CLK_P": {
                 "physical_name": "CLK_IN_D_0_clk_p",
-                "direction": "I"
+                "direction": "I",
+                "left": "0",
+                "right": "0"
               }
             }
           },
@@ -987,11 +1004,15 @@
             "port_maps": {
               "CLK_N": {
                 "physical_name": "CLK_IN_D_1_clk_n",
-                "direction": "I"
+                "direction": "I",
+                "left": "0",
+                "right": "0"
               },
               "CLK_P": {
                 "physical_name": "CLK_IN_D_1_clk_p",
-                "direction": "I"
+                "direction": "I",
+                "left": "0",
+                "right": "0"
               }
             }
           },
@@ -1002,19 +1023,27 @@
             "port_maps": {
               "GRX_N": {
                 "physical_name": "GT_Serial_0_grx_n",
-                "direction": "I"
+                "direction": "I",
+                "left": "3",
+                "right": "0"
               },
               "GRX_P": {
                 "physical_name": "GT_Serial_0_grx_p",
-                "direction": "I"
+                "direction": "I",
+                "left": "3",
+                "right": "0"
               },
               "GTX_N": {
                 "physical_name": "GT_Serial_0_gtx_n",
-                "direction": "O"
+                "direction": "O",
+                "left": "3",
+                "right": "0"
               },
               "GTX_P": {
                 "physical_name": "GT_Serial_0_gtx_p",
-                "direction": "O"
+                "direction": "O",
+                "left": "3",
+                "right": "0"
               }
             }
           },
@@ -1025,19 +1054,27 @@
             "port_maps": {
               "GRX_N": {
                 "physical_name": "GT_Serial_1_grx_n",
-                "direction": "I"
+                "direction": "I",
+                "left": "3",
+                "right": "0"
               },
               "GRX_P": {
                 "physical_name": "GT_Serial_1_grx_p",
-                "direction": "I"
+                "direction": "I",
+                "left": "3",
+                "right": "0"
               },
               "GTX_N": {
                 "physical_name": "GT_Serial_1_gtx_n",
-                "direction": "O"
+                "direction": "O",
+                "left": "3",
+                "right": "0"
               },
               "GTX_P": {
                 "physical_name": "GT_Serial_1_gtx_p",
-                "direction": "O"
+                "direction": "O",
+                "left": "3",
+                "right": "0"
               }
             }
           },
@@ -1048,7 +1085,9 @@
             "port_maps": {
               "ARADDR": {
                 "physical_name": "s_axi_araddr",
-                "direction": "I"
+                "direction": "I",
+                "left": "31",
+                "right": "0"
               },
               "ARREADY": {
                 "physical_name": "s_axi_arready",
@@ -1060,7 +1099,9 @@
               },
               "AWADDR": {
                 "physical_name": "s_axi_awaddr",
-                "direction": "I"
+                "direction": "I",
+                "left": "31",
+                "right": "0"
               },
               "AWREADY": {
                 "physical_name": "s_axi_awready",
@@ -1076,7 +1117,9 @@
               },
               "BRESP": {
                 "physical_name": "s_axi_bresp",
-                "direction": "O"
+                "direction": "O",
+                "left": "1",
+                "right": "0"
               },
               "BVALID": {
                 "physical_name": "s_axi_bvalid",
@@ -1084,7 +1127,9 @@
               },
               "RDATA": {
                 "physical_name": "s_axi_rdata",
-                "direction": "O"
+                "direction": "O",
+                "left": "31",
+                "right": "0"
               },
               "RREADY": {
                 "physical_name": "s_axi_rready",
@@ -1092,7 +1137,9 @@
               },
               "RRESP": {
                 "physical_name": "s_axi_rresp",
-                "direction": "O"
+                "direction": "O",
+                "left": "1",
+                "right": "0"
               },
               "RVALID": {
                 "physical_name": "s_axi_rvalid",
@@ -1100,7 +1147,9 @@
               },
               "WDATA": {
                 "physical_name": "s_axi_wdata",
-                "direction": "I"
+                "direction": "I",
+                "left": "31",
+                "right": "0"
               },
               "WREADY": {
                 "physical_name": "s_axi_wready",
@@ -2909,11 +2958,15 @@
             "parameters": {
               "FREQ_HZ": {
                 "value": "249997499",
-                "value_src": "user_prop"
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
               },
               "CLK_DOMAIN": {
-                "value": "vpk120_eth2x100_s_axi_clk",
-                "value_src": "default_prop"
+                "value": "bd_0477_pspmc_0_0_pl0_ref_clk",
+                "value_src": "ip_prop"
               }
             }
           },
@@ -2943,16 +2996,44 @@
                 "value_src": "ip_prop"
               },
               "CLK_DOMAIN": {
-                "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                 "value_src": "ip_prop"
               }
             }
           },
           "core_clk_in": {
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "782001201",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
+                "value_src": "default_prop"
+              }
+            }
           },
           "ts_clk_in": {
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "300769693",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "clkwiz_locked": {
             "direction": "I"
@@ -3054,28 +3135,172 @@
             }
           },
           "ch0_rx_usr_clk_0": {
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "644531000.0",
+                "value_src": "ip_prop"
+              },
+              "PARENT_ID": {
+                "value": "undef",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "vpk120_eth2x100_inst_0_gt_quad_base_0_0_ch0_rxoutclk",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "ch0_rx_usr_clk_1": {
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "644531000.0",
+                "value_src": "ip_prop"
+              },
+              "PARENT_ID": {
+                "value": "undef",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "vpk120_eth2x100_inst_0_gt_quad_base_1_0_ch0_rxoutclk",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "ch0_tx_usr_clk_0": {
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "644531000.0",
+                "value_src": "ip_prop"
+              },
+              "PARENT_ID": {
+                "value": "undef",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "vpk120_eth2x100_inst_0_gt_quad_base_0_0_ch0_txoutclk",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "ch0_tx_usr_clk_1": {
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "644531000.0",
+                "value_src": "ip_prop"
+              },
+              "PARENT_ID": {
+                "value": "undef",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "vpk120_eth2x100_inst_0_gt_quad_base_1_0_ch0_txoutclk",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "ch0_rx_usr_clk2_0": {
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "322265500.0",
+                "value_src": "ip_prop"
+              },
+              "PARENT_ID": {
+                "value": "undef",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "vpk120_eth2x100_inst_0_gt_quad_base_0_0_ch0_rxoutclk",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "ch0_rx_usr_clk2_1": {
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "322265500.0",
+                "value_src": "ip_prop"
+              },
+              "PARENT_ID": {
+                "value": "undef",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "vpk120_eth2x100_inst_0_gt_quad_base_1_0_ch0_rxoutclk",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "ch0_tx_usr_clk2_0": {
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "322265500.0",
+                "value_src": "ip_prop"
+              },
+              "PARENT_ID": {
+                "value": "undef",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "vpk120_eth2x100_inst_0_gt_quad_base_0_0_ch0_txoutclk",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "ch0_tx_usr_clk2_1": {
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "322265500.0",
+                "value_src": "ip_prop"
+              },
+              "PARENT_ID": {
+                "value": "undef",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "vpk120_eth2x100_inst_0_gt_quad_base_1_0_ch0_txoutclk",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "rx_serdes_clk": {
             "type": "gt_usrclk",
@@ -3332,7 +3557,7 @@
               },
               "FREQ_HZ": {
                 "value": "249997499",
-                "value_src": "user_prop"
+                "value_src": "ip_prop"
               },
               "ID_WIDTH": {
                 "value": "0",
@@ -3418,9 +3643,13 @@
                 "value": "1",
                 "value_src": "auto"
               },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
               "CLK_DOMAIN": {
-                "value": "vpk120_eth2x100_s_axi_clk",
-                "value_src": "default_prop"
+                "value": "bd_0477_pspmc_0_0_pl0_ref_clk",
+                "value_src": "ip_prop"
               }
             },
             "address_space_ref": "M_AXI",
@@ -3541,7 +3770,7 @@
               },
               "FREQ_HZ": {
                 "value": "249997499",
-                "value_src": "user_prop"
+                "value_src": "ip_prop"
               },
               "ID_WIDTH": {
                 "value": "0",
@@ -3627,9 +3856,13 @@
                 "value": "1",
                 "value_src": "auto"
               },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
               "CLK_DOMAIN": {
-                "value": "vpk120_eth2x100_s_axi_clk",
-                "value_src": "default_prop"
+                "value": "bd_0477_pspmc_0_0_pl0_ref_clk",
+                "value_src": "ip_prop"
               },
               "NUM_READ_THREADS": {
                 "value": "1",
@@ -3762,11 +3995,15 @@
               },
               "FREQ_HZ": {
                 "value": "249997499",
-                "value_src": "user_prop"
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
               },
               "CLK_DOMAIN": {
-                "value": "vpk120_eth2x100_s_axi_clk",
-                "value_src": "default_prop"
+                "value": "bd_0477_pspmc_0_0_pl0_ref_clk",
+                "value_src": "ip_prop"
               }
             }
           },
@@ -3814,6 +4051,17 @@
             "direction": "O",
             "left": "6",
             "right": "0"
+          },
+          "override": {
+            "direction": "O"
+          },
+          "ovr_gt_reset_all": {
+            "direction": "O"
+          },
+          "ovr_gt_reset_rxdp": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
           }
         },
         "addressing": {
@@ -3834,11 +4082,15 @@
             "port_maps": {
               "TDATA": {
                 "physical_name": "rx_user_tdata",
-                "direction": "O"
+                "direction": "O",
+                "left": "511",
+                "right": "0"
               },
               "TKEEP": {
                 "physical_name": "rx_user_tkeep",
-                "direction": "O"
+                "direction": "O",
+                "left": "63",
+                "right": "0"
               },
               "TLAST": {
                 "physical_name": "rx_user_tlast",
@@ -3846,7 +4098,9 @@
               },
               "TUSER": {
                 "physical_name": "rx_user_tuser",
-                "direction": "O"
+                "direction": "O",
+                "left": "1",
+                "right": "0"
               },
               "TVALID": {
                 "physical_name": "rx_user_tvalid",
@@ -3979,7 +4233,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -4062,7 +4316,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -4145,7 +4399,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -4228,7 +4482,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -4288,7 +4542,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 }
@@ -4484,7 +4738,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -4567,7 +4821,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -4650,7 +4904,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -4733,7 +4987,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -4816,7 +5070,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -4895,7 +5149,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -4974,7 +5228,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -5053,7 +5307,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -5109,7 +5363,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 }
@@ -5184,7 +5438,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -5263,7 +5517,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -5342,7 +5596,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -5421,7 +5675,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -5500,7 +5754,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -5579,7 +5833,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -5635,7 +5889,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 }
@@ -5710,7 +5964,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -5789,7 +6043,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -5868,7 +6122,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -5947,7 +6201,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -6020,9 +6274,13 @@
                   "FREQ_HZ": {
                     "value": "249997499"
                   },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "ip_prop"
+                  },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_rx0_user_clk",
-                    "value_src": "user_prop"
+                    "value": "bd_0477_pspmc_0_0_pl0_ref_clk",
+                    "value_src": "ip_prop"
                   }
                 },
                 "port_maps": {
@@ -6081,7 +6339,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 }
@@ -6107,9 +6365,13 @@
                   "FREQ_HZ": {
                     "value": "249997499"
                   },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "ip_prop"
+                  },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_rx0_user_clk",
-                    "value_src": "user_prop"
+                    "value": "bd_0477_pspmc_0_0_pl0_ref_clk",
+                    "value_src": "ip_prop"
                   }
                 }
               }
@@ -6325,11 +6587,15 @@
             "port_maps": {
               "TDATA": {
                 "physical_name": "tx_user_tdata",
-                "direction": "I"
+                "direction": "I",
+                "left": "511",
+                "right": "0"
               },
               "TKEEP": {
                 "physical_name": "tx_user_tkeep",
-                "direction": "I"
+                "direction": "I",
+                "left": "63",
+                "right": "0"
               },
               "TLAST": {
                 "physical_name": "tx_user_tlast",
@@ -6473,7 +6739,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -6550,7 +6816,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -6627,7 +6893,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -6704,7 +6970,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -6781,7 +7047,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -6858,7 +7124,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -6935,7 +7201,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -7012,7 +7278,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -7066,7 +7332,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 }
@@ -7141,7 +7407,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -7218,7 +7484,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -7295,7 +7561,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -7372,7 +7638,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -7426,7 +7692,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 }
@@ -7551,7 +7817,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -7628,7 +7894,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -7705,7 +7971,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -7782,7 +8048,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -7850,13 +8116,17 @@
                     "value": "1",
                     "value_src": "constant"
                   },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "ip_prop"
+                  },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_tx0_user_clk",
-                    "value_src": "default_prop"
+                    "value": "bd_0477_pspmc_0_0_pl0_ref_clk",
+                    "value_src": "ip_prop"
                   },
                   "LAYERED_METADATA": {
                     "value": "undef",
-                    "value_src": "user_prop"
+                    "value_src": "default_prop"
                   }
                 },
                 "port_maps": {
@@ -7899,9 +8169,13 @@
                   "FREQ_HZ": {
                     "value": "249997499"
                   },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "ip_prop"
+                  },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_tx0_user_clk",
-                    "value_src": "default_prop"
+                    "value": "bd_0477_pspmc_0_0_pl0_ref_clk",
+                    "value_src": "ip_prop"
                   }
                 }
               },
@@ -7932,7 +8206,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 }
@@ -8001,8 +8275,8 @@
             "ports": [
               "axis_clk",
               "dcmac_tx_2seg/clk",
-              "dcmac_packetizer/clk",
-              "axis64_to_dcmac/m_axis_clk"
+              "axis64_to_dcmac/m_axis_clk",
+              "dcmac_packetizer/clk"
             ]
           },
           "dcmac_helper_axis0_resetn": {
@@ -8119,11 +8393,15 @@
             "port_maps": {
               "TDATA": {
                 "physical_name": "tx_user_tdata",
-                "direction": "I"
+                "direction": "I",
+                "left": "511",
+                "right": "0"
               },
               "TKEEP": {
                 "physical_name": "tx_user_tkeep",
-                "direction": "I"
+                "direction": "I",
+                "left": "63",
+                "right": "0"
               },
               "TLAST": {
                 "physical_name": "tx_user_tlast",
@@ -8267,7 +8545,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -8344,7 +8622,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -8421,7 +8699,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -8498,7 +8776,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -8575,7 +8853,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -8652,7 +8930,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -8729,7 +9007,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -8806,7 +9084,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -8860,7 +9138,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 }
@@ -8935,7 +9213,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -9012,7 +9290,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -9089,7 +9367,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -9166,7 +9444,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -9220,7 +9498,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 }
@@ -9345,7 +9623,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -9422,7 +9700,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -9499,7 +9777,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -9576,7 +9854,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -9644,13 +9922,17 @@
                     "value": "1",
                     "value_src": "constant"
                   },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "ip_prop"
+                  },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_tx1_user_clk",
-                    "value_src": "default_prop"
+                    "value": "bd_0477_pspmc_0_0_pl0_ref_clk",
+                    "value_src": "ip_prop"
                   },
                   "LAYERED_METADATA": {
                     "value": "undef",
-                    "value_src": "user_prop"
+                    "value_src": "default_prop"
                   }
                 },
                 "port_maps": {
@@ -9693,9 +9975,13 @@
                   "FREQ_HZ": {
                     "value": "249997499"
                   },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "ip_prop"
+                  },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_tx1_user_clk",
-                    "value_src": "default_prop"
+                    "value": "bd_0477_pspmc_0_0_pl0_ref_clk",
+                    "value_src": "ip_prop"
                   }
                 }
               },
@@ -9726,7 +10012,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 }
@@ -9795,8 +10081,8 @@
             "ports": [
               "axis_clk",
               "dcmac_tx_2seg/clk",
-              "dcmac_packetizer/clk",
-              "axis64_to_dcmac/m_axis_clk"
+              "axis64_to_dcmac/m_axis_clk",
+              "dcmac_packetizer/clk"
             ]
           },
           "dcmac_helper_axis0_resetn": {
@@ -9913,11 +10199,15 @@
             "port_maps": {
               "TDATA": {
                 "physical_name": "rx_user_tdata",
-                "direction": "O"
+                "direction": "O",
+                "left": "511",
+                "right": "0"
               },
               "TKEEP": {
                 "physical_name": "rx_user_tkeep",
-                "direction": "O"
+                "direction": "O",
+                "left": "63",
+                "right": "0"
               },
               "TLAST": {
                 "physical_name": "rx_user_tlast",
@@ -9925,7 +10215,9 @@
               },
               "TUSER": {
                 "physical_name": "rx_user_tuser",
-                "direction": "O"
+                "direction": "O",
+                "left": "1",
+                "right": "0"
               },
               "TVALID": {
                 "physical_name": "rx_user_tvalid",
@@ -10058,7 +10350,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -10141,7 +10433,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -10224,7 +10516,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -10307,7 +10599,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -10367,7 +10659,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 }
@@ -10563,7 +10855,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -10646,7 +10938,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -10729,7 +11021,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -10812,7 +11104,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -10895,7 +11187,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -10974,7 +11266,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -11053,7 +11345,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -11132,7 +11424,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -11188,7 +11480,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 }
@@ -11263,7 +11555,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -11342,7 +11634,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -11421,7 +11713,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -11500,7 +11792,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -11579,7 +11871,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -11658,7 +11950,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -11714,7 +12006,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 }
@@ -11789,7 +12081,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -11868,7 +12160,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -11947,7 +12239,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -12026,7 +12318,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 },
@@ -12097,12 +12389,16 @@
                     "value_src": "constant"
                   },
                   "FREQ_HZ": {
-                    "value": "100000000",
-                    "value_src": "user_prop"
+                    "value": "249997499",
+                    "value_src": "ip_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_rx1_user_clk",
-                    "value_src": "default_prop"
+                    "value": "bd_0477_pspmc_0_0_pl0_ref_clk",
+                    "value_src": "ip_prop"
                   }
                 },
                 "port_maps": {
@@ -12161,7 +12457,7 @@
                     "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_clk_wizard_0_core_clk",
+                    "value": "vpk120_eth2x100_inst_0_clk_wizard_0_core_clk",
                     "value_src": "ip_prop"
                   }
                 }
@@ -12185,12 +12481,16 @@
                     "value_src": "constant"
                   },
                   "FREQ_HZ": {
-                    "value": "100000000",
-                    "value_src": "user_prop"
+                    "value": "249997499",
+                    "value_src": "ip_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "ip_prop"
                   },
                   "CLK_DOMAIN": {
-                    "value": "vpk120_eth2x100_rx1_user_clk",
-                    "value_src": "default_prop"
+                    "value": "bd_0477_pspmc_0_0_pl0_ref_clk",
+                    "value_src": "ip_prop"
                   }
                 }
               }
@@ -12441,6 +12741,9 @@
             "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
             "parameters": {
+              "MAX_BURST_LENGTH": {
+                "value": "1"
+              },
               "NUM_READ_OUTSTANDING": {
                 "value": "1"
               },
@@ -12454,6 +12757,9 @@
                 "value": "1"
               },
               "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "SUPPORTS_NARROW_BURST": {
                 "value": "0"
               },
               "WUSER_BITS_PER_BYTE": {
@@ -12490,7 +12796,7 @@
               },
               "FREQ_HZ": {
                 "value": "249997499",
-                "value_src": "user_prop"
+                "value_src": "ip_prop"
               },
               "ID_WIDTH": {
                 "value": "0",
@@ -12576,9 +12882,13 @@
                 "value": "1",
                 "value_src": "auto"
               },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
               "CLK_DOMAIN": {
-                "value": "vpk120_eth2x100_s_axi_clk",
-                "value_src": "default_prop"
+                "value": "bd_0477_pspmc_0_0_pl0_ref_clk",
+                "value_src": "ip_prop"
               }
             },
             "address_space_ref": "M_AXI",
@@ -12700,11 +13010,15 @@
               },
               "FREQ_HZ": {
                 "value": "249997499",
-                "value_src": "user_prop"
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
               },
               "CLK_DOMAIN": {
-                "value": "vpk120_eth2x100_s_axi_clk",
-                "value_src": "default_prop"
+                "value": "bd_0477_pspmc_0_0_pl0_ref_clk",
+                "value_src": "ip_prop"
               }
             }
           },
@@ -12722,6 +13036,17 @@
             "direction": "O"
           },
           "enable_rsfec": {
+            "direction": "I"
+          },
+          "override": {
+            "direction": "I"
+          },
+          "ovr_gt_reset_rx_datapath": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "ovr_gt_reset_all": {
             "direction": "I"
           },
           "gt_reset_rx_datapath": {
@@ -12911,6 +13236,24 @@
         "ports": [
           "dcmac_ctrl/gt_precursor",
           "dcmac_helper/user_gt_precursor"
+        ]
+      },
+      "dcmac_ctrl_override": {
+        "ports": [
+          "dcmac_ctrl/override",
+          "dcmac_iface/override"
+        ]
+      },
+      "dcmac_ctrl_ovr_gt_reset_all": {
+        "ports": [
+          "dcmac_ctrl/ovr_gt_reset_all",
+          "dcmac_iface/ovr_gt_reset_all"
+        ]
+      },
+      "dcmac_ctrl_ovr_gt_reset_rxdp": {
+        "ports": [
+          "dcmac_ctrl/ovr_gt_reset_rxdp",
+          "dcmac_iface/ovr_gt_reset_rx_datapath"
         ]
       },
       "dcmac_ctrl_qsfp_lpmode": {
@@ -13429,9 +13772,9 @@
           "dcmac_ip/apb3clk_quad",
           "dcmac_ip/s_axi_aclk",
           "smartconnect/aclk",
-          "dcmac_iface/clk",
           "dcmac_ctrl/clk",
-          "dcmac_helper/s_axi_clk"
+          "dcmac_helper/s_axi_clk",
+          "dcmac_iface/clk"
         ]
       },
       "ts_clk_1": {

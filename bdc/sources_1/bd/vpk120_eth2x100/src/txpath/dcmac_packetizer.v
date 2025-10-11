@@ -37,8 +37,8 @@ module dcmac_packetizer # (parameter MAX_PACKET_SIZE = 16384)
     input           axis0_out_tready, axis1_out_tready, axis2_out_tready, axis3_out_tready  
 );
 
-// We want our FIFOs to be built of uram
-localparam FIFO_MEMORY_TYPE = "ultra";
+// Type of memory to build our FIFOs from
+localparam FIFO_MEMORY_TYPE = "auto";
 
 // Our datapath is four segments of 16 bytes each for a total 
 // of 64 bytes wide.   Determine how many data-cycles we will
